@@ -1,0 +1,43 @@
+{
+  "scope": "all dumped MaxHook image regions 0x180*",
+  "ranges": {
+    "bcryptPrimitives": [
+      "0x7ff843230000",
+      "0x7ff8432d8000"
+    ],
+    "bcrypt": [
+      "0x7ff842ba0000",
+      "0x7ff842bca000"
+    ],
+    "ncrypt": [
+      "0x7ff8425d0000",
+      "0x7ff842600000"
+    ],
+    "ncryptsslp": [
+      "0x7ff81dc70000",
+      "0x7ff81dcb8000"
+    ],
+    "winhttp": [
+      "0x7ff83ca70000",
+      "0x7ff83cc25000"
+    ]
+  },
+  "hits": [
+    {
+      "file": "region_0000000180960000.bin",
+      "owner_va": "0x180960220",
+      "alignment": 0,
+      "target": "0x7ff83ca87ea0",
+      "module": "winhttp",
+      "rva": "0x17ea0"
+    },
+    {
+      "file": "region_0000000180980000.bin",
+      "owner_va": "0x18098c0f8",
+      "alignment": 0,
+      "target": "0x7ff83ca70000",
+      "module": "winhttp",
+      "rva": "0x0"
+    }
+  ]
+}

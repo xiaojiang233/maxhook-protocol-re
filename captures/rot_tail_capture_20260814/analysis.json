@@ -1,0 +1,60 @@
+{
+  "schema": "maxhook.rotation-tail.analysis/v1",
+  "capture": "E:\\Coding\\S1mple\\target\\rot_tail_capture_20260814",
+  "calls": [
+    {
+      "call_id": 1,
+      "plaintext_bytes": 745,
+      "ciphertext_bytes": 745,
+      "nonce_hex": "f62ca3da7f1f5b93932c9ffa",
+      "keystream_sha256": "3992d23b7c68adf15a8e06e4374d60170d92af61f629c4bdac5a11da56ae1789",
+      "rot_hits": 13613,
+      "detail_range": [
+        12845,
+        13612
+      ],
+      "site_counts": {
+        "0xa164be": 107,
+        "0xa59e63": 104,
+        "0xb5f49c": 390,
+        "0xaf6547": 162,
+        "0xb3cbf4": 5
+      },
+      "verified": 768,
+      "mismatches": 0
+    },
+    {
+      "call_id": 2,
+      "plaintext_bytes": 1387,
+      "ciphertext_bytes": 1387,
+      "nonce_hex": "bc5a8b0544b92e7af5026fc8",
+      "keystream_sha256": "232988c786b1a5336682c6f526478dde61e705a7426f843d2b9cadc9f31335c2",
+      "rot_hits": 23723,
+      "detail_range": [
+        22955,
+        23722
+      ],
+      "site_counts": {
+        "0xa164be": 107,
+        "0xa59e63": 104,
+        "0xb5f49c": 390,
+        "0xaf6547": 162,
+        "0xb3cbf4": 5
+      },
+      "verified": 768,
+      "mismatches": 0
+    }
+  ],
+  "comparisons": [
+    {
+      "left": 1,
+      "right": 2,
+      "aligned_tail_samples": 768,
+      "same_rotation_semantics": 768,
+      "rotation_semantics_identical": true,
+      "register_rows_identical": 748,
+      "context_rows_identical": 91
+    }
+  ],
+  "interpretation": "Identical aligned tail rotation semantics across calls with distinct plaintext, nonce, and keystream shows these five rotate handlers are generic VM/control-flow primitives, not observations of the cipher state."
+}

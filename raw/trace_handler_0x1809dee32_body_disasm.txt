@@ -1,0 +1,27 @@
+0x1809a57e6: mov      r10, r10
+0x1809a57e9: mov      rdx, rbp
+0x1809a57ec: add      rdx, 0x6d
+0x1809a57f3: mov      rdx, qword ptr [rdx]
+0x1809a57f6: add      rdx, 4
+0x1809a57fd: movzx    rdx, word ptr [rdx]
+0x1809a5801: mov      r13, rbp
+0x1809a5804: add      r13, 0x85
+0x1809a580b: mov      r13, qword ptr [r13]
+0x1809a580f: mov      r9, rbp
+0x1809a5812: add      r9, 0xa
+0x1809a5819: add      edx, dword ptr [r9]
+0x1809a581c: mov      r10, rbp
+0x1809a581f: add      r10, 0xa
+0x1809a5826: sub      dword ptr [r10], edx
+0x1809a5829: and      rdx, 0xffff
+0x1809a5830: shl      rdx, 3
+0x1809a5834: add      r13, rdx
+0x1809a5837: mov      rax, qword ptr [r13]
+0x1809a583b: mov      r11, rbp
+0x1809a583e: add      r11, 0x6d
+0x1809a5845: mov      r11, qword ptr [r11]
+0x1809a5848: add      r11, 0
+0x1809a584f: movsxd   r13, dword ptr [r11]
+0x1809a5852: mov      r10, rbp
+0x1809a5855: add      r10, 0x6d
+0x1809a585c: add      qword ptr [r10], r13

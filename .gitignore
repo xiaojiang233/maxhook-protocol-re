@@ -1,0 +1,14 @@
+# Raw memory dumps + organize manifests too large / transient for git
+_bigdata/
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+
+# Local deps
+.pydeps/
+
+# OS
+.DS_Store
+Thumbs.db

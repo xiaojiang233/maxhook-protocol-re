@@ -1,0 +1,164 @@
+{
+  "schema": "maxhook.live-stack-keyscan/v1",
+  "source": "E:\\Coding\\S1mple\\target\\target\\native_capture_live",
+  "scanned": [
+    {
+      "request_id": "1",
+      "path": "/api/v3/session/bootstrap/redeem",
+      "stack_bytes": 5160,
+      "unique_keys": 7882,
+      "hits": 0
+    },
+    {
+      "request_id": "2",
+      "path": "/api/v3/session/exchange",
+      "stack_bytes": 7128,
+      "unique_keys": 11421,
+      "hits": 0
+    },
+    {
+      "request_id": "3",
+      "path": "/api/v3/report",
+      "stack_bytes": 4280,
+      "unique_keys": 8321,
+      "hits": 0
+    },
+    {
+      "request_id": "4",
+      "path": "/api/v3/report",
+      "stack_bytes": 4280,
+      "unique_keys": 8310,
+      "hits": 0
+    },
+    {
+      "request_id": "5",
+      "path": "/api/v3/report",
+      "stack_bytes": 4280,
+      "unique_keys": 8294,
+      "hits": 0
+    },
+    {
+      "request_id": "6",
+      "path": "/api/v3/report",
+      "stack_bytes": 4280,
+      "unique_keys": 8317,
+      "hits": 0
+    },
+    {
+      "request_id": "7",
+      "path": "/api/v3/report",
+      "stack_bytes": 4280,
+      "unique_keys": 8229,
+      "hits": 0
+    },
+    {
+      "request_id": "8",
+      "path": "/api/v3/report",
+      "stack_bytes": 4280,
+      "unique_keys": 8300,
+      "hits": 0
+    },
+    {
+      "request_id": "9",
+      "path": "/api/v3/report",
+      "stack_bytes": 4280,
+      "unique_keys": 8294,
+      "hits": 0
+    },
+    {
+      "request_id": "10",
+      "path": "/api/v3/report",
+      "stack_bytes": 4280,
+      "unique_keys": 8301,
+      "hits": 0
+    },
+    {
+      "request_id": "11",
+      "path": "/api/v3/report",
+      "stack_bytes": 4280,
+      "unique_keys": 8233,
+      "hits": 0
+    },
+    {
+      "request_id": "12",
+      "path": "/api/v3/report",
+      "stack_bytes": 4280,
+      "unique_keys": 8303,
+      "hits": 0
+    },
+    {
+      "request_id": "13",
+      "path": "/api/v3/report",
+      "stack_bytes": 4280,
+      "unique_keys": 8296,
+      "hits": 0
+    },
+    {
+      "request_id": "14",
+      "path": "/api/v3/report",
+      "stack_bytes": 4280,
+      "unique_keys": 8231,
+      "hits": 0
+    },
+    {
+      "request_id": "15",
+      "path": "/api/v3/report",
+      "stack_bytes": 4280,
+      "unique_keys": 8300,
+      "hits": 0
+    },
+    {
+      "request_id": "16",
+      "path": "/api/v3/report",
+      "stack_bytes": 4280,
+      "unique_keys": 8232,
+      "hits": 0
+    },
+    {
+      "request_id": "17",
+      "path": "/api/v3/report",
+      "stack_bytes": 4280,
+      "unique_keys": 8305,
+      "hits": 0
+    },
+    {
+      "request_id": "18",
+      "path": "/api/v3/report",
+      "stack_bytes": 4280,
+      "unique_keys": 8294,
+      "hits": 0
+    },
+    {
+      "request_id": "19",
+      "path": "/api/v3/report",
+      "stack_bytes": 4280,
+      "unique_keys": 8298,
+      "hits": 0
+    },
+    {
+      "request_id": "20",
+      "path": "/api/v3/report",
+      "stack_bytes": 4280,
+      "unique_keys": 8233,
+      "hits": 0
+    },
+    {
+      "request_id": "21",
+      "path": "/api/v3/report",
+      "stack_bytes": 4280,
+      "unique_keys": 8305,
+      "hits": 0
+    },
+    {
+      "request_id": "22",
+      "path": "/api/v3/report",
+      "stack_bytes": 4280,
+      "unique_keys": 8296,
+      "hits": 0
+    }
+  ],
+  "unique_keys_sum": 184995,
+  "attempts": 15640100,
+  "hits": [],
+  "elapsed_seconds": 84.156
+}

@@ -1,0 +1,96 @@
+0x180982798: mov      r12, rbp
+0x18098279b: add      r12, 0x6d
+0x1809827a2: mov      rcx, rbp
+0x1809827a5: mov      rdx, rbp
+0x1809827a8: add      rdx, 0x6d
+0x1809827af: mov      r12, qword ptr [r12]
+0x1809827b3: mov      rdx, qword ptr [rdx]
+0x1809827b6: add      r12, 0
+0x1809827bd: mov      r14d, dword ptr [r12]
+0x1809827c1: add      rcx, 0x6d
+0x1809827c8: mov      rdi, rbp
+0x1809827cb: mov      rcx, qword ptr [rcx]
+0x1809827ce: add      rcx, 8
+0x1809827d5: add      rdi, 0xa
+0x1809827dc: xor      dword ptr [rdi], r14d
+0x1809827df: add      rdx, 6
+0x1809827e6: movzx    rcx, word ptr [rcx]
+0x1809827ea: add      rcx, rbp
+0x1809827ed: movzx    rdx, word ptr [rdx]
+0x1809827f1: add      qword ptr [rcx], 8
+0x1809827f8: add      rdx, rbp
+0x1809827fb: pop      qword ptr [rdx]
+0x1809827fd: mov      rdi, rbp
+0x180982800: add      rdi, 0x5d
+0x180982807: mov      esi, dword ptr [rdi]
+0x180982809: and      esi, 1
+0x18098280f: cmp      esi, 0
+0x180982815: je       0x18098282b
+0x18098281b: mov      rdi, rbp
+0x18098281e: add      rdi, 0x5d
+0x180982825: and      dword ptr [rdi], 0x49c3a21
+0x18098282b: mov      r12, 0x65753e5f
+0x180982832: mov      r8, rbp
+0x180982835: add      r8, 0x5d
+0x18098283c: xor      dword ptr [r8], r12d
+0x18098283f: or       r12, r11
+0x180982842: sub      r13, r12
+0x180982845: mov      rbx, 0x12
+0x18098284c: add      r9, r11
+0x18098284f: or       r9, r9
+0x180982852: mov      rdx, rbp
+0x180982855: mov      r10, 0x12
+0x18098285c: xor      r10, r11
+0x18098285f: add      rdx, 0x85
+0x180982866: xor      r13, 8
+0x18098286d: sub      r9, 0x20
+0x180982874: mov      r9, rbp
+0x180982877: mov      r12, 0x400
+0x18098287e: sub      rbx, 1
+0x180982885: mov      rdx, qword ptr [rdx]
+0x180982888: mov      r15, 0x12
+0x18098288f: add      r9, 0x6d
+0x180982896: mov      rax, 0
+0x18098289d: sub      r13, 0x90
+0x1809828a4: mov      r9, qword ptr [r9]
+0x1809828a7: add      r9, 4
+0x1809828ae: or       r12, 0x20
+0x1809828b5: movzx    r9, word ptr [r9]
+0x1809828b9: add      r13, 0x400
+0x1809828c0: and      r12, r13
+0x1809828c3: mov      rcx, rbp
+0x1809828c6: xor      r10, rdx
+0x1809828c9: add      rcx, 0xa
+0x1809828d0: sub      r9d, dword ptr [rcx]
+0x1809828d3: add      r13, 4
+0x1809828da: xor      r9d, 0x2fc2ab68
+0x1809828e1: xor      r15, 0x90
+0x1809828e8: mov      rdi, rbp
+0x1809828eb: or       r13, 8
+0x1809828f2: mov      r15, r9
+0x1809828f5: add      rdi, 0xa
+0x1809828fc: or       dword ptr [rdi], r9d
+0x1809828ff: and      r9, 0xffff
+0x180982906: add      r15, 8
+0x18098290d: shl      r9, 3
+0x180982911: add      rdx, r9
+0x180982914: add      r13, r10
+0x180982917: add      r10, 0x400
+0x18098291e: mov      rbx, qword ptr [rdx]
+0x180982921: or       r15, 0x78
+0x180982928: or       r15, 0xffffffff80000000
+0x18098292f: mov      r11, rbp
+0x180982932: add      r15, rax
+0x180982935: sub      r15, 4
+0x18098293c: add      r11, 0x6d
+0x180982943: sub      rax, 0x400
+0x180982949: mov      r11, qword ptr [r11]
+0x18098294c: mov      r13, 0
+0x180982953: add      r11, 0xa
+0x18098295a: sub      r13, r10
+0x18098295d: mov      rax, r10
+0x180982960: movsxd   rdx, dword ptr [r11]
+0x180982963: mov      r10, rbp
+0x180982966: mov      r12, 0
+0x18098296d: add      r10, 0x6d
+0x180982974: add      qword ptr [r10], rdx

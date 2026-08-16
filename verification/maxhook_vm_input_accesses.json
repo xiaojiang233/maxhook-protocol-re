@@ -1,0 +1,61 @@
+{
+  "schema": "maxhook.vm.input-accesses/v1",
+  "boundary_selection": {
+    "session": 2,
+    "call": 4,
+    "kid_ascii_bytes": 32,
+    "key_material_ascii_bytes": 64
+  },
+  "first_input_reads": {
+    "kid": {
+      "reader": "0x180322e30",
+      "offsets": [
+        0,
+        31
+      ],
+      "read_count": 32,
+      "semantics": "sequential character scan"
+    },
+    "key_material_validation": {
+      "reader": "0x180322e30",
+      "offsets": [
+        0,
+        63
+      ],
+      "read_count": 64,
+      "semantics": "sequential character scan"
+    },
+    "key_material_decode": {
+      "even_reader": "0x1804ad4e8",
+      "odd_reader": "0x1804ad566",
+      "offsets": [
+        0,
+        63
+      ],
+      "read_count": 64,
+      "heap_writer": "0x18001c563",
+      "heap_allocation": "0x20000100000",
+      "decoded_bytes": 32,
+      "decoded_hex": "9626da95f889109ad83c2238ca7959639cb76fdca6569283a1e727c376cf9d40",
+      "equals_bytes_fromhex_input64": true
+    }
+  },
+  "access_counts": {
+    "context_object:read": 2,
+    "key_material_data:read": 128,
+    "key_material_object:read": 169,
+    "kid_data:read": 32,
+    "kid_object:read": 6
+  },
+  "plaintext_or_output_access_observed": false,
+  "emulation_end": {
+    "instruction_count": 350000,
+    "error": null,
+    "invalid_memory": null
+  },
+  "inputs": {
+    "emulation_json_sha256": "8318c170d559a786b6f014a3b1b18b16e54fc9f7abba8c086bdde67b89230eea",
+    "kid_file_sha256": "5de50abd502117bf8a75970f110af52bd0d8c08fcc0565e189fc52e6e4bfeb0f",
+    "key_material_file_sha256": "ffea889b4fc2a9f944c3dfa9392bc8d0ce843d085df1c848e26517643da27126"
+  }
+}

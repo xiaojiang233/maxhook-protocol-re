@@ -1,0 +1,8 @@
+0x181ad6100 rol eax, cl
+0x181ad6102 pop rsi
+0x181ad6103 iretd 
+0x181ad6104 xor eax, 0x4962e18c
+0x181ad6109 mov esp, esi
+0x181ad610b mov edx, 0xaa85ee77
+0x181ad6110 push rsp
+0x181ad6111 mov edx, eax

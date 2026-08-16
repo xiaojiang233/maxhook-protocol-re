@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MaxHook / 布吉岛反作弊逆向 · 全进度总结</title>
+<style>
+  :root { --bg:#f7f8fa; --card:#fff; --ink:#1f2329; --sub:#646a73; --line:#e5e6eb;
+    --acc:#3370ff; --ok:#00b42a; --warn:#ff7d00; --err:#f53f3f; --mono:"Cascadia Code",Consolas,monospace; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--ink); font-family:-apple-system,"Segoe UI","Microsoft YaHei",sans-serif; line-height:1.7; }
+  .wrap { max-width:1100px; margin:0 auto; padding:40px 24px 80px; }
+  h1 { font-size:27px; margin-bottom:6px; }
+  .subtitle { color:var(--sub); font-size:14px; margin-bottom:26px; }
+  h2 { font-size:20px; margin:34px 0 14px; padding-left:12px; border-left:4px solid var(--acc); }
+  h3 { font-size:16px; margin:20px 0 10px; color:#2b3340; }
+  p { margin-bottom:12px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:18px 20px; margin-bottom:16px; }
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  @media (max-width:820px){ .grid2{grid-template-columns:1fr;} }
+  code,pre { font-family:var(--mono); }
+  code { background:#f2f3f5; padding:2px 6px; border-radius:4px; font-size:13px; }
+  pre { background:#0d1117; color:#c9d1d9; padding:14px 16px; border-radius:8px; font-size:12.5px; overflow-x:auto; margin:10px 0; }
+  table { width:100%; border-collapse:collapse; margin:10px 0; font-size:13.5px; }
+  th,td { border:1px solid var(--line); padding:7px 11px; text-align:left; vertical-align:top; }
+  th { background:#f2f3f5; font-weight:600; white-space:nowrap; }
+  tr:nth-child(even) td { background:#fafbfc; }
+  .tag { display:inline-block; padding:1px 9px; border-radius:20px; font-size:12px; font-weight:600; }
+  .t-ok { background:#e8ffea; color:var(--ok); } .t-warn{background:#fff3e8;color:var(--warn);}
+  .t-err{background:#ffece8;color:var(--err);} .t-blue{background:#e8f3ff;color:var(--acc);}
+  .callout { border-radius:8px; padding:12px 16px; margin:12px 0; font-size:14px; }
+  .c-ok{background:#e8ffea;border:1px solid #b7f0c0;} .c-warn{background:#fff7e6;border:1px solid #ffe1b3;}
+  .c-err{background:#ffece8;border:1px solid #ffbcb3;} .c-blue{background:#e8f3ff;border:1px solid #bcd7ff;}
+  .addr { font-family:var(--mono); font-size:13px; }
+  .small { font-size:12.5px; color:var(--sub); }
+  .kv { display:grid; grid-template-columns:150px 1fr; gap:4px 14px; font-size:13.5px; }
+  .kv .k{color:var(--sub);font-weight:500;}
+</style>
+</head>
+<body><div class="wrap">
+
+<h1>MaxHook · 布吉岛反作弊逆向 全进度总结</h1>
+<div class="subtitle">2026-08-13 · 覆盖：壳逆向 / 内存取证 / native 协议 / 加密破译 / 双 agent 协同 · 证据均来自本地授权环境</div>
+
+<div class="callout c-err"><b>一句话总结：</b>MaxHook.dll（WinLicense 3.x 加壳的布吉岛原生反作弊）的<b>外壳已完全拆解、上报协议 100% 确定、加密信封的明文/密钥/输出全部截获</b>；
+唯一未破的是<b>外层加密算法本身</b>——被 Themida VM 字节码化，标准密码库 60+ 项验证全排除，剩余唯一路径是 VM 字节码反编译（另一 agent 进行中）。
+工程替代方案（加密边界 hook 复用）已就绪可落地。</div>
+
+<h2>一、目标与结论</h2>
+<div class="card">
+  <div class="kv">
+    <span class="k">目标</span><span>无需原 DLL，用纯协议模拟实现布吉岛 native 反作弊上报（含加密信封）</span>
+    <span class="k">核心难点</span><span>外层信封加密 = Themida VM 私有流密码，算法本体在 VM 字节码内</span>
+    <span class="k">已达成</span><span>端点/信封/明文/参数布局 100% 确定；明文+密钥+输出信封 7 组验证集到手；方案 1 可落地</span>
+    <span class="k">剩余</span><span>VM 字节码反编译（key 派生 + 轮函数）→ 用验证集验收</span>
+  </div>
+</div>
+
+<h2>二、逆向进程时间线</h2>
+<div class="card">
+  <table>
+    <tr><th>阶段</th><th>成果</th></tr>
+    <tr><td>1. 壳识别</td><td>WinLicense（Themida 商业版）3.x；<code>.boot</code> 22.5MB 加密载荷、<code>.bugland</code> BSS 工作区</td></tr>
+    <tr><td>2. 解压</td><td>Unicorn 模拟 LZ77 stub → .boot 解压到 .bugland → OEP <code>0x180C0EB27</code>；产物与真机 dump 99.99% 一致</td></tr>
+    <tr><td>3. VM 模拟</td><td>WinEnv 模拟（PEB/TEB/API 分发）→ VM 跑 105 块；崩溃定位 = handler table 越界（非 rolling key）</td></tr>
+    <tr><td>4. 监控取证</td><td>monitor 150ms 轮询 .bugland → 重建初始化后运行时状态；PSS 同步快照方案</td></tr>
+    <tr><td>5. 协议提取</td><td>全内存 dump + 22 组双向样本 → 上报端点/信封/事件/明文 全部确定</td></tr>
+    <tr><td>6. 加密边界</td><td>hook 0x180324610 → 明文+密钥+信封 7/7 截获；确认 VM 私有算法</td></tr>
+    <tr><td>7. 执行跟踪</td><td>Stalker 40K 地址 → 全为 VM 解释器 handler；确认算法 VM 字节码化</td></tr>
+    <tr><td>8. 数据流追踪</td><td>keyread 96hex = kid+input64；input64 会话级密钥（3 会话指纹不同）</td></tr>
+    <tr><td>9. unlicense 审计</td><td>可作备选脱壳工具，但不能替代 VM 解译（里程碑 08）</td></tr>
+  </table>
+</div>
+
+<h2>三、MaxHook 壳逆向成果</h2>
+<div class="grid2">
+  <div class="card">
+    <h3>3.1 壳与分布</h3>
+    <ul style="margin-left:18px;font-size:13.5px;">
+      <li>WinLicense 3.x，16 节，部分保护模式（.text/.rdata 明文真实代码，.boot 加密载荷）</li>
+      <li>开发路径：<code>NativeAntiCheat\x64\Release\anti-cheat.dll</code>（PDB 同源）</li>
+      <li>分发：mod jar 内 <code>lib/MaxHook.x64.dll</code> + MinHook.x64.dll</li>
+      <li>导入表实锤：WINHTTP/ADVAPI32/IPHLPAPI/WS2_32/jvm.dll 等</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>3.2 关键坐标</h3>
+    <table>
+      <tr><td>OEP</td><td class="addr">0x180C0EB27（VM 化跳板链）</td></tr>
+      <tr><td>VM 上下文</td><td class="addr">0x18098C884（rbp 基址）</td></tr>
+      <tr><td>handler 表</td><td class="addr">0x180C64EBD</td></tr>
+      <tr><td>JNI 类匹配器</td><td class="addr">0x18018D790（net/minecraft）</td></tr>
+      <tr><td>report worker</td><td class="addr">0x1804B67A0 → VM 0x181A841D3</td></tr>
+    </table>
+  </div>
+</div>
+
+<h2>四、内存取证与 Dump 清单</h2>
+<div class="card">
+  <table>
+    <tr><th>文件</th><th>大小</th><th>来源与价值</th></tr>
+    <tr><td class="addr">boot_unpacked.bin</td><td>22.5MB</td><td>Unicorn 模拟解压结果，与真机 99.99% 一致（验证了模拟正确性）</td></tr>
+    <tr><td class="addr">MaxHook.runtime-unpacked.dll</td><td>47.4MB</td><td>真机早期 dump（.bugland 回填），确认运行时 VM 上下文初始化</td></tr>
+    <tr><td class="addr">runtime_bugland.bin / 2</td><td>22.5MB ×2</td><td>monitor 重建的初始化后 / 末态运行时 .bugland</td></tr>
+    <tr><td class="addr">mem_after_vm.bin / vm_final_mem.bin</td><td>48.4MB ×2</td><td>VM 模拟（1 亿/2 千万指令）后内存快照</td></tr>
+    <tr><td class="addr">dump_out/</td><td>5.4GB</td><td>全进程内存 dump（10187 区域）→ 挖出网易 EnvSDK 全链路 + 上报请求头/响应</td></tr>
+    <tr><td class="addr">monitor_out/</td><td>1070 文件</td><td>.bugland 变化监控快照 → 抓 VM 初始化瞬间解密</td></tr>
+    <tr><td class="addr">fake_jvm.dll</td><td>8.7KB</td><td>伪造 jvm.dll（JVM 附加模拟）</td></tr>
+  </table>
+  <p class="small">关键结论：检测数据<b>从不落明文内存</b>（3 份全内存 dump + 1000+ 快照交叉验证）——VM 即时解密到寄存器/栈，用完即弃。</p>
+</div>
+
+<h2>五、Native 上报协议全貌（100% 确定）</h2>
+<div class="card">
+  <h3>5.1 端点与流程</h3>
+  <pre><code>POST https://security.mcbjd.net/api/v3/session/bootstrap/redeem  （1 次）
+POST https://security.mcbjd.net/api/v3/session/exchange          （1 次, KID 切换）
+POST https://security.mcbjd.net/api/v3/report                    （周期 ~30s, 20+ 次）
+→ 111.124.198.121:443 直连 · Keep-Alive · JSON</code></pre>
+  <h3>5.2 信封（Envelope）</h3>
+  <pre><code>请求: {"ciphertext","kid","nonce","sv":3,"tag"}   （字段顺序与此不同！）
+响应: {"sv":3,"kid","nonce","ciphertext","tag"}
+kid=32hex · nonce=12B · tag=16B · 密文长=明文长（流式无填充）</code></pre>
+  <h3>5.3 加密前明文</h3>
+  <pre><code>{"device_id":"E43A2C0F779F0DF2","h2_cantor":"v2:&lt;MD5&gt;:&lt;SHA256&gt;",
+ "nonce":"&lt;16B&gt;","report_packet":"&lt;104B hex 内层加密&gt;",
+ "seq":74,"session_id":"2933FD48...","sv":3,"timestamp":1786614116994}</code></pre>
+  <div class="callout c-warn"><b>双层加密：</b>信封内还有内层 <code>report_packet</code>（104B hex）——外层保护整个 JSON，内层保护设备报告，可能复用同一加密函数（VM 内第三条路径实锤）。</div>
+</div>
+
+<h2>六、三条反作弊通道（不互相借用密钥/字段）</h2>
+<div class="card">
+  <table>
+    <tr><th>通道</th><th>端点</th><th>检测内容</th><th>状态</th></tr>
+    <tr><td><b>MaxHook native</b></td><td>security.mcbjd.net /api/v3/report</td><td>线程枚举/句柄/固件/JNI 类加载/网络证明（class_loaded/alloc_anomaly/network_attestation）</td><td>加密 VM 化，其余已破</td></tr>
+    <tr><td><b>网易 EnvSDK 4.2.3</b></td><td>acsdk.gameyw.netease.com /acsdk/v3/ip/* + nos</td><td>VM DLL 名单 30+、YARA、进程缓冲（cheatengine 等）、设备指纹</td><td>已实锤</td></tr>
+    <tr><td><b>HeyPixel Java</b></td><td>pc.bjdmc.net:25565（s2cevent）</td><td>SyncToken 心跳、完整性上报、MuxFragment 分片</td><td>已实锤</td></tr>
+  </table>
+  <p class="small">⚠️ 黑屋根因 = Java 侧跨服后 <code>minecraft:register</code> 重注册缺失 → 服务端收不到 s2cevent 完整性上报 → 周期判「协议无效」。非 native 上报触发。</p>
+</div>
+
+<h2>七、加密破译进展</h2>
+<div class="card">
+  <h3>7.1 已确定</h3>
+  <table>
+    <tr><th>项</th><th>值</th></tr>
+    <tr><td>加密边界</td><td class="addr">0x180324610 = jmp VM 0x181523001 → dispatcher 0x180c43fdd → handler 表 0x180c0c000</td></tr>
+    <tr><td>参数布局</td><td>RCX=输出信封 · RDX=KID(32hex) · R8=<b>会话密钥 input64(64hex=32B)</b> · R9=context · [RSP+0x20]=明文</td></tr>
+    <tr><td>key 材料</td><td class="addr">30bfeafea2cc438dfa757a8c4db06c9181ce50dc73fd453ca187c9e0e04b0345（本会话）</td></tr>
+    <tr><td>数据流</td><td>0x180322e30 逐字节读 96hex = <b>kid+input64 拼接</b>（12+ 次验证恒定）</td></tr>
+    <tr><td>算法判定</td><td><b>VM 字节码化私有流密码</b>——.bugland 无任何标准密码常量，60+ 项算法/派生验证全排除</td></tr>
+  </table>
+  <h3>7.2 算法排除清单（不用重复踩）</h3>
+  <p class="small">AES-GCM/CCM/CTR/OFB/CFB · ChaCha20(12B/8B nonce) · Salsa20 · RC4 · HMAC-SHA256/SHA1/MD5 截断 · input64 全部哈希/字节序/XOR 变体 · +kid/h2_cantor/device/session 全部组合 → <span class="tag t-err">全 0 命中</span></p>
+  <h3>7.3 验证集（现成回归门槛）</h3>
+  <p><code>crypto_verify_set.json</code>：7 组同会话 (明文, input64, kid, nonce, 密文, tag) 对齐样本，独立校验通过（seq 74-80，密文长=明文长 7/7，KID 恒等 7/7）——<b>VM 解出算法后用它验收</b>。</p>
+  <h3>7.4 重要修正（里程碑 08）</h3>
+  <div class="callout c-blue"><b>0x180322d10 不是 hex 解码器</b>——静态反汇编显示它是"逐字节范围校验/匹配/分类"（读 96hex + 间接谓词，无输出写入）。不应在"还原它的解码结果"上花时间，应继续追踪 VM 入口内对 input32/input64 的实际消费。</div>
+  <h3>7.5 unlicense 适配性（里程碑 08 审计）</h3>
+  <p class="small">ergrelet/unlicense（Themida/WinLicense 2.x/3.x 动态脱壳+导入修复）可作"从原始壳重取干净 runtime dump"的备选，<b>但不能替代 VM 解译</b>（无 VM 字节码反编译器、无本协议识别逻辑）。运行需执行目标（rundll32 加载），需隔离环境 + 授权。</p>
+</div>
+
+<h2>八、检测行为画像（API 调用实锤）</h2>
+<div class="card">
+  <table>
+    <tr><th>行为</th><th>API</th><th>目的</th></tr>
+    <tr><td>线程枚举</td><td class="addr">Thread32First</td><td>查注入线程</td></tr>
+    <tr><td>句柄对象检测</td><td class="addr">ZwQueryObject</td><td>查调试/监控句柄</td></tr>
+    <tr><td>固件/VM 检测</td><td class="addr">GetSystemFirmwareTable</td><td>BIOS/虚拟机指纹</td></tr>
+    <tr><td>授权写入</td><td class="addr">RegCreateKeyA/SetValueExA</td><td>Software\WLkt 授权键</td></tr>
+    <tr><td>JNI 类监控</td><td class="addr">net/minecraft 匹配器</td><td>类加载拦截</td></tr>
+    <tr><td>内存保护</td><td class="addr">VirtualProtect</td><td>VM 自修改</td></tr>
+  </table>
+</div>
+
+<h2>九、工具链清单（128 个 py/js）</h2>
+<div class="card">
+  <table>
+    <tr><th>类别</th><th>工具</th></tr>
+    <tr><td>壳解压/模拟</td><td class="addr">unpack_boot.py · winenv.py · phase2_*.py（VM 模拟链）· trace_*.py</td></tr>
+    <tr><td>动态捕获</td><td class="addr">capture_maxhook_encrypt_boundary（方案1）· vm_trace · keytrace · keyread · strfn · crypto</td></tr>
+    <tr><td>监控/取证</td><td class="addr">monitor_javaw2.py · dump_process*.py · capture_vm_pss.py · dump_modules.py</td></tr>
+    <tr><td>网络取证</td><td class="addr">tcp_monitor.py · clash_query.py · etw_capture*.py</td></tr>
+    <tr><td>分析</td><td class="addr">analyze_maxhook_live_capture.py · analyze_vm_trace.py · hash_match*.py · scan_constructed.py</td></tr>
+  </table>
+</div>
+
+<h2>十、下一步方向（优先级）</h2>
+<div class="card">
+  <table>
+    <tr><th>#</th><th>方向</th><th>状态</th></tr>
+    <tr><td>1</td><td><b>方案 1 落地</b>：加密边界 hook → Envelope 服务 → proxy 复用真实加密输出</td><td><span class="tag t-ok">可立即做</span></td></tr>
+    <tr><td>2</td><td><b>VM 硬破</b>（另一 agent）：0x181523001 路径，恢复 handler table 初始化 → 语义归一化 → 用 7 组验证集验收</td><td><span class="tag t-warn">进行中</span></td></tr>
+    <tr><td>3</td><td><b>unlicense</b>：隔离环境跑一次，重取干净 runtime dump（辅助 IAT/代码分析）</td><td><span class="tag t-blue">备选</span></td></tr>
+    <tr><td>4</td><td>实机采集：仅 transition-triggered PSS/边界快照（获取验证集同会话的 VM 入口状态）</td><td><span class="tag t-blue">需授权</span></td></tr>
+  </table>
+</div>
+
+<p class="small" style="margin-top:26px;text-align:center">MaxHook / 布吉岛反作弊逆向 · 全进度总结 · 2026-08-13 · 原始敏感数据仅存本地 capture 目录，未上传未公开</p>
+
+</div></body></html>

@@ -1,0 +1,66 @@
+{
+  "schema": "maxhook.vm.bootstrap-dispatch/v1",
+  "proof": {
+    "prologue_stack_index": "0x2ca",
+    "index_entry_rsp_offset": "-0x10",
+    "rsp_at_index_load_relative_to_entry": "0xffffffffffffff68",
+    "index_load": "0x180c44c9a push qword ptr [rsp+0x88]",
+    "index_scale": "0x180c44cb6 shl rbx,3",
+    "handler_table_rva": "0xc64ebd",
+    "handler_table_va": "0x180c64ebd",
+    "table_base_expression": "RCX(module_base) + 0x00c64ebd",
+    "indirect_jump": "0x180c44ced jmp qword ptr [rax]",
+    "table_entry_va": "0x180c6650d",
+    "target": "0x1809894ba",
+    "target_stub": "jmp 0x180a97f70"
+  },
+  "capture_cross_check": {
+    "semantics": "first translation after source, not runtime hit count",
+    "all_calls_match_static_target": true,
+    "calls": [
+      {
+        "file": "E:\\Coding\\S1mple\\target\\vm_trace_capture4\\vm_addrs_call1.txt",
+        "source_translation_count": 1,
+        "next_first_translation_address": "0x1809894ba",
+        "next_translation_count": 1,
+        "matches_static_target": true,
+        "sha256": "3d013a92504209ae5232556cb71aa53cd44ac070cbda5de3c00693f9eebd5080"
+      },
+      {
+        "file": "E:\\Coding\\S1mple\\target\\vm_trace_capture4\\vm_addrs_call2.txt",
+        "source_translation_count": 1,
+        "next_first_translation_address": "0x1809894ba",
+        "next_translation_count": 1,
+        "matches_static_target": true,
+        "sha256": "eafd46b3e8517b93169614bd31fb1fcb2134da38c80ad924c9556b2baf76772a"
+      },
+      {
+        "file": "E:\\Coding\\S1mple\\target\\vm_trace_capture4\\vm_addrs_call3.txt",
+        "source_translation_count": 1,
+        "next_first_translation_address": "0x1809894ba",
+        "next_translation_count": 1,
+        "matches_static_target": true,
+        "sha256": "3dea053eab8520334c43533a16df05611c04013b115f3b649984b864e558c3f7"
+      },
+      {
+        "file": "E:\\Coding\\S1mple\\target\\vm_trace_capture4\\vm_addrs_call4.txt",
+        "source_translation_count": 1,
+        "next_first_translation_address": "0x1809894ba",
+        "next_translation_count": 1,
+        "matches_static_target": true,
+        "sha256": "154a16e09fe8a69a9241b92c646ea4267feee85645cbd9a4c99fc1e116e342ed"
+      },
+      {
+        "file": "E:\\Coding\\S1mple\\target\\vm_trace_capture4\\vm_addrs_call5.txt",
+        "source_translation_count": 1,
+        "next_first_translation_address": "0x1809894ba",
+        "next_translation_count": 1,
+        "matches_static_target": true,
+        "sha256": "3d013a92504209ae5232556cb71aa53cd44ac070cbda5de3c00693f9eebd5080"
+      }
+    ]
+  },
+  "inputs": {
+    "runtime_bugland_sha256": "3a8e093afbf678fec5b4a84e5759b4d030f8ad39b52eac81a872dfe581449f26"
+  }
+}

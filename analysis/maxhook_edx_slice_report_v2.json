@@ -1,0 +1,31 @@
+{
+  "schema": "maxhook.edx-slice/v2",
+  "corrections": {
+    "bugland_end": "0x181efc000",
+    "writer_entry": "ret-trampoline (no call)",
+    "rdx_mapping": "S10",
+    "rcx_mapping": "S11",
+    "rip_mapping": "S14=store32"
+  },
+  "last_rdx_definition": {
+    "address": "0x180c27be2",
+    "instruction": "mov rdx, qword ptr [rsp]",
+    "semantics": "rdx = S10 (producer-pushed keystream word)"
+  },
+  "word_producer": {
+    "primary": "0x180b8c7aa",
+    "chain": [
+      "0x180afc853",
+      "0x180bc0334",
+      "0x18099089e",
+      "0x180bce798",
+      "0x180a3b547",
+      "0x180a350fd",
+      "0x180a8d3d6",
+      "0x180a16ab9"
+    ],
+    "state_sources": "word[VIP+k]+rbp (S-box/state lookups) folded via sub/xor/add/and over rbp+0x0a/0x5d/0x69/0x6d/0xf6/0xe5",
+    "in_boot_unpacked": true
+  },
+  "conclusion": "EDX at store32 = S10 = a keystream word produced by folding word[VIP+k]+rbp lookups and context-slot arithmetic across the producer chain 0x180afc853..0x180b8c7aa, then routed by the ret-trampoline. The last definition of RDX is 0x180c27be2 (mov rdx,[rsp]). Closing the expression requires evaluating those handler folds with live key-scheduled context state."
+}

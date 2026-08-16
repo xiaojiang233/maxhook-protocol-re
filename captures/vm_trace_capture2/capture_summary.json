@@ -1,0 +1,89 @@
+{
+  "schema": "maxhook.vm-trace.capture/v1",
+  "pid": 46460,
+  "finished_at": "2026-08-13T16:50:50.191124+08:00",
+  "event_count": 21,
+  "trace_calls": 10,
+  "summaries": [
+    {
+      "call_id": 1,
+      "total_instructions": 202560,
+      "unique_addresses": 30000,
+      "top_mnemonics": "mov:54048,add:40340,sub:19035,push:18250,xor:14502,pop:12935,and:11861,or:11361,jmp:2825,movzx:2764,movabs:2050,movsxd:1464,cmp:1397,lea:1034,ror:918,pushfq:902,rol:860,bswap:805,je:727,shl:666,not:491,call:431,neg:379,jbe:329,inc:299,jne:288,shr:274,dec:262,ret:254,cdqe:125,test:115,vmovdqu:66,popfq:55,imul:51,vmovdqa:32,lock cmpxchg:31,nop:27,jae:27,ja:22,jb:22",
+      "addrs_file": "E:\\Coding\\S1mple\\target\\vm_trace_capture2\\vm_addrs_call1.txt",
+      "addrs_count": 0
+    },
+    {
+      "call_id": 2,
+      "total_instructions": 202318,
+      "unique_addresses": 30000,
+      "top_mnemonics": "mov:54025,add:40301,sub:19009,push:18217,xor:14500,pop:12910,and:11862,or:11355,jmp:2822,movzx:2764,movabs:2051,movsxd:1464,cmp:1390,lea:1034,ror:918,pushfq:902,rol:860,bswap:805,je:726,shl:660,not:490,call:431,neg:379,jbe:328,inc:299,jne:286,shr:273,dec:257,ret:254,cdqe:125,test:115,popfq:55,imul:52,vmovdqu:42,lock cmpxchg:30,jae:25,nop:24,jb:22,ja:20,movups:20",
+      "addrs_file": "E:\\Coding\\S1mple\\target\\vm_trace_capture2\\vm_addrs_call2.txt",
+      "addrs_count": 0
+    },
+    {
+      "call_id": 3,
+      "total_instructions": 202241,
+      "unique_addresses": 30000,
+      "top_mnemonics": "mov:54013,add:40269,sub:18983,push:18196,xor:14488,pop:12890,and:11859,or:11358,jmp:2826,movzx:2762,movabs:2048,movsxd:1464,cmp:1396,lea:1030,ror:918,pushfq:902,rol:860,bswap:805,je:724,shl:656,not:489,call:430,neg:378,jbe:329,inc:299,jne:285,shr:274,dec:257,ret:253,cdqe:125,test:114,vmovdqu:56,popfq:55,imul:52,vmovdqa:32,lock cmpxchg:30,jae:29,nop:27,ja:22,jb:22",
+      "addrs_file": "E:\\Coding\\S1mple\\target\\vm_trace_capture2\\vm_addrs_call3.txt",
+      "addrs_count": 0
+    },
+    {
+      "call_id": 4,
+      "total_instructions": 202550,
+      "unique_addresses": 30000,
+      "top_mnemonics": "mov:54044,add:40348,sub:19040,push:18250,xor:14498,pop:12942,and:11863,or:11362,jmp:2826,movzx:2761,movabs:2054,movsxd:1464,cmp:1397,lea:1035,ror:918,pushfq:902,rol:860,bswap:805,je:726,shl:666,not:490,call:431,neg:378,jbe:329,inc:301,jne:288,shr:274,dec:262,ret:251,cdqe:125,test:115,popfq:55,imul:52,vmovdqu:42,vmovdqa:32,lock cmpxchg:31,jae:28,nop:27,ja:22,jb:22",
+      "addrs_file": "E:\\Coding\\S1mple\\target\\vm_trace_capture2\\vm_addrs_call4.txt",
+      "addrs_count": 0
+    },
+    {
+      "call_id": 5,
+      "total_instructions": 202393,
+      "unique_addresses": 30000,
+      "top_mnemonics": "mov:54029,add:40311,sub:19015,push:18220,xor:14493,pop:12919,and:11861,or:11359,jmp:2825,movzx:2761,movabs:2052,movsxd:1464,cmp:1397,lea:1035,ror:918,pushfq:902,rol:860,bswap:805,je:725,shl:659,not:490,call:431,neg:378,jbe:329,inc:300,jne:287,shr:274,dec:259,ret:251,cdqe:125,test:115,popfq:55,imul:52,vmovdqu:42,vmovdqa:32,lock cmpxchg:30,jae:28,nop:27,ja:22,jb:22",
+      "addrs_file": "E:\\Coding\\S1mple\\target\\vm_trace_capture2\\vm_addrs_call5.txt",
+      "addrs_count": 0
+    },
+    {
+      "call_id": 6,
+      "total_instructions": 202493,
+      "unique_addresses": 30000,
+      "top_mnemonics": "mov:54041,add:40317,sub:19010,push:18227,xor:14500,pop:12924,and:11861,or:11361,jmp:2826,movzx:2762,movabs:2058,movsxd:1470,cmp:1398,lea:1042,ror:924,pushfq:902,rol:863,bswap:807,je:726,shl:664,not:491,call:432,neg:380,jbe:330,inc:300,jne:287,shr:273,dec:260,ret:254,cdqe:125,test:115,vmovdqu:62,popfq:55,imul:51,vmovdqa:32,lock cmpxchg:30,nop:27,jae:27,ja:22,jb:22",
+      "addrs_file": "E:\\Coding\\S1mple\\target\\vm_trace_capture2\\vm_addrs_call6.txt",
+      "addrs_count": 0
+    },
+    {
+      "call_id": 7,
+      "total_instructions": 202641,
+      "unique_addresses": 30000,
+      "top_mnemonics": "mov:54089,add:40338,sub:19029,push:18225,xor:14495,pop:12923,and:11864,or:11361,jmp:2821,movzx:2773,movabs:2052,movsxd:1464,cmp:1412,lea:1041,ror:918,pushfq:902,rol:860,bswap:805,je:741,shl:665,not:488,call:433,neg:374,jbe:329,jne:315,inc:299,shr:271,dec:261,ret:255,test:140,cdqe:125,popfq:55,vmovdqu:53,imul:51,lock cmpxchg:38,vmovdqa:32,nop:29,jae:28,ja:25,jb:25",
+      "addrs_file": "E:\\Coding\\S1mple\\target\\vm_trace_capture2\\vm_addrs_call7.txt",
+      "addrs_count": 0
+    },
+    {
+      "call_id": 8,
+      "total_instructions": 202564,
+      "unique_addresses": 30000,
+      "top_mnemonics": "mov:54048,add:40342,sub:19035,push:18251,xor:14502,pop:12943,and:11861,or:11361,jmp:2827,movzx:2762,movabs:2050,movsxd:1464,cmp:1397,lea:1035,ror:918,pushfq:902,rol:860,bswap:805,je:726,shl:666,not:491,call:431,neg:379,jbe:329,inc:299,jne:288,shr:275,dec:262,ret:254,cdqe:125,test:115,vmovdqu:56,popfq:55,imul:52,vmovdqa:32,lock cmpxchg:31,jae:28,nop:27,ja:22,jb:22",
+      "addrs_file": "E:\\Coding\\S1mple\\target\\vm_trace_capture2\\vm_addrs_call8.txt",
+      "addrs_count": 0
+    },
+    {
+      "call_id": 9,
+      "total_instructions": 202385,
+      "unique_addresses": 30000,
+      "top_mnemonics": "mov:54026,add:40307,sub:19006,push:18223,xor:14492,pop:12913,and:11862,or:11361,jmp:2824,movzx:2761,movabs:2050,movsxd:1464,cmp:1397,lea:1034,ror:918,pushfq:902,rol:860,bswap:805,je:726,shl:664,not:489,call:431,neg:378,jbe:329,inc:299,jne:287,shr:273,dec:260,ret:252,cdqe:125,test:115,popfq:55,imul:51,vmovdqu:50,vmovdqa:32,lock cmpxchg:30,jae:28,nop:27,ja:22,jb:22",
+      "addrs_file": "E:\\Coding\\S1mple\\target\\vm_trace_capture2\\vm_addrs_call9.txt",
+      "addrs_count": 0
+    },
+    {
+      "call_id": 10,
+      "total_instructions": 202652,
+      "unique_addresses": 30000,
+      "top_mnemonics": "mov:54047,add:40378,sub:19068,push:18274,xor:14506,pop:12956,and:11863,or:11362,jmp:2824,movzx:2758,movabs:2054,movsxd:1464,cmp:1397,lea:1030,ror:918,pushfq:902,rol:860,bswap:805,je:728,shl:666,not:492,call:430,neg:379,jbe:329,inc:301,jne:287,shr:274,dec:264,ret:250,cdqe:125,test:114,popfq:55,imul:52,vmovdqu:44,lock cmpxchg:32,vmovdqa:32,jae:28,nop:27,ja:22,jb:22",
+      "addrs_file": "E:\\Coding\\S1mple\\target\\vm_trace_capture2\\vm_addrs_call10.txt",
+      "addrs_count": 0
+    }
+  ]
+}

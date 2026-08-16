@@ -1,0 +1,82 @@
+{
+  "schema": "maxhook.key-schedule.arx-loop/v1",
+  "scope": "offline; keystream_history_capture_20260814 call-history trace + disasm_unpacked.asm",
+  "source": "52 snapshots' 1024-entry call-history ring buffers (pid 42948) cross-referenced with disasm_unpacked.asm",
+  "vm_context_base": "0x18098c884",
+  "context_slots_touched": {
+    "0x0a": "counter (rolling position)",
+    "0x5d": "state word (bit-test/inc branch)",
+    "0x69": "state word (and/cmp)",
+    "0x6d": "VIP (bytecode instruction pointer, qword)",
+    "0xe5": "state word (sub/add accumulator)"
+  },
+  "arx_chains": [
+    {
+      "chain": "A",
+      "executions": 25,
+      "bodies": ["0x18099089e", "0x180990a93", "0x180990b21"],
+      "role": "load word[VIP] push operands; sub word[0xe5], r13w; cmp[0x0a],rcx"
+    },
+    {
+      "chain": "B",
+      "executions": 16,
+      "bodies": ["0x1809bfebb", "0x1809bff47", "0x1809c012a"],
+      "role": "xor dword[r8],0x5f5c808f; sub word[0xe5],ax; xor r13,r9",
+      "constants": ["0x5f5c808f", "0x3b6a3d7a", "0x4eceee25"]
+    },
+    {
+      "chain": "C",
+      "executions": 17,
+      "bodies": ["0x180a02a99", "0x180a02bcd", "0x180a02c51", "0x180a02c94"],
+      "role": "xor dword[r9],0x558a625a; sub r14d,0x681b64d8; mov r8,0x4dbfde8f; add dword[r11],0x6abd113b; add word[0xe5],r14w; sub dword[0x0a],r8d",
+      "constants": ["0x558a625a", "0x681b64d8", "0x4dbfde8f", "0x6abd113b"]
+    },
+    {
+      "chain": "D",
+      "executions": 14,
+      "bodies": ["0x180b41fb8", "0x180b42104", "0x180b42287", "0x180b423a3"],
+      "role": "sub dword[r8],0x7f594fcf; add dword[r8],0x616c560b; or dword[rbx],0x472793ed; add word[0xe5],dx",
+      "constants": ["0x7f594fcf", "0x616c560b", "0x472793ed"]
+    },
+    {
+      "chain": "E",
+      "executions": 4,
+      "bodies": ["0x180a182e9", "0x180a1841c"],
+      "role": "pop qword[rX]; or dword[r11],0x4bfba08f",
+      "constants": ["0x4bfba08f"]
+    },
+    {
+      "chain": "F",
+      "executions": 4,
+      "bodies": ["0x180bd41ad", "0x180bd430d", "0x180bd43de"],
+      "role": "xor dword[r12],0x453d7de7; or dword[r14],0x3e0cc8b0; and dword[r10],0x3b86d410; and dword[rcx],0x6220b8ca; xor dword[rcx],0x662ff97c; and dword[r10],0x3c02264d",
+      "constants": ["0x453d7de7", "0x3e0cc8b0", "0x3b86d410", "0x6220b8ca", "0x662ff97c", "0x3c02264d"]
+    },
+    {
+      "chain": "G",
+      "executions": 3,
+      "bodies": ["0x180addfc6", "0x180ade18c", "0x180ade35e"],
+      "role": "add dword[r13],0x31d126f2; sub r10d,0x544833d7; mov r9,0x6c4b7e4b",
+      "constants": ["0x31d126f2", "0x544833d7", "0x6c4b7e4b"]
+    },
+    {
+      "chain": "W",
+      "executions": 2,
+      "bodies": ["0x180a725cb", "0x180a72787", "0x180a728df"],
+      "role": "xor dword[rcx],0x5e800fc4; sub esi,0x7829ebab",
+      "constants": ["0x5e800fc4", "0x7829ebab"]
+    }
+  ],
+  "genuine_key_schedule_round_constants": [
+    "0x5f5c808f", "0x3b6a3d7a", "0x4eceee25",
+    "0x558a625a", "0x681b64d8", "0x4dbfde8f", "0x6abd113b",
+    "0x7f594fcf", "0x616c560b", "0x472793ed",
+    "0x4bfba08f",
+    "0x453d7de7", "0x3e0cc8b0", "0x3b86d410", "0x6220b8ca", "0x662ff97c", "0x3c02264d",
+    "0x31d126f2", "0x544833d7", "0x6c4b7e4b",
+    "0x5e800fc4", "0x7829ebab"
+  ],
+  "note": "These are the key-schedule round constants, distinct from the fold constants (0x7ef78e7d/0x47f75fb8/0x1f5ff464/0x3879c8ab/0x6eaa89fc/0x5f77d611) and the two key-schedule entry constants (0x32f12c5a/0x35a7d4cf). Many operations still carry Themida pointer-obfuscation (add rX,rbp; or rX,0x6f7595a8; add r9,-0x80000000) around the genuine state-slot arithmetic.",
+  "remaining_gap": "The ARX loop structure and constant set are fully extracted. The 6 word-producer slot VALUES in the LIVE session (pid 42948) are decoded: +0xb5=keystream byte, +0x26=block counter, +0xd9=byte offset (0/64/128/192 cycle), +0x61=dispatch/pointer table (0x180835f10, module .data, NOT a byte S-box), +0x106=state value, +0x45=state-buffer offset (advances +0x20/block). The key bytes are at heap 0x13a4e192070 (pid 42948), and the cipher S-box (key-derived) is in heap — neither covered by local dump (pid 41264 heap is 0x1ef8/0x5960-range). Reproducing keystream requires the key+S-box heap bytes or full symbolic execution of the ARX loop from key+nonce. NOTE: 'source' field in snapshots = plaintext pointer (r12), NOT the state buffer (corrected round 100).",
+  "verification_status": "block0 word0 oracle (writer_sync call1 nonce 96e71401fc4f5faa040e5ca1) = 0xdfa1e432; fold/generator are plaintext; key-schedule ARX loop constant set extracted here."
+}

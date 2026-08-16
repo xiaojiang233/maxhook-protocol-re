@@ -1,0 +1,510 @@
+[
+  {
+    "candidate": "0x1812b8a4a",
+    "file": "candidate_1812b8a4a.json",
+    "instructions": 4300000,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 360,
+    "error": null,
+    "invalid": null,
+    "rip": "0x180c02c2a"
+  },
+  {
+    "candidate": "0x1812ceb5d",
+    "file": "candidate_1812ceb5d.json",
+    "instructions": 4300000,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 354,
+    "error": null,
+    "invalid": null,
+    "rip": "0x180c0281a"
+  },
+  {
+    "candidate": "0x18124eaa1",
+    "file": "candidate_18124eaa1.json",
+    "instructions": 4281935,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 336,
+    "error": "Invalid memory read (UC_ERR_READ_UNMAPPED)",
+    "invalid": {
+      "access": 19,
+      "address": "0x18",
+      "size": 8,
+      "value": "0x0",
+      "rip": "0x18006c4e0",
+      "instruction": 4281935
+    },
+    "rip": "0x18006c4e0"
+  },
+  {
+    "candidate": "0x1812f8f7b",
+    "file": "candidate_1812f8f7b.json",
+    "instructions": 4277784,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 348,
+    "error": "Invalid memory write (UC_ERR_WRITE_UNMAPPED)",
+    "invalid": {
+      "access": 20,
+      "address": "0x8",
+      "size": 8,
+      "value": "-0x45f1ff5c9c082de3",
+      "rip": "0x180b1d165",
+      "instruction": 4277784
+    },
+    "rip": "0x180b1d165"
+  },
+  {
+    "candidate": "0x1812da3b9",
+    "file": "candidate_1812da3b9.json",
+    "instructions": 4273347,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 342,
+    "error": "Invalid memory write (UC_ERR_WRITE_UNMAPPED)",
+    "invalid": {
+      "access": 20,
+      "address": "0x8",
+      "size": 8,
+      "value": "-0x24949d28ee697bfd",
+      "rip": "0x180b60e23",
+      "instruction": 4273347
+    },
+    "rip": "0x180b60e23"
+  },
+  {
+    "candidate": "0x1811ec127",
+    "file": "candidate_1811ec127.json",
+    "instructions": 4268864,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 348,
+    "error": "Invalid memory read (UC_ERR_READ_UNMAPPED)",
+    "invalid": {
+      "access": 19,
+      "address": "0x18",
+      "size": 8,
+      "value": "0x0",
+      "rip": "0x18006c4e0",
+      "instruction": 4268864
+    },
+    "rip": "0x18006c4e0"
+  },
+  {
+    "candidate": "0x181afb6b1",
+    "file": "candidate_181afb6b1.json",
+    "instructions": 4265332,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 348,
+    "error": "Invalid memory fetch (UC_ERR_FETCH_UNMAPPED)",
+    "invalid": {
+      "access": 21,
+      "address": "0xb9a7a",
+      "size": 1,
+      "value": "0x0",
+      "rip": "0xb9a7a",
+      "instruction": 4265332
+    },
+    "rip": "0xb9a7a"
+  },
+  {
+    "candidate": "0x18141a27e",
+    "file": "candidate_18141a27e.json",
+    "instructions": 4264745,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 342,
+    "error": "Invalid memory read (UC_ERR_READ_UNMAPPED)",
+    "invalid": {
+      "access": 19,
+      "address": "0x8",
+      "size": 1,
+      "value": "0x0",
+      "rip": "0x18031c30b",
+      "instruction": 4264745
+    },
+    "rip": "0x18031c30b"
+  },
+  {
+    "candidate": "0x181ac384d",
+    "file": "candidate_181ac384d.json",
+    "instructions": 4261977,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 336,
+    "error": "Invalid memory read (UC_ERR_READ_UNMAPPED)",
+    "invalid": {
+      "access": 19,
+      "address": "0x8",
+      "size": 4,
+      "value": "0x0",
+      "rip": "0x180089bc0",
+      "instruction": 4261977
+    },
+    "rip": "0x180089bc0"
+  },
+  {
+    "candidate": "0x1819b0d2e",
+    "file": "candidate_1819b0d2e.json",
+    "instructions": 4260296,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 342,
+    "error": "Invalid memory write (UC_ERR_WRITE_UNMAPPED)",
+    "invalid": {
+      "access": 20,
+      "address": "0x8",
+      "size": 8,
+      "value": "0x0",
+      "rip": "0x1800381f6",
+      "instruction": 4260296
+    },
+    "rip": "0x1800381f6"
+  },
+  {
+    "candidate": "0x1815a7788",
+    "file": "candidate_1815a7788.json",
+    "instructions": 4258467,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 342,
+    "error": "Invalid memory write (UC_ERR_WRITE_UNMAPPED)",
+    "invalid": {
+      "access": 20,
+      "address": "0x8",
+      "size": 8,
+      "value": "-0x48cbef4d9a0521ed",
+      "rip": "0x180ae357a",
+      "instruction": 4258467
+    },
+    "rip": "0x180ae357a"
+  },
+  {
+    "candidate": "0x181628889",
+    "file": "candidate_181628889.json",
+    "instructions": 4256780,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 354,
+    "error": "Invalid memory write (UC_ERR_WRITE_UNMAPPED)",
+    "invalid": {
+      "access": 20,
+      "address": "0x8",
+      "size": 8,
+      "value": "-0x46cbe9468b0024ea",
+      "rip": "0x180b91af6",
+      "instruction": 4256780
+    },
+    "rip": "0x180b91af6"
+  },
+  {
+    "candidate": "0x181c1d4c0",
+    "file": "diff_nonce_ret_candidate_181c1d4c0.json",
+    "instructions": 4254911,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 342,
+    "error": "Invalid memory write (UC_ERR_WRITE_UNMAPPED)",
+    "invalid": {
+      "access": 20,
+      "address": "0x8",
+      "size": 8,
+      "value": "0x1806748a8",
+      "rip": "0x180b1d165",
+      "instruction": 4254911
+    },
+    "rip": "0x180b1d165"
+  },
+  {
+    "candidate": "0x18193ea0a",
+    "file": "candidate_18193ea0a.json",
+    "instructions": 4251065,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 348,
+    "error": "Invalid memory read (UC_ERR_READ_UNMAPPED)",
+    "invalid": {
+      "access": 19,
+      "address": "0x10",
+      "size": 8,
+      "value": "0x0",
+      "rip": "0x1800e0970",
+      "instruction": 4251065
+    },
+    "rip": "0x1800e0970"
+  },
+  {
+    "candidate": "0x181b851c7",
+    "file": "diff_nonce_ret_candidate_181b851c7.json",
+    "instructions": 4243515,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 342,
+    "error": "Invalid memory write (UC_ERR_WRITE_UNMAPPED)",
+    "invalid": {
+      "access": 20,
+      "address": "0x8",
+      "size": 8,
+      "value": "0x20000100200",
+      "rip": "0x180b1d165",
+      "instruction": 4243515
+    },
+    "rip": "0x180b1d165"
+  },
+  {
+    "candidate": "0x181c1abfd",
+    "file": "diff_nonce_ret_candidate_181c1abfd.json",
+    "instructions": 4240578,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 342,
+    "error": "Invalid memory write (UC_ERR_WRITE_UNMAPPED)",
+    "invalid": {
+      "access": 20,
+      "address": "0x40",
+      "size": 8,
+      "value": "0x0",
+      "rip": "0x1804a583f",
+      "instruction": 4240578
+    },
+    "rip": "0x1804a583f"
+  },
+  {
+    "candidate": "0x181bb9891",
+    "file": "diff_nonce_ret_candidate_181bb9891.json",
+    "instructions": 4223261,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 348,
+    "error": "Invalid memory read (UC_ERR_READ_UNMAPPED)",
+    "invalid": {
+      "access": 19,
+      "address": "0x361a8f89",
+      "size": 8,
+      "value": "0x0",
+      "rip": "0x18001d58e",
+      "instruction": 4223261
+    },
+    "rip": "0x18001d58e"
+  },
+  {
+    "candidate": "0x1819d7e9b",
+    "file": "candidate_1819d7e9b.json",
+    "instructions": 4221463,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 336,
+    "error": "Invalid memory read (UC_ERR_READ_UNMAPPED)",
+    "invalid": {
+      "access": 19,
+      "address": "0x361a8e81",
+      "size": 1,
+      "value": "0x0",
+      "rip": "0x180b5ef40",
+      "instruction": 4221463
+    },
+    "rip": "0x180b5ef40"
+  },
+  {
+    "candidate": "0x18175dfa5",
+    "file": "candidate_18175dfa5.json",
+    "instructions": 4189226,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 336,
+    "error": "Invalid memory read (UC_ERR_READ_UNMAPPED)",
+    "invalid": {
+      "access": 19,
+      "address": "0x1efa1952d10",
+      "size": 4,
+      "value": "0x0",
+      "rip": "0x180a353e7",
+      "instruction": 4189226
+    },
+    "rip": "0x180a353e7"
+  },
+  {
+    "candidate": "0x180f0cd3e",
+    "file": "candidate_180f0cd3e.json",
+    "instructions": 4188468,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 336,
+    "error": "Invalid memory read (UC_ERR_READ_UNMAPPED)",
+    "invalid": {
+      "access": 19,
+      "address": "0x1efa1952d10",
+      "size": 4,
+      "value": "0x0",
+      "rip": "0x180a353e7",
+      "instruction": 4188468
+    },
+    "rip": "0x180a353e7"
+  },
+  {
+    "candidate": "0x180e8f6d3",
+    "file": "candidate_180e8f6d3.json",
+    "instructions": 4174967,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 336,
+    "error": "Invalid memory read (UC_ERR_READ_UNMAPPED)",
+    "invalid": {
+      "access": 19,
+      "address": "0xc698",
+      "size": 8,
+      "value": "0x0",
+      "rip": "0x180c3b6a2",
+      "instruction": 4174967
+    },
+    "rip": "0x180c3b6a2"
+  },
+  {
+    "candidate": "0x180e124b6",
+    "file": "candidate_180e124b6.json",
+    "instructions": 4171003,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 336,
+    "error": "Invalid memory write (UC_ERR_WRITE_UNMAPPED)",
+    "invalid": {
+      "access": 20,
+      "address": "0x1042bb",
+      "size": 8,
+      "value": "0x55c6d",
+      "rip": "0x180b60e23",
+      "instruction": 4171003
+    },
+    "rip": "0x180b60e23"
+  },
+  {
+    "candidate": "0x180cbf32f",
+    "file": "candidate_180cbf32f.json",
+    "instructions": 4170968,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 342,
+    "error": "Invalid memory write (UC_ERR_WRITE_UNMAPPED)",
+    "invalid": {
+      "access": 20,
+      "address": "0x81cd0",
+      "size": 8,
+      "value": "0x1c096a",
+      "rip": "0x180ae357a",
+      "instruction": 4170968
+    },
+    "rip": "0x180ae357a"
+  },
+  {
+    "candidate": "0x180d3c8dc",
+    "file": "candidate_180d3c8dc.json",
+    "instructions": 4170909,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 336,
+    "error": "Invalid memory write (UC_ERR_WRITE_UNMAPPED)",
+    "invalid": {
+      "access": 20,
+      "address": "0x2da92f",
+      "size": 8,
+      "value": "0x2351ef",
+      "rip": "0x180ae357a",
+      "instruction": 4170909
+    },
+    "rip": "0x180ae357a"
+  },
+  {
+    "candidate": "0x180bd845f",
+    "file": "candidate_180bd845f.json",
+    "instructions": 4170858,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 342,
+    "error": "Invalid memory write (UC_ERR_WRITE_UNMAPPED)",
+    "invalid": {
+      "access": 20,
+      "address": "0x1e55e8",
+      "size": 8,
+      "value": "0x2f137",
+      "rip": "0x180ae357a",
+      "instruction": 4170858
+    },
+    "rip": "0x180ae357a"
+  },
+  {
+    "candidate": "0x180d416fa",
+    "file": "candidate_180d416fa.json",
+    "instructions": 4170856,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 336,
+    "error": "Invalid memory write (UC_ERR_WRITE_UNMAPPED)",
+    "invalid": {
+      "access": 20,
+      "address": "0x10272a",
+      "size": 8,
+      "value": "0x2cd355",
+      "rip": "0x180b91af6",
+      "instruction": 4170856
+    },
+    "rip": "0x180b91af6"
+  },
+  {
+    "candidate": "0x180e31c8f",
+    "file": "candidate_180e31c8f.json",
+    "instructions": 4170205,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 336,
+    "error": "Invalid memory read (UC_ERR_READ_UNMAPPED)",
+    "invalid": {
+      "access": 19,
+      "address": "0x103955",
+      "size": 4,
+      "value": "0x0",
+      "rip": "0x180b18522",
+      "instruction": 4170205
+    },
+    "rip": "0x180b18522"
+  },
+  {
+    "candidate": "0x180e3ebc8",
+    "file": "candidate_180e3ebc8.json",
+    "instructions": 4169939,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 336,
+    "error": "Invalid memory write (UC_ERR_WRITE_UNMAPPED)",
+    "invalid": {
+      "access": 20,
+      "address": "0x1f4b19",
+      "size": 1,
+      "value": "0x5",
+      "rip": "0x180b16f86",
+      "instruction": 4169939
+    },
+    "rip": "0x180b16f86"
+  },
+  {
+    "candidate": "0x180e66e11",
+    "file": "candidate_180e66e11.json",
+    "instructions": 4169477,
+    "nonce_reads": 0,
+    "store32": 0,
+    "word_producer": 336,
+    "error": "Invalid memory read (UC_ERR_READ_UNMAPPED)",
+    "invalid": {
+      "access": 19,
+      "address": "0x103955",
+      "size": 4,
+      "value": "0x0",
+      "rip": "0x180a47a73",
+      "instruction": 4169477
+    },
+    "rip": "0x180a47a73"
+  }
+]

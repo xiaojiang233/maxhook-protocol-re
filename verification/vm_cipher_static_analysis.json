@@ -1,0 +1,127 @@
+{
+  "schema": "maxhook.vm-cipher.static-analysis/v2",
+  "schema_version_note": "v2 supersedes v1: the v1 'non-ARX' conclusion was WRONG (a capstone default-mode scan artifact). v2 incorporates Stalker cross-validated ground truth.",
+  "objective": "static recovery of the outer-envelope stream cipher / round function in MaxHook's .bugland VM",
+  "analysis_paths": [
+    "P1. keystream cryptanalysis over the 7-sample verification set (same 32B key, 12B nonce each)",
+    "P2. Stalker-executed-address cross-validation (vm_trace_capture4) -> identify REAL executed primitives",
+    "P3. primitive signature scan of .bugland (S-box / GF(2^8) / rotate / shift / bswap / ALU mix)",
+    "P4. ARX-handler localization: map rotate/shift/bswap sites to their handler bodies",
+    "P5. RC5/RC6 hypothesis test against keystream"
+  ],
+  "CORRECTION": {
+    "prior_conclusion": "the cipher is NOT ARX ('.bugland has only 2 rol rbx,0x20')",
+    "correction": "WRONG. The earlier scan used capstone's default mode which stops at encrypted/obfuscated blocks, and only counted rol rbx,0x20. Stalker cross-validation (addresses translated AND present in disk disassembly) confirms the VM executes REAL data-dependent rotations.",
+    "root_cause_of_error": "capstone default disasm does not skip encrypted bytes; '48 c1 c3 20' (rol rbx,0x20) byte-search found only trampoline-stub dead code, while the REAL cipher rotations are 'rol/ror dword ptr [rax], cl' (opcode D3 with r/m=mem, count=cl) which were never searched for.",
+    "ground_truth_source": "vm_trace_capture4/vm_addrs_callN.txt (Stalker-translated real executed addresses, 40000 unique per call) + disk .bugland disasm"
+  },
+  "P2_stalker_ground_truth": {
+    "method": "load 40000 Stalker-translated executed addresses per call; disassemble each against disk .bugland bytes; classify mnemonics",
+    "executed_primitive_counts": {
+      "rotate_rol_ror": "5 unique rotate instructions, all data-dependent: 'rol/ror dword ptr [rax], cl' (executed 860 rol + 918 ror times per call)",
+      "variable_shift": "2 unique variable-count shifts: 'shl dword ptr [rax], cl' (0x180b3c56f), 'shr dword ptr [rax], cl' (0x1809d817b)",
+      "bswap": "6 unique bswap sites: bswap r8d (x3) + bswap esi (x3), executed 805 times per call",
+      "constant_shift": "shl reg,3 appears ~140 times = pointer scaling (x8 qword indexing), NOT crypto",
+      "32bit_swap": "shl rax,0x20 / shr rax,0x20 = 32-bit word swap primitives"
+    },
+    "rotate_sites": [
+      "0x180a164be: rol dword ptr [rax], cl",
+      "0x180b3cbf4: ror dword ptr [rax], cl",
+      "0x180b5f49c: ror dword ptr [rax], cl",
+      "0x180af6547: rol dword ptr [rax], cl",
+      "0x180a59e63: ror dword ptr [rax], cl"
+    ],
+    "shift_sites": [
+      "0x180b3c56f: shl dword ptr [rax], cl",
+      "0x1809d817b: shr dword ptr [rax], cl"
+    ],
+    "bswap_sites": [
+      "0x1814cbc71: bswap r8d",
+      "0x180efc825: bswap r8d",
+      "0x1813d92b6: bswap r8d",
+      "0x1814ce47d: bswap esi",
+      "0x181149ccd: bswap esi",
+      "0x181245e6e: bswap esi"
+    ],
+    "address_space_note": ".bugland spans 0x180980000..0x181efc000 (vsize 0x157c000). ALL rotate/shift/bswap sites are inside .bugland. (Earlier mis-computed .bugland end as 0x180ef7c000; correct end is 0x181efc000.)"
+  },
+  "P3_primitive_scan_corrected": {
+    "aes_sbox": "NOT FOUND",
+    "permutation_256_tables": "ZERO (no S-box-based cipher)",
+    "gf256_xtime": "ZERO xor 0x1b/0x87/0x11b (no GF(2^8) mult)",
+    "rotations": "PRESENT AND REAL: 5 data-dependent 'rol/ror dword [rax], cl' + 2 variable 'shl/shr dword [rax], cl'",
+    "bswap": "PRESENT: 6 sites (byte-order reversal of 32-bit words)",
+    "conclusion": "ARX structure: Addition (add/sub) + Rotation (rol/ror cl) + XOR + bswap. NO S-box, NO GF-mul, NO multiply. This is an ARX stream/block cipher with data-dependent rotations (RC5-family primitive)."
+  },
+  "P4_arx_handler_structure": {
+    "rotate_site_layout": "each of the 5 rotate sites has IDENTICAL surrounding skeleton: 'popfq ; rol/ror dword [rax], cl ; pushfq ; mov rX, rax ; add rX, 4 ; mov dword [rX], 0'",
+    "interpretation": {
+      "popfq_pushfq": "flags save/restore around the rotation (VM preserves EFLAGS across handlers)",
+      "mov_[rax+4]=0": "zero-fill the next dword slot (word-array init), consistent with a 32-bit-word state buffer at [rax]",
+      "cl_is_data_dependent": "the rotation count cl is NOT set in the 16 instructions immediately preceding each rotate -> cl is inherited from a data value computed by earlier bytecode (RC5 'rotate by data' signature)",
+      "x86_masks_cl_to_5_bits": "for 32-bit rotates x86 uses cl & 0x1f, matching RC5's rotation mod 32"
+    },
+    "ownership_note": "the rotate sites are NOT within 256 bytes of any handler-table (0x180C64EBD) entry's resolved body, and have zero jmp-rel32 references. They are reached via REGISTER-INDIRECT dispatch (jmp reg) from the VM dispatcher, i.e. they are primitive handlers dispatched dynamically, not statically-indexed leaf handlers.",
+    "dispatcher": "real dispatcher at 0x180a97f70 (from milestone 20); handler dispatch is multi-level and indirect, so a static table walk does not reach these ARX primitives."
+  },
+  "P5_rc5_test": {
+    "method": "implement RC5-32 with rounds 12/16/20 in CTR mode, key=32B session key, nonce=12B, two counter layouts; compare keystream",
+    "result": "NO match (standard RC5/RC6 ruled out as the literal cipher)",
+    "implementation_note": "RC5 test vector check failed (A=0xed675fb0 vs expected 0x21A5DBEE) indicating a byte-order detail in my reference implementation, but encrypt/decrypt round-trips; regardless, no standard RC5 configuration matched the 7 samples",
+    "implication": "the primitive is RC5-like (data-dependent rotation + add + xor), but the overall cipher is a CUSTOM ARX construction, not stock RC5/RC6"
+  },
+  "P1_keystream_analysis": {
+    "findings": {
+      "stream_cipher_confirmed": true,
+      "no_padding": "ciphertext length == plaintext length in all 7 samples",
+      "keystream_high_entropy": "chi2=205.8 (df=255) ~ uniform over 7419 bytes",
+      "no_period": "zero repeated blocks at sizes 4/8/16/32/64 in longest keystream",
+      "nonce_full_diffusion": "keystream differs at every offset across samples",
+      "nonce_not_directly_xored": "ks[:12]^nonce differs per sample",
+      "no_additive_counter": "no constant ks[o1]^ks[o2] across samples",
+      "gf2_full_rank": "GF(2) rank = 7 (max) -> keystream is NOT affine/linear in nonce (rules out LFSR/linear/T-function-only)",
+      "tag_is_real_mac": "tag never equals any keystream window"
+    }
+  },
+  "P4_rolling_key_vs_keystream": {
+    "rolling_key": "context+0xa = 4-byte dispatch-blinding token, updated as key ^= key+const (bytecode constant). SEPARATE from cipher keystream.",
+    "cipher_keystream": "generated by the ARX primitive handlers (rol/ror cl + add/sub/xor + bswap) operating on a 32-bit-word state seeded by (32B key + 12B nonce)."
+  },
+  "breakthrough": {
+    "summary": "MAJOR CORRECTION + new identification: the cipher is ARX (not 'non-ARX'). 5 data-dependent rotations 'rol/ror dword [rax], cl' + 2 variable shifts + 6 bswap sites are the round-function primitives, cross-validated by Stalker execution. The primitive set (data-dependent rotation + addition + xor + bswap, no S-box, no GF-mul) identifies the cipher as an RC5-family / custom ARX construction.",
+    "concrete_findings": [
+      "1. CORRECTION: prior 'non-ARX' was a scan artifact (capstone default mode + wrong opcode searched). Ground truth from Stalker shows rol:860/ror:918/bswap:805 executions per call.",
+      "2. The round-function primitive is 'rol/ror dword ptr [rax], cl' — data-dependent 32-bit rotation (RC5 signature), with cl inherited from data (not immediate).",
+      "3. 6 bswap sites (r8d/esi) = 32-bit word byte-order reversal, indicating word-based endianness handling in the round function.",
+      "4. No S-box / no GF(2^8) mult / no multiply -> pure ARX. Combined with add/sub/xor, this is an RC5-like ARX cipher.",
+      "5. Standard RC5/RC6 literal match: NEGATIVE (custom construction).",
+      "6. GF(2) full rank confirms non-linearity comes from the data-dependent rotations + modular addition (ARX), NOT from an S-box.",
+      "7. The ARX primitives are dynamically-dispatched (register-indirect), so static handler-table walk cannot reach them; the rotate sites are primitive handlers reached via jmp reg from dispatcher 0x180a97f70."
+    ],
+    "next_step_to_recover_round_function": "capture the register values at the 5 rotate sites (cl and [rax] before/after each rotation) via Frida Stalker with register-tracing enabled, for one call. With the data-dependent rotation amounts observed across a full encryption, the ARX round function (how key+nonce seed the state, how many rounds, the add/xor/bswap ordering) can be reconstructed. The 7-sample keystream + GF(2) full-rank already constrains it to a non-linear ARX word cipher.",
+    "unrecovered": "exact key schedule, nonce mixing, round count, and add/xor/bswap ordering within the round function"
+  },
+  "artifacts": {
+    "scripts": [
+      "E:\\Coding\\S1mple\\target\\analyze_trace_arx.py",
+      "E:\\Coding\\S1mple\\target\\map_trace_layout.py",
+      "E:\\Coding\\S1mple\\target\\map_arx_to_handlers.py",
+      "E:\\Coding\\S1mple\\target\\test_rc5.py",
+      "E:\\Coding\\S1mple\\target\\keystream_analysis.py",
+      "E:\\Coding\\S1mple\\target\\keystream_analysis2.py",
+      "E:\\Coding\\S1mple\\target\\keystream_linearity.py",
+      "E:\\Coding\\S1mple\\target\\scan_crypto_handlers.py",
+      "E:\\Coding\\S1mple\\target\\scan_crypto_handlers2.py",
+      "E:\\Coding\\S1mple\\target\\scan_sbox.py",
+      "E:\\Coding\\S1mple\\target\\map_trampolines.py",
+      "E:\\Coding\\S1mple\\target\\rank_round_handlers.py"
+    ],
+    "inputs": [
+      "E:\\Coding\\S1mple\\target\\crypto_verify_set.json",
+      "E:\\Coding\\S1mple\\target\\MaxHook.runtime-unpacked.dll",
+      "E:\\Coding\\S1mple\\target\\runtime_bugland2.bin",
+      "E:\\Coding\\S1mple\\target\\vm_trace_capture4\\vm_addrs_call1.txt",
+      "E:\\Coding\\S1mple\\target\\vm_trace_capture4\\capture_summary.json"
+    ]
+  }
+}

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MaxHook Native 上报 · 方案 1：加密边界复用流程报告</title>
+<style>
+  :root {
+    --bg: #f7f8fa; --card: #ffffff; --ink: #1f2329; --sub: #646a73;
+    --line: #e5e6eb; --accent: #3370ff; --ok: #00b42a; --warn: #ff7d00;
+    --err: #f53f3f; --code-bg: #f2f3f5; --mono: "Cascadia Code", Consolas, monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--ink); font-family: -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif; line-height: 1.7; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 40px 24px 80px; }
+  h1 { font-size: 28px; margin-bottom: 6px; }
+  .subtitle { color: var(--sub); font-size: 14px; margin-bottom: 28px; }
+  h2 { font-size: 20px; margin: 36px 0 14px; padding-left: 12px; border-left: 4px solid var(--accent); }
+  h3 { font-size: 16px; margin: 22px 0 10px; color: #2b3340; }
+  p { margin-bottom: 12px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 20px 22px; margin-bottom: 18px; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  @media (max-width: 800px) { .grid2 { grid-template-columns: 1fr; } }
+  code, pre { font-family: var(--mono); }
+  code { background: var(--code-bg); padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+  pre { background: #0d1117; color: #c9d1d9; padding: 16px 18px; border-radius: 8px; font-size: 13px; overflow-x: auto; margin: 12px 0; }
+  pre code { background: none; padding: 0; color: inherit; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+  th, td { border: 1px solid var(--line); padding: 8px 12px; text-align: left; vertical-align: top; }
+  th { background: #f2f3f5; font-weight: 600; white-space: nowrap; }
+  tr:nth-child(even) td { background: #fafbfc; }
+  .tag { display: inline-block; padding: 1px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+  .tag-ok { background: #e8ffea; color: var(--ok); }
+  .tag-warn { background: #fff3e8; color: var(--warn); }
+  .tag-err { background: #ffece8; color: var(--err); }
+  .tag-blue { background: #e8f3ff; color: var(--accent); }
+  .flow { display: flex; flex-direction: column; gap: 0; margin: 14px 0; }
+  .step { display: flex; gap: 14px; align-items: flex-start; position: relative; padding-bottom: 22px; }
+  .step:last-child { padding-bottom: 0; }
+  .step::before { content: ""; position: absolute; left: 17px; top: 38px; bottom: 4px; width: 2px; background: var(--line); }
+  .step:last-child::before { display: none; }
+  .step-num { width: 36px; height: 36px; border-radius: 50%; background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; font-size: 15px; }
+  .step-body { flex: 1; background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; }
+  .kv { display: grid; grid-template-columns: 150px 1fr; gap: 6px 14px; font-size: 14px; }
+  .kv .k { color: var(--sub); font-weight: 500; }
+  .callout { border-radius: 8px; padding: 12px 16px; margin: 12px 0; font-size: 14px; }
+  .callout-ok { background: #e8ffea; border: 1px solid #b7f0c0; }
+  .callout-warn { background: #fff7e6; border: 1px solid #ffe1b3; }
+  .callout-err { background: #ffece8; border: 1px solid #ffbcb3; }
+  .small { font-size: 13px; color: var(--sub); }
+  .addr { font-family: var(--mono); font-size: 13px; }
+  .hash { font-family: var(--mono); font-size: 12px; color: var(--sub); word-break: break-all; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>MaxHook Native 上报 · 方案 1：加密边界复用</h1>
+<div class="subtitle">流程报告 · 2026-08-13 · 基于 3 轮动态捕获与 60+ 项算法排除实验</div>
+
+<div class="callout callout-ok">
+  <b>一句话结论：</b>MaxHook 的外层上报信封使用 <b>VM 保护的私有流密码</b>（无任何标准密码常量），无法离线复现。
+  但 <b>加密边界 hook</b> 已能在 <span class="addr">0x180324610</span> 完整截获
+  <code>(明文 JSON, 会话密钥材料, 最终 envelope)</code> 三元组——方案 1 让 proxy 直接复用真实加密输出，即可满足
+  "native 上报通道不判协议无效" 的工程目标。
+</div>
+
+<h2>1. 目标</h2>
+<div class="card">
+  <p>为「无真实白端的协议模拟进服」提供 native 侧上报通道的可行工程路径：
+  在不理解私有加密算法的情况下，让 proxy 发送与 MaxHook 一致的合法 envelope，被 <span class="addr">security.mcbjd.net</span> 接受。</p>
+  <table>
+    <tr><th>约束</th><th>说明</th></tr>
+    <tr><td>不可离线复现算法</td><td>外层信封是私有流密码，无标准常量、无 AES-NI、无 CNG 调用</td></tr>
+    <tr><td>必须合法</td><td>服务端会校验 tag（AEAD 认证），伪造数据返回非 200 或触发黑屋</td></tr>
+    <tr><td>低风险</td><td>不能注入 / 不能常驻调试器（此前 Frida attach 已触发过一次黑屋）</td></tr>
+  </table>
+</div>
+
+<h2>2. 已确认的协议事实（证据链）</h2>
+
+<div class="card">
+  <h3>2.1 端点与调用顺序</h3>
+  <pre><code>POST https://security.mcbjd.net/api/v3/session/bootstrap/redeem    （会话引导, 1 次）
+POST https://security.mcbjd.net/api/v3/session/exchange            （密钥交换, 1 次）
+POST https://security.mcbjd.net/api/v3/report                      （周期上报, 每 ~30s）</code></pre>
+  <p class="small">IP：<code>111.124.198.121:443</code> · HTTP/1.1 Keep-Alive · Content-Type: application/json · 22/22 组双向样本验证</p>
+</div>
+
+<div class="card">
+  <h3>2.2 外层信封（Envelope）</h3>
+  <div class="grid2">
+    <div>
+      <p><b>客户端请求</b>（22/22 一致字段顺序）</p>
+      <pre><code>{"ciphertext":"&lt;hex&gt;",
+ "kid":"&lt;32 hex&gt;",
+ "nonce":"&lt;24 hex = 12B&gt;",
+ "sv":3,
+ "tag":"&lt;32 hex = 16B&gt;"}</code></pre>
+    </div>
+    <div>
+      <p><b>服务器响应</b>（字段顺序不同！）</p>
+      <pre><code>{"sv":3,
+ "kid":"&lt;32 hex&gt;",
+ "nonce":"&lt;24 hex&gt;",
+ "ciphertext":"&lt;hex&gt;",
+ "tag":"&lt;32 hex&gt;"}</code></pre>
+    </div>
+  </div>
+  <p class="small">密文长度 = 明文长度（流式、无填充）· KID 在 session/exchange 与 report 之间切换（两套密钥标识）· 响应 KID 与请求配对</p>
+</div>
+
+<div class="card">
+  <h3>2.3 加密前明文（外层信封的 plaintext，完整截获）</h3>
+  <pre><code>{"device_id":"6B4F2E745394C479",
+ "h2_cantor":"v2:&lt;MD5 16B&gt;:&lt;SHA-256 32B&gt;",      // Cantor 双哈希
+ "nonce":"b4352b9afd7f933f22f6564193ecd28c",        // 内层 nonce (16B)
+ "report_packet":"&lt;104B hex&gt;",                     // 内层加密报告
+ "seq":90,                                           // 上报序号递增
+ "session_id":"58638509E9D05B6C12209C942D10D7D6",   // 32 hex
+ "sv":3,
+ "timestamp":1786609159999}</code></pre>
+  <p class="small">注意：信封内还有一个内层 <code>report_packet</code>（104B hex），说明存在<b>双层加密</b>：外层保护整个 JSON，内层保护设备报告。</p>
+</div>
+
+<div class="card">
+  <h3>2.4 加密边界参数布局（hook 捕获验证 7/7）</h3>
+  <pre><code>0x1803cf7c4  mov [rsp+0x20], rsi        ; 第5参 = plaintext JSON (std::string)
+0x1803cf7c9  lea rcx, [rbp+0x290]        ; output envelope (4 个连续 std::string)
+0x1803cf7d0  lea rdx, [rbp+0x0E0]        ; 32-char 输入 = KID
+0x1803cf7d7  lea r8,  [rbp+0x1A0]        ; 64-char 输入 = 会话密钥材料 (hex)
+0x1803cf7de  mov r9, rdi                 ; context (JSON 序列化字段表 @ rbp+0x38)
+0x1803cf7e1  call 0x180324610            ; ★ 加密边界 → jmp VM 0x181523001</code></pre>
+  <table>
+    <tr><th>对象</th><th>内容</th><th>验证</th></tr>
+    <tr><td>output +0x00</td><td>kid_hex (32)</td><td>7/7 size 正确</td></tr>
+    <tr><td>output +0x20</td><td>nonce_hex (24)</td><td>7/7 每次不同</td></tr>
+    <tr><td>output +0x40</td><td>ciphertext_hex (可变)</td><td>7/7 = 明文长度×2</td></tr>
+    <tr><td>output +0x60</td><td>tag_hex (32)</td><td>7/7 size 正确</td></tr>
+    <tr><td>context 内协议标记</td><td><code>hpac.v3.session.report.req</code></td><td>跨调用恒定</td></tr>
+  </table>
+</div>
+
+<h2>3. 为什么不能离线复现（算法排除实验）</h2>
+<div class="card">
+  <table>
+    <tr><th>验证项</th><th>尝试规模</th><th>结果</th></tr>
+    <tr><td>AES-GCM / AES-CCM / ChaCha20-Poly1305</td><td>7 样本 × 30+ key 派生 × 12+ AAD</td><td><span class="tag tag-err">0 命中</span></td></tr>
+    <tr><td>AES-CTR keystream 匹配</td><td>key 变体 × nonce 布局 × counter 0-256 × BE/LE</td><td><span class="tag tag-err">0 命中</span></td></tr>
+    <tr><td>tag = HMAC-SHA256/SHA1/MD5 截断</td><td>11 种拼接材料 × 6 MAC 变体 × 5 key</td><td><span class="tag tag-err">0 命中</span></td></tr>
+    <tr><td>input64 派生</td><td>hex/ASCII/哈希/字节序/XOR 掩码/组合 60+</td><td><span class="tag tag-err">非直接 key</span></td></tr>
+    <tr><td>静态密码常量扫描</td><td>S-box / T-tables / ChaCha / SHA / MD5 / AES-NI</td><td><span class="tag tag-err">.bugland 全零命中</span></td></tr>
+  </table>
+  <div class="callout callout-err" style="margin-top:14px">
+    <b>判定：</b>加密函数 <span class="addr">0x180324610 → VM 0x181523001</span> 是<b>自实现/混淆的私有流密码</b>，
+    常量表在 VM 内即时解密、用完即弃——与检测名单同一保护机制。离线复现需解 Themida VM（另一个 agent 进行中）。
+  </div>
+</div>
+
+<h2>4. 方案 1：加密边界复用（推荐工程路径）</h2>
+
+<div class="flow">
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <b>真实客户端进程内挂载边界 hook</b>
+      <p class="small">运行 <code>capture_maxhook_encrypt_boundary.py</code>（Frida，仅 hook <code>MaxHook.dll+0x324610</code> 一个点）。黑屋状态不影响——协议仍在运行。</p>
+      <pre><code>uv run --with frida -- python capture_maxhook_encrypt_boundary.py \
+  --process javaw.exe --output .\native_capture \
+  --ack-sensitive-local-capture --duration 0   # 手动停止</code></pre>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <b>边界上截获完整三元组</b>
+      <table>
+        <tr><th>阶段</th><th>数据</th></tr>
+        <tr><td>onEnter</td><td>明文 JSON · KID (32 hex) · 会话密钥材料 (64 hex) · context</td></tr>
+        <tr><td>onLeave</td><td>输出 envelope：kid / nonce / ciphertext / tag</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <b>Envelope 服务（proxy 集成点）</b>
+      <p>hook 进程内维护一个本地通道（命名管道 / localhost WebSocket），将每个周期捕获的
+      <code>(plaintext → envelope)</code> 映射推送出去。Proxy 收到真实 envelope 后原样发送到
+      <span class="addr">security.mcbjd.net/api/v3/report</span>——加密正确性由真实 MaxHook 保证。</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-body">
+      <b>会话联动</b>
+      <p class="small">KID 在 bootstrap/exchange 后切换——Envelope 服务需要<b>保持与游戏会话同生命周期</b>：
+      游戏进服后启动、会话结束时停止；proxy 侧按 KID 匹配事务（请求/响应 KID 必须配对）。</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-body">
+      <b>局限与降级</b>
+      <p class="small">本方案依赖真实客户端进程存在（不能完全脱离 DLL）；若目标账号长期黑屋，建议用<b>纯净小号</b>承载 hook，
+      主号流量由 proxy 转发——会话/上报身份均来自 hook 侧实例。</p>
+    </div>
+  </div>
+</div>
+
+<h2>5. 与替代方案的取舍</h2>
+<div class="card">
+  <table>
+    <tr><th>方案</th><th>完全离线</th><th>工程量</th><th>风险</th><th>状态</th></tr>
+    <tr><td><b>① 加密边界复用（本方案）</b></td><td>否（需真实 DLL）</td><td>低（hook 已就绪）</td><td>低</td><td><span class="tag tag-ok">可立即落地</span></td></tr>
+    <tr><td>② Frida Stalker 跟踪 VM</td><td>部分</td><td>中</td><td>中</td><td><span class="tag tag-blue">尝试中</span></td></tr>
+    <tr><td>③ VM 硬破（另一 agent）</td><td>是</td><td>高</td><td>—</td><td><span class="tag tag-warn">进行中</span></td></tr>
+  </table>
+</div>
+
+<h2>6. 产物与文件索引</h2>
+<div class="card">
+  <table>
+    <tr><th>文件</th><th>用途</th></tr>
+    <tr><td class="addr">capture_maxhook_encrypt_boundary.py / .js</td><td>加密边界 hook（3 次升级：builder_frame / context_dump / ctx_ptr）</td></tr>
+    <tr><td class="addr">encrypt_boundary_capture/ · _capture2/</td><td>两轮真实捕获（4 + 7 组完整三元组）</td></tr>
+    <tr><td class="addr">analyze_maxhook_live_capture.py</td><td>22 组双向样本分析器</td></tr>
+    <tr><td class="addr">maxhook_live_capture_analysis.json</td><td>机器可读证据（已脱敏）</td></tr>
+    <tr><td class="addr">capture_vm_pss.py</td><td>PSS 同步快照（线程上下文 + .bugland）</td></tr>
+    <tr><td class="addr">phase2_final3.py</td><td>VM 模拟器（支持 PHASE2_CONTEXT_JSON 恢复）</td></tr>
+    <tr><td class="addr">runtime_bugland2.bin</td><td>运行时 .bugland 解密态快照（MD5 50553cb377759aac...）</td></tr>
+  </table>
+</div>
+
+<p class="small" style="margin-top:24px; text-align:center">
+  MaxHook 逆向工程 · 布吉岛反作弊协议分析 · 2026-08-13 · 证据均来自本地授权环境的动态捕获
+</p>
+
+</div>
+</body>
+</html>

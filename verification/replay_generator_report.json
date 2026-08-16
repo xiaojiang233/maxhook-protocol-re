@@ -1,0 +1,165 @@
+{
+  "schema": "maxhook.generator.replay/v1",
+  "dll": "E:\\Coding\\S1mple\\target\\MaxHook.runtime-unpacked.dll",
+  "oracle": {
+    "dir": "E:\\Coding\\S1mple\\target\\writer_sync_clean_20260814_014351",
+    "call_id": 1,
+    "plaintext_bytes": 745,
+    "oracle_word_count": 192
+  },
+  "entry": "0x18041a8a0",
+  "state_buffer": "0x20000000000",
+  "output_buffer": "0x20000010000",
+  "instruction_count": 426,
+  "stopped_by_limit": false,
+  "error": null,
+  "invalid_memory": null,
+  "store32_checkpoints": [],
+  "generator_checkpoints": [
+    {
+      "instruction": 1,
+      "kind": "enter",
+      "rcx": "0x20000000000",
+      "rdx": "0x20000010000",
+      "context": {
+        "instruction": 1,
+        "rip": "0x18041a8a0",
+        "registers": {
+          "rax": "0x0",
+          "rbx": "0x0",
+          "rcx": "0x20000000000",
+          "rdx": "0x20000010000",
+          "rsi": "0x0",
+          "rdi": "0x0",
+          "rbp": "0x0",
+          "rsp": "0x7ffe1ff000",
+          "r8": "0x0",
+          "r9": "0x0",
+          "r10": "0x0",
+          "r11": "0x0",
+          "r12": "0x0",
+          "r13": "0x0",
+          "r14": "0x0",
+          "r15": "0x0",
+          "rip": "0x18041a8a0"
+        }
+      }
+    }
+  ],
+  "dispatch_calls": [
+    {
+      "instruction": 38,
+      "rip": "0x18041a914",
+      "computed_index": "0xd",
+      "table_slot": "0x1807d7cd8",
+      "target_function": "0x180089bc0"
+    },
+    {
+      "instruction": 65,
+      "rip": "0x18041a969",
+      "computed_index": "0xd",
+      "table_slot": "0x1807d7cd8",
+      "target_function": "0x180089bc0"
+    },
+    {
+      "instruction": 92,
+      "rip": "0x18041a9be",
+      "computed_index": "0xd",
+      "table_slot": "0x1807d7cd8",
+      "target_function": "0x180089bc0"
+    },
+    {
+      "instruction": 119,
+      "rip": "0x18041aa13",
+      "computed_index": "0xd",
+      "table_slot": "0x1807d7cd8",
+      "target_function": "0x180089bc0"
+    },
+    {
+      "instruction": 308,
+      "rip": "0x18041ac69",
+      "computed_index": "0xd",
+      "table_slot": "0x1807d7cd8",
+      "target_function": "0x180089bc0"
+    }
+  ],
+  "first_divergence": null,
+  "output_block_hex": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+  "output_matches_oracle_first_block": false,
+  "interpretation": "store32 checkpoints record each final keystream word; first_divergence pinpoints the exact word/instruction where the offline replay departs from the writer_sync call-1 oracle.",
+  "index_table_recovery": {
+    "index_table_address": "0x1807d7cf0",
+    "fn_table_address": "0x1807d7c70",
+    "fn_table_entries": [
+      "0x1804167e0",
+      "0x18041a8a0",
+      "0x180417130",
+      "0x1804172e0",
+      "0x18041b180",
+      "0x18041a860",
+      "0x18041b0a0",
+      "0x18041ae20",
+      "0x180416750",
+      "0x18041a840",
+      "0x1804160d0",
+      "0x18041b950",
+      "0x1800415d0",
+      "0x180089bc0",
+      "0x180416280",
+      "0x0"
+    ],
+    "dispatch_entries": [
+      {
+        "subcall": 0,
+        "shift_src": "0x180894b04",
+        "shift_src_value": "0x6d5320",
+        "cl": "0x39856c0",
+        "index_into_index_table": "0x6",
+        "index_table_address": "0x1807d7cf6",
+        "encrypted_value_on_disk": "0x92f10000",
+        "fn_table_base": "0x1807d7c70"
+      },
+      {
+        "subcall": 1,
+        "shift_src": "0x180894aec",
+        "shift_src_value": "0x6aa980",
+        "cl": "0x39b0060",
+        "index_into_index_table": "0x6",
+        "index_table_address": "0x1807d7cf6",
+        "encrypted_value_on_disk": "0x92f10000",
+        "fn_table_base": "0x1807d7c70"
+      },
+      {
+        "subcall": 2,
+        "shift_src": "0x180894b00",
+        "shift_src_value": "0x4a3eb5",
+        "cl": "0x3bb6b2b",
+        "index_into_index_table": "0x180",
+        "index_table_address": "0x1807d7e70",
+        "encrypted_value_on_disk": "0x51d20196",
+        "fn_table_base": "0x1807d7c70"
+      },
+      {
+        "subcall": 3,
+        "shift_src": "0x180894ae8",
+        "shift_src_value": "0x4a3c27",
+        "cl": "0x3bb6db9",
+        "index_into_index_table": "0x18",
+        "index_table_address": "0x1807d7d08",
+        "encrypted_value_on_disk": "0xcffffff",
+        "fn_table_base": "0x1807d7c70"
+      }
+    ],
+    "phase2_shift_sources": [
+      {
+        "src": "0x180894afc",
+        "value": "0x4a3e20"
+      },
+      {
+        "src": "0x180894af4",
+        "value": "0x4a3e16"
+      }
+    ],
+    "note": "Each dispatch sub-call reads a fixed offset in the encrypted index table 0x1807d7cf0; the encrypted value there, deobfuscated via a known bijective rol/ror, selects the fn-table entry.  Recovering these 4 encrypted dwords offline (against the writer_sync oracle) is the single remaining step to reproduce the keystream without attaching to the game."
+  }
+}

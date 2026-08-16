@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MaxHook.dll 逆向分析报告 v2 — 壳逆向 + VM 攻破 + 明文反汇编交付</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0f1117; color: #d8dee9; font-family: "Segoe UI","Microsoft YaHei",sans-serif; line-height: 1.65; padding: 32px 20px; max-width: 1100px; margin: 0 auto; }
+  h1 { font-size: 25px; color: #fff; margin-bottom: 6px; }
+  h2 { font-size: 20px; color: #7ec8ff; margin: 34px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #2a3040; }
+  h3 { font-size: 16px; color: #ffd479; margin: 20px 0 8px; }
+  p { margin: 8px 0; }
+  .sub { color: #8a93a6; font-size: 13px; margin-bottom: 20px; }
+  .card { background: #171b26; border: 1px solid #2a3040; border-radius: 10px; padding: 16px 18px; margin: 14px 0; }
+  .verdict { background: #1d2434; border-left: 4px solid #ff6b6b; border-radius: 8px; padding: 16px 18px; margin: 18px 0; }
+  code, .mono { font-family: "Cascadia Code",Consolas,monospace; font-size: 12.5px; background: #1a1f2c; padding: 1px 6px; border-radius: 4px; color: #9ee6a8; }
+  pre { background: #141824; border: 1px solid #2a3040; border-radius: 8px; padding: 14px; overflow-x: auto; font-size: 12px; line-height: 1.5; margin: 10px 0; }
+  pre code { background: none; padding: 0; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 13px; }
+  th { background: #1d2434; color: #7ec8ff; text-align: left; padding: 8px 10px; border: 1px solid #2a3040; }
+  td { padding: 7px 10px; border: 1px solid #2a3040; vertical-align: top; }
+  tr:nth-child(even) td { background: #151924; }
+  .tag { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 11px; margin-right: 6px; }
+  .tag.red { background: #4a1e26; color: #ff8a8a; }
+  .tag.green { background: #1d3a28; color: #6fd89a; }
+  .tag.yellow { background: #3d3522; color: #ffd479; }
+  .small { font-size: 12px; color: #8a93a6; }
+  .hl { color: #ff8a8a; font-weight: 600; }
+  .hlg { color: #6fd89a; font-weight: 600; }
+  ul, ol { margin: 8px 0 8px 24px; }
+  li { margin: 4px 0; }
+  .footer { margin-top: 40px; padding-top: 14px; border-top: 1px solid #2a3040; color: #6b7280; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<h1>MaxHook.dll 逆向分析报告（v2）</h1>
+<p class="sub">网易中国版 MC「布吉岛」heypixel 反作弊 — WinLicense 壳逆向 · Unicorn VM 攻破 · 明文区反汇编交付<br>分析时间：2026-08-12 ~ 08-13 · 目标：<code>MaxHook.dll</code> (24,928,616 B, PDB <code>anti-cheat.pdb</code>)</p>
+
+<div class="verdict">
+<h3 style="margin-top:0">执行摘要</h3>
+<p><b>1. MaxHook.dll 是 WinLicense（Themida）加壳的 JVMTI/JNI 原生反作弊</b>，随 heypixel mod 分发（jar 内 <code>lib/MaxHook.x64.dll</code>），与「布吉岛」服务器同厂商（开发路径 <code>NativeAntiCheat\x64\Release\anti-cheat.dll</code>）。</p>
+<p><b>2. 检测面两层</b>：① Java mod（ZKM 混淆）经 <code>heypixel:s2cevent</code> 上报 mod 哈希 + 硬件指纹（jasypt 加密），含 SyncToken 心跳；② DLL 经 JNI 钩子（<code>jni_call_hook::flush_and_report</code>）挂钩 <code>net/minecraft*</code> 类、自带 socket 层 + 内嵌 Certum/Sectigo 证书库经 WinHTTP 独立上报。</p>
+<p><b>3. 根因（「协议无效」）</b>：跨服 GAME→CONFIGURATION 重协商后，代理代答配置阶段导致 heypixel 通道重注册与完整性/心跳链路断裂，服务端周期校验缺失 → 周期判「协议无效」。</p>
+<p><b>4. VM 攻破状态</b>：<span class="hlg">解压 100% 还原（与真机 dump 99.99% 一致）；VM 初始化已绕过（预填真机上下文后 VM 正常执行 13 块）</span>；卡在 VM 读取<b>真机 VirtualAlloc 堆数据</b>（runtime dump 无堆内容）——需真机全进程内存 dump 才能继续。</p>
+<p><b>5. 已交付明文区反汇编</b>：原始 .text（175 万行）+ 解压区（67.7 万行）+ 字符串表（4.5 万条）。</p>
+</div>
+
+<h2>一、壳结构与解压还原</h2>
+<div class="card">
+<ul>
+<li><b>WinLicense 特征</b>：入口 RVA <code>0x1F00058</code> 位于 .boot 节（15.9MB，熵 7.95）；明文特征串 <code>WinLicenseVersion</code>/<code>WinLicenseDriverVersion</code>/<code>/forcerun</code>/<code>/dumpstatus</code>、注册表 <code>SOFTWARE\WinLicense</code>/<code>Software\WLkt</code>。</li>
+<li><b>解压流程（Unicorn 完整还原）</b>：入口 LZ77 stub（src=<code>base+0x1F00248</code>，dst=<code>base+0x980000</code>=.bugland）→ helper 计算 delta → 循环解压 22.5MB → <code>jmp base+0xC0EB27</code>（真实入口）。<b>解压产物 <code>boot_unpacked.bin</code> 与真机 runtime dump 99.99% 一致，解压实现已验证正确。</b></li>
+<li><b>API 解析器</b>：FNV 变体（seed 0x1c258cc9, prime 0x1000193），匹配出 19 个壳自身 API（VirtualAlloc/VirtualProtect/NtMapViewOfSection/RtlImageNtHeader/GetSystemInfo 等）。</li>
+<li><b>模块内嵌证书</b>：Certum/Sectigo CA 的 CRL/OCSP URL（<code>ocsp.sectigo.com</code>/<code>crl.certum.pl</code>/<code>ocsp-certum.com</code> 等 17 条）——内嵌 DER 证书数据，用于 WinHTTP TLS 证书链校验。</li>
+</ul>
+</div>
+
+<h2>二、DLL 检测与通信能力</h2>
+<div class="card">
+<table>
+<tr><th>能力</th><th>证据</th><th>结论</th></tr>
+<tr><td>JNI 类名匹配</td><td>RVA <code>0x18D790</code>：<code>memcmp(name,"net/minecraft",13)==0</code>（movabs 构造避免明文）</td><td>钩 Minecraft 类（网络/连接相关）</td></tr>
+<tr><td>JNI 记录上报</td><td>RTTI：<code>jni_call_hook::flush_and_report</code>（含 <code>std::vector&lt;std::string&gt;</code> 队列）</td><td>收集 JNI 调用并批量上报</td></tr>
+<tr><td>类文件校验</td><td>明文串 <code>Invalid inc maxStack/size</code></td><td>Java class 解析/字节码插桩能力</td></tr>
+<tr><td>独立上报通道</td><td>WinHTTP + 内嵌证书库 + 自带 socket 层错误串</td><td>WinHTTP 直连上报（URL 在加密载荷内）</td></tr>
+<tr><td>环境指纹</td><td>导入：GetAdaptersAddresses/RegGetValueW/GetFileVersionInfoA/GetTempPath2W</td><td>网卡/注册表/文件版本/临时文件</td></tr>
+<tr><td>反调试</td><td>RtlAddVectoredExceptionHandler(VEH)、GetSystemTimePreciseAsFileTime</td><td>VEH + 时间戳检测</td></tr>
+</table>
+<p class="small">注：检测名单（进程/工具名）与 WinHTTP URL 位于 WinLicense 加密载荷内，静态未解密（见 VM 攻破部分）。</p>
+</div>
+
+<h2>三、Java mod 侧全貌</h2>
+<div class="card">
+<ul>
+<li>mod 为 ZKM 24.0.2 混淆（1128 类，含 emoji 类名）；<code>com.heypixel.client</code> 已完全逆向。</li>
+<li>通道：<code>heypixel:s2cevent</code>（包 233/250/234）、<code>floodgate:form</code>、<code>floodgate:netease</code>；MuxFragmentCodec 分片（协议 v1）。</li>
+<li>线格式：<code>0xFA+int32+zlib JSON</code>（S2C 配置）、<code>0x01/0x02 opaque</code>（C2S 上报）、<code>0x0C</code>（心跳）、<code>heypixel:sync_skins</code>。</li>
+<li>完整性上报（RemoteAssetMessage）：mod 文件列表+SHA-256、硬件指纹（CPU/主板/网卡/磁盘）、integrity token，jasypt 加密（密码=clientId）。</li>
+<li>心跳：NetworkHeartbeatMessage（包 12）带 SyncToken；Netty pipeline 注入 PacketInterceptHandler。</li>
+</ul>
+</div>
+
+<h2>四、heypixel.log #1–#10 节奏</h2>
+<div class="card">
+<table>
+<tr><th>阶段</th><th>序列</th><th>间隔</th><th>推断</th></tr>
+<tr><td>进服检测</td><td>#1→#7→#8→#2</td><td>#8≈50-80ms；#2≈800-1250ms</td><td>快速组（进程/窗口/网卡枚举）→ 慢速组（证书/文件/连接校验）</td></tr>
+<tr><td>周期快检</td><td>#3→#4</td><td>0ms，每~400ms</td><td>文件/注册表轻量扫描</td></tr>
+<tr><td>周期中检</td><td>#9→#10</td><td>330-550ms，每~400ms</td><td>网络/连接特征/上报校验</td></tr>
+<tr><td>周期慢检</td><td>#5→#6</td><td>1000-1437ms，每~1000ms</td><td>WinHTTP 上报/证书 CRL 深度检查</td></tr>
+</table>
+<p>服务端「协议无效」周期性判定，与 #9/#10、#5/#6 节奏吻合。</p>
+</div>
+
+<h2>五、代理链路与根因</h2>
+<div class="card">
+<ul>
+<li>代理（S1mple/MCProtocolLib 1.20.6）：GAME 态全转发；跨服重协商走 <code>legacyServerSwitch</code> 代答配置阶段。</li>
+<li>代理源码注释自认：<i>"Dropping them makes the server judge the client's protocol invalid (missing integrity report / sync token) after the switch"</i>。</li>
+<li><b>触发链</b>：跨服后客户端（GAME 态）不重发 <code>minecraft:register</code> → 新上下文无 heypixel 通道注册 → 完整性上报/心跳断裂 → 周期判「协议无效」。DLL 不校验 Minecraft 连接对端 IP（校验的是自己 WinHTTP 通道的 TLS 对端）。</li>
+<li>3h 运行日志：s2cevent 2.5 万次、sync_skins 2042 次，无 WARN/ERROR——流量正常，判定在服务端。</li>
+</ul>
+</div>
+
+<h2>六、Unicorn VM 攻破攻坚记录</h2>
+<div class="card">
+<h3>6.1 已突破</h3>
+<table>
+<tr><th>里程碑</th><th>方法</th><th>结果</th></tr>
+<tr><td>解压还原</td><td>Unicorn 模拟入口 LZ77 stub</td><td><span class="tag green">完成</span> boot_unpacked.bin 与真机 99.99% 一致</td></tr>
+<tr><td>PHASE1 不稳定绕过</td><td>跳过解压，直接用验证产物构建内存，从真实入口 <code>0x180C0EB27</code> 启动</td><td><span class="tag green">完成</span> 稳定复现 VM 执行</td></tr>
+<tr><td>入口寄存器</td><td>设 rbp=VM上下文(<code>0x18098C884</code>)，显式设 RIP</td><td><span class="tag green">完成</span> VM 从跳板链进入 dispatcher</td></tr>
+<tr><td>VM 初始化绕过</td><td>预填真机上下文（runtime dump 差异 8841B + 周边）</td><td><span class="tag green">完成</span> VM 从「跳垃圾地址崩」→「正常执行 13 块」</td></tr>
+<tr><td>堆访问</td><td>按需映射 + 堆指针重定位（73 个）</td><td><span class="tag yellow">部分</span> VM 读真机堆内容（空）→ 逻辑错</td></tr>
+</table>
+<h3>6.2 硬卡点：真机堆数据缺失</h3>
+<p>VM 读取 <b>真机 VirtualAlloc 分配地址</b>（如 <code>0x1AB783620D0</code>、<code>0x20088C8F8</code>）。这些堆内容<b>不在 runtime-unpacked dump 里</b>（该 dump 只有模块映像 + 解压区）。模拟堆为空 → VM 读 0 → 指针错 → <code>INSN_INVALID</code>。</p>
+<p><b>结论</b>：无真机堆 dump，VM 无法继续。需朋友用 <b>VMMap / Process Hacker 全进程内存 dump</b>（含 VirtualAlloc 区域）→ 重定位堆指针 + 填入内容 → VM 可跑到 OEP 解密字符串。</p>
+<h3>6.3 工程教训</h3>
+<ul>
+<li>unicorn 2.1.4 在 Windows 不稳定：emu_start 偶发立即返回/卡死；循环创建 Uc 实例全失败（全局状态污染）→ 必须独立进程。</li>
+<li>PHASE1 解压偶发失败（rax≠期望值）——因 unicorn 内存初始态不确定，曾误导为解压错误。</li>
+<li>若干「崩溃」实为 Python 异常（如 <code>struct.pack('&lt;I', -480)</code> 负数溢出）被误判为 unicorn 崩溃。</li>
+<li>范围 code hook 在 unicorn 2.1.4 对范围内<b>每条指令</b>触发（非仅 begin 处）——回调必须精确过滤地址。</li>
+</ul>
+</div>
+
+<h2>七、明文区反汇编交付</h2>
+<div class="card">
+<p>在 VM 数据依赖限制下，已产出<b>明文区系统反汇编</b>（非 VM 部分的最大可读成果）：</p>
+<table>
+<tr><th>文件</th><th>规模</th><th>内容</th></tr>
+<tr><td><code>E:\Coding\S1mple\target\disasm_text.asm</code></td><td>175 万行</td><td>原始 .text 全量反汇编（skipdata 模式）：WinLicense stub（FNV API 解析器）+ 真实 anti-cheat 代码（<code>net/minecraft</code> 匹配器等，含 3.2 万个 movabs 字符串构造立即数）</td></tr>
+<tr><td><code>E:\Coding\S1mple\target\disasm_unpacked.asm</code></td><td>67.7 万行</td><td>解压区明文区（0x980000-0xB00000）：Themida VM handler/dispatcher + 壳运行时</td></tr>
+<tr><td><code>E:\Coding\S1mple\target\strings_table.txt</code></td><td>45,690 条</td><td>全文件可打印字符串表（VA → 内容），含证书 URL、C++ RTTI、WinLicense 授权串</td></tr>
+</table>
+<h3>关键位置索引</h3>
+<table>
+<tr><th>对象</th><th>位置</th><th>说明</th></tr>
+<tr><td>net/minecraft 匹配器</td><td>.text RVA <code>0x18D790</code></td><td><code>memcmp("net/minecraft",13)</code>，movabs <code>0x656e696d2f74656e</code></td></tr>
+<tr><td>WinLicense API 解析器</td><td>.text RVA <code>0x10000</code> 起</td><td>FNV 哈希（seed 0x1c258cc9）解析 19 个壳 API</td></tr>
+<tr><td>VM 上下文基址</td><td>解压区 RVA <code>0xC884</code></td><td>rbp 指向，预填后 VM 可初始化</td></tr>
+<tr><td>崩溃 VM handler</td><td>解压区 RVA <code>0x1B230</code> 区</td><td>乱序算术 handler（ret 到垃圾地址）</td></tr>
+<tr><td>表读取 handler</td><td>解压区 RVA <code>0xA6432</code></td><td><code>r14=[[r14]]</code> 读 VM 数据表</td></tr>
+</table>
+</div>
+
+<h2>八、遗留问题与下一步</h2>
+<div class="card">
+<ol>
+<li><b>真机堆 dump</b>（最高优先）：朋友用 VMMap/Process Hacker 抓游戏运行中进程全内存（含 VirtualAlloc 区域）→ 重定位堆指针 → VM 跑到 OEP → 检测名单/URL 全量落地。</li>
+<li><b>x64dbg 真机脱壳</b>（备选）：ScyllaHide 反反调试 + OEP dump + IAT 修复。</li>
+<li>#1-#10 与检测项精确对应：需运行态内存（堆 dump 或 Procmon 交叉验证）。</li>
+<li>WinHTTP 上报 URL：同上（堆/抓包）。</li>
+</ol>
+</div>
+
+<div class="footer">
+MaxHook.dll 逆向分析 v2 · 方法：PE 静态 + Unicorn 动态解压/VM 模拟 + FNV 哈希还原 + Java mod 逆向 + 代理源码审查 + 明文区反汇编<br>
+生成：WorkBuddy · 2026-08-13
+</div>
+
+</body>
+</html>

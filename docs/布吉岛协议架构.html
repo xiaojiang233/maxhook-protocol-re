@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>布吉岛服务器协议架构分析报告</title>
+<style>
+body{background:#1e1e2e;color:#cdd6f4;font-family:'Consolas','Microsoft YaHei',monospace;margin:0;padding:30px;line-height:1.7}
+h1{color:#89b4fa;border-bottom:2px solid #45475a;padding-bottom:10px}
+h2{color:#a6e3a1;margin-top:35px;border-left:4px solid #a6e3a1;padding-left:10px}
+h3{color:#f9e2af}
+table{border-collapse:collapse;margin:10px 0;width:100%;font-size:13px}
+th{background:#313244;color:#89b4fa;padding:8px 12px;text-align:left;border:1px solid #45475a}
+td{padding:6px 12px;border:1px solid #45475a;vertical-align:top}
+tr:nth-child(even){background:#252537}
+code{background:#313244;padding:2px 6px;border-radius:4px;color:#f38ba8}
+pre{background:#181825;padding:15px;border-radius:8px;border:1px solid #45475a;overflow-x:auto;font-size:12.5px;color:#a6e3a1}
+.tag{display:inline-block;background:#f38ba8;color:#1e1e2e;padding:1px 8px;border-radius:10px;font-size:11px;margin-right:6px}
+.green{color:#a6e3a1}.red{color:#f38ba8}.yellow{color:#f9e2af}.blue{color:#89b4fa}
+.box{background:#181825;border:1px solid #45475a;border-radius:8px;padding:15px;margin:12px 0}
+.arch{background:#11111b;border:2px solid #89b4fa;border-radius:10px;padding:20px;margin:20px 0;font-size:13px}
+.arch .layer{border:1px solid #45475a;border-radius:8px;padding:12px;margin:8px 0}
+.arrow{color:#f9e2af;text-align:center;margin:4px 0}
+</style>
+</head>
+<body>
+
+<h1>布吉岛服务器协议架构分析报告</h1>
+<p><span class="tag">逆向分析</span><span class="tag">2026-08-13</span>基于 heypixel mod 反编译 + javaw 全内存 dump (5.6GB) + 运行时监控 + ETW/Clash 连接确认</p>
+
+<div class="arch">
+<div style="text-align:center;color:#89b4fa;font-size:16px;font-weight:bold">布吉岛反作弊双层架构</div>
+
+<div class="layer">
+<b>① 游戏客户端 (javaw.exe, PID 动态)</b>
+<code>MaxHook.dll</code> (WinLicense 壳, JVMTI/JNI) + <code>heypixel mod</code> (ZKM 混淆) + <code>envsdk</code> (网易环境 SDK)<br>
+</div>
+<div class="arrow">│ 游戏内通道 (Netty, 经 Minecraft 连接) │</div>
+<div class="layer">
+<b>② 游戏服务器</b> <code>pc.bjdmc.net:25565</code><br>
+通道: <code>heypixel:s2cevent</code> / <code>floodgate:form</code> / <code>floodgate:netease</code> / <code>heypixel:sync_skins</code><br>
+MuxFragment 分片协议, 消息 ID 0-11 发送 / 100-121 接收<br>
+内容: 服务器列表同步 / 商店货币 / 玩家状态 / SyncToken 心跳
+</div>
+<div class="arrow">│ 独立上报通道 (原生 socket + TLS, DIRECT 直连) │</div>
+<div class="layer">
+<b>③ 安全上报服务器</b> <code>security.mcbjd.net:443</code> → <code>111.124.198.121</code><br>
+<b>POST https://security.mcbjd.net/api/v3/report</b> (JSON ~2659B)<br>
+响应: <code>{"code":200,"message":"pass","regular_id":"..."}</code>
+</div>
+<div class="arrow">│ 网易 SDK 通道 │</div>
+<div class="layer">
+<b>④ 网易平台</b> <code>acsdk.gameyw.netease.com:443</code> (117.147.201.72) <code>/acsdk/v3/ip/*</code><br>
+<code>nos.gameyw.netease.com</code> 上传 <code>regular_encode_g79_...json</code> (设备指纹)
+</div>
+</div>
+
+<h2>一、上报协议 (security.mcbjd.net/api/v3/report)</h2>
+
+<div class="box"><b>HTTP 请求头</b> (堆内明文 @0x1efa9337956)
+<pre>POST /api/v3/report HTTP/1.1
+Connection: Keep-Alive
+Content-Type: application/json
+Accept: application/json
+Content-Length: 2659
+Host: security.mcbjd.net</pre></div>
+
+<h3>设备指纹结构</h3>
+<pre>{
+  "device_id": "37A20C79494D711F",            // 机器指纹 (MachineGuid 衍生)
+  "h2_cantor": "v2:cd969f19400d0e1f9720569dc3fefba3:...",  // Cantor 配对双重哈希
+  "nonce": "35e56d93dccb19eb9d3109e54876c74f", // 随机数
+  "report_packet": "1449f50bcce7368089c1fd1b8786e533..."  // 加密报告包 (含全部检测数据)
+}</pre>
+
+<h3>上报事件类型 (seq 递增的事件流)</h3>
+<table>
+<tr><th>type</th><th>type_name</th><th>detail 字段</th><th>检测目标</th></tr>
+<tr><td>8</td><td><code>class_loaded</code></td><td>class_count, source_count</td><td class="red">JVMTI 类加载监控 → 注入类/作弊 mod</td></tr>
+<tr><td>9</td><td><code>alloc_anomaly</code></td><td>class_count</td><td class="red">内存分配异常 → 代码注入/堆攻击</td></tr>
+<tr><td>16</td><td><code>network_attestation</code></td><td>api_integrity_flags, established_count, evidence_count, listen_count, loopback_count, peer_count, risk_flags, row_count, scan_counter, sensor_status, source_mask, duration_us</td><td class="red">网络连接证明 → 代理/抓包/多连接检测</td></tr>
+</table>
+
+<div class="box"><b>真实上报样本</b> (堆内 @0x1efa0d5cb01)
+<pre>[{"detail":{"class_count":2,"source_count":1},"seq":57,"type":8,"type_name":"class_loaded"},
+ {"detail":{"api_integrity_flags":0,"detail_schema":4,"duration_us":2543,"established_count":4,
+   "evidence_count":1,"listen_count":0,"loopback_count":1,"peer_count":1,"risk_flags":6,
+   "row_count":4,"scan_counter":45,"sensor_status":"ok","source_mask":3},"seq":58,
+   "type":16,"type_name":"network_attestation"},
+ {"detail":{"class_count":2},"seq":60,"type":9,"type_name":"alloc_anomaly"}, ...]</pre></div>
+
+<h2>二、检测机制 (从字段反推)</h2>
+
+<table>
+<tr><th>机制</th><th>实现</th><th>证据</th></tr>
+<tr><td><b>类加载监控</b></td><td>JVMTI/JNI 钩 net/minecraft 类 (memcmp "net/minecraft" 匹配器) + class_loaded 事件</td><td>.text RVA 0x18D790, jni_call_hook::flush_and_report</td></tr>
+<tr><td><b>内存分配监控</b></td><td>alloc_anomaly 事件 (class_count 计数)</td><td>堆内事件流</td></tr>
+<tr><td><b>网络证明</b></td><td>枚举 TCP 连接表 (established/listen/loopback/peer 计数), risk_flags 标记异常, scan_counter 周期扫描</td><td>network_attestation 事件</td></tr>
+<tr><td><b>进程检测</b></td><td>枚举进程名: cheatengine-x86_64 / immunitydebugger / vmware-authd 被跟踪 (无 wireshark/fiddler)</td><td>dump 进程缓冲</td></tr>
+<tr><td><b>VM 检测</b></td><td>vm3dgl64/vboxhook/vmGuestLib/qemu-ga 等 30+ DLL + GetSystemFirmwareTable (BIOS)</td><td>dump VM 名单</td></tr>
+<tr><td><b>API 完整性</b></td><td>api_integrity_flags + hook 检测 (MinHook)</td><td>network_attestation</td></tr>
+</table>
+
+<h2>三、认证与黑屋判定链路</h2>
+
+<div class="box">
+1. 客户端收集事件 (class_loaded / alloc_anomaly / network_attestation) → 组装 JSON<br>
+2. 设备指纹: device_id + h2_cantor + nonce → <b>report_packet 加密打包</b><br>
+3. <b>POST security.mcbjd.net/api/v3/report</b> (Keep-Alive 长连接, 12 分钟级)<br>
+4. 服务端校验 → 响应 <code>{"code":200,"message":"pass","regular_id":"..."}</code><br>
+5. <span class="red">message != "pass" 或检测超时 → 服务器判定「协议无效」→ 黑屋 (periodic 判定)</span><br>
+6. regular_id = 布吉岛正式玩家认证 ID (SyncToken 关联)
+</div>
+
+<h2>四、关键证据位置索引</h2>
+<table>
+<tr><th>证据</th><th>位置</th></tr>
+<tr><td>HTTP 请求头 (POST /api/v3/report)</td><td>dump @0x1efa9337956</td></tr>
+<tr><td>服务端响应 pass/regular_id</td><td>dump @0x1efa0338080</td></tr>
+<tr><td>设备指纹 device_id/h2_cantor/report_packet</td><td>dump @0x1efa1580322</td></tr>
+<tr><td>事件流 class_loaded/alloc_anomaly/network_attestation</td><td>dump @0x1efa0d5cb01</td></tr>
+<tr><td>域名证书 SAN (bjd-mc.com/bjdmc.net/mcbjd.net)</td><td>dump @0x1efa1b4338b</td></tr>
+<tr><td>启动器属性 uid/filterkey/launchversion</td><td>dump @0x1efa0b890b5</td></tr>
+<tr><td>服务器列表 pc.bjdmc.net:25565</td><td>dump @0x1efa03e1e31</td></tr>
+<tr><td>网络连接 security.mcbjd.net:443 → 111.124.198.121</td><td>Clash Verge 连接记录 (Tun/DIRECT, 上传175KB)</td></tr>
+</table>
+
+<h2>五、对代理项目 (S1mple) 的启示</h2>
+<div class="box">
+<b>已确认:</b> 包内容没问题, 黑屋根因 = 跨服后 <code>minecraft:register</code> 重注册缺失 → 服务器收不到 SyncToken 心跳与完整性上报 → periodic 判定协议无效。<br><br>
+<b>协议事实:</b> security.mcbjd.net 上报是客户端主动行为 (经代理可见域名), 代理不影响其到达性;<br>
+<b>修复方向不变:</b> 跨服配置阶段代答时补发 register (含 heypixel:s2cevent/sync_skins/floodgate:*), 或让客户端真实参与重协商。
+</div>
+
+</body>
+</html>

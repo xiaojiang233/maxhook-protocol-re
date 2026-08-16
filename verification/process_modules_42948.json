@@ -1,0 +1,938 @@
+[
+  {
+    "name": "javaw.exe",
+    "base": "0x7ff6ceba0000",
+    "size": 57344,
+    "path": "E:\\MCLDownload\\ext\\jre-v64-220420\\jdk17\\bin\\javaw.exe"
+  },
+  {
+    "name": "ntdll.dll",
+    "base": "0x7ffef6620000",
+    "size": 2514944,
+    "path": "C:\\WINDOWS\\SYSTEM32\\ntdll.dll"
+  },
+  {
+    "name": "KERNEL32.DLL",
+    "base": "0x7ffef4cf0000",
+    "size": 823296,
+    "path": "C:\\WINDOWS\\System32\\KERNEL32.DLL"
+  },
+  {
+    "name": "KERNELBASE.dll",
+    "base": "0x7ffef38b0000",
+    "size": 4169728,
+    "path": "C:\\WINDOWS\\System32\\KERNELBASE.dll"
+  },
+  {
+    "name": "ucrtbase.dll",
+    "base": "0x7ffef3e70000",
+    "size": 1359872,
+    "path": "C:\\WINDOWS\\System32\\ucrtbase.dll"
+  },
+  {
+    "name": "jli.dll",
+    "base": "0x7ffe8e390000",
+    "size": 98304,
+    "path": "E:\\MCLDownload\\ext\\jre-v64-220420\\jdk17\\bin\\jli.dll"
+  },
+  {
+    "name": "USER32.dll",
+    "base": "0x7ffef4af0000",
+    "size": 1863680,
+    "path": "C:\\WINDOWS\\System32\\USER32.dll"
+  },
+  {
+    "name": "win32u.dll",
+    "base": "0x7ffef4200000",
+    "size": 159744,
+    "path": "C:\\WINDOWS\\System32\\win32u.dll"
+  },
+  {
+    "name": "COMCTL32.dll",
+    "base": "0x7ffed7850000",
+    "size": 2695168,
+    "path": "C:\\WINDOWS\\WinSxS\\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.8521_none_3e08b75ce33403b3\\COMCTL32.dll"
+  },
+  {
+    "name": "GDI32.dll",
+    "base": "0x7ffef4cc0000",
+    "size": 176128,
+    "path": "C:\\WINDOWS\\System32\\GDI32.dll"
+  },
+  {
+    "name": "gdi32full.dll",
+    "base": "0x7ffef3cb0000",
+    "size": 1224704,
+    "path": "C:\\WINDOWS\\System32\\gdi32full.dll"
+  },
+  {
+    "name": "msvcrt.dll",
+    "base": "0x7ffef48e0000",
+    "size": 692224,
+    "path": "C:\\WINDOWS\\System32\\msvcrt.dll"
+  },
+  {
+    "name": "msvcp_win.dll",
+    "base": "0x7ffef42e0000",
+    "size": 667648,
+    "path": "C:\\WINDOWS\\System32\\msvcp_win.dll"
+  },
+  {
+    "name": "VCRUNTIME140.dll",
+    "base": "0x7ffdaf2d0000",
+    "size": 94208,
+    "path": "E:\\MCLDownload\\ext\\jre-v64-220420\\jdk17\\bin\\VCRUNTIME140.dll"
+  },
+  {
+    "name": "IMM32.DLL",
+    "base": "0x7ffef4710000",
+    "size": 204800,
+    "path": "C:\\WINDOWS\\System32\\IMM32.DLL"
+  },
+  {
+    "name": "windhawk.dll",
+    "base": "0x7ffed0170000",
+    "size": 991232,
+    "path": "D:\\Program Files\\Windhawk\\Engine\\1.6.1\\64\\windhawk.dll"
+  },
+  {
+    "name": "ADVAPI32.dll",
+    "base": "0x7ffef4760000",
+    "size": 745472,
+    "path": "C:\\WINDOWS\\System32\\ADVAPI32.dll"
+  },
+  {
+    "name": "sechost.dll",
+    "base": "0x7ffef5770000",
+    "size": 696320,
+    "path": "C:\\WINDOWS\\System32\\sechost.dll"
+  },
+  {
+    "name": "RPCRT4.dll",
+    "base": "0x7ffef51c0000",
+    "size": 1146880,
+    "path": "C:\\WINDOWS\\System32\\RPCRT4.dll"
+  },
+  {
+    "name": "explorer-details-better-file-sizes_1.4.11_202881.dll",
+    "base": "0x7ffecfde0000",
+    "size": 163840,
+    "path": "C:\\ProgramData\\Windhawk\\Engine\\Mods\\64\\explorer-details-better-file-sizes_1.4.11_202881.dll"
+  },
+  {
+    "name": "ole32.dll",
+    "base": "0x7ffef5020000",
+    "size": 1671168,
+    "path": "C:\\WINDOWS\\System32\\ole32.dll"
+  },
+  {
+    "name": "combase.dll",
+    "base": "0x7ffef5820000",
+    "size": 3682304,
+    "path": "C:\\WINDOWS\\System32\\combase.dll"
+  },
+  {
+    "name": "OLEAUT32.dll",
+    "base": "0x7ffef4630000",
+    "size": 888832,
+    "path": "C:\\WINDOWS\\System32\\OLEAUT32.dll"
+  },
+  {
+    "name": "SHELL32.dll",
+    "base": "0x7ffef5d50000",
+    "size": 7880704,
+    "path": "C:\\WINDOWS\\System32\\SHELL32.dll"
+  },
+  {
+    "name": "libc++.whl",
+    "base": "0x7ffecfbf0000",
+    "size": 1740800,
+    "path": "C:\\ProgramData\\Windhawk\\Engine\\Mods\\64\\libc++.whl"
+  },
+  {
+    "name": "libunwind.whl",
+    "base": "0x7ffecfda0000",
+    "size": 237568,
+    "path": "C:\\ProgramData\\Windhawk\\Engine\\Mods\\64\\libunwind.whl"
+  },
+  {
+    "name": "PROPSYS.dll",
+    "base": "0x7ffeef0d0000",
+    "size": 1073152,
+    "path": "C:\\WINDOWS\\SYSTEM32\\PROPSYS.dll"
+  },
+  {
+    "name": "vcruntime140_1.dll",
+    "base": "0x7ffea1a50000",
+    "size": 49152,
+    "path": "E:\\MCLDownload\\ext\\jre-v64-220420\\jdk17\\bin\\vcruntime140_1.dll"
+  },
+  {
+    "name": "msvcp140.dll",
+    "base": "0x7ffdaf230000",
+    "size": 643072,
+    "path": "E:\\MCLDownload\\ext\\jre-v64-220420\\jdk17\\bin\\msvcp140.dll"
+  },
+  {
+    "name": "jvm.dll",
+    "base": "0x7ffdae5e0000",
+    "size": 12873728,
+    "path": "E:\\MCLDownload\\ext\\jre-v64-220420\\jdk17\\bin\\server\\jvm.dll"
+  },
+  {
+    "name": "PSAPI.DLL",
+    "base": "0x7ffef4600000",
+    "size": 32768,
+    "path": "C:\\WINDOWS\\System32\\PSAPI.DLL"
+  },
+  {
+    "name": "WSOCK32.dll",
+    "base": "0x7ffed6b10000",
+    "size": 40960,
+    "path": "C:\\WINDOWS\\SYSTEM32\\WSOCK32.dll"
+  },
+  {
+    "name": "WS2_32.dll",
+    "base": "0x7ffef6550000",
+    "size": 524288,
+    "path": "C:\\WINDOWS\\System32\\WS2_32.dll"
+  },
+  {
+    "name": "VERSION.dll",
+    "base": "0x7ffee4a50000",
+    "size": 45056,
+    "path": "C:\\WINDOWS\\SYSTEM32\\VERSION.dll"
+  },
+  {
+    "name": "WINMM.dll",
+    "base": "0x7ffee45b0000",
+    "size": 221184,
+    "path": "C:\\WINDOWS\\SYSTEM32\\WINMM.dll"
+  },
+  {
+    "name": "kernel.appcore.dll",
+    "base": "0x7ffef2720000",
+    "size": 110592,
+    "path": "C:\\WINDOWS\\SYSTEM32\\kernel.appcore.dll"
+  },
+  {
+    "name": "jimage.dll",
+    "base": "0x7ffe8f610000",
+    "size": 40960,
+    "path": "E:\\MCLDownload\\ext\\jre-v64-220420\\jdk17\\bin\\jimage.dll"
+  },
+  {
+    "name": "DBGHELP.DLL",
+    "base": "0x7ffef0c20000",
+    "size": 2367488,
+    "path": "C:\\WINDOWS\\SYSTEM32\\DBGHELP.DLL"
+  },
+  {
+    "name": "dbgcore.DLL",
+    "base": "0x7ffecc630000",
+    "size": 241664,
+    "path": "C:\\WINDOWS\\SYSTEM32\\dbgcore.DLL"
+  },
+  {
+    "name": "bcryptPrimitives.dll",
+    "base": "0x7ffef4230000",
+    "size": 688128,
+    "path": "C:\\WINDOWS\\System32\\bcryptPrimitives.dll"
+  },
+  {
+    "name": "java.dll",
+    "base": "0x7ffdacba0000",
+    "size": 151552,
+    "path": "E:\\MCLDownload\\ext\\jre-v64-220420\\jdk17\\bin\\java.dll"
+  },
+  {
+    "name": "jsvml.dll",
+    "base": "0x7ffdacac0000",
+    "size": 876544,
+    "path": "E:\\MCLDownload\\ext\\jre-v64-220420\\jdk17\\bin\\jsvml.dll"
+  },
+  {
+    "name": "windows.storage.dll",
+    "base": "0x7ffef1450000",
+    "size": 8912896,
+    "path": "C:\\WINDOWS\\SYSTEM32\\windows.storage.dll"
+  },
+  {
+    "name": "SHCORE.dll",
+    "base": "0x7ffef4500000",
+    "size": 1007616,
+    "path": "C:\\WINDOWS\\System32\\SHCORE.dll"
+  },
+  {
+    "name": "shlwapi.dll",
+    "base": "0x7ffef64e0000",
+    "size": 421888,
+    "path": "C:\\WINDOWS\\System32\\shlwapi.dll"
+  },
+  {
+    "name": "profapi.dll",
+    "base": "0x7ffef37d0000",
+    "size": 167936,
+    "path": "C:\\WINDOWS\\SYSTEM32\\profapi.dll"
+  },
+  {
+    "name": "net.dll",
+    "base": "0x7ffdacaa0000",
+    "size": 102400,
+    "path": "E:\\MCLDownload\\ext\\jre-v64-220420\\jdk17\\bin\\net.dll"
+  },
+  {
+    "name": "WINHTTP.dll",
+    "base": "0x7ffeed1a0000",
+    "size": 1216512,
+    "path": "C:\\WINDOWS\\SYSTEM32\\WINHTTP.dll"
+  },
+  {
+    "name": "mswsock.dll",
+    "base": "0x7ffef2c70000",
+    "size": 442368,
+    "path": "C:\\WINDOWS\\system32\\mswsock.dll"
+  },
+  {
+    "name": "nio.dll",
+    "base": "0x7ffdaca80000",
+    "size": 86016,
+    "path": "E:\\MCLDownload\\ext\\jre-v64-220420\\jdk17\\bin\\nio.dll"
+  },
+  {
+    "name": "zip.dll",
+    "base": "0x7ffdaca60000",
+    "size": 98304,
+    "path": "E:\\MCLDownload\\ext\\jre-v64-220420\\jdk17\\bin\\zip.dll"
+  },
+  {
+    "name": "verify.dll",
+    "base": "0x7ffdd0860000",
+    "size": 65536,
+    "path": "E:\\MCLDownload\\ext\\jre-v64-220420\\jdk17\\bin\\verify.dll"
+  },
+  {
+    "name": "management.dll",
+    "base": "0x7ffdcee00000",
+    "size": 36864,
+    "path": "E:\\MCLDownload\\ext\\jre-v64-220420\\jdk17\\bin\\management.dll"
+  },
+  {
+    "name": "management_ext.dll",
+    "base": "0x7ffdc4d50000",
+    "size": 45056,
+    "path": "E:\\MCLDownload\\ext\\jre-v64-220420\\jdk17\\bin\\management_ext.dll"
+  },
+  {
+    "name": "napinsp.dll",
+    "base": "0x7ffe8a7c0000",
+    "size": 98304,
+    "path": "C:\\WINDOWS\\system32\\napinsp.dll"
+  },
+  {
+    "name": "DNSAPI.dll",
+    "base": "0x7ffef21f0000",
+    "size": 1351680,
+    "path": "C:\\WINDOWS\\SYSTEM32\\DNSAPI.dll"
+  },
+  {
+    "name": "DSPARSE.dll",
+    "base": "0x7ffef2a90000",
+    "size": 53248,
+    "path": "C:\\WINDOWS\\SYSTEM32\\DSPARSE.dll"
+  },
+  {
+    "name": "IPHLPAPI.DLL",
+    "base": "0x7ffef21b0000",
+    "size": 208896,
+    "path": "C:\\WINDOWS\\SYSTEM32\\IPHLPAPI.DLL"
+  },
+  {
+    "name": "NSI.dll",
+    "base": "0x7ffef44f0000",
+    "size": 40960,
+    "path": "C:\\WINDOWS\\System32\\NSI.dll"
+  },
+  {
+    "name": "winrnr.dll",
+    "base": "0x7ffe8a7a0000",
+    "size": 77824,
+    "path": "C:\\WINDOWS\\System32\\winrnr.dll"
+  },
+  {
+    "name": "nlansp_c.dll",
+    "base": "0x7ffe8a730000",
+    "size": 139264,
+    "path": "C:\\WINDOWS\\system32\\nlansp_c.dll"
+  },
+  {
+    "name": "wshbth.dll",
+    "base": "0x7ffee83f0000",
+    "size": 90112,
+    "path": "C:\\WINDOWS\\system32\\wshbth.dll"
+  },
+  {
+    "name": "rasadhlp.dll",
+    "base": "0x7ffeec880000",
+    "size": 45056,
+    "path": "C:\\Windows\\System32\\rasadhlp.dll"
+  },
+  {
+    "name": "fwpuclnt.dll",
+    "base": "0x7ffeedb10000",
+    "size": 548864,
+    "path": "C:\\WINDOWS\\System32\\fwpuclnt.dll"
+  },
+  {
+    "name": "api-ms-win-crt-utility-l1-1-1.dll",
+    "base": "0x7ffd73080000",
+    "size": 43114496,
+    "path": "E:\\MCLDownload\\Game\\.minecraft\\versions\\1.20\\natives\\runtime\\api-ms-win-crt-utility-l1-1-1.dll"
+  },
+  {
+    "name": "CRYPT32.dll",
+    "base": "0x7ffef3fc0000",
+    "size": 1540096,
+    "path": "C:\\WINDOWS\\System32\\CRYPT32.dll"
+  },
+  {
+    "name": "bcrypt.dll",
+    "base": "0x7ffef37a0000",
+    "size": 172032,
+    "path": "C:\\WINDOWS\\SYSTEM32\\bcrypt.dll"
+  },
+  {
+    "name": "libenvsdk.dll",
+    "base": "0x7ffdabad0000",
+    "size": 16257024,
+    "path": "E:\\MCLDownload\\ext\\jre-v64-220420\\jdk17\\bin\\libenvsdk.dll"
+  },
+  {
+    "name": "WTSAPI32.dll",
+    "base": "0x7ffeef320000",
+    "size": 172032,
+    "path": "C:\\WINDOWS\\SYSTEM32\\WTSAPI32.dll"
+  },
+  {
+    "name": "SspiCli.dll",
+    "base": "0x7ffef29c0000",
+    "size": 299008,
+    "path": "C:\\WINDOWS\\SYSTEM32\\SspiCli.dll"
+  },
+  {
+    "name": "ntmarta.dll",
+    "base": "0x7ffef2840000",
+    "size": 221184,
+    "path": "C:\\WINDOWS\\SYSTEM32\\ntmarta.dll"
+  },
+  {
+    "name": "SETUPAPI.DLL",
+    "base": "0x7ffef52e0000",
+    "size": 4747264,
+    "path": "C:\\WINDOWS\\System32\\SETUPAPI.DLL"
+  },
+  {
+    "name": "cfgmgr32.DLL",
+    "base": "0x7ffef3540000",
+    "size": 331776,
+    "path": "C:\\WINDOWS\\SYSTEM32\\cfgmgr32.DLL"
+  },
+  {
+    "name": "dhcpcsvc.DLL",
+    "base": "0x7ffeed2e0000",
+    "size": 151552,
+    "path": "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc.DLL"
+  },
+  {
+    "name": "CRYPTSP.dll",
+    "base": "0x7ffef3070000",
+    "size": 110592,
+    "path": "C:\\WINDOWS\\SYSTEM32\\CRYPTSP.dll"
+  },
+  {
+    "name": "rsaenh.dll",
+    "base": "0x7ffef2680000",
+    "size": 233472,
+    "path": "C:\\WINDOWS\\system32\\rsaenh.dll"
+  },
+  {
+    "name": "CRYPTBASE.dll",
+    "base": "0x7ffef2ed0000",
+    "size": 49152,
+    "path": "C:\\WINDOWS\\SYSTEM32\\CRYPTBASE.dll"
+  },
+  {
+    "name": "Wintrust.dll",
+    "base": "0x7ffef3de0000",
+    "size": 536576,
+    "path": "C:\\WINDOWS\\System32\\Wintrust.dll"
+  },
+  {
+    "name": "MSASN1.dll",
+    "base": "0x7ffef30d0000",
+    "size": 77824,
+    "path": "C:\\WINDOWS\\SYSTEM32\\MSASN1.dll"
+  },
+  {
+    "name": "Normaliz.dll",
+    "base": "0x7ffef4750000",
+    "size": 32768,
+    "path": "C:\\WINDOWS\\System32\\Normaliz.dll"
+  },
+  {
+    "name": "clbcatq.dll",
+    "base": "0x7ffef4820000",
+    "size": 712704,
+    "path": "C:\\WINDOWS\\System32\\clbcatq.dll"
+  },
+  {
+    "name": "wbemprox.dll",
+    "base": "0x7ffed9730000",
+    "size": 73728,
+    "path": "C:\\WINDOWS\\system32\\wbem\\wbemprox.dll"
+  },
+  {
+    "name": "wbemcomn.dll",
+    "base": "0x7ffed96b0000",
+    "size": 499712,
+    "path": "C:\\WINDOWS\\SYSTEM32\\wbemcomn.dll"
+  },
+  {
+    "name": "wbemsvc.dll",
+    "base": "0x7ffed65c0000",
+    "size": 86016,
+    "path": "C:\\WINDOWS\\system32\\wbem\\wbemsvc.dll"
+  },
+  {
+    "name": "fastprox.dll",
+    "base": "0x7ffed5c80000",
+    "size": 995328,
+    "path": "C:\\WINDOWS\\system32\\wbem\\fastprox.dll"
+  },
+  {
+    "name": "amsi.dll",
+    "base": "0x7ffed5030000",
+    "size": 118784,
+    "path": "C:\\WINDOWS\\SYSTEM32\\amsi.dll"
+  },
+  {
+    "name": "USERENV.dll",
+    "base": "0x7ffef2d20000",
+    "size": 208896,
+    "path": "C:\\WINDOWS\\SYSTEM32\\USERENV.dll"
+  },
+  {
+    "name": "dhcpcsvc6.DLL",
+    "base": "0x7ffeed350000",
+    "size": 118784,
+    "path": "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc6.DLL"
+  },
+  {
+    "name": "jna13385752164826592907.dll",
+    "base": "0x7ffdaba90000",
+    "size": 262144,
+    "path": "E:\\MCLDownload\\Game\\.minecraft\\bin\\d4abd45eda44d8516fe1c7a0c4f47a1dd04ab0d1\\jna13385752164826592907.dll"
+  },
+  {
+    "name": "Pdh.dll",
+    "base": "0x7ffed7af0000",
+    "size": 360448,
+    "path": "C:\\WINDOWS\\SYSTEM32\\Pdh.dll"
+  },
+  {
+    "name": "perfos.dll",
+    "base": "0x7ffed6350000",
+    "size": 69632,
+    "path": "C:\\WINDOWS\\System32\\perfos.dll"
+  },
+  {
+    "name": "pfclient.dll",
+    "base": "0x7ffef1d00000",
+    "size": 73728,
+    "path": "C:\\WINDOWS\\SYSTEM32\\pfclient.dll"
+  },
+  {
+    "name": "lwjgl.dll",
+    "base": "0x7ffdaba10000",
+    "size": 479232,
+    "path": "E:\\MCLDownload\\Game\\.minecraft\\bin\\d4abd45eda44d8516fe1c7a0c4f47a1dd04ab0d1\\lwjgl.dll"
+  },
+  {
+    "name": "jemalloc.dll",
+    "base": "0x7ffdab420000",
+    "size": 2461696,
+    "path": "E:\\MCLDownload\\Game\\.minecraft\\bin\\d4abd45eda44d8516fe1c7a0c4f47a1dd04ab0d1\\jemalloc.dll"
+  },
+  {
+    "name": "glfw.dll",
+    "base": "0x7ffed1cf0000",
+    "size": 397312,
+    "path": "E:\\MCLDownload\\Game\\.minecraft\\bin\\d4abd45eda44d8516fe1c7a0c4f47a1dd04ab0d1\\glfw.dll"
+  },
+  {
+    "name": "dinput8.dll",
+    "base": "0x7ffecc6a0000",
+    "size": 307200,
+    "path": "C:\\WINDOWS\\SYSTEM32\\dinput8.dll"
+  },
+  {
+    "name": "xinput1_4.dll",
+    "base": "0x7ffe92040000",
+    "size": 114688,
+    "path": "C:\\WINDOWS\\SYSTEM32\\xinput1_4.dll"
+  },
+  {
+    "name": "DEVOBJ.dll",
+    "base": "0x7ffef3510000",
+    "size": 184320,
+    "path": "C:\\WINDOWS\\SYSTEM32\\DEVOBJ.dll"
+  },
+  {
+    "name": "dwmapi.dll",
+    "base": "0x7ffeefc50000",
+    "size": 192512,
+    "path": "C:\\WINDOWS\\SYSTEM32\\dwmapi.dll"
+  },
+  {
+    "name": "inputhost.dll",
+    "base": "0x7ffeb9dc0000",
+    "size": 1986560,
+    "path": "C:\\WINDOWS\\SYSTEM32\\inputhost.dll"
+  },
+  {
+    "name": "CoreMessaging.dll",
+    "base": "0x7ffeee640000",
+    "size": 1200128,
+    "path": "C:\\WINDOWS\\SYSTEM32\\CoreMessaging.dll"
+  },
+  {
+    "name": "uxtheme.dll",
+    "base": "0x7ffeefa00000",
+    "size": 696320,
+    "path": "C:\\WINDOWS\\system32\\uxtheme.dll"
+  },
+  {
+    "name": "MSCTF.dll",
+    "base": "0x7ffef4390000",
+    "size": 1429504,
+    "path": "C:\\WINDOWS\\System32\\MSCTF.dll"
+  },
+  {
+    "name": "opengl32.dll",
+    "base": "0x7ffee0170000",
+    "size": 1097728,
+    "path": "C:\\WINDOWS\\SYSTEM32\\opengl32.dll"
+  },
+  {
+    "name": "GLU32.dll",
+    "base": "0x7ffee2380000",
+    "size": 184320,
+    "path": "C:\\WINDOWS\\SYSTEM32\\GLU32.dll"
+  },
+  {
+    "name": "dxcore.dll",
+    "base": "0x7ffeefd20000",
+    "size": 278528,
+    "path": "C:\\WINDOWS\\SYSTEM32\\dxcore.dll"
+  },
+  {
+    "name": "windows.staterepositorycore.dll",
+    "base": "0x7ffed5000000",
+    "size": 118784,
+    "path": "C:\\WINDOWS\\SYSTEM32\\windows.staterepositorycore.dll"
+  },
+  {
+    "name": "nvoglv64.dll",
+    "base": "0x7ffd76d30000",
+    "size": 48779264,
+    "path": "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nvami.inf_amd64_46b14a8ba26be7f7\\nvoglv64.dll"
+  },
+  {
+    "name": "cryptnet.dll",
+    "base": "0x7ffedfee0000",
+    "size": 241664,
+    "path": "C:\\WINDOWS\\SYSTEM32\\cryptnet.dll"
+  },
+  {
+    "name": "wldp.dll",
+    "base": "0x7ffef2f70000",
+    "size": 434176,
+    "path": "C:\\WINDOWS\\SYSTEM32\\wldp.dll"
+  },
+  {
+    "name": "drvstore.dll",
+    "base": "0x7ffedfd60000",
+    "size": 1540096,
+    "path": "C:\\WINDOWS\\SYSTEM32\\drvstore.dll"
+  },
+  {
+    "name": "imagehlp.dll",
+    "base": "0x7ffef5bb0000",
+    "size": 131072,
+    "path": "C:\\WINDOWS\\System32\\imagehlp.dll"
+  },
+  {
+    "name": "nvgpucomp64.dll",
+    "base": "0x7ffec3e00000",
+    "size": 98623488,
+    "path": "C:\\WINDOWS\\System32\\DriverStore\\FileRepository\\nvami.inf_amd64_46b14a8ba26be7f7\\nvgpucomp64.dll"
+  },
+  {
+    "name": "nvspcap64.dll",
+    "base": "0x7ffeb96e0000",
+    "size": 1458176,
+    "path": "C:\\WINDOWS\\system32\\nvspcap64.dll"
+  },
+  {
+    "name": "powrprof.dll",
+    "base": "0x7ffef2460000",
+    "size": 385024,
+    "path": "C:\\WINDOWS\\SYSTEM32\\powrprof.dll"
+  },
+  {
+    "name": "UMPDC.dll",
+    "base": "0x7ffef2440000",
+    "size": 81920,
+    "path": "C:\\WINDOWS\\SYSTEM32\\UMPDC.dll"
+  },
+  {
+    "name": "WINSTA.dll",
+    "base": "0x7ffef2060000",
+    "size": 397312,
+    "path": "C:\\WINDOWS\\SYSTEM32\\WINSTA.dll"
+  },
+  {
+    "name": "textinputframework.dll",
+    "base": "0x7ffec3870000",
+    "size": 1343488,
+    "path": "C:\\WINDOWS\\SYSTEM32\\textinputframework.dll"
+  },
+  {
+    "name": "Oleacc.dll",
+    "base": "0x7ffed86d0000",
+    "size": 483328,
+    "path": "C:\\WINDOWS\\system32\\Oleacc.dll"
+  },
+  {
+    "name": "lwjgl_opengl.dll",
+    "base": "0x7ffdab9b0000",
+    "size": 380928,
+    "path": "E:\\MCLDownload\\Game\\.minecraft\\bin\\d4abd45eda44d8516fe1c7a0c4f47a1dd04ab0d1\\lwjgl_opengl.dll"
+  },
+  {
+    "name": "lwjgl_stb.dll",
+    "base": "0x7ffdab920000",
+    "size": 528384,
+    "path": "E:\\MCLDownload\\Game\\.minecraft\\bin\\d4abd45eda44d8516fe1c7a0c4f47a1dd04ab0d1\\lwjgl_stb.dll"
+  },
+  {
+    "name": "mscms.dll",
+    "base": "0x7ffeec3f0000",
+    "size": 782336,
+    "path": "C:\\WINDOWS\\SYSTEM32\\mscms.dll"
+  },
+  {
+    "name": "icm32.dll",
+    "base": "0x7ffe211b0000",
+    "size": 299008,
+    "path": "C:\\WINDOWS\\SYSTEM32\\icm32.dll"
+  },
+  {
+    "name": "perfdisk.dll",
+    "base": "0x7ffe20cb0000",
+    "size": 69632,
+    "path": "C:\\WINDOWS\\System32\\perfdisk.dll"
+  },
+  {
+    "name": "WMICLNT.dll",
+    "base": "0x7ffee9480000",
+    "size": 77824,
+    "path": "C:\\WINDOWS\\System32\\WMICLNT.dll"
+  },
+  {
+    "name": "OpenAL.dll",
+    "base": "0x7ffd9fcc0000",
+    "size": 1667072,
+    "path": "E:\\MCLDownload\\Game\\.minecraft\\bin\\d4abd45eda44d8516fe1c7a0c4f47a1dd04ab0d1\\OpenAL.dll"
+  },
+  {
+    "name": "MMDevApi.dll",
+    "base": "0x7ffee7a70000",
+    "size": 667648,
+    "path": "C:\\WINDOWS\\System32\\MMDevApi.dll"
+  },
+  {
+    "name": "awt.dll",
+    "base": "0x7ffd8c370000",
+    "size": 1630208,
+    "path": "E:\\MCLDownload\\ext\\jre-v64-220420\\jdk17\\bin\\awt.dll"
+  },
+  {
+    "name": "apphelp.dll",
+    "base": "0x7ffeef350000",
+    "size": 655360,
+    "path": "C:\\WINDOWS\\SYSTEM32\\apphelp.dll"
+  },
+  {
+    "name": "sapi.dll",
+    "base": "0x7ffde91b0000",
+    "size": 1519616,
+    "path": "C:\\WINDOWS\\System32\\Speech\\Common\\sapi.dll"
+  },
+  {
+    "name": "sunmscapi.dll",
+    "base": "0x7ffeef410000",
+    "size": 57344,
+    "path": "E:\\MCLDownload\\ext\\jre-v64-220420\\jdk17\\bin\\sunmscapi.dll"
+  },
+  {
+    "name": "ncrypt.dll",
+    "base": "0x7ffef31d0000",
+    "size": 196608,
+    "path": "C:\\WINDOWS\\SYSTEM32\\ncrypt.dll"
+  },
+  {
+    "name": "NTASN1.dll",
+    "base": "0x7ffef3180000",
+    "size": 258048,
+    "path": "C:\\WINDOWS\\SYSTEM32\\NTASN1.dll"
+  },
+  {
+    "name": "wshunix.dll",
+    "base": "0x7ffe91830000",
+    "size": 32768,
+    "path": "C:\\WINDOWS\\system32\\wshunix.dll"
+  },
+  {
+    "name": "CoreUIComponents.dll",
+    "base": "0x7ffee7500000",
+    "size": 3031040,
+    "path": "C:\\WINDOWS\\SYSTEM32\\CoreUIComponents.dll"
+  },
+  {
+    "name": "wintypes.dll",
+    "base": "0x7ffeed580000",
+    "size": 1482752,
+    "path": "C:\\WINDOWS\\SYSTEM32\\wintypes.dll"
+  },
+  {
+    "name": "wetype_tip.dll",
+    "base": "0x7ffe86ba0000",
+    "size": 1396736,
+    "path": "C:\\Windows\\system32\\wetype_tip.dll"
+  },
+  {
+    "name": "wetype_tip_core.dll",
+    "base": "0x7ffe862d0000",
+    "size": 4964352,
+    "path": "C:\\Program Files\\Tencent\\WeType\\WetypeCore_2.1.1.8\\x64\\wetype_tip_core.dll"
+  },
+  {
+    "name": "CrashRpt1500.dll",
+    "base": "0x7ffe86800000",
+    "size": 704512,
+    "path": "C:\\Program Files\\Tencent\\WeType\\WetypeCore_2.1.1.8\\x64\\CrashRpt1500.dll"
+  },
+  {
+    "name": "ktmw32.dll",
+    "base": "0x7ffece3d0000",
+    "size": 45056,
+    "path": "C:\\WINDOWS\\SYSTEM32\\ktmw32.dll"
+  },
+  {
+    "name": "input.dll",
+    "base": "0x7ffe868b0000",
+    "size": 413696,
+    "path": "C:\\WINDOWS\\SYSTEM32\\input.dll"
+  },
+  {
+    "name": "DWrite.dll",
+    "base": "0x7ffef0860000",
+    "size": 2519040,
+    "path": "C:\\WINDOWS\\SYSTEM32\\DWrite.dll"
+  },
+  {
+    "name": "d2d1.dll",
+    "base": "0x7ffef0220000",
+    "size": 6529024,
+    "path": "C:\\WINDOWS\\SYSTEM32\\d2d1.dll"
+  },
+  {
+    "name": "MaxHook.dll",
+    "base": "0x180000000",
+    "size": 48496640,
+    "path": "E:\\MCLDownload\\Game\\.minecraft\\native\\MaxHook.dll"
+  },
+  {
+    "name": "gpapi.dll",
+    "base": "0x7ffef2ce0000",
+    "size": 192512,
+    "path": "C:\\WINDOWS\\SYSTEM32\\gpapi.dll"
+  },
+  {
+    "name": "WINNSI.DLL",
+    "base": "0x7ffeefcb0000",
+    "size": 57344,
+    "path": "C:\\WINDOWS\\SYSTEM32\\WINNSI.DLL"
+  },
+  {
+    "name": "AUDIOSES.DLL",
+    "base": "0x7ffede340000",
+    "size": 1785856,
+    "path": "C:\\WINDOWS\\SYSTEM32\\AUDIOSES.DLL"
+  },
+  {
+    "name": "resourcepolicyclient.dll",
+    "base": "0x7ffeeffc0000",
+    "size": 81920,
+    "path": "C:\\WINDOWS\\SYSTEM32\\resourcepolicyclient.dll"
+  },
+  {
+    "name": "urlmon.dll",
+    "base": "0x7ffed63e0000",
+    "size": 1953792,
+    "path": "C:\\WINDOWS\\system32\\urlmon.dll"
+  },
+  {
+    "name": "iertutil.dll",
+    "base": "0x7ffed4a80000",
+    "size": 2904064,
+    "path": "C:\\WINDOWS\\SYSTEM32\\iertutil.dll"
+  },
+  {
+    "name": "netutils.dll",
+    "base": "0x7ffef1ea0000",
+    "size": 53248,
+    "path": "C:\\WINDOWS\\SYSTEM32\\netutils.dll"
+  },
+  {
+    "name": "srvcli.dll",
+    "base": "0x7ffed5050000",
+    "size": 167936,
+    "path": "C:\\WINDOWS\\SYSTEM32\\srvcli.dll"
+  },
+  {
+    "name": "webio.dll",
+    "base": "0x7ffedff20000",
+    "size": 839680,
+    "path": "C:\\WINDOWS\\SYSTEM32\\webio.dll"
+  },
+  {
+    "name": "schannel.DLL",
+    "base": "0x7ffef2550000",
+    "size": 806912,
+    "path": "C:\\WINDOWS\\system32\\schannel.DLL"
+  },
+  {
+    "name": "ncryptsslp.dll",
+    "base": "0x7ffed0050000",
+    "size": 294912,
+    "path": "C:\\WINDOWS\\system32\\ncryptsslp.dll"
+  },
+  {
+    "name": "DPAPI.DLL",
+    "base": "0x7ffef35c0000",
+    "size": 40960,
+    "path": "C:\\WINDOWS\\SYSTEM32\\DPAPI.DLL"
+  }
+]

@@ -1,0 +1,2014 @@
+{
+  "schema": "maxhook.offline-vm-differential/v1",
+  "baseline": "target\\diff_key_baseline_1500k.json",
+  "variant": "target\\diff_key_byte1bit0_1500k.json",
+  "jump_count": 4096,
+  "instruction_range": [
+    214165,
+    1499756
+  ],
+  "decoded_key_reads": {
+    "baseline": [
+      {
+        "instruction": 1404053,
+        "rip": "0x1805d0c36",
+        "address": "0x200001000e0",
+        "offset": 0,
+        "size": 8,
+        "value": "0x0",
+        "vm_jump_count": 4096,
+        "vip": "0x181be2ccf",
+        "key_low32": "0xffff012f"
+      },
+      {
+        "instruction": 1404053,
+        "rip": "0x1805d0c36",
+        "address": "0x200001000e8",
+        "offset": 8,
+        "size": 8,
+        "value": "0x0",
+        "vm_jump_count": 4096,
+        "vip": "0x181be2ccf",
+        "key_low32": "0xffff012f"
+      },
+      {
+        "instruction": 1404054,
+        "rip": "0x1805d0c3a",
+        "address": "0x200001000f0",
+        "offset": 16,
+        "size": 8,
+        "value": "0x0",
+        "vm_jump_count": 4096,
+        "vip": "0x181be2ccf",
+        "key_low32": "0xffff012f"
+      },
+      {
+        "instruction": 1404054,
+        "rip": "0x1805d0c3a",
+        "address": "0x200001000f8",
+        "offset": 24,
+        "size": 8,
+        "value": "0x0",
+        "vm_jump_count": 4096,
+        "vip": "0x181be2ccf",
+        "key_low32": "0xffff012f"
+      }
+    ],
+    "variant": [
+      {
+        "instruction": 1404053,
+        "rip": "0x1805d0c36",
+        "address": "0x200001000e0",
+        "offset": 0,
+        "size": 8,
+        "value": "0x0",
+        "vm_jump_count": 4096,
+        "vip": "0x181be2ccf",
+        "key_low32": "0xffff012f"
+      },
+      {
+        "instruction": 1404053,
+        "rip": "0x1805d0c36",
+        "address": "0x200001000e8",
+        "offset": 8,
+        "size": 8,
+        "value": "0x0",
+        "vm_jump_count": 4096,
+        "vip": "0x181be2ccf",
+        "key_low32": "0xffff012f"
+      },
+      {
+        "instruction": 1404054,
+        "rip": "0x1805d0c3a",
+        "address": "0x200001000f0",
+        "offset": 16,
+        "size": 8,
+        "value": "0x0",
+        "vm_jump_count": 4096,
+        "vip": "0x181be2ccf",
+        "key_low32": "0xffff012f"
+      },
+      {
+        "instruction": 1404054,
+        "rip": "0x1805d0c3a",
+        "address": "0x200001000f8",
+        "offset": 24,
+        "size": 8,
+        "value": "0x0",
+        "vm_jump_count": 4096,
+        "vip": "0x181be2ccf",
+        "key_low32": "0xffff012f"
+      }
+    ]
+  },
+  "first_any_difference_step": 3980,
+  "control_flow_difference_count": 0,
+  "control_flow_identical": true,
+  "differing_steps": 116,
+  "first_context_influence": {
+    "0xe": {
+      "step": 3980,
+      "instruction": 1436211,
+      "baseline": 187,
+      "variant": 186,
+      "entry_target": "0x1809d3bed",
+      "entry_target_body": "0x180aa78e0",
+      "producer_target": "0x18098abf8",
+      "producer_body": "0x180aa57d7",
+      "producer_exit_source": "0x180b6d8c9",
+      "vip": "0x181be70bd"
+    },
+    "0x10e": {
+      "step": 3983,
+      "instruction": 1438276,
+      "baseline": 141,
+      "variant": 140,
+      "entry_target": "0x18098b0a7",
+      "entry_target_body": "0x1809ba2f0",
+      "producer_target": "0x1809820f7",
+      "producer_body": "0x1809a62e0",
+      "producer_exit_source": "0x180bd4909",
+      "vip": "0x181beb0c9"
+    },
+    "0x16f": {
+      "step": 3983,
+      "instruction": 1438276,
+      "baseline": 134,
+      "variant": 130,
+      "entry_target": "0x18098b0a7",
+      "entry_target_body": "0x1809ba2f0",
+      "producer_target": "0x1809820f7",
+      "producer_body": "0x1809a62e0",
+      "producer_exit_source": "0x180bd4909",
+      "vip": "0x181beb0c9"
+    },
+    "0x152": {
+      "step": 3986,
+      "instruction": 1439960,
+      "baseline": 187,
+      "variant": 186,
+      "entry_target": "0x180985196",
+      "entry_target_body": "0x1809e62cd",
+      "producer_target": "0x180982192",
+      "producer_body": "0x180aa85f2",
+      "producer_exit_source": "0x180a71631",
+      "vip": "0x181be00a0"
+    },
+    "0x15a": {
+      "step": 3997,
+      "instruction": 1447043,
+      "baseline": 231,
+      "variant": 230,
+      "entry_target": "0x180992ae8",
+      "entry_target_body": "0x1809e02e6",
+      "producer_target": "0x1809815f8",
+      "producer_body": "0x18099dfee",
+      "producer_exit_source": "0x180bceeba",
+      "vip": "0x181beaacf"
+    }
+  },
+  "first_stack_influence": {
+    "0x91": {
+      "step": 3986,
+      "instruction": 1439960,
+      "baseline": 141,
+      "variant": 140
+    },
+    "0x51": {
+      "step": 3991,
+      "instruction": 1443476,
+      "baseline": 231,
+      "variant": 230
+    }
+  },
+  "affected_target_counts": {
+    "0x1809d3bed": 20,
+    "0x1809819de": 5,
+    "0x1809820f7": 5,
+    "0x18098b0a7": 5,
+    "0x180982192": 5,
+    "0x180985196": 13,
+    "0x1809d3995": 5,
+    "0x1809d5920": 5,
+    "0x180982f45": 5,
+    "0x1809815f8": 8,
+    "0x18099fd6c": 4,
+    "0x1809dbb1a": 4,
+    "0x180992ae8": 4,
+    "0x18098c63d": 4,
+    "0x1809876d0": 4,
+    "0x180988e03": 4,
+    "0x1809ceaf1": 4,
+    "0x1809851af": 4,
+    "0x18099412c": 4,
+    "0x18098abf8": 4
+  },
+  "timeline": [
+    {
+      "step": 3980,
+      "instruction": 1436211,
+      "source": "0x180b6d8c9",
+      "target": "0x1809d3bed",
+      "vip": "0x181be70bd",
+      "context_offsets": [
+        "0xe"
+      ],
+      "stack_offsets": [],
+      "registers": [],
+      "new_context_offsets": [
+        "0xe"
+      ],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 3981,
+      "instruction": 1436542,
+      "source": "0x180aa7fa4",
+      "target": "0x1809819de",
+      "vip": "0x181be9590",
+      "context_offsets": [
+        "0xe"
+      ],
+      "stack_offsets": [],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 3982,
+      "instruction": 1436939,
+      "source": "0x180a3569d",
+      "target": "0x1809820f7",
+      "vip": "0x181be9103",
+      "context_offsets": [
+        "0xe"
+      ],
+      "stack_offsets": [],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 3983,
+      "instruction": 1438276,
+      "source": "0x180bd4909",
+      "target": "0x18098b0a7",
+      "vip": "0x181beb0c9",
+      "context_offsets": [
+        "0xe",
+        "0x10e",
+        "0x16f"
+      ],
+      "stack_offsets": [],
+      "registers": [],
+      "new_context_offsets": [
+        "0x10e",
+        "0x16f"
+      ],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 3984,
+      "instruction": 1438590,
+      "source": "0x1809ba93d",
+      "target": "0x1809d3bed",
+      "vip": "0x181bed2e4",
+      "context_offsets": [
+        "0xe",
+        "0x10e",
+        "0x16f"
+      ],
+      "stack_offsets": [],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 3985,
+      "instruction": 1438921,
+      "source": "0x180aa7fa4",
+      "target": "0x180982192",
+      "vip": "0x181bec998",
+      "context_offsets": [
+        "0xe",
+        "0x10e",
+        "0x16f"
+      ],
+      "stack_offsets": [],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 3986,
+      "instruction": 1439960,
+      "source": "0x180a71631",
+      "target": "0x180985196",
+      "vip": "0x181be00a0",
+      "context_offsets": [
+        "0x10e",
+        "0x152",
+        "0x16f"
+      ],
+      "stack_offsets": [
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [
+        "0x152"
+      ],
+      "new_stack_offsets": [
+        "0x91"
+      ]
+    },
+    {
+      "step": 3987,
+      "instruction": 1440267,
+      "source": "0x1809e6918",
+      "target": "0x1809d3995",
+      "vip": "0x181be4a2b",
+      "context_offsets": [
+        "0x10e",
+        "0x152",
+        "0x16f"
+      ],
+      "stack_offsets": [
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 3988,
+      "instruction": 1440640,
+      "source": "0x180a8344d",
+      "target": "0x1809d5920",
+      "vip": "0x181be141c",
+      "context_offsets": [
+        "0x152",
+        "0x16f"
+      ],
+      "stack_offsets": [
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 3989,
+      "instruction": 1442160,
+      "source": "0x180bb2776",
+      "target": "0x1809d3bed",
+      "vip": "0x181be7e8c",
+      "context_offsets": [
+        "0x10e",
+        "0x152",
+        "0x16f"
+      ],
+      "stack_offsets": [
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 3990,
+      "instruction": 1442491,
+      "source": "0x180aa7fa4",
+      "target": "0x180982f45",
+      "vip": "0x181be4fe1",
+      "context_offsets": [
+        "0x10e",
+        "0x152",
+        "0x16f"
+      ],
+      "stack_offsets": [
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 3991,
+      "instruction": 1443476,
+      "source": "0x180b6d8c9",
+      "target": "0x1809d3bed",
+      "vip": "0x181be364b",
+      "context_offsets": [
+        "0x10e",
+        "0x152",
+        "0x16f"
+      ],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": [
+        "0x51"
+      ]
+    },
+    {
+      "step": 3992,
+      "instruction": 1443807,
+      "source": "0x180aa7fa4",
+      "target": "0x1809815f8",
+      "vip": "0x181bea52b",
+      "context_offsets": [
+        "0x10e",
+        "0x152",
+        "0x16f"
+      ],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 3993,
+      "instruction": 1444727,
+      "source": "0x1809ba93d",
+      "target": "0x18099fd6c",
+      "vip": "0x181be7842",
+      "context_offsets": [
+        "0x10e",
+        "0x16f"
+      ],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 3994,
+      "instruction": 1445097,
+      "source": "0x180a46efd",
+      "target": "0x1809dbb1a",
+      "vip": "0x181be3045",
+      "context_offsets": [
+        "0x10e"
+      ],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 3995,
+      "instruction": 1445769,
+      "source": "0x180a2e470",
+      "target": "0x180985196",
+      "vip": "0x181be5de6",
+      "context_offsets": [
+        "0x10e"
+      ],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 3996,
+      "instruction": 1446076,
+      "source": "0x1809e6918",
+      "target": "0x1809815f8",
+      "vip": "0x181be1770",
+      "context_offsets": [
+        "0x10e"
+      ],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 3997,
+      "instruction": 1447043,
+      "source": "0x180bceeba",
+      "target": "0x180992ae8",
+      "vip": "0x181beaacf",
+      "context_offsets": [
+        "0x15a"
+      ],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [
+        "0x15a"
+      ],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 3998,
+      "instruction": 1447352,
+      "source": "0x1809e098b",
+      "target": "0x18098c63d",
+      "vip": "0x181be3a6c",
+      "context_offsets": [
+        "0x15a"
+      ],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 3999,
+      "instruction": 1447513,
+      "source": "0x1809a523c",
+      "target": "0x1809876d0",
+      "vip": "0x181be7fac",
+      "context_offsets": [
+        "0x10e"
+      ],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4000,
+      "instruction": 1447914,
+      "source": "0x180bc0b69",
+      "target": "0x180988e03",
+      "vip": "0x181be9ded",
+      "context_offsets": [
+        "0x10e"
+      ],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4001,
+      "instruction": 1448133,
+      "source": "0x180bc4963",
+      "target": "0x1809ceaf1",
+      "vip": "0x181be122d",
+      "context_offsets": [
+        "0x10e"
+      ],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4002,
+      "instruction": 1448380,
+      "source": "0x1809d2196",
+      "target": "0x1809851af",
+      "vip": "0x181be8788",
+      "context_offsets": [
+        "0x10e"
+      ],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4003,
+      "instruction": 1448730,
+      "source": "0x180bd4909",
+      "target": "0x18099412c",
+      "vip": "0x181be8245",
+      "context_offsets": [
+        "0x10e"
+      ],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4004,
+      "instruction": 1449091,
+      "source": "0x180bceeba",
+      "target": "0x180985196",
+      "vip": "0x181beb014",
+      "context_offsets": [
+        "0x10e"
+      ],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4005,
+      "instruction": 1449398,
+      "source": "0x1809e6918",
+      "target": "0x18098abf8",
+      "vip": "0x181be1445",
+      "context_offsets": [
+        "0x10e"
+      ],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4006,
+      "instruction": 1450281,
+      "source": "0x180b6d8c9",
+      "target": "0x1809d3bed",
+      "vip": "0x181be70bd",
+      "context_offsets": [
+        "0x10e"
+      ],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4007,
+      "instruction": 1450612,
+      "source": "0x180aa7fa4",
+      "target": "0x1809819de",
+      "vip": "0x181be9590",
+      "context_offsets": [
+        "0x10e"
+      ],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4008,
+      "instruction": 1451009,
+      "source": "0x180a3569d",
+      "target": "0x1809820f7",
+      "vip": "0x181be9103",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4009,
+      "instruction": 1452346,
+      "source": "0x180bd4909",
+      "target": "0x18098b0a7",
+      "vip": "0x181beb0c9",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4010,
+      "instruction": 1452660,
+      "source": "0x1809ba93d",
+      "target": "0x1809d3bed",
+      "vip": "0x181bed2e4",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4011,
+      "instruction": 1452991,
+      "source": "0x180aa7fa4",
+      "target": "0x180982192",
+      "vip": "0x181bec998",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4012,
+      "instruction": 1454030,
+      "source": "0x180a71631",
+      "target": "0x180985196",
+      "vip": "0x181be00a0",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4013,
+      "instruction": 1454337,
+      "source": "0x1809e6918",
+      "target": "0x1809d3995",
+      "vip": "0x181be4a2b",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4014,
+      "instruction": 1454710,
+      "source": "0x180a8344d",
+      "target": "0x1809d5920",
+      "vip": "0x181be141c",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4015,
+      "instruction": 1456230,
+      "source": "0x180bb2776",
+      "target": "0x1809d3bed",
+      "vip": "0x181be7e8c",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4016,
+      "instruction": 1456561,
+      "source": "0x180aa7fa4",
+      "target": "0x180982f45",
+      "vip": "0x181be4fe1",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4017,
+      "instruction": 1457546,
+      "source": "0x180b6d8c9",
+      "target": "0x1809d3bed",
+      "vip": "0x181be364b",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4018,
+      "instruction": 1457877,
+      "source": "0x180aa7fa4",
+      "target": "0x1809815f8",
+      "vip": "0x181bea52b",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4019,
+      "instruction": 1458797,
+      "source": "0x1809ba93d",
+      "target": "0x18099fd6c",
+      "vip": "0x181be7842",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4020,
+      "instruction": 1459167,
+      "source": "0x180a46efd",
+      "target": "0x1809dbb1a",
+      "vip": "0x181be3045",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4021,
+      "instruction": 1459839,
+      "source": "0x180a2e470",
+      "target": "0x180985196",
+      "vip": "0x181be5de6",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4022,
+      "instruction": 1460146,
+      "source": "0x1809e6918",
+      "target": "0x1809815f8",
+      "vip": "0x181be1770",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4023,
+      "instruction": 1461113,
+      "source": "0x180bceeba",
+      "target": "0x180992ae8",
+      "vip": "0x181beaacf",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4024,
+      "instruction": 1461422,
+      "source": "0x1809e098b",
+      "target": "0x18098c63d",
+      "vip": "0x181be3a6c",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4025,
+      "instruction": 1461583,
+      "source": "0x1809a523c",
+      "target": "0x1809876d0",
+      "vip": "0x181be7fac",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4026,
+      "instruction": 1461984,
+      "source": "0x180bc0b69",
+      "target": "0x180988e03",
+      "vip": "0x181be9ded",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4027,
+      "instruction": 1462203,
+      "source": "0x180bc4963",
+      "target": "0x1809ceaf1",
+      "vip": "0x181be122d",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4028,
+      "instruction": 1462450,
+      "source": "0x1809d2196",
+      "target": "0x1809851af",
+      "vip": "0x181be8788",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4029,
+      "instruction": 1462800,
+      "source": "0x180bd4909",
+      "target": "0x18099412c",
+      "vip": "0x181be8245",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4030,
+      "instruction": 1463161,
+      "source": "0x180bceeba",
+      "target": "0x180985196",
+      "vip": "0x181beb014",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4031,
+      "instruction": 1463468,
+      "source": "0x1809e6918",
+      "target": "0x18098abf8",
+      "vip": "0x181be1445",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4032,
+      "instruction": 1464351,
+      "source": "0x180b6d8c9",
+      "target": "0x1809d3bed",
+      "vip": "0x181be70bd",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4033,
+      "instruction": 1464682,
+      "source": "0x180aa7fa4",
+      "target": "0x1809819de",
+      "vip": "0x181be9590",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4034,
+      "instruction": 1465079,
+      "source": "0x180a3569d",
+      "target": "0x1809820f7",
+      "vip": "0x181be9103",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4035,
+      "instruction": 1466416,
+      "source": "0x180bd4909",
+      "target": "0x18098b0a7",
+      "vip": "0x181beb0c9",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4036,
+      "instruction": 1466730,
+      "source": "0x1809ba93d",
+      "target": "0x1809d3bed",
+      "vip": "0x181bed2e4",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4037,
+      "instruction": 1467061,
+      "source": "0x180aa7fa4",
+      "target": "0x180982192",
+      "vip": "0x181bec998",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4038,
+      "instruction": 1468100,
+      "source": "0x180a71631",
+      "target": "0x180985196",
+      "vip": "0x181be00a0",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4039,
+      "instruction": 1468407,
+      "source": "0x1809e6918",
+      "target": "0x1809d3995",
+      "vip": "0x181be4a2b",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4040,
+      "instruction": 1468780,
+      "source": "0x180a8344d",
+      "target": "0x1809d5920",
+      "vip": "0x181be141c",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4041,
+      "instruction": 1470300,
+      "source": "0x180bb2776",
+      "target": "0x1809d3bed",
+      "vip": "0x181be7e8c",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4042,
+      "instruction": 1470631,
+      "source": "0x180aa7fa4",
+      "target": "0x180982f45",
+      "vip": "0x181be4fe1",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4043,
+      "instruction": 1471616,
+      "source": "0x180b6d8c9",
+      "target": "0x1809d3bed",
+      "vip": "0x181be364b",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4044,
+      "instruction": 1471947,
+      "source": "0x180aa7fa4",
+      "target": "0x1809815f8",
+      "vip": "0x181bea52b",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4045,
+      "instruction": 1472867,
+      "source": "0x1809ba93d",
+      "target": "0x18099fd6c",
+      "vip": "0x181be7842",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4046,
+      "instruction": 1473237,
+      "source": "0x180a46efd",
+      "target": "0x1809dbb1a",
+      "vip": "0x181be3045",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4047,
+      "instruction": 1473909,
+      "source": "0x180a2e470",
+      "target": "0x180985196",
+      "vip": "0x181be5de6",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4048,
+      "instruction": 1474216,
+      "source": "0x1809e6918",
+      "target": "0x1809815f8",
+      "vip": "0x181be1770",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4049,
+      "instruction": 1475183,
+      "source": "0x180bceeba",
+      "target": "0x180992ae8",
+      "vip": "0x181beaacf",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4050,
+      "instruction": 1475492,
+      "source": "0x1809e098b",
+      "target": "0x18098c63d",
+      "vip": "0x181be3a6c",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4051,
+      "instruction": 1475653,
+      "source": "0x1809a523c",
+      "target": "0x1809876d0",
+      "vip": "0x181be7fac",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4052,
+      "instruction": 1476054,
+      "source": "0x180bc0b69",
+      "target": "0x180988e03",
+      "vip": "0x181be9ded",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4053,
+      "instruction": 1476273,
+      "source": "0x180bc4963",
+      "target": "0x1809ceaf1",
+      "vip": "0x181be122d",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4054,
+      "instruction": 1476520,
+      "source": "0x1809d2196",
+      "target": "0x1809851af",
+      "vip": "0x181be8788",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4055,
+      "instruction": 1476870,
+      "source": "0x180bd4909",
+      "target": "0x18099412c",
+      "vip": "0x181be8245",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4056,
+      "instruction": 1477231,
+      "source": "0x180bceeba",
+      "target": "0x180985196",
+      "vip": "0x181beb014",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4057,
+      "instruction": 1477538,
+      "source": "0x1809e6918",
+      "target": "0x18098abf8",
+      "vip": "0x181be1445",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4058,
+      "instruction": 1478421,
+      "source": "0x180b6d8c9",
+      "target": "0x1809d3bed",
+      "vip": "0x181be70bd",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4059,
+      "instruction": 1478752,
+      "source": "0x180aa7fa4",
+      "target": "0x1809819de",
+      "vip": "0x181be9590",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4060,
+      "instruction": 1479149,
+      "source": "0x180a3569d",
+      "target": "0x1809820f7",
+      "vip": "0x181be9103",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4061,
+      "instruction": 1480486,
+      "source": "0x180bd4909",
+      "target": "0x18098b0a7",
+      "vip": "0x181beb0c9",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4062,
+      "instruction": 1480800,
+      "source": "0x1809ba93d",
+      "target": "0x1809d3bed",
+      "vip": "0x181bed2e4",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4063,
+      "instruction": 1481131,
+      "source": "0x180aa7fa4",
+      "target": "0x180982192",
+      "vip": "0x181bec998",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4064,
+      "instruction": 1482170,
+      "source": "0x180a71631",
+      "target": "0x180985196",
+      "vip": "0x181be00a0",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4065,
+      "instruction": 1482477,
+      "source": "0x1809e6918",
+      "target": "0x1809d3995",
+      "vip": "0x181be4a2b",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4066,
+      "instruction": 1482850,
+      "source": "0x180a8344d",
+      "target": "0x1809d5920",
+      "vip": "0x181be141c",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4067,
+      "instruction": 1484370,
+      "source": "0x180bb2776",
+      "target": "0x1809d3bed",
+      "vip": "0x181be7e8c",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4068,
+      "instruction": 1484701,
+      "source": "0x180aa7fa4",
+      "target": "0x180982f45",
+      "vip": "0x181be4fe1",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4069,
+      "instruction": 1485686,
+      "source": "0x180b6d8c9",
+      "target": "0x1809d3bed",
+      "vip": "0x181be364b",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4070,
+      "instruction": 1486017,
+      "source": "0x180aa7fa4",
+      "target": "0x1809815f8",
+      "vip": "0x181bea52b",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4071,
+      "instruction": 1486937,
+      "source": "0x1809ba93d",
+      "target": "0x18099fd6c",
+      "vip": "0x181be7842",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4072,
+      "instruction": 1487307,
+      "source": "0x180a46efd",
+      "target": "0x1809dbb1a",
+      "vip": "0x181be3045",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4073,
+      "instruction": 1487979,
+      "source": "0x180a2e470",
+      "target": "0x180985196",
+      "vip": "0x181be5de6",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4074,
+      "instruction": 1488286,
+      "source": "0x1809e6918",
+      "target": "0x1809815f8",
+      "vip": "0x181be1770",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4075,
+      "instruction": 1489253,
+      "source": "0x180bceeba",
+      "target": "0x180992ae8",
+      "vip": "0x181beaacf",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4076,
+      "instruction": 1489562,
+      "source": "0x1809e098b",
+      "target": "0x18098c63d",
+      "vip": "0x181be3a6c",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4077,
+      "instruction": 1489723,
+      "source": "0x1809a523c",
+      "target": "0x1809876d0",
+      "vip": "0x181be7fac",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4078,
+      "instruction": 1490124,
+      "source": "0x180bc0b69",
+      "target": "0x180988e03",
+      "vip": "0x181be9ded",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4079,
+      "instruction": 1490343,
+      "source": "0x180bc4963",
+      "target": "0x1809ceaf1",
+      "vip": "0x181be122d",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4080,
+      "instruction": 1490590,
+      "source": "0x1809d2196",
+      "target": "0x1809851af",
+      "vip": "0x181be8788",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4081,
+      "instruction": 1490940,
+      "source": "0x180bd4909",
+      "target": "0x18099412c",
+      "vip": "0x181be8245",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4082,
+      "instruction": 1491301,
+      "source": "0x180bceeba",
+      "target": "0x180985196",
+      "vip": "0x181beb014",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4083,
+      "instruction": 1491608,
+      "source": "0x1809e6918",
+      "target": "0x18098abf8",
+      "vip": "0x181be1445",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4084,
+      "instruction": 1492491,
+      "source": "0x180b6d8c9",
+      "target": "0x1809d3bed",
+      "vip": "0x181be70bd",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4085,
+      "instruction": 1492822,
+      "source": "0x180aa7fa4",
+      "target": "0x1809819de",
+      "vip": "0x181be9590",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4086,
+      "instruction": 1493219,
+      "source": "0x180a3569d",
+      "target": "0x1809820f7",
+      "vip": "0x181be9103",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4087,
+      "instruction": 1494556,
+      "source": "0x180bd4909",
+      "target": "0x18098b0a7",
+      "vip": "0x181beb0c9",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4088,
+      "instruction": 1494870,
+      "source": "0x1809ba93d",
+      "target": "0x1809d3bed",
+      "vip": "0x181bed2e4",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4089,
+      "instruction": 1495201,
+      "source": "0x180aa7fa4",
+      "target": "0x180982192",
+      "vip": "0x181bec998",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4090,
+      "instruction": 1496240,
+      "source": "0x180a71631",
+      "target": "0x180985196",
+      "vip": "0x181be00a0",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4091,
+      "instruction": 1496547,
+      "source": "0x1809e6918",
+      "target": "0x1809d3995",
+      "vip": "0x181be4a2b",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4092,
+      "instruction": 1496920,
+      "source": "0x180a8344d",
+      "target": "0x1809d5920",
+      "vip": "0x181be141c",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4093,
+      "instruction": 1498440,
+      "source": "0x180bb2776",
+      "target": "0x1809d3bed",
+      "vip": "0x181be7e8c",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4094,
+      "instruction": 1498771,
+      "source": "0x180aa7fa4",
+      "target": "0x180982f45",
+      "vip": "0x181be4fe1",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    },
+    {
+      "step": 4095,
+      "instruction": 1499756,
+      "source": "0x180b6d8c9",
+      "target": "0x1809d3bed",
+      "vip": "0x181be364b",
+      "context_offsets": [],
+      "stack_offsets": [
+        "0x51",
+        "0x91"
+      ],
+      "registers": [],
+      "new_context_offsets": [],
+      "new_stack_offsets": []
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "schema": "maxhook.encrypt-boundary.capture/v1",
+  "pid": 3404,
+  "finished_at": "2026-08-14T01:23:12.909364+08:00",
+  "sensitive_plaintext_and_key_material": true,
+  "event_count": 16,
+  "call_count": 2,
+  "complete_calls": 0,
+  "calls": [
+    {
+      "call_id": "1",
+      "thread_ids": [
+        39504
+      ],
+      "return_address": null,
+      "complete_inputs": false,
+      "complete_outputs": false,
+      "strings": [],
+      "errors": []
+    },
+    {
+      "call_id": "2",
+      "thread_ids": [
+        39504
+      ],
+      "return_address": null,
+      "complete_inputs": false,
+      "complete_outputs": false,
+      "strings": [],
+      "errors": []
+    }
+  ]
+}

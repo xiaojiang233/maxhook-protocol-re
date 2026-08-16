@@ -1,0 +1,70 @@
+{
+  "schema": "maxhook.report-thread-chain/v1",
+  "evidence": [
+    {
+      "file": "region_0000005962cf8000.bin",
+      "offset": "0x7948",
+      "va": "0x5962cff948",
+      "value": "0x1804bb305",
+      "expected": "0x1804bb305",
+      "match": true
+    },
+    {
+      "file": "region_0000005962cf8000.bin",
+      "offset": "0x79a8",
+      "va": "0x5962cff9a8",
+      "value": "0x1805af5b7",
+      "expected": "0x1805af5b7",
+      "match": true
+    },
+    {
+      "file": "region_0000005962cf8000.bin",
+      "offset": "0x7980",
+      "va": "0x5962cff980",
+      "value": "0x1efb5672040",
+      "expected": "0x1efb5672040",
+      "match": true
+    },
+    {
+      "file": "region_000001efb5663000.bin",
+      "offset": "0xf040",
+      "va": "0x1efb5672040",
+      "value": "0x1804bb1b0",
+      "expected": "0x1804bb1b0",
+      "match": true
+    },
+    {
+      "file": "region_000001efb5663000.bin",
+      "offset": "0xf048",
+      "va": "0x1efb5672048",
+      "value": "0x1efa78e4e60",
+      "expected": "0x1efa78e4e60",
+      "match": true
+    },
+    {
+      "file": "region_000001efa7840000.bin",
+      "offset": "0xa4e60",
+      "va": "0x1efa78e4e60",
+      "value": "0x18089ba70",
+      "expected": "0x18089ba70",
+      "match": true
+    },
+    {
+      "file": "region_000001efa7840000.bin",
+      "offset": "0xa4e68",
+      "va": "0x1efa78e4e68",
+      "value": "0x1804b67a0",
+      "expected": "0x1804b67a0",
+      "match": true
+    }
+  ],
+  "interpretation": {
+    "thread_callable": "0x1efb5672040",
+    "thread_function": "0x1804bb1b0",
+    "thread_argument": "0x1efa78e4e60",
+    "worker_clear_entry": "0x1804b67a0",
+    "worker_vm_entry": "0x181a841d3",
+    "outer_virtual_call_return": "0x1804bb305",
+    "thread_bootstrap_return": "0x1805af5b7"
+  }
+}

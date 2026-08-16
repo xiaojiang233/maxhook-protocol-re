@@ -1,0 +1,24 @@
+--- 域名 ---
+schemas.microsoft.com
+
+--- IP ---
+
+--- 事件数据 (去重) ---
+    8192
+83951626
+   26200
+      16
+  156250
+       0
+0x0
+       1
+       8
+    2496
+0xA
+0x7
+134310668805000000
+10000000
+134310728335753026
+0x1
+winhttptrace
+E:\Coding\S1mple\target\etw_out\winhttp.etl

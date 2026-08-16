@@ -1,0 +1,1322 @@
+{
+  "dump_dir": "E:\\Coding\\S1mple\\target\\dump_out\\41264",
+  "literal_hits": [
+    {
+      "kind": "native_url",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_0000005962cf8000.bin",
+      "file_offset": 30832,
+      "file_offset_hex": "0x7870",
+      "virtual_address": 383909886064,
+      "virtual_address_hex": "0x5962cff870"
+    },
+    {
+      "kind": "motherboard_count",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_0000005962cf8000.bin",
+      "file_offset": 30000,
+      "file_offset_hex": "0x7530",
+      "virtual_address": 383909885232,
+      "virtual_address_hex": "0x5962cff530"
+    },
+    {
+      "kind": "mac_count",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_0000005962cf8000.bin",
+      "file_offset": 30032,
+      "file_offset_hex": "0x7550",
+      "virtual_address": 383909885264,
+      "virtual_address_hex": "0x5962cff550"
+    },
+    {
+      "kind": "disk_count",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_0000005962cf8000.bin",
+      "file_offset": 30048,
+      "file_offset_hex": "0x7560",
+      "virtual_address": 383909885280,
+      "virtual_address_hex": "0x5962cff560"
+    },
+    {
+      "kind": "cpu_count",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_0000005962cf8000.bin",
+      "file_offset": 30064,
+      "file_offset_hex": "0x7570",
+      "virtual_address": 383909885296,
+      "virtual_address_hex": "0x5962cff570"
+    },
+    {
+      "kind": "http_response",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa4d9d000.bin",
+      "file_offset": 9357,
+      "file_offset_hex": "0x248d",
+      "virtual_address": 2128774558861,
+      "virtual_address_hex": "0x1efa4d9f48d"
+    },
+    {
+      "kind": "http_response",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa5f01000.bin",
+      "file_offset": 99648,
+      "file_offset_hex": "0x18540",
+      "virtual_address": 2128792884544,
+      "virtual_address_hex": "0x1efa5f19540"
+    },
+    {
+      "kind": "native_url",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa83e9000.bin",
+      "file_offset": 413200,
+      "file_offset_hex": "0x64e10",
+      "virtual_address": 2128831897104,
+      "virtual_address_hex": "0x1efa844de10"
+    },
+    {
+      "kind": "native_url",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8421000.bin",
+      "file_offset": 183824,
+      "file_offset_hex": "0x2ce10",
+      "virtual_address": 2128831897104,
+      "virtual_address_hex": "0x1efa844de10"
+    },
+    {
+      "kind": "native_request",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa9307000.bin",
+      "file_offset": 198992,
+      "file_offset_hex": "0x30950",
+      "virtual_address": 2128847534416,
+      "virtual_address_hex": "0x1efa9337950"
+    },
+    {
+      "kind": "http_response",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efaedaa000.bin",
+      "file_offset": 8375,
+      "file_offset_hex": "0x20b7",
+      "virtual_address": 2128942383287,
+      "virtual_address_hex": "0x1efaedac0b7"
+    },
+    {
+      "kind": "http_response",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efaedaa000.bin",
+      "file_offset": 8832,
+      "file_offset_hex": "0x2280",
+      "virtual_address": 2128942383744,
+      "virtual_address_hex": "0x1efaedac280"
+    },
+    {
+      "kind": "http_response",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efaedaa000.bin",
+      "file_offset": 9289,
+      "file_offset_hex": "0x2449",
+      "virtual_address": 2128942384201,
+      "virtual_address_hex": "0x1efaedac449"
+    },
+    {
+      "kind": "http_response",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efaedaa000.bin",
+      "file_offset": 9746,
+      "file_offset_hex": "0x2612",
+      "virtual_address": 2128942384658,
+      "virtual_address_hex": "0x1efaedac612"
+    },
+    {
+      "kind": "http_response",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efaedaa000.bin",
+      "file_offset": 10203,
+      "file_offset_hex": "0x27db",
+      "virtual_address": 2128942385115,
+      "virtual_address_hex": "0x1efaedac7db"
+    },
+    {
+      "kind": "http_response",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efaedaa000.bin",
+      "file_offset": 10660,
+      "file_offset_hex": "0x29a4",
+      "virtual_address": 2128942385572,
+      "virtual_address_hex": "0x1efaedac9a4"
+    },
+    {
+      "kind": "http_response",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efaedaa000.bin",
+      "file_offset": 11117,
+      "file_offset_hex": "0x2b6d",
+      "virtual_address": 2128942386029,
+      "virtual_address_hex": "0x1efaedacb6d"
+    },
+    {
+      "kind": "http_response",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efaedaa000.bin",
+      "file_offset": 11574,
+      "file_offset_hex": "0x2d36",
+      "virtual_address": 2128942386486,
+      "virtual_address_hex": "0x1efaedacd36"
+    },
+    {
+      "kind": "http_response",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efaedaa000.bin",
+      "file_offset": 12031,
+      "file_offset_hex": "0x2eff",
+      "virtual_address": 2128942386943,
+      "virtual_address_hex": "0x1efaedaceff"
+    },
+    {
+      "kind": "http_response",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efb4b0b000.bin",
+      "file_offset": 6407,
+      "file_offset_hex": "0x1907",
+      "virtual_address": 2129040296199,
+      "virtual_address_hex": "0x1efb4b0c907"
+    },
+    {
+      "kind": "http_response",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efb4b0b000.bin",
+      "file_offset": 6864,
+      "file_offset_hex": "0x1ad0",
+      "virtual_address": 2129040296656,
+      "virtual_address_hex": "0x1efb4b0cad0"
+    },
+    {
+      "kind": "http_response",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efb4b0b000.bin",
+      "file_offset": 7321,
+      "file_offset_hex": "0x1c99",
+      "virtual_address": 2129040297113,
+      "virtual_address_hex": "0x1efb4b0cc99"
+    },
+    {
+      "kind": "http_response",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efb4b0b000.bin",
+      "file_offset": 7778,
+      "file_offset_hex": "0x1e62",
+      "virtual_address": 2129040297570,
+      "virtual_address_hex": "0x1efb4b0ce62"
+    },
+    {
+      "kind": "http_response",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efb4b0b000.bin",
+      "file_offset": 8235,
+      "file_offset_hex": "0x202b",
+      "virtual_address": 2129040298027,
+      "virtual_address_hex": "0x1efb4b0d02b"
+    },
+    {
+      "kind": "http_response",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efb4b0b000.bin",
+      "file_offset": 8692,
+      "file_offset_hex": "0x21f4",
+      "virtual_address": 2129040298484,
+      "virtual_address_hex": "0x1efb4b0d1f4"
+    },
+    {
+      "kind": "http_response",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efb4b0b000.bin",
+      "file_offset": 9149,
+      "file_offset_hex": "0x23bd",
+      "virtual_address": 2129040298941,
+      "virtual_address_hex": "0x1efb4b0d3bd"
+    },
+    {
+      "kind": "http_response",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efb4b0b000.bin",
+      "file_offset": 9606,
+      "file_offset_hex": "0x2586",
+      "virtual_address": 2129040299398,
+      "virtual_address_hex": "0x1efb4b0d586"
+    },
+    {
+      "kind": "http_response",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efb5e04000.bin",
+      "file_offset": 410823,
+      "file_offset_hex": "0x644c7",
+      "virtual_address": 2129060594887,
+      "virtual_address_hex": "0x1efb5e684c7"
+    }
+  ],
+  "http_requests": [
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa9307000.bin",
+      "file_offset": 198992,
+      "file_offset_hex": "0x30950",
+      "virtual_address": 2128847534416,
+      "virtual_address_hex": "0x1efa9337950",
+      "request_line": "POST /api/v3/report HTTP/1.1",
+      "headers": {
+        "connection": "Keep-Alive",
+        "content-type": "application/json",
+        "accept": "application/json",
+        "content-length": "2659",
+        "host": "security.mcbjd.net"
+      },
+      "body_buffer": {
+        "declared_content_length": 2659,
+        "inline_body_valid": false,
+        "candidate_sha256": "1fbf3a5366f2e45b460aed6e620a4fa0ec976f36a7e4b16314b14c40829592ea",
+        "candidate_prefix_hex": "00006400610079000000000000000000000000000000bbf8ff19000d00803a00530075006e003a00530075006e006400610079003a004d006f006e003a004d00",
+        "reason": "adjacent bytes do not begin with a JSON object"
+      }
+    }
+  ],
+  "http_responses": [
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa4d9d000.bin",
+      "file_offset": 9357,
+      "file_offset_hex": "0x248d",
+      "virtual_address": 2128774558861,
+      "virtual_address_hex": "0x1efa4d9f48d",
+      "status_line": "HTTP/1.1 200 ",
+      "headers": {
+        "server": "nginx/1.31.3",
+        "date": "Thu, 13 Aug 2026 04:38:47 GMT",
+        "content-type": "application/json",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive"
+      },
+      "first_chunk": {
+        "chunk_size": 285,
+        "chunk_sha256": "7fa5584c87c062c74842c02d1cc58b182504c56c7269dea10bd90c470f07f064",
+        "json_valid": true,
+        "json": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "7c064bb3c59409649b2ab870",
+          "ciphertext": "eeded0bf945452ea1035206f189c788b0892b756c9f8f4d4d22977723dd3d35955d9939f8e1e3a5323cce34d707accc5f391241ab5ff9a4c63c30bb423b3571d28bfe4c778d83220",
+          "tag": "45eafe7f6c79dec182525fa4faa7a00c"
+        },
+        "envelope": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "7c064bb3c59409649b2ab870",
+          "ciphertext": "eeded0bf945452ea1035206f189c788b0892b756c9f8f4d4d22977723dd3d35955d9939f8e1e3a5323cce34d707accc5f391241ab5ff9a4c63c30bb423b3571d28bfe4c778d83220",
+          "ciphertext_chars": 144,
+          "ciphertext_bytes_if_hex": 72,
+          "tag": "45eafe7f6c79dec182525fa4faa7a00c"
+        }
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa5f01000.bin",
+      "file_offset": 99648,
+      "file_offset_hex": "0x18540",
+      "virtual_address": 2128792884544,
+      "virtual_address_hex": "0x1efa5f19540",
+      "status_line": "HTTP/1.1 200 OK",
+      "headers": {
+        "date": "Thu, 13 Aug 2026 04:30:39 GMT",
+        "content-type": "image/png",
+        "content-length": "437",
+        "connection": "keep-alive",
+        "last-modified": "Thu, 17 Nov 2022 13:48:41 GMT",
+        "etag": "0x8DAC8A26FDC66F6",
+        "x-ms-request-id": "fc731a99-a01e-0072-07b9-23dc08000000",
+        "x-ms-version": "2009-09-19",
+        "x-ms-lease-status": "unlocked",
+        "x-ms-blob-type": "BlockBlob",
+        "access-control-expose-headers": "x-ms-request-id,Server,x-ms-version,Content-Type,ETag,Last-Modified,x-ms-lease-status,x-ms-blob-type,Content-Length,Date,Transfer-Encoding",
+        "access-control-allow-origin": "*",
+        "x-azure-ref": "20260813T043039Z-r1874bb485f7l65khC1SEL5g7n0000000ue00000000002pp",
+        "cache-control": "public, max-age=604800",
+        "x-fd-int-roxy-purgeid": "0",
+        "x-cache": "TCP_HIT",
+        "access-control-allow-methods": "GET",
+        "access-control-allow-headers": "*",
+        "access-control-max-age": "3600",
+        "accept-ranges": "bytes"
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efaedaa000.bin",
+      "file_offset": 8375,
+      "file_offset_hex": "0x20b7",
+      "virtual_address": 2128942383287,
+      "virtual_address_hex": "0x1efaedac0b7",
+      "status_line": "HTTP/1.1 200 ",
+      "headers": {
+        "server": "nginx/1.31.3",
+        "date": "Thu, 13 Aug 2026 04:35:16 GMT",
+        "content-type": "application/json",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive"
+      },
+      "first_chunk": {
+        "chunk_size": 285,
+        "chunk_sha256": "8f84344955dceb29d794cf32b0c2b6013c21078f25eb10a9b3c04a2057b4f404",
+        "json_valid": true,
+        "json": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "c0cc4e86f853812f6e342253",
+          "ciphertext": "f8ac25edf8fbb7289ebec45f065c16df2638a1714eb7b297007fdb73793e3b4deace3ff6918cccc96bc2fbceb2e1168d23905e097f6d001ce1f3aa28e4224e586df22161937fc7aa",
+          "tag": "1c5163ba078f3f1437e3eaa3f7ba0494"
+        },
+        "envelope": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "c0cc4e86f853812f6e342253",
+          "ciphertext": "f8ac25edf8fbb7289ebec45f065c16df2638a1714eb7b297007fdb73793e3b4deace3ff6918cccc96bc2fbceb2e1168d23905e097f6d001ce1f3aa28e4224e586df22161937fc7aa",
+          "ciphertext_chars": 144,
+          "ciphertext_bytes_if_hex": 72,
+          "tag": "1c5163ba078f3f1437e3eaa3f7ba0494"
+        }
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efaedaa000.bin",
+      "file_offset": 8832,
+      "file_offset_hex": "0x2280",
+      "virtual_address": 2128942383744,
+      "virtual_address_hex": "0x1efaedac280",
+      "status_line": "HTTP/1.1 200 ",
+      "headers": {
+        "server": "nginx/1.31.3",
+        "date": "Thu, 13 Aug 2026 04:35:46 GMT",
+        "content-type": "application/json",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive"
+      },
+      "first_chunk": {
+        "chunk_size": 285,
+        "chunk_sha256": "f6f30ee82224aac7fb2cad122455d3c63d90bfcbd0a6c61a6da0afb4f42df4d0",
+        "json_valid": true,
+        "json": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "a4e1b44f8f3b67a2df062c92",
+          "ciphertext": "6873c2a381684e4e9d3f2dc5f407e36a04462602e7996fc18abafba86859d66e2081e9ed21045babf54c517c4bfe38b719c84a7d072e243ca60db238017d581296fcf39321f5e706",
+          "tag": "64229290bd384b95ed79e316bd44d3cd"
+        },
+        "envelope": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "a4e1b44f8f3b67a2df062c92",
+          "ciphertext": "6873c2a381684e4e9d3f2dc5f407e36a04462602e7996fc18abafba86859d66e2081e9ed21045babf54c517c4bfe38b719c84a7d072e243ca60db238017d581296fcf39321f5e706",
+          "ciphertext_chars": 144,
+          "ciphertext_bytes_if_hex": 72,
+          "tag": "64229290bd384b95ed79e316bd44d3cd"
+        }
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efaedaa000.bin",
+      "file_offset": 9289,
+      "file_offset_hex": "0x2449",
+      "virtual_address": 2128942384201,
+      "virtual_address_hex": "0x1efaedac449",
+      "status_line": "HTTP/1.1 200 ",
+      "headers": {
+        "server": "nginx/1.31.3",
+        "date": "Thu, 13 Aug 2026 04:35:47 GMT",
+        "content-type": "application/json",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive"
+      },
+      "first_chunk": {
+        "chunk_size": 285,
+        "chunk_sha256": "eda14189bbf5e7a04ec0879b2f13f12581f5ff690ef711d23df261bcdfcccdd9",
+        "json_valid": true,
+        "json": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "e23e7aa927ce62857803d70f",
+          "ciphertext": "2547741c542c9ec346e67821e6f6aa8d45ef3c825ea3f62e8cf9efa21b3a837a0c923f823aab849d69324b26d6e0ca08f9b2fc90d8c850521eaabf94e3dce471bf483ced4f9d97c9",
+          "tag": "fb1eee30c42989f93c2cfbe8f79b1abc"
+        },
+        "envelope": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "e23e7aa927ce62857803d70f",
+          "ciphertext": "2547741c542c9ec346e67821e6f6aa8d45ef3c825ea3f62e8cf9efa21b3a837a0c923f823aab849d69324b26d6e0ca08f9b2fc90d8c850521eaabf94e3dce471bf483ced4f9d97c9",
+          "ciphertext_chars": 144,
+          "ciphertext_bytes_if_hex": 72,
+          "tag": "fb1eee30c42989f93c2cfbe8f79b1abc"
+        }
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efaedaa000.bin",
+      "file_offset": 9746,
+      "file_offset_hex": "0x2612",
+      "virtual_address": 2128942384658,
+      "virtual_address_hex": "0x1efaedac612",
+      "status_line": "HTTP/1.1 200 ",
+      "headers": {
+        "server": "nginx/1.31.3",
+        "date": "Thu, 13 Aug 2026 04:36:13 GMT",
+        "content-type": "application/json",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive"
+      },
+      "first_chunk": {
+        "chunk_size": 285,
+        "chunk_sha256": "9ee75fff9d80cb73f7c6adb565ecb073af46cfb6e3a370bb82c38c3d8feb6166",
+        "json_valid": true,
+        "json": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "c6ad10d65e81bc864fe13a92",
+          "ciphertext": "70a1651f31c41279b4dd8d16afb3b08562bb7b9c6ae8bad7219d4c0eecb11bee40db1fabffb034bf8704491aa4806bbea1561165ae81daedbede4db54e875d2358abd22c0875dd68",
+          "tag": "e340a8448cea38df21fefb5e4f6528e8"
+        },
+        "envelope": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "c6ad10d65e81bc864fe13a92",
+          "ciphertext": "70a1651f31c41279b4dd8d16afb3b08562bb7b9c6ae8bad7219d4c0eecb11bee40db1fabffb034bf8704491aa4806bbea1561165ae81daedbede4db54e875d2358abd22c0875dd68",
+          "ciphertext_chars": 144,
+          "ciphertext_bytes_if_hex": 72,
+          "tag": "e340a8448cea38df21fefb5e4f6528e8"
+        }
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efaedaa000.bin",
+      "file_offset": 10203,
+      "file_offset_hex": "0x27db",
+      "virtual_address": 2128942385115,
+      "virtual_address_hex": "0x1efaedac7db",
+      "status_line": "HTTP/1.1 200 ",
+      "headers": {
+        "server": "nginx/1.31.3",
+        "date": "Thu, 13 Aug 2026 04:36:16 GMT",
+        "content-type": "application/json",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive"
+      },
+      "first_chunk": {
+        "chunk_size": 285,
+        "chunk_sha256": "1fbf0d7dfe923fcb580dc8a61645531089848ec7dcb667b513d9b68fe2af6881",
+        "json_valid": true,
+        "json": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "1bd73c4a226495eada36fcf8",
+          "ciphertext": "de69661bbd78958edec91acb3007096a74d7d0e9f2654d38639a03846a730c0a1c56e84d72d14083460e66f33564a6b4a4a586e7014f53bced942bf3db439f1fabecafba40131e6d",
+          "tag": "34e48d5b754550ed6541ffd272f36a72"
+        },
+        "envelope": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "1bd73c4a226495eada36fcf8",
+          "ciphertext": "de69661bbd78958edec91acb3007096a74d7d0e9f2654d38639a03846a730c0a1c56e84d72d14083460e66f33564a6b4a4a586e7014f53bced942bf3db439f1fabecafba40131e6d",
+          "ciphertext_chars": 144,
+          "ciphertext_bytes_if_hex": 72,
+          "tag": "34e48d5b754550ed6541ffd272f36a72"
+        }
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efaedaa000.bin",
+      "file_offset": 10660,
+      "file_offset_hex": "0x29a4",
+      "virtual_address": 2128942385572,
+      "virtual_address_hex": "0x1efaedac9a4",
+      "status_line": "HTTP/1.1 200 ",
+      "headers": {
+        "server": "nginx/1.31.3",
+        "date": "Thu, 13 Aug 2026 04:36:17 GMT",
+        "content-type": "application/json",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive"
+      },
+      "first_chunk": {
+        "chunk_size": 285,
+        "chunk_sha256": "907e1221785440bbf7c1d69aba78d9e97bbc201cfc2e029a3e88412acae05b28",
+        "json_valid": true,
+        "json": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "282149fc7859259e88c38c0e",
+          "ciphertext": "8d13b6eeeb177ce4173567a43bd1569a26db24f561378e41a6d08c8a95f3e59314fda00d9119403accd4ab37e233b4f0e6adb5515685bf6725eedc83059072b8606ef32347d8844b",
+          "tag": "03b8567a9445b74436d6b91c1361ebbc"
+        },
+        "envelope": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "282149fc7859259e88c38c0e",
+          "ciphertext": "8d13b6eeeb177ce4173567a43bd1569a26db24f561378e41a6d08c8a95f3e59314fda00d9119403accd4ab37e233b4f0e6adb5515685bf6725eedc83059072b8606ef32347d8844b",
+          "ciphertext_chars": 144,
+          "ciphertext_bytes_if_hex": 72,
+          "tag": "03b8567a9445b74436d6b91c1361ebbc"
+        }
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efaedaa000.bin",
+      "file_offset": 11117,
+      "file_offset_hex": "0x2b6d",
+      "virtual_address": 2128942386029,
+      "virtual_address_hex": "0x1efaedacb6d",
+      "status_line": "HTTP/1.1 200 ",
+      "headers": {
+        "server": "nginx/1.31.3",
+        "date": "Thu, 13 Aug 2026 04:36:46 GMT",
+        "content-type": "application/json",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive"
+      },
+      "first_chunk": {
+        "chunk_size": 285,
+        "chunk_sha256": "b32b6acd260e14839129ee6ff70b3f5f8a81b07f44aeceb28ba77e62eaf4cbe5",
+        "json_valid": true,
+        "json": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "a11d1174fb288378be29859d",
+          "ciphertext": "42edd2651351a9d3fd93b5d1a2ef196ef3e43b13897dc451b7a29bc2d138bb468dcbddd41f783c9048ea57cba1b67301615493de957a20f892afd1af365ffdf73dd949fdcb5ee0e3",
+          "tag": "c9bbcbbf874d42e93a3a6f6506d83527"
+        },
+        "envelope": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "a11d1174fb288378be29859d",
+          "ciphertext": "42edd2651351a9d3fd93b5d1a2ef196ef3e43b13897dc451b7a29bc2d138bb468dcbddd41f783c9048ea57cba1b67301615493de957a20f892afd1af365ffdf73dd949fdcb5ee0e3",
+          "ciphertext_chars": 144,
+          "ciphertext_bytes_if_hex": 72,
+          "tag": "c9bbcbbf874d42e93a3a6f6506d83527"
+        }
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efaedaa000.bin",
+      "file_offset": 11574,
+      "file_offset_hex": "0x2d36",
+      "virtual_address": 2128942386486,
+      "virtual_address_hex": "0x1efaedacd36",
+      "status_line": "HTTP/1.1 200 ",
+      "headers": {
+        "server": "nginx/1.31.3",
+        "date": "Thu, 13 Aug 2026 04:36:47 GMT",
+        "content-type": "application/json",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive"
+      },
+      "first_chunk": {
+        "chunk_size": 285,
+        "chunk_sha256": "4e8aafceeed1211d20a829c992422362223d294d47bec31b774c4efbebdaa6c7",
+        "json_valid": true,
+        "json": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "22407c15affc686136ce11bd",
+          "ciphertext": "e42cedd80c3152894d75cf565743c5459742cce0cdabc2a9aa6ae78a1862b7c1636db3ba575edce008032a47604107564365095bf67544600cf8e4ea89904aca30917aa154e1320c",
+          "tag": "46e6909698f235975a2de5acf9233292"
+        },
+        "envelope": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "22407c15affc686136ce11bd",
+          "ciphertext": "e42cedd80c3152894d75cf565743c5459742cce0cdabc2a9aa6ae78a1862b7c1636db3ba575edce008032a47604107564365095bf67544600cf8e4ea89904aca30917aa154e1320c",
+          "ciphertext_chars": 144,
+          "ciphertext_bytes_if_hex": 72,
+          "tag": "46e6909698f235975a2de5acf9233292"
+        }
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efaedaa000.bin",
+      "file_offset": 12031,
+      "file_offset_hex": "0x2eff",
+      "virtual_address": 2128942386943,
+      "virtual_address_hex": "0x1efaedaceff",
+      "status_line": "HTTP/1.1 200 ",
+      "headers": {
+        "server": "nginx/1.31.3",
+        "date": "Thu, 13 Aug 2026 04:37:16 GMT",
+        "content-type": "application/json",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive"
+      },
+      "first_chunk": {
+        "chunk_size": 285,
+        "chunk_sha256": "6617420c154c662de5677af50e130d6e07c0ac5efb33f93c9afbe768e90e5bea",
+        "json_valid": false,
+        "chunk_prefix_hex": "7b227376223a332c226b6964223a223745363735374644383039303135333933384346463938394144464543313139222c226e6f6e6365223a22346338663736"
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efb4b0b000.bin",
+      "file_offset": 6407,
+      "file_offset_hex": "0x1907",
+      "virtual_address": 2129040296199,
+      "virtual_address_hex": "0x1efb4b0c907",
+      "status_line": "HTTP/1.1 200 ",
+      "headers": {
+        "server": "nginx/1.31.3",
+        "date": "Thu, 13 Aug 2026 04:29:46 GMT",
+        "content-type": "application/json",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive"
+      },
+      "first_chunk": {
+        "chunk_size": 285,
+        "chunk_sha256": "fd49124053be302296bd2b650a3b6aefbd380e4c7145b383e39d683541fa3214",
+        "json_valid": true,
+        "json": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "5fdc0b1cc4b8ec220ee59f15",
+          "ciphertext": "efacfae77dbf6da8204d9f45333df11930d52004273cf1cbb329ec33f4958e6c511c2a296a9c3bc15830c6e5725823116a3aecf6cb9da0940bc545e0c3f0fa6eee12a5819e1f7fab",
+          "tag": "4401b5cec58a3f78e7e0e71c418e035c"
+        },
+        "envelope": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "5fdc0b1cc4b8ec220ee59f15",
+          "ciphertext": "efacfae77dbf6da8204d9f45333df11930d52004273cf1cbb329ec33f4958e6c511c2a296a9c3bc15830c6e5725823116a3aecf6cb9da0940bc545e0c3f0fa6eee12a5819e1f7fab",
+          "ciphertext_chars": 144,
+          "ciphertext_bytes_if_hex": 72,
+          "tag": "4401b5cec58a3f78e7e0e71c418e035c"
+        }
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efb4b0b000.bin",
+      "file_offset": 6864,
+      "file_offset_hex": "0x1ad0",
+      "virtual_address": 2129040296656,
+      "virtual_address_hex": "0x1efb4b0cad0",
+      "status_line": "HTTP/1.1 200 ",
+      "headers": {
+        "server": "nginx/1.31.3",
+        "date": "Thu, 13 Aug 2026 04:29:47 GMT",
+        "content-type": "application/json",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive"
+      },
+      "first_chunk": {
+        "chunk_size": 285,
+        "chunk_sha256": "96e4029670141671671cf2301fd5e76d77d3b401b5f468a926f44fbceca3f7ba",
+        "json_valid": true,
+        "json": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "94ca2cfe0a2e3350b1ad5314",
+          "ciphertext": "ad9700df336d4dd8dbaf65c85a1a82cbe6b05bdc26f841f0fd61894752d8f5149d0d34ee9499e21a6eeee3f69a31e694586473344619226f05c58964553f082f8224bad81f47706f",
+          "tag": "804d04f1e3754ca18d07b6daa7fd7b1d"
+        },
+        "envelope": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "94ca2cfe0a2e3350b1ad5314",
+          "ciphertext": "ad9700df336d4dd8dbaf65c85a1a82cbe6b05bdc26f841f0fd61894752d8f5149d0d34ee9499e21a6eeee3f69a31e694586473344619226f05c58964553f082f8224bad81f47706f",
+          "ciphertext_chars": 144,
+          "ciphertext_bytes_if_hex": 72,
+          "tag": "804d04f1e3754ca18d07b6daa7fd7b1d"
+        }
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efb4b0b000.bin",
+      "file_offset": 7321,
+      "file_offset_hex": "0x1c99",
+      "virtual_address": 2129040297113,
+      "virtual_address_hex": "0x1efb4b0cc99",
+      "status_line": "HTTP/1.1 200 ",
+      "headers": {
+        "server": "nginx/1.31.3",
+        "date": "Thu, 13 Aug 2026 04:30:16 GMT",
+        "content-type": "application/json",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive"
+      },
+      "first_chunk": {
+        "chunk_size": 285,
+        "chunk_sha256": "a622d50c0952205acdbb7e5d7c368c00d54af94a72ab348941f2d65f040788d7",
+        "json_valid": true,
+        "json": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "0b69da933ec8e55e416365e0",
+          "ciphertext": "b6bd01024da446f9652c7f3bb77d45fd151020219855db1d185507d4781eddad586455ad90f2ef8022ef800f224bcd49da31d958af926ee881ff465aed75c4bcd0727a24a20f81d1",
+          "tag": "d894ef938bec6bf5decabcc32f437557"
+        },
+        "envelope": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "0b69da933ec8e55e416365e0",
+          "ciphertext": "b6bd01024da446f9652c7f3bb77d45fd151020219855db1d185507d4781eddad586455ad90f2ef8022ef800f224bcd49da31d958af926ee881ff465aed75c4bcd0727a24a20f81d1",
+          "ciphertext_chars": 144,
+          "ciphertext_bytes_if_hex": 72,
+          "tag": "d894ef938bec6bf5decabcc32f437557"
+        }
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efb4b0b000.bin",
+      "file_offset": 7778,
+      "file_offset_hex": "0x1e62",
+      "virtual_address": 2129040297570,
+      "virtual_address_hex": "0x1efb4b0ce62",
+      "status_line": "HTTP/1.1 200 ",
+      "headers": {
+        "server": "nginx/1.31.3",
+        "date": "Thu, 13 Aug 2026 04:30:17 GMT",
+        "content-type": "application/json",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive"
+      },
+      "first_chunk": {
+        "chunk_size": 285,
+        "chunk_sha256": "050cc6b7f641b81c6799f6a2632d235af3d6b5c45f1c5fc3fc201ae27e795617",
+        "json_valid": true,
+        "json": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "df0756e063acd19b9c6e138f",
+          "ciphertext": "5d7a1f8b7c281a93991a2273c1b49d9f99c9724519f8cb8442303a0ce44205c2c063c0fc18a42d840843fa7dfc97ac0caba2ed8a55a47cb68c3ba3e4c32957a32f94d784463ce55a",
+          "tag": "ae6709c6b77c1500bb831a60855d6c65"
+        },
+        "envelope": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "df0756e063acd19b9c6e138f",
+          "ciphertext": "5d7a1f8b7c281a93991a2273c1b49d9f99c9724519f8cb8442303a0ce44205c2c063c0fc18a42d840843fa7dfc97ac0caba2ed8a55a47cb68c3ba3e4c32957a32f94d784463ce55a",
+          "ciphertext_chars": 144,
+          "ciphertext_bytes_if_hex": 72,
+          "tag": "ae6709c6b77c1500bb831a60855d6c65"
+        }
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efb4b0b000.bin",
+      "file_offset": 8235,
+      "file_offset_hex": "0x202b",
+      "virtual_address": 2129040298027,
+      "virtual_address_hex": "0x1efb4b0d02b",
+      "status_line": "HTTP/1.1 200 ",
+      "headers": {
+        "server": "nginx/1.31.3",
+        "date": "Thu, 13 Aug 2026 04:30:34 GMT",
+        "content-type": "application/json",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive"
+      },
+      "first_chunk": {
+        "chunk_size": 285,
+        "chunk_sha256": "63160eaa329fb25470abcb2c02c197d02da6ae42d48aa01a70957dae34a3763b",
+        "json_valid": true,
+        "json": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "9b16296cac7a7aa0387449f3",
+          "ciphertext": "d6110d41a1fdf7da86a60917234ad76450c496b9022b754928fe50bfbc18886d2a1c06a9242bb821283e7658bbfa7134b7a78e7d609390ed3373000415fd100ed971a65ea6d155ed",
+          "tag": "a892d6086153461d3367ab5045ac4a05"
+        },
+        "envelope": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "9b16296cac7a7aa0387449f3",
+          "ciphertext": "d6110d41a1fdf7da86a60917234ad76450c496b9022b754928fe50bfbc18886d2a1c06a9242bb821283e7658bbfa7134b7a78e7d609390ed3373000415fd100ed971a65ea6d155ed",
+          "ciphertext_chars": 144,
+          "ciphertext_bytes_if_hex": 72,
+          "tag": "a892d6086153461d3367ab5045ac4a05"
+        }
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efb4b0b000.bin",
+      "file_offset": 8692,
+      "file_offset_hex": "0x21f4",
+      "virtual_address": 2129040298484,
+      "virtual_address_hex": "0x1efb4b0d1f4",
+      "status_line": "HTTP/1.1 200 ",
+      "headers": {
+        "server": "nginx/1.31.3",
+        "date": "Thu, 13 Aug 2026 04:30:46 GMT",
+        "content-type": "application/json",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive"
+      },
+      "first_chunk": {
+        "chunk_size": 285,
+        "chunk_sha256": "659919a4f72dc71acf0c60fcbeba21b9c34aa5a3c9a7a8a1225efc85309f2d60",
+        "json_valid": true,
+        "json": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "0d59c6bff67df702bc0c3cb2",
+          "ciphertext": "35006be8b670e6ea46c0ca0220d839f4c8655b5fc4223f8d70718ab1c38ecc5ed8c39474b632a4928d598058216ff8606198dc5ba821cf6f86d01cdc12c2a469086baeb3b1a3af69",
+          "tag": "83a79a8fa5fcc793147136acb61ab12f"
+        },
+        "envelope": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "0d59c6bff67df702bc0c3cb2",
+          "ciphertext": "35006be8b670e6ea46c0ca0220d839f4c8655b5fc4223f8d70718ab1c38ecc5ed8c39474b632a4928d598058216ff8606198dc5ba821cf6f86d01cdc12c2a469086baeb3b1a3af69",
+          "ciphertext_chars": 144,
+          "ciphertext_bytes_if_hex": 72,
+          "tag": "83a79a8fa5fcc793147136acb61ab12f"
+        }
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efb4b0b000.bin",
+      "file_offset": 9149,
+      "file_offset_hex": "0x23bd",
+      "virtual_address": 2129040298941,
+      "virtual_address_hex": "0x1efb4b0d3bd",
+      "status_line": "HTTP/1.1 200 ",
+      "headers": {
+        "server": "nginx/1.31.3",
+        "date": "Thu, 13 Aug 2026 04:30:48 GMT",
+        "content-type": "application/json",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive"
+      },
+      "first_chunk": {
+        "chunk_size": 285,
+        "chunk_sha256": "e4a62bfe2c6722a1114f69df5f40bf252e54c3c87b7e894b3c95cfd49bb5a174",
+        "json_valid": true,
+        "json": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "e46a0b33372e4e34a5f3704d",
+          "ciphertext": "291778939009a4b7a7e43ee13357b56217e1e141355a5e80c3dea6c8f6b2f21fc6aa6d425a7aef2d63dd067083032cb4e16e09f2eb7fca92f7d2d9ad0dfb03e1a520e2810b4a23bc",
+          "tag": "6cf81f9824e86065ff03faf1fb6752dc"
+        },
+        "envelope": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "e46a0b33372e4e34a5f3704d",
+          "ciphertext": "291778939009a4b7a7e43ee13357b56217e1e141355a5e80c3dea6c8f6b2f21fc6aa6d425a7aef2d63dd067083032cb4e16e09f2eb7fca92f7d2d9ad0dfb03e1a520e2810b4a23bc",
+          "ciphertext_chars": 144,
+          "ciphertext_bytes_if_hex": 72,
+          "tag": "6cf81f9824e86065ff03faf1fb6752dc"
+        }
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efb4b0b000.bin",
+      "file_offset": 9606,
+      "file_offset_hex": "0x2586",
+      "virtual_address": 2129040299398,
+      "virtual_address_hex": "0x1efb4b0d586",
+      "status_line": "HTTP/1.1 200 ",
+      "headers": {
+        "server": "nginx/1.31.3",
+        "date": "Thu, 13 Aug 2026 04:30:48 GMT",
+        "content-type": "application/json",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive"
+      },
+      "first_chunk": {
+        "chunk_size": 285,
+        "chunk_sha256": "16a69073f1bab158bc5f2e8c03bb3d1df9a84ac9eb67acc63ff3e66c5a2c66e0",
+        "json_valid": true,
+        "json": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "b687be1590fe4d68f0726ea3",
+          "ciphertext": "a7fe17cba15c4f0026a057669e32d0022be279cd00bdaf482ff0df9a0bd38d431edac7b73ee4bfe536045e41ae048753e15b147fc37e56ef3c0717f1e1bb1b26aca82c41293551da",
+          "tag": "9acd2ad24ac06bc094a9fd2b1531c159"
+        },
+        "envelope": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "b687be1590fe4d68f0726ea3",
+          "ciphertext": "a7fe17cba15c4f0026a057669e32d0022be279cd00bdaf482ff0df9a0bd38d431edac7b73ee4bfe536045e41ae048753e15b147fc37e56ef3c0717f1e1bb1b26aca82c41293551da",
+          "ciphertext_chars": 144,
+          "ciphertext_bytes_if_hex": 72,
+          "tag": "9acd2ad24ac06bc094a9fd2b1531c159"
+        }
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efb5e04000.bin",
+      "file_offset": 410823,
+      "file_offset_hex": "0x644c7",
+      "virtual_address": 2129060594887,
+      "virtual_address_hex": "0x1efb5e684c7",
+      "status_line": "HTTP/1.1 200 ",
+      "headers": {
+        "server": "nginx/1.31.3",
+        "date": "Thu, 13 Aug 2026 04:38:47 GMT",
+        "content-type": "application/json",
+        "transfer-encoding": "chunked",
+        "connection": "keep-alive"
+      },
+      "first_chunk": {
+        "chunk_size": 285,
+        "chunk_sha256": "7fa5584c87c062c74842c02d1cc58b182504c56c7269dea10bd90c470f07f064",
+        "json_valid": true,
+        "json": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "7c064bb3c59409649b2ab870",
+          "ciphertext": "eeded0bf945452ea1035206f189c788b0892b756c9f8f4d4d22977723dd3d35955d9939f8e1e3a5323cce34d707accc5f391241ab5ff9a4c63c30bb423b3571d28bfe4c778d83220",
+          "tag": "45eafe7f6c79dec182525fa4faa7a00c"
+        },
+        "envelope": {
+          "sv": 3,
+          "kid": "7E6757FD8090153938CFF989ADFEC119",
+          "nonce": "7c064bb3c59409649b2ab870",
+          "ciphertext": "eeded0bf945452ea1035206f189c788b0892b756c9f8f4d4d22977723dd3d35955d9939f8e1e3a5323cce34d707accc5f391241ab5ff9a4c63c30bb423b3571d28bfe4c778d83220",
+          "ciphertext_chars": 144,
+          "ciphertext_bytes_if_hex": 72,
+          "tag": "45eafe7f6c79dec182525fa4faa7a00c"
+        }
+      }
+    }
+  ],
+  "valid_crypto_envelopes": [
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa4d9d000.bin",
+      "file_offset": 9522,
+      "file_offset_hex": "0x2532",
+      "virtual_address": 2128774559026,
+      "virtual_address_hex": "0x1efa4d9f532",
+      "json_length": 285,
+      "sha256": "4eb7fc807a84162095f626742ecb8047dcff0980e192faa992046df1176169c7",
+      "envelope": {
+        "sv": 3,
+        "kid": "7E6757FD8090153938CFF989ADFEC119",
+        "nonce": "7c064bb3c59409649b2ab870",
+        "ciphertext": "eeded0bf945452ea1035206f189c788b0892b756c9f8f4d4d22977723dd3d35955d9939f8e1e3a5323cce34d707accc5f391241ab5ff9a4c63c30bb423b3571d28bfe4c778d83220",
+        "ciphertext_chars": 144,
+        "ciphertext_bytes_if_hex": 72,
+        "tag": "45eafe7f6c79dec182525fa4faa7a00c"
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efaedaa000.bin",
+      "file_offset": 8540,
+      "file_offset_hex": "0x215c",
+      "virtual_address": 2128942383452,
+      "virtual_address_hex": "0x1efaedac15c",
+      "json_length": 285,
+      "sha256": "77ff0dde183cab932483ea53e22208efd62c4bf73740fff81b8bb894413598c3",
+      "envelope": {
+        "sv": 3,
+        "kid": "7E6757FD8090153938CFF989ADFEC119",
+        "nonce": "c0cc4e86f853812f6e342253",
+        "ciphertext": "f8ac25edf8fbb7289ebec45f065c16df2638a1714eb7b297007fdb73793e3b4deace3ff6918cccc96bc2fbceb2e1168d23905e097f6d001ce1f3aa28e4224e586df22161937fc7aa",
+        "ciphertext_chars": 144,
+        "ciphertext_bytes_if_hex": 72,
+        "tag": "1c5163ba078f3f1437e3eaa3f7ba0494"
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efaedaa000.bin",
+      "file_offset": 8997,
+      "file_offset_hex": "0x2325",
+      "virtual_address": 2128942383909,
+      "virtual_address_hex": "0x1efaedac325",
+      "json_length": 285,
+      "sha256": "f7930e128dc756cb9bcb7915ac5fa54fdafb26301ec10a37ebd068e7dd95aa5e",
+      "envelope": {
+        "sv": 3,
+        "kid": "7E6757FD8090153938CFF989ADFEC119",
+        "nonce": "a4e1b44f8f3b67a2df062c92",
+        "ciphertext": "6873c2a381684e4e9d3f2dc5f407e36a04462602e7996fc18abafba86859d66e2081e9ed21045babf54c517c4bfe38b719c84a7d072e243ca60db238017d581296fcf39321f5e706",
+        "ciphertext_chars": 144,
+        "ciphertext_bytes_if_hex": 72,
+        "tag": "64229290bd384b95ed79e316bd44d3cd"
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efaedaa000.bin",
+      "file_offset": 9454,
+      "file_offset_hex": "0x24ee",
+      "virtual_address": 2128942384366,
+      "virtual_address_hex": "0x1efaedac4ee",
+      "json_length": 285,
+      "sha256": "0dccfecfd61894a2c9fc61e3570caa50dafe72916a385a357c44abaed4fd72d4",
+      "envelope": {
+        "sv": 3,
+        "kid": "7E6757FD8090153938CFF989ADFEC119",
+        "nonce": "e23e7aa927ce62857803d70f",
+        "ciphertext": "2547741c542c9ec346e67821e6f6aa8d45ef3c825ea3f62e8cf9efa21b3a837a0c923f823aab849d69324b26d6e0ca08f9b2fc90d8c850521eaabf94e3dce471bf483ced4f9d97c9",
+        "ciphertext_chars": 144,
+        "ciphertext_bytes_if_hex": 72,
+        "tag": "fb1eee30c42989f93c2cfbe8f79b1abc"
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efaedaa000.bin",
+      "file_offset": 9911,
+      "file_offset_hex": "0x26b7",
+      "virtual_address": 2128942384823,
+      "virtual_address_hex": "0x1efaedac6b7",
+      "json_length": 285,
+      "sha256": "5a0aacd38884a232a3258450a68a58177f20451b7d64c992a42dd530115e14f5",
+      "envelope": {
+        "sv": 3,
+        "kid": "7E6757FD8090153938CFF989ADFEC119",
+        "nonce": "c6ad10d65e81bc864fe13a92",
+        "ciphertext": "70a1651f31c41279b4dd8d16afb3b08562bb7b9c6ae8bad7219d4c0eecb11bee40db1fabffb034bf8704491aa4806bbea1561165ae81daedbede4db54e875d2358abd22c0875dd68",
+        "ciphertext_chars": 144,
+        "ciphertext_bytes_if_hex": 72,
+        "tag": "e340a8448cea38df21fefb5e4f6528e8"
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efaedaa000.bin",
+      "file_offset": 10368,
+      "file_offset_hex": "0x2880",
+      "virtual_address": 2128942385280,
+      "virtual_address_hex": "0x1efaedac880",
+      "json_length": 285,
+      "sha256": "6b2de73c9f7ba580171ff4fe6f7c3653146682fcfb69b270088c386f61521f31",
+      "envelope": {
+        "sv": 3,
+        "kid": "7E6757FD8090153938CFF989ADFEC119",
+        "nonce": "1bd73c4a226495eada36fcf8",
+        "ciphertext": "de69661bbd78958edec91acb3007096a74d7d0e9f2654d38639a03846a730c0a1c56e84d72d14083460e66f33564a6b4a4a586e7014f53bced942bf3db439f1fabecafba40131e6d",
+        "ciphertext_chars": 144,
+        "ciphertext_bytes_if_hex": 72,
+        "tag": "34e48d5b754550ed6541ffd272f36a72"
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efaedaa000.bin",
+      "file_offset": 10825,
+      "file_offset_hex": "0x2a49",
+      "virtual_address": 2128942385737,
+      "virtual_address_hex": "0x1efaedaca49",
+      "json_length": 285,
+      "sha256": "437ebbe0c890c28e6203442fe6ce554402ba64a221422e9772dd1de6781fe499",
+      "envelope": {
+        "sv": 3,
+        "kid": "7E6757FD8090153938CFF989ADFEC119",
+        "nonce": "282149fc7859259e88c38c0e",
+        "ciphertext": "8d13b6eeeb177ce4173567a43bd1569a26db24f561378e41a6d08c8a95f3e59314fda00d9119403accd4ab37e233b4f0e6adb5515685bf6725eedc83059072b8606ef32347d8844b",
+        "ciphertext_chars": 144,
+        "ciphertext_bytes_if_hex": 72,
+        "tag": "03b8567a9445b74436d6b91c1361ebbc"
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efaedaa000.bin",
+      "file_offset": 11282,
+      "file_offset_hex": "0x2c12",
+      "virtual_address": 2128942386194,
+      "virtual_address_hex": "0x1efaedacc12",
+      "json_length": 285,
+      "sha256": "149a6a51a98b3815cd881d0eb0169c1c29f664f6c4352e23bd7e6e849adb07f4",
+      "envelope": {
+        "sv": 3,
+        "kid": "7E6757FD8090153938CFF989ADFEC119",
+        "nonce": "a11d1174fb288378be29859d",
+        "ciphertext": "42edd2651351a9d3fd93b5d1a2ef196ef3e43b13897dc451b7a29bc2d138bb468dcbddd41f783c9048ea57cba1b67301615493de957a20f892afd1af365ffdf73dd949fdcb5ee0e3",
+        "ciphertext_chars": 144,
+        "ciphertext_bytes_if_hex": 72,
+        "tag": "c9bbcbbf874d42e93a3a6f6506d83527"
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efaedaa000.bin",
+      "file_offset": 11739,
+      "file_offset_hex": "0x2ddb",
+      "virtual_address": 2128942386651,
+      "virtual_address_hex": "0x1efaedacddb",
+      "json_length": 285,
+      "sha256": "8f5f1e32b7a50452d4963190abda5ce20fde3022542ab440edfdc3ed97a04138",
+      "envelope": {
+        "sv": 3,
+        "kid": "7E6757FD8090153938CFF989ADFEC119",
+        "nonce": "22407c15affc686136ce11bd",
+        "ciphertext": "e42cedd80c3152894d75cf565743c5459742cce0cdabc2a9aa6ae78a1862b7c1636db3ba575edce008032a47604107564365095bf67544600cf8e4ea89904aca30917aa154e1320c",
+        "ciphertext_chars": 144,
+        "ciphertext_bytes_if_hex": 72,
+        "tag": "46e6909698f235975a2de5acf9233292"
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efb4b0b000.bin",
+      "file_offset": 6572,
+      "file_offset_hex": "0x19ac",
+      "virtual_address": 2129040296364,
+      "virtual_address_hex": "0x1efb4b0c9ac",
+      "json_length": 285,
+      "sha256": "6cf84009eb0f311dc15d164d8ae66fe6ed995e34c83ce5b82fe81adabc41c484",
+      "envelope": {
+        "sv": 3,
+        "kid": "7E6757FD8090153938CFF989ADFEC119",
+        "nonce": "5fdc0b1cc4b8ec220ee59f15",
+        "ciphertext": "efacfae77dbf6da8204d9f45333df11930d52004273cf1cbb329ec33f4958e6c511c2a296a9c3bc15830c6e5725823116a3aecf6cb9da0940bc545e0c3f0fa6eee12a5819e1f7fab",
+        "ciphertext_chars": 144,
+        "ciphertext_bytes_if_hex": 72,
+        "tag": "4401b5cec58a3f78e7e0e71c418e035c"
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efb4b0b000.bin",
+      "file_offset": 7029,
+      "file_offset_hex": "0x1b75",
+      "virtual_address": 2129040296821,
+      "virtual_address_hex": "0x1efb4b0cb75",
+      "json_length": 285,
+      "sha256": "6bbfde955496b0b1a69362979e0595a721018da501fdca33635813ceef84243e",
+      "envelope": {
+        "sv": 3,
+        "kid": "7E6757FD8090153938CFF989ADFEC119",
+        "nonce": "94ca2cfe0a2e3350b1ad5314",
+        "ciphertext": "ad9700df336d4dd8dbaf65c85a1a82cbe6b05bdc26f841f0fd61894752d8f5149d0d34ee9499e21a6eeee3f69a31e694586473344619226f05c58964553f082f8224bad81f47706f",
+        "ciphertext_chars": 144,
+        "ciphertext_bytes_if_hex": 72,
+        "tag": "804d04f1e3754ca18d07b6daa7fd7b1d"
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efb4b0b000.bin",
+      "file_offset": 7486,
+      "file_offset_hex": "0x1d3e",
+      "virtual_address": 2129040297278,
+      "virtual_address_hex": "0x1efb4b0cd3e",
+      "json_length": 285,
+      "sha256": "174d14e83687dc47f60033236aac9f63478a08b757c6277091cf252577f0b079",
+      "envelope": {
+        "sv": 3,
+        "kid": "7E6757FD8090153938CFF989ADFEC119",
+        "nonce": "0b69da933ec8e55e416365e0",
+        "ciphertext": "b6bd01024da446f9652c7f3bb77d45fd151020219855db1d185507d4781eddad586455ad90f2ef8022ef800f224bcd49da31d958af926ee881ff465aed75c4bcd0727a24a20f81d1",
+        "ciphertext_chars": 144,
+        "ciphertext_bytes_if_hex": 72,
+        "tag": "d894ef938bec6bf5decabcc32f437557"
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efb4b0b000.bin",
+      "file_offset": 7943,
+      "file_offset_hex": "0x1f07",
+      "virtual_address": 2129040297735,
+      "virtual_address_hex": "0x1efb4b0cf07",
+      "json_length": 285,
+      "sha256": "e04d22080eccb362ba6da2161ec37a914be701972de7b5b1bde80b0628c0ae4a",
+      "envelope": {
+        "sv": 3,
+        "kid": "7E6757FD8090153938CFF989ADFEC119",
+        "nonce": "df0756e063acd19b9c6e138f",
+        "ciphertext": "5d7a1f8b7c281a93991a2273c1b49d9f99c9724519f8cb8442303a0ce44205c2c063c0fc18a42d840843fa7dfc97ac0caba2ed8a55a47cb68c3ba3e4c32957a32f94d784463ce55a",
+        "ciphertext_chars": 144,
+        "ciphertext_bytes_if_hex": 72,
+        "tag": "ae6709c6b77c1500bb831a60855d6c65"
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efb4b0b000.bin",
+      "file_offset": 8400,
+      "file_offset_hex": "0x20d0",
+      "virtual_address": 2129040298192,
+      "virtual_address_hex": "0x1efb4b0d0d0",
+      "json_length": 285,
+      "sha256": "403c3289cfe82e0a292ba1bfbf55664780c65f5778a50f3a7fa157a1aaa0c51a",
+      "envelope": {
+        "sv": 3,
+        "kid": "7E6757FD8090153938CFF989ADFEC119",
+        "nonce": "9b16296cac7a7aa0387449f3",
+        "ciphertext": "d6110d41a1fdf7da86a60917234ad76450c496b9022b754928fe50bfbc18886d2a1c06a9242bb821283e7658bbfa7134b7a78e7d609390ed3373000415fd100ed971a65ea6d155ed",
+        "ciphertext_chars": 144,
+        "ciphertext_bytes_if_hex": 72,
+        "tag": "a892d6086153461d3367ab5045ac4a05"
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efb4b0b000.bin",
+      "file_offset": 8857,
+      "file_offset_hex": "0x2299",
+      "virtual_address": 2129040298649,
+      "virtual_address_hex": "0x1efb4b0d299",
+      "json_length": 285,
+      "sha256": "a1d74a787cb1c6fd357e90cc0a00510c3362764c5b76033765d234c1d8b94f72",
+      "envelope": {
+        "sv": 3,
+        "kid": "7E6757FD8090153938CFF989ADFEC119",
+        "nonce": "0d59c6bff67df702bc0c3cb2",
+        "ciphertext": "35006be8b670e6ea46c0ca0220d839f4c8655b5fc4223f8d70718ab1c38ecc5ed8c39474b632a4928d598058216ff8606198dc5ba821cf6f86d01cdc12c2a469086baeb3b1a3af69",
+        "ciphertext_chars": 144,
+        "ciphertext_bytes_if_hex": 72,
+        "tag": "83a79a8fa5fcc793147136acb61ab12f"
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efb4b0b000.bin",
+      "file_offset": 9314,
+      "file_offset_hex": "0x2462",
+      "virtual_address": 2129040299106,
+      "virtual_address_hex": "0x1efb4b0d462",
+      "json_length": 285,
+      "sha256": "1184f829e21cdb3bdbeeaea9c732ebd5ba7d425f2e10e4dbada12ca6ec18cc3c",
+      "envelope": {
+        "sv": 3,
+        "kid": "7E6757FD8090153938CFF989ADFEC119",
+        "nonce": "e46a0b33372e4e34a5f3704d",
+        "ciphertext": "291778939009a4b7a7e43ee13357b56217e1e141355a5e80c3dea6c8f6b2f21fc6aa6d425a7aef2d63dd067083032cb4e16e09f2eb7fca92f7d2d9ad0dfb03e1a520e2810b4a23bc",
+        "ciphertext_chars": 144,
+        "ciphertext_bytes_if_hex": 72,
+        "tag": "6cf81f9824e86065ff03faf1fb6752dc"
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efb4b0b000.bin",
+      "file_offset": 9771,
+      "file_offset_hex": "0x262b",
+      "virtual_address": 2129040299563,
+      "virtual_address_hex": "0x1efb4b0d62b",
+      "json_length": 285,
+      "sha256": "bfab63591f3bc08a645f9121121a68ae0f6210ac4d092fba0d496692e1dd8241",
+      "envelope": {
+        "sv": 3,
+        "kid": "7E6757FD8090153938CFF989ADFEC119",
+        "nonce": "b687be1590fe4d68f0726ea3",
+        "ciphertext": "a7fe17cba15c4f0026a057669e32d0022be279cd00bdaf482ff0df9a0bd38d431edac7b73ee4bfe536045e41ae048753e15b147fc37e56ef3c0717f1e1bb1b26aca82c41293551da",
+        "ciphertext_chars": 144,
+        "ciphertext_bytes_if_hex": 72,
+        "tag": "9acd2ad24ac06bc094a9fd2b1531c159"
+      }
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efb4f3d000.bin",
+      "file_offset": 584200,
+      "file_offset_hex": "0x8ea08",
+      "virtual_address": 2129045273096,
+      "virtual_address_hex": "0x1efb4fcba08",
+      "json_length": 285,
+      "sha256": "c634ea4178011477c89ec84ae0b25e5b946eb1f41afa2fa5e1fe5c629463e782",
+      "envelope": {
+        "sv": 3,
+        "kid": "7E6757FD8090153938CFF989ADFEC119",
+        "nonce": "6f6dc2f24dc0eb0b9b7ff79b",
+        "ciphertext": "a4670d4a7c6362b386d5dad7199ae375a5c9a0c2032c3abe7ece89dfffe8a59d26a20473dbfa4adb25f1090bceb051eeae0fe3ff1287f62bd75619dae7d3c84311a37828a176ccdb",
+        "ciphertext_chars": 144,
+        "ciphertext_bytes_if_hex": 72,
+        "tag": "fbb88e79e65f4da420e1507de6531eab"
+      }
+    }
+  ],
+  "crypto_tail_fragments": [
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa4d9d000.bin",
+      "file_offset": 9859,
+      "file_offset_hex": "0x2683",
+      "virtual_address": 2128774559363,
+      "virtual_address_hex": "0x1efa4d9f683",
+      "printable_chars": 1606,
+      "sha256": "87c88632acf39732bf19f8def1beae3a636a44fa0b8847e8fe702b435d0966a1",
+      "prefix": "8414a40cf4d475ff84307ab27f076f68b390ada556cdd91ddec5ef8333e03e2e90eb418a8863ef58",
+      "suffix": "365d836b77f4e124a0f77be69fb14798ceea02aec8a5bcedad589c2767d5b7c074ce2dc2aeb95\",\"tag\":\"0c6754d737bb12a18db4b7b75915f479\"}",
+      "tag": "0c6754d737bb12a18db4b7b75915f479",
+      "note": "printable tail only; not claimed as a complete HTTP body"
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa4d9d000.bin",
+      "file_offset": 11483,
+      "file_offset_hex": "0x2cdb",
+      "virtual_address": 2128774560987,
+      "virtual_address_hex": "0x1efa4d9fcdb",
+      "printable_chars": 1084,
+      "sha256": "e65155404a7f7b9005aa6babd8dcf3219e909d6c06bdc9a864960a46d8077606",
+      "prefix": "fbe20ad1d76b33c3452d1659dc6a2e52702a6e81c948f02d9cfd9bd6c454b71d3bfd8edc00eafc20",
+      "suffix": "f072df60e0950ee14f22b3131397f0000eb771370e4c2963737cd0db694bd0dcf4f4f39bb73c6\",\"tag\":\"23ae48f45c9064b4a8a588cd8cc77b2d\"}",
+      "tag": "23ae48f45c9064b4a8a588cd8cc77b2d",
+      "note": "printable tail only; not claimed as a complete HTTP body"
+    }
+  ],
+  "files_scanned": 10764,
+  "bytes_scanned": 5755867136,
+  "conclusions": {
+    "native_endpoint": "https://security.mcbjd.net/api/v3/report",
+    "request_body_recovered_inline": false,
+    "crypto_envelope_fields": [
+      "sv",
+      "kid",
+      "nonce",
+      "ciphertext",
+      "tag"
+    ],
+    "warning": "The request body uses a separate heap buffer in this dump. Bytes adjacent to the POST headers are unrelated UTF-16 locale data."
+  }
+}

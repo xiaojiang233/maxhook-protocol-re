@@ -1,0 +1,148 @@
+{
+  "schema": "maxhook.round-function-reconstruction/v1",
+  "scope": "offline; disasm_unpacked.asm + writer_sync keystreams",
+  "cipher_constants": [
+    {
+      "address": "0x1809bd367",
+      "constant": "0x32f12c5a",
+      "insn": "xor ecx, 0x32f12c5a",
+      "role": "key-schedule round constant A"
+    },
+    {
+      "address": "0x1809bd5a5",
+      "constant": "0x35a7d4cf",
+      "insn": "push 0x35a7d4cf",
+      "role": "key-schedule round constant B"
+    }
+  ],
+  "fold_constants": [
+    {
+      "address": "0x180c2769e",
+      "constant": "0x7ef78e7d",
+      "insn": "sub rdx, 0x7ef78e7d",
+      "role": "fold constant (sub)"
+    },
+    {
+      "address": "0x180c27747",
+      "constant": "0x47f75fb8",
+      "insn": "add r13d, 0x47f75fb8",
+      "role": "fold constant (add+not+neg+not)"
+    },
+    {
+      "address": "0x180c27987",
+      "constant": "0x1f5ff464",
+      "insn": "sub r8, 0x1f5ff464",
+      "role": "fold branch constant"
+    },
+    {
+      "address": "0x180c2799d",
+      "constant": "0x3879c8ab",
+      "insn": "push 0x3879c8ab; not r9",
+      "role": "fold constant"
+    },
+    {
+      "address": "0x180c279aa",
+      "constant": "0x6eaa89fc",
+      "insn": "mov ebp, 0x6eaa89fc",
+      "role": "fold constant"
+    },
+    {
+      "address": "0x180c279a1c",
+      "constant": "0x5f77d611",
+      "insn": "xor rsi, 0x5f77d611",
+      "role": "fold constant"
+    }
+  ],
+  "pointer_masks": [
+    {
+      "address": "0x180bd4683",
+      "mask": "0x9e22",
+      "insn": "xor r10w, 0x9e22"
+    },
+    {
+      "address": "0x180bd46a1",
+      "mask": "0x1d6e",
+      "insn": "xor cx, 0x1d6e"
+    },
+    {
+      "address": "0x1809bd51a",
+      "mask": "0x65aa",
+      "insn": "add r9w, 0x65aa"
+    }
+  ],
+  "context_slots": [
+    {
+      "offset": "0xa",
+      "size": "dword",
+      "role": "rolling counter (position-derived)"
+    },
+    {
+      "offset": "0x61",
+      "size": "qword",
+      "role": "keystream state table pointer (0x180835f10)"
+    },
+    {
+      "offset": "0x6d",
+      "size": "qword",
+      "role": "VIP - advances per dispatch, not cipher state"
+    },
+    {
+      "offset": "0x85",
+      "size": "qword",
+      "role": "handler table pointer (0x180c64ebd)"
+    },
+    {
+      "offset": "0xb5",
+      "size": "byte",
+      "role": "destination slot A (keystream byte, XOR target)"
+    },
+    {
+      "offset": "0xbd",
+      "size": "qword",
+      "role": "KEY POINTER: decoded input64 (32B key) pointer, written during key-schedule; consumed by vm_load 0x1809bd556"
+    },
+    {
+      "offset": "0xc5",
+      "size": "qword",
+      "role": "runtime keystream-source pointer"
+    },
+    {
+      "offset": "0xe5",
+      "size": "word",
+      "role": "state word (word)"
+    },
+    {
+      "offset": "0xed",
+      "size": "qword",
+      "role": "state word (qword)"
+    },
+    {
+      "offset": "0x235",
+      "size": "byte",
+      "role": "destination slot B (keystream byte, XOR target)"
+    }
+  ],
+  "round_function_regions": [
+    {
+      "address": "0x1809bd245",
+      "end": "0x1809bd73a",
+      "role": "KEY-SCHEDULE / KEY-CONSUMER handler: vm_load 0x1809bd502..556 (two-level deref) fetches decoded input64 key via context+0xbd; contains the two genuine 32-bit round constants 0x32f12c5a and 0x35a7d4cf (milestone 26: key pointer -> context+0xbd -> 0x1809bd556)"
+    },
+    {
+      "address": "0x180bd4640",
+      "end": "0x180bd46b1",
+      "role": "byte/word pump (pointer-obfuscation masks 0x9e22/0x1d6e only)"
+    },
+    {
+      "address": "0x180b8c7aa",
+      "end": "0x180b8caa0",
+      "role": "WORD PRODUCER (final keystream word -> store32 EDX): six push [word[VIP+k]+rbp] sites; writes destination slots +0xb5/+0x235 (edx_slice_findings_corrected.md)"
+    },
+    {
+      "address": "0x180c27500",
+      "end": "0x180c27d00",
+      "role": "FOLD/TRAMPOLINE: folds the 6 word-producer values into EDX via fold constants 0x7ef78e7d/0x47f75fb8/0x1f5ff464/0x3879c8ab/0x6eaa89fc/0x5f77d611, then popfq;ret -> store32"
+    }
+  ],
+  "conclusion": "Proprietary word-oriented ARX stream cipher. The key-schedule/key-consumer handler 0x1809bd245..73a contains two genuine 32-bit round constants 0x32f12c5a and 0x35a7d4cf; it fetches the decoded input64 key via context+0xbd. The final word producer is 0x180b8c7aa (six push [word[VIP+k]+rbp] sites feeding store32 EDX). 16-bit masks 0x9e22/0x1d6e/0x65aa are Themida pointer-obfuscation, not cipher constants. Full state in the 768-byte context; keystream = F(key, nonce) fully diffused from byte 0, 64-byte output blocks."
+}

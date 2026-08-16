@@ -1,0 +1,215 @@
+{
+  "schema": "maxhook.keytrace.analysis/v1",
+  "sensitive_values_omitted": true,
+  "source": {
+    "capture_dir": "E:\\Coding\\S1mple\\target\\keytrace_capture",
+    "events_sha256": "7c2e3f9526178f9c955a9e758d5d6939326c0c2dffa2c338040feb112133e3cd"
+  },
+  "sessions": [
+    {
+      "installed_at": "2026-08-13T17:15:58.167815+08:00",
+      "thread_id": 44788,
+      "calls": [
+        {
+          "call_id": 1,
+          "input32_bytes": 32,
+          "input64_bytes": 64,
+          "input32_format": "invalid-or-missing",
+          "input64_format": "invalid-or-missing",
+          "input32_fingerprint_sha256_12": null,
+          "input64_fingerprint_sha256_12": null,
+          "total_access": null,
+          "first_page_readers": []
+        }
+      ],
+      "valid_input32_calls": 0,
+      "valid_input64_calls": 0,
+      "unique_input32_fingerprints": [],
+      "unique_input64_fingerprints": [],
+      "input32_constant_within_capture": true,
+      "input64_constant_within_capture": true,
+      "aggregated_first_page_readers": []
+    },
+    {
+      "installed_at": "2026-08-13T17:17:11.114457+08:00",
+      "thread_id": 49268,
+      "calls": [
+        {
+          "call_id": 1,
+          "input32_bytes": 32,
+          "input64_bytes": 64,
+          "input32_format": "uppercase-or-lowercase-hex/32-bytes",
+          "input64_format": "uppercase-or-lowercase-hex/64-bytes",
+          "input32_fingerprint_sha256_12": "487eda0b7143",
+          "input64_fingerprint_sha256_12": "5b766aaad7df",
+          "total_access": 2,
+          "first_page_readers": [
+            {
+              "address": "0x180322e30",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "call_id": 2,
+          "input32_bytes": 32,
+          "input64_bytes": 64,
+          "input32_format": "uppercase-or-lowercase-hex/32-bytes",
+          "input64_format": "uppercase-or-lowercase-hex/64-bytes",
+          "input32_fingerprint_sha256_12": "487eda0b7143",
+          "input64_fingerprint_sha256_12": "5b766aaad7df",
+          "total_access": 2,
+          "first_page_readers": [
+            {
+              "address": "0x180322e30",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "call_id": 3,
+          "input32_bytes": 32,
+          "input64_bytes": 64,
+          "input32_format": "uppercase-or-lowercase-hex/32-bytes",
+          "input64_format": "uppercase-or-lowercase-hex/64-bytes",
+          "input32_fingerprint_sha256_12": "487eda0b7143",
+          "input64_fingerprint_sha256_12": "5b766aaad7df",
+          "total_access": 2,
+          "first_page_readers": [
+            {
+              "address": "0x180322e30",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "call_id": 4,
+          "input32_bytes": 32,
+          "input64_bytes": 64,
+          "input32_format": "uppercase-or-lowercase-hex/32-bytes",
+          "input64_format": "uppercase-or-lowercase-hex/64-bytes",
+          "input32_fingerprint_sha256_12": "487eda0b7143",
+          "input64_fingerprint_sha256_12": "5b766aaad7df",
+          "total_access": 2,
+          "first_page_readers": [
+            {
+              "address": "0x180322e30",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "call_id": 5,
+          "input32_bytes": 32,
+          "input64_bytes": 64,
+          "input32_format": "uppercase-or-lowercase-hex/32-bytes",
+          "input64_format": "uppercase-or-lowercase-hex/64-bytes",
+          "input32_fingerprint_sha256_12": "487eda0b7143",
+          "input64_fingerprint_sha256_12": "5b766aaad7df",
+          "total_access": 2,
+          "first_page_readers": [
+            {
+              "address": "0x180322e30",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "call_id": 6,
+          "input32_bytes": 32,
+          "input64_bytes": 64,
+          "input32_format": "uppercase-or-lowercase-hex/32-bytes",
+          "input64_format": "uppercase-or-lowercase-hex/64-bytes",
+          "input32_fingerprint_sha256_12": "487eda0b7143",
+          "input64_fingerprint_sha256_12": "5b766aaad7df",
+          "total_access": 2,
+          "first_page_readers": [
+            {
+              "address": "0x180322e30",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "call_id": 7,
+          "input32_bytes": 32,
+          "input64_bytes": 64,
+          "input32_format": "uppercase-or-lowercase-hex/32-bytes",
+          "input64_format": "uppercase-or-lowercase-hex/64-bytes",
+          "input32_fingerprint_sha256_12": "487eda0b7143",
+          "input64_fingerprint_sha256_12": "5b766aaad7df",
+          "total_access": 2,
+          "first_page_readers": [
+            {
+              "address": "0x7ff845af5d01",
+              "count": 1
+            },
+            {
+              "address": "0x180322e30",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "call_id": 8,
+          "input32_bytes": 32,
+          "input64_bytes": 64,
+          "input32_format": "uppercase-or-lowercase-hex/32-bytes",
+          "input64_format": "uppercase-or-lowercase-hex/64-bytes",
+          "input32_fingerprint_sha256_12": "487eda0b7143",
+          "input64_fingerprint_sha256_12": "5b766aaad7df",
+          "total_access": 2,
+          "first_page_readers": [
+            {
+              "address": "0x180322e30",
+              "count": 2
+            }
+          ]
+        }
+      ],
+      "valid_input32_calls": 8,
+      "valid_input64_calls": 8,
+      "unique_input32_fingerprints": [
+        "487eda0b7143"
+      ],
+      "unique_input64_fingerprints": [
+        "5b766aaad7df"
+      ],
+      "input32_constant_within_capture": true,
+      "input64_constant_within_capture": true,
+      "aggregated_first_page_readers": [
+        {
+          "address": "0x180322e30",
+          "count": 15
+        },
+        {
+          "address": "0x7ff845af5d01",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "static_helper": {
+    "dll_sha256": "f3ddac1dae9539f34e6b9d1fdea654f984cca4cff37851cadcbf6909b78af6a9",
+    "function": "0x180322d10",
+    "loop_byte_load": "0x180322e30",
+    "loop_byte_load_instruction": {
+      "address": "0x180322e30",
+      "mnemonic": "movzx",
+      "op_str": "edx, byte ptr [rdi]"
+    },
+    "loop_shape": [
+      "movzx edx, byte ptr [rdi]",
+      "indirect predicate call",
+      "inc rdi",
+      "cmp rdi, rsi",
+      "jne loop_byte_load"
+    ],
+    "interpretation": "The only recorded RIP is a byte-wise range/predicate helper. It is consistent with input-string validation or comparison, not proof of the VM cipher/KDF."
+  },
+  "limitations": [
+    "Frida MemoryAccessMonitor reports page-first access; it does not reconstruct every load or copied buffer.",
+    "A constant input64 across eight calls proves session-level reuse for this capture, not a universal constant.",
+    "No KDF, stream state, tag formula, or report_packet transform is recovered by this artifact alone."
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema": "maxhook.vm.setup-taint/v1",
+  "range": [
+    "0x180c43fdd",
+    "0x180c441aa"
+  ],
+  "instruction_count": 125,
+  "entry_rsp_relative_at_start": -32,
+  "entry_rsp_relative_at_end": -152,
+  "call_next_verified": true,
+  "final_argument_register_taints": {
+    "rdx": [
+      "KID"
+    ],
+    "r8": [
+      "OUTPUT"
+    ]
+  },
+  "final_argument_stack_taints": {
+    "entry_rsp-0x98": [
+      "KEYMAT"
+    ],
+    "entry_rsp-0x90": [
+      "CONTEXT"
+    ],
+    "entry_rsp-0x30": [
+      "KID"
+    ],
+    "entry_rsp+0x28": [
+      "PLAINTEXT"
+    ]
+  },
+  "input_objects_dereferenced_in_range": false,
+  "semantic_summary": {
+    "output": "R8",
+    "kid": "RDX and [ENTRY_RSP-0x30]",
+    "key_material": "[ENTRY_RSP-0x98]",
+    "context": "[ENTRY_RSP-0x90]",
+    "plaintext": "[ENTRY_RSP+0x28]"
+  },
+  "inputs": {
+    "runtime_bugland_sha256": "3a8e093afbf678fec5b4a84e5759b4d030f8ad39b52eac81a872dfe581449f26"
+  }
+}

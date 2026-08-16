@@ -1,0 +1,857 @@
+{
+  "schema": "maxhook.vm.trace-coverage/v2",
+  "limits_from_capture_script": {
+    "max_total": 3000000,
+    "max_uniq": 40000
+  },
+  "ranges": {
+    "image_base": "0x180000000",
+    "bugland": [
+      "0x180980000",
+      "0x181efc000"
+    ]
+  },
+  "anchors": {
+    "crypto_vm_entry": "0x181523001",
+    "outer_dispatcher": "0x180c43fdd",
+    "dispatch_helper": "0x1809a57e6",
+    "dispatch_indirect_jump": "0x1809a585f"
+  },
+  "old_handler_table": {
+    "table_va": "0x180c64ebd",
+    "entry_count": 1612,
+    "index_range": [
+      "0x0",
+      "0x64b"
+    ],
+    "all_entries_point_into_bugland": true,
+    "terminology": "This is the runtime qword dispatch table. The executable range 0x180c0c000-0x180c0d300 is VM code, not this table."
+  },
+  "static_instruction_universe": {
+    "bugland_instruction_starts": 676864,
+    "source_sha256": "2a38e29563adff0a142e18687de08d74e625623180ebd08fd2cba30f802697d4"
+  },
+  "captures": [
+    {
+      "directory": "E:\\Coding\\S1mple\\target\\vm_trace_capture3",
+      "capture_schema": "maxhook.vm-trace.capture/v1",
+      "call_count": 6,
+      "translation_statistics": {
+        "transformed_instruction_instances_min": 202217,
+        "transformed_instruction_instances_max": 202756,
+        "transformed_instruction_instances_range": 539,
+        "translated_mnemonic_ranges": {
+          "add": {
+            "min": 40272,
+            "max": 40381
+          },
+          "and": {
+            "min": 11858,
+            "max": 11865
+          },
+          "bswap": {
+            "min": 805,
+            "max": 805
+          },
+          "call": {
+            "min": 431,
+            "max": 432
+          },
+          "cdqe": {
+            "min": 125,
+            "max": 125
+          },
+          "cmp": {
+            "min": 1396,
+            "max": 1407
+          },
+          "dec": {
+            "min": 257,
+            "max": 264
+          },
+          "imul": {
+            "min": 51,
+            "max": 53
+          },
+          "inc": {
+            "min": 294,
+            "max": 302
+          },
+          "ja": {
+            "min": 22,
+            "max": 24
+          },
+          "jae": {
+            "min": 27,
+            "max": 29
+          },
+          "jb": {
+            "min": 22,
+            "max": 24
+          },
+          "jbe": {
+            "min": 329,
+            "max": 329
+          },
+          "je": {
+            "min": 723,
+            "max": 737
+          },
+          "jmp": {
+            "min": 2823,
+            "max": 2827
+          },
+          "jne": {
+            "min": 286,
+            "max": 306
+          },
+          "lea": {
+            "min": 1035,
+            "max": 1039
+          },
+          "lock cmpxchg": {
+            "min": 29,
+            "max": 36
+          },
+          "mov": {
+            "min": 53992,
+            "max": 54091
+          },
+          "movabs": {
+            "min": 2045,
+            "max": 2054
+          },
+          "movsxd": {
+            "min": 1464,
+            "max": 1464
+          },
+          "movzx": {
+            "min": 2761,
+            "max": 2767
+          },
+          "neg": {
+            "min": 374,
+            "max": 379
+          },
+          "nop": {
+            "min": 26,
+            "max": 29
+          },
+          "not": {
+            "min": 485,
+            "max": 492
+          },
+          "or": {
+            "min": 11358,
+            "max": 11362
+          },
+          "pop": {
+            "min": 12891,
+            "max": 12964
+          },
+          "popfq": {
+            "min": 55,
+            "max": 55
+          },
+          "push": {
+            "min": 18187,
+            "max": 18274
+          },
+          "pushfq": {
+            "min": 902,
+            "max": 902
+          },
+          "ret": {
+            "min": 251,
+            "max": 255
+          },
+          "rol": {
+            "min": 860,
+            "max": 860
+          },
+          "ror": {
+            "min": 918,
+            "max": 918
+          },
+          "shl": {
+            "min": 657,
+            "max": 669
+          },
+          "shr": {
+            "min": 270,
+            "max": 277
+          },
+          "sub": {
+            "min": 18982,
+            "max": 19067
+          },
+          "test": {
+            "min": 115,
+            "max": 131
+          },
+          "vmovdqa": {
+            "min": 32,
+            "max": 32
+          },
+          "vmovdqu": {
+            "min": 42,
+            "max": 66
+          },
+          "xor": {
+            "min": 14482,
+            "max": 14511
+          }
+        },
+        "note": "Counters are incremented in Stalker transform(iterator), so they measure translation/retranslation instances, not runtime instruction executions."
+      },
+      "address_detail": {
+        "effective_unique_cap": 30000,
+        "effective_unique_cap_source": "explicit_historical_override",
+        "remembered_unique_min": 30000,
+        "remembered_unique_max": 30000,
+        "all_calls_hit_unique_cap": true,
+        "intersection_size": 29869,
+        "union_size": 30120,
+        "variable_membership_size": 251,
+        "pairwise_identical_address_count_maps": [
+          {
+            "left_call": 1,
+            "right_call": 2,
+            "transformed_instruction_instance_delta": -16
+          },
+          {
+            "left_call": 1,
+            "right_call": 3,
+            "transformed_instruction_instance_delta": -35
+          },
+          {
+            "left_call": 2,
+            "right_call": 3,
+            "transformed_instruction_instance_delta": -19
+          },
+          {
+            "left_call": 4,
+            "right_call": 6,
+            "transformed_instruction_instance_delta": 73
+          }
+        ],
+        "note": "Address files are a MAX_UNIQ-capped set in first-translation Map insertion order within equal translation-count buckets; they are not an execution trace."
+      },
+      "old_table_overlap": {
+        "intersection_hits": 106,
+        "union_hits": 106,
+        "intersection_enrichment": {
+          "population_instruction_starts": 676864,
+          "sample_instruction_starts": 29475,
+          "marked_table_entries": 1323,
+          "observed_table_entries": 92,
+          "expected_if_uniform": 57.6119,
+          "observed_over_expected": 1.5969,
+          "approx_hypergeometric_z": 4.6371
+        },
+        "union_enrichment": {
+          "population_instruction_starts": 676864,
+          "sample_instruction_starts": 29726,
+          "marked_table_entries": 1323,
+          "observed_table_entries": 92,
+          "expected_if_uniform": 58.1025,
+          "observed_over_expected": 1.5834,
+          "approx_hypergeometric_z": 4.5525
+        }
+      },
+      "calls": [
+        {
+          "call_id": 1,
+          "transformed_instruction_instances": 202252,
+          "remembered_unique_addresses": 30000,
+          "address_format": "address-only",
+          "hit_unique_cap": true,
+          "hit_transform_instance_cap": false,
+          "remembered_bugland_addresses": 29899,
+          "remembered_system_addresses": 65,
+          "old_table_entry_hits": 106,
+          "old_table_entry_translation_count_histogram": {
+            "1": 106
+          },
+          "anchors": {
+            "crypto_vm_entry": {
+              "present": false,
+              "recorded_translation_count": null
+            },
+            "outer_dispatcher": {
+              "present": true,
+              "recorded_translation_count": 1
+            },
+            "dispatch_helper": {
+              "present": true,
+              "recorded_translation_count": 1
+            },
+            "dispatch_indirect_jump": {
+              "present": true,
+              "recorded_translation_count": 1
+            }
+          },
+          "sha256": "8482603860e2fbb40fb34643853eead0300307a82976f733dd2815ee5ef7c500"
+        },
+        {
+          "call_id": 2,
+          "transformed_instruction_instances": 202236,
+          "remembered_unique_addresses": 30000,
+          "address_format": "address-only",
+          "hit_unique_cap": true,
+          "hit_transform_instance_cap": false,
+          "remembered_bugland_addresses": 29899,
+          "remembered_system_addresses": 65,
+          "old_table_entry_hits": 106,
+          "old_table_entry_translation_count_histogram": {
+            "1": 106
+          },
+          "anchors": {
+            "crypto_vm_entry": {
+              "present": false,
+              "recorded_translation_count": null
+            },
+            "outer_dispatcher": {
+              "present": true,
+              "recorded_translation_count": 1
+            },
+            "dispatch_helper": {
+              "present": true,
+              "recorded_translation_count": 1
+            },
+            "dispatch_indirect_jump": {
+              "present": true,
+              "recorded_translation_count": 1
+            }
+          },
+          "sha256": "80a1de35a3143b29158a333a286f9b67f340a11a8ec7e9cabe213a69d371b60f"
+        },
+        {
+          "call_id": 3,
+          "transformed_instruction_instances": 202217,
+          "remembered_unique_addresses": 30000,
+          "address_format": "address-only",
+          "hit_unique_cap": true,
+          "hit_transform_instance_cap": false,
+          "remembered_bugland_addresses": 29899,
+          "remembered_system_addresses": 65,
+          "old_table_entry_hits": 106,
+          "old_table_entry_translation_count_histogram": {
+            "1": 106
+          },
+          "anchors": {
+            "crypto_vm_entry": {
+              "present": false,
+              "recorded_translation_count": null
+            },
+            "outer_dispatcher": {
+              "present": true,
+              "recorded_translation_count": 1
+            },
+            "dispatch_helper": {
+              "present": true,
+              "recorded_translation_count": 1
+            },
+            "dispatch_indirect_jump": {
+              "present": true,
+              "recorded_translation_count": 1
+            }
+          },
+          "sha256": "80a1de35a3143b29158a333a286f9b67f340a11a8ec7e9cabe213a69d371b60f"
+        },
+        {
+          "call_id": 4,
+          "transformed_instruction_instances": 202683,
+          "remembered_unique_addresses": 30000,
+          "address_format": "address-only",
+          "hit_unique_cap": true,
+          "hit_transform_instance_cap": false,
+          "remembered_bugland_addresses": 29899,
+          "remembered_system_addresses": 65,
+          "old_table_entry_hits": 106,
+          "old_table_entry_translation_count_histogram": {
+            "1": 106
+          },
+          "anchors": {
+            "crypto_vm_entry": {
+              "present": false,
+              "recorded_translation_count": null
+            },
+            "outer_dispatcher": {
+              "present": true,
+              "recorded_translation_count": 1
+            },
+            "dispatch_helper": {
+              "present": true,
+              "recorded_translation_count": 1
+            },
+            "dispatch_indirect_jump": {
+              "present": true,
+              "recorded_translation_count": 1
+            }
+          },
+          "sha256": "71bd95015d65f4264ff983bc8b9232bcb44a249aa406dbb8dece5d0cff932dd7"
+        },
+        {
+          "call_id": 5,
+          "transformed_instruction_instances": 202374,
+          "remembered_unique_addresses": 30000,
+          "address_format": "address-only",
+          "hit_unique_cap": true,
+          "hit_transform_instance_cap": false,
+          "remembered_bugland_addresses": 29899,
+          "remembered_system_addresses": 65,
+          "old_table_entry_hits": 106,
+          "old_table_entry_translation_count_histogram": {
+            "1": 106
+          },
+          "anchors": {
+            "crypto_vm_entry": {
+              "present": false,
+              "recorded_translation_count": null
+            },
+            "outer_dispatcher": {
+              "present": true,
+              "recorded_translation_count": 1
+            },
+            "dispatch_helper": {
+              "present": true,
+              "recorded_translation_count": 1
+            },
+            "dispatch_indirect_jump": {
+              "present": true,
+              "recorded_translation_count": 1
+            }
+          },
+          "sha256": "45c5d4ca17b482c82b9f6a65d979c8c925c2b048c4841f19512d25da8ba00813"
+        },
+        {
+          "call_id": 6,
+          "transformed_instruction_instances": 202756,
+          "remembered_unique_addresses": 30000,
+          "address_format": "address-only",
+          "hit_unique_cap": true,
+          "hit_transform_instance_cap": false,
+          "remembered_bugland_addresses": 29899,
+          "remembered_system_addresses": 65,
+          "old_table_entry_hits": 106,
+          "old_table_entry_translation_count_histogram": {
+            "1": 106
+          },
+          "anchors": {
+            "crypto_vm_entry": {
+              "present": false,
+              "recorded_translation_count": null
+            },
+            "outer_dispatcher": {
+              "present": true,
+              "recorded_translation_count": 1
+            },
+            "dispatch_helper": {
+              "present": true,
+              "recorded_translation_count": 1
+            },
+            "dispatch_indirect_jump": {
+              "present": true,
+              "recorded_translation_count": 1
+            }
+          },
+          "sha256": "71bd95015d65f4264ff983bc8b9232bcb44a249aa406dbb8dece5d0cff932dd7"
+        }
+      ],
+      "capture_summary_sha256": "bd659bb24a69ba5ad46536781af89fb4bc6b310c1209eb569db1fee4be24f817"
+    },
+    {
+      "directory": "E:\\Coding\\S1mple\\target\\vm_trace_capture4",
+      "capture_schema": "maxhook.vm-trace.capture/v1",
+      "call_count": 5,
+      "translation_statistics": {
+        "transformed_instruction_instances_min": 202251,
+        "transformed_instruction_instances_max": 202958,
+        "transformed_instruction_instances_range": 707,
+        "translated_mnemonic_ranges": {
+          "add": {
+            "min": 40286,
+            "max": 40385
+          },
+          "and": {
+            "min": 11860,
+            "max": 11867
+          },
+          "bswap": {
+            "min": 805,
+            "max": 805
+          },
+          "call": {
+            "min": 431,
+            "max": 434
+          },
+          "cdqe": {
+            "min": 125,
+            "max": 125
+          },
+          "cmp": {
+            "min": 1396,
+            "max": 1415
+          },
+          "dec": {
+            "min": 258,
+            "max": 265
+          },
+          "imul": {
+            "min": 51,
+            "max": 52
+          },
+          "inc": {
+            "min": 296,
+            "max": 303
+          },
+          "ja": {
+            "min": 22,
+            "max": 25
+          },
+          "jae": {
+            "min": 27,
+            "max": 28
+          },
+          "jb": {
+            "min": 22,
+            "max": 25
+          },
+          "jbe": {
+            "min": 329,
+            "max": 329
+          },
+          "je": {
+            "min": 725,
+            "max": 743
+          },
+          "jmp": {
+            "min": 2824,
+            "max": 2828
+          },
+          "jne": {
+            "min": 287,
+            "max": 313
+          },
+          "lea": {
+            "min": 1034,
+            "max": 1041
+          },
+          "lock cmpxchg": {
+            "min": 30,
+            "max": 38
+          },
+          "mov": {
+            "min": 54006,
+            "max": 54139
+          },
+          "movabs": {
+            "min": 2047,
+            "max": 2055
+          },
+          "movsxd": {
+            "min": 1464,
+            "max": 1464
+          },
+          "movzx": {
+            "min": 2761,
+            "max": 2768
+          },
+          "neg": {
+            "min": 374,
+            "max": 380
+          },
+          "nop": {
+            "min": 27,
+            "max": 28
+          },
+          "not": {
+            "min": 486,
+            "max": 492
+          },
+          "or": {
+            "min": 11358,
+            "max": 11364
+          },
+          "pop": {
+            "min": 12895,
+            "max": 12968
+          },
+          "popfq": {
+            "min": 55,
+            "max": 55
+          },
+          "push": {
+            "min": 18193,
+            "max": 18278
+          },
+          "pushfq": {
+            "min": 902,
+            "max": 902
+          },
+          "ret": {
+            "min": 251,
+            "max": 256
+          },
+          "rol": {
+            "min": 860,
+            "max": 860
+          },
+          "ror": {
+            "min": 918,
+            "max": 918
+          },
+          "shl": {
+            "min": 661,
+            "max": 669
+          },
+          "shr": {
+            "min": 270,
+            "max": 278
+          },
+          "sub": {
+            "min": 18993,
+            "max": 19072
+          },
+          "test": {
+            "min": 115,
+            "max": 138
+          },
+          "vmovdqa": {
+            "min": 32,
+            "max": 32
+          },
+          "vmovdqu": {
+            "min": 37,
+            "max": 66
+          },
+          "xor": {
+            "min": 14484,
+            "max": 14512
+          }
+        },
+        "note": "Counters are incremented in Stalker transform(iterator), so they measure translation/retranslation instances, not runtime instruction executions."
+      },
+      "address_detail": {
+        "effective_unique_cap": 40000,
+        "effective_unique_cap_source": "explicit_historical_override",
+        "remembered_unique_min": 40000,
+        "remembered_unique_max": 40000,
+        "all_calls_hit_unique_cap": true,
+        "intersection_size": 39867,
+        "union_size": 40133,
+        "variable_membership_size": 266,
+        "pairwise_identical_address_count_maps": [
+          {
+            "left_call": 1,
+            "right_call": 5,
+            "transformed_instruction_instance_delta": -562
+          }
+        ],
+        "note": "Address files are a MAX_UNIQ-capped set in first-translation Map insertion order within equal translation-count buckets; they are not an execution trace."
+      },
+      "old_table_overlap": {
+        "intersection_hits": 135,
+        "union_hits": 136,
+        "intersection_enrichment": {
+          "population_instruction_starts": 676864,
+          "sample_instruction_starts": 38176,
+          "marked_table_entries": 1323,
+          "observed_table_entries": 113,
+          "expected_if_uniform": 74.6189,
+          "observed_over_expected": 1.5144,
+          "approx_hypergeometric_z": 4.5785
+        },
+        "union_enrichment": {
+          "population_instruction_starts": 676864,
+          "sample_instruction_starts": 38441,
+          "marked_table_entries": 1323,
+          "observed_table_entries": 113,
+          "expected_if_uniform": 75.1369,
+          "observed_over_expected": 1.5039,
+          "approx_hypergeometric_z": 4.5021
+        }
+      },
+      "calls": [
+        {
+          "call_id": 1,
+          "transformed_instruction_instances": 202958,
+          "remembered_unique_addresses": 40000,
+          "address_format": "address:count",
+          "hit_unique_cap": true,
+          "hit_transform_instance_cap": false,
+          "remembered_bugland_addresses": 39301,
+          "remembered_system_addresses": 65,
+          "old_table_entry_hits": 135,
+          "old_table_entry_translation_count_histogram": {
+            "1": 135
+          },
+          "anchors": {
+            "crypto_vm_entry": {
+              "present": false,
+              "recorded_translation_count": null
+            },
+            "outer_dispatcher": {
+              "present": true,
+              "recorded_translation_count": 1
+            },
+            "dispatch_helper": {
+              "present": true,
+              "recorded_translation_count": 1
+            },
+            "dispatch_indirect_jump": {
+              "present": true,
+              "recorded_translation_count": 1
+            }
+          },
+          "sha256": "3d013a92504209ae5232556cb71aa53cd44ac070cbda5de3c00693f9eebd5080"
+        },
+        {
+          "call_id": 2,
+          "transformed_instruction_instances": 202251,
+          "remembered_unique_addresses": 40000,
+          "address_format": "address:count",
+          "hit_unique_cap": true,
+          "hit_transform_instance_cap": false,
+          "remembered_bugland_addresses": 39301,
+          "remembered_system_addresses": 65,
+          "old_table_entry_hits": 136,
+          "old_table_entry_translation_count_histogram": {
+            "1": 136
+          },
+          "anchors": {
+            "crypto_vm_entry": {
+              "present": false,
+              "recorded_translation_count": null
+            },
+            "outer_dispatcher": {
+              "present": true,
+              "recorded_translation_count": 1
+            },
+            "dispatch_helper": {
+              "present": true,
+              "recorded_translation_count": 1
+            },
+            "dispatch_indirect_jump": {
+              "present": true,
+              "recorded_translation_count": 1
+            }
+          },
+          "sha256": "eafd46b3e8517b93169614bd31fb1fcb2134da38c80ad924c9556b2baf76772a"
+        },
+        {
+          "call_id": 3,
+          "transformed_instruction_instances": 202538,
+          "remembered_unique_addresses": 40000,
+          "address_format": "address:count",
+          "hit_unique_cap": true,
+          "hit_transform_instance_cap": false,
+          "remembered_bugland_addresses": 39301,
+          "remembered_system_addresses": 65,
+          "old_table_entry_hits": 135,
+          "old_table_entry_translation_count_histogram": {
+            "1": 135
+          },
+          "anchors": {
+            "crypto_vm_entry": {
+              "present": false,
+              "recorded_translation_count": null
+            },
+            "outer_dispatcher": {
+              "present": true,
+              "recorded_translation_count": 1
+            },
+            "dispatch_helper": {
+              "present": true,
+              "recorded_translation_count": 1
+            },
+            "dispatch_indirect_jump": {
+              "present": true,
+              "recorded_translation_count": 1
+            }
+          },
+          "sha256": "3dea053eab8520334c43533a16df05611c04013b115f3b649984b864e558c3f7"
+        },
+        {
+          "call_id": 4,
+          "transformed_instruction_instances": 202510,
+          "remembered_unique_addresses": 40000,
+          "address_format": "address:count",
+          "hit_unique_cap": true,
+          "hit_transform_instance_cap": false,
+          "remembered_bugland_addresses": 39301,
+          "remembered_system_addresses": 65,
+          "old_table_entry_hits": 136,
+          "old_table_entry_translation_count_histogram": {
+            "1": 136
+          },
+          "anchors": {
+            "crypto_vm_entry": {
+              "present": false,
+              "recorded_translation_count": null
+            },
+            "outer_dispatcher": {
+              "present": true,
+              "recorded_translation_count": 1
+            },
+            "dispatch_helper": {
+              "present": true,
+              "recorded_translation_count": 1
+            },
+            "dispatch_indirect_jump": {
+              "present": true,
+              "recorded_translation_count": 1
+            }
+          },
+          "sha256": "154a16e09fe8a69a9241b92c646ea4267feee85645cbd9a4c99fc1e116e342ed"
+        },
+        {
+          "call_id": 5,
+          "transformed_instruction_instances": 202396,
+          "remembered_unique_addresses": 40000,
+          "address_format": "address:count",
+          "hit_unique_cap": true,
+          "hit_transform_instance_cap": false,
+          "remembered_bugland_addresses": 39301,
+          "remembered_system_addresses": 65,
+          "old_table_entry_hits": 135,
+          "old_table_entry_translation_count_histogram": {
+            "1": 135
+          },
+          "anchors": {
+            "crypto_vm_entry": {
+              "present": false,
+              "recorded_translation_count": null
+            },
+            "outer_dispatcher": {
+              "present": true,
+              "recorded_translation_count": 1
+            },
+            "dispatch_helper": {
+              "present": true,
+              "recorded_translation_count": 1
+            },
+            "dispatch_indirect_jump": {
+              "present": true,
+              "recorded_translation_count": 1
+            }
+          },
+          "sha256": "3d013a92504209ae5232556cb71aa53cd44ac070cbda5de3c00693f9eebd5080"
+        }
+      ],
+      "capture_summary_sha256": "278e7828be6b1f51c7c23c16cf296cb16ccb751df6093ed49505ac698f7afd24"
+    }
+  ],
+  "inputs": {
+    "capture_script_sha256": "9ffee774d0283d4b55e08b2846427bf339c494a258a9bfac7889790791452c43",
+    "runtime_bugland_sha256": "3a8e093afbf678fec5b4a84e5759b4d030f8ad39b52eac81a872dfe581449f26"
+  },
+  "interpretation_limits": [
+    "The address detail is not a runtime chronological trace and cannot by itself identify a dispatched handler.",
+    "Counts are transform-callback translation counts, not execution frequencies.",
+    "Translation counts are retained only for addresses remembered before MAX_UNIQ was reached.",
+    "A table-entry overlap does not prove that the corresponding table index was selected.",
+    "The old runtime dump is asynchronous and cannot supply the real capture's key/VIP state."
+  ]
+}

@@ -1,0 +1,9 @@
+[main] INFO top.xiaojiang233.s1mple.S1mple - S1mple initialized with 1 modules
+[main] INFO top.xiaojiang233.proxy.PayloadInspectionInterceptor - Payload inspection disabled
+[main] INFO top.xiaojiang233.Main - Account persistence enabled (plaintext) (file accounts.json)
+[main] INFO top.xiaojiang233.proxy.MinecraftProxy - Direct X19 authentication adapter enabled.
+[main] INFO top.xiaojiang233.proxy.ProxyServerListener - Proxy listener bound at 127.0.0.1:25570
+[main] INFO top.xiaojiang233.proxy.MinecraftProxy - Listening on 127.0.0.1:25570 -> 127.0.0.1:25565 (Minecraft 1.20.6 / protocol 766)
+[main] INFO top.xiaojiang233.management.ManagementServer - Management WebUI listening on http://0.0.0.0:18085/
+[main] WARN top.xiaojiang233.management.ManagementServer - Management API is not bound to loopback; protect the connection before entering sauth_json.
+[main] INFO top.xiaojiang233.Main - S1mple proxy is running. Press Ctrl+C to stop it.

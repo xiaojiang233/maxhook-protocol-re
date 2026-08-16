@@ -1,0 +1,473 @@
+{
+  "schema": "maxhook.rotation-capture.analysis/v1",
+  "capture": "E:\\Coding\\S1mple\\target\\rot_capture_20260814",
+  "calls": [
+    {
+      "call_id": 1,
+      "samples": 13613,
+      "dropped": 0,
+      "verified": 13613,
+      "mismatches": 0,
+      "site_counts": [
+        {
+          "rva": "0xaf6547",
+          "op": "rol",
+          "count": 4869
+        },
+        {
+          "rva": "0xa164be",
+          "op": "rol",
+          "count": 4262
+        },
+        {
+          "rva": "0xa59e63",
+          "op": "ror",
+          "count": 1703
+        },
+        {
+          "rva": "0xb5f49c",
+          "op": "ror",
+          "count": 1700
+        },
+        {
+          "rva": "0xb3cbf4",
+          "op": "ror",
+          "count": 1079
+        }
+      ],
+      "rotation_counts": {
+        "0": 11,
+        "1": 4,
+        "2": 721,
+        "3": 30,
+        "4": 24,
+        "5": 13,
+        "6": 9,
+        "7": 6,
+        "8": 7,
+        "9": 218,
+        "10": 10,
+        "11": 3283,
+        "12": 17,
+        "13": 33,
+        "14": 68,
+        "15": 34,
+        "16": 290,
+        "17": 222,
+        "18": 4962,
+        "19": 18,
+        "20": 4,
+        "21": 2870,
+        "22": 465,
+        "23": 153,
+        "24": 30,
+        "25": 16,
+        "26": 17,
+        "27": 29,
+        "28": 8,
+        "29": 12,
+        "30": 28,
+        "31": 1
+      },
+      "unique_target_addresses": 28,
+      "top_target_addresses": [
+        {
+          "address": "0x18098c9d6",
+          "count": 3192
+        },
+        {
+          "address": "0x18098c892",
+          "count": 2120
+        },
+        {
+          "address": "0x18098c91b",
+          "count": 1810
+        },
+        {
+          "address": "0x18098c9de",
+          "count": 1378
+        },
+        {
+          "address": "0x18098c9aa",
+          "count": 1265
+        },
+        {
+          "address": "0x18098c9ba",
+          "count": 1228
+        },
+        {
+          "address": "0x18098c92b",
+          "count": 1120
+        },
+        {
+          "address": "0x18098c992",
+          "count": 756
+        },
+        {
+          "address": "0x18098c941",
+          "count": 110
+        },
+        {
+          "address": "0x18098c98a",
+          "count": 86
+        },
+        {
+          "address": "0x18098c939",
+          "count": 69
+        },
+        {
+          "address": "0x18098cb56",
+          "count": 63
+        },
+        {
+          "address": "0x18098c8e5",
+          "count": 58
+        },
+        {
+          "address": "0x18098c95d",
+          "count": 55
+        },
+        {
+          "address": "0x18098ca12",
+          "count": 54
+        },
+        {
+          "address": "0x18098c8aa",
+          "count": 50
+        },
+        {
+          "address": "0x18098ca9b",
+          "count": 42
+        },
+        {
+          "address": "0x18098cb5e",
+          "count": 33
+        },
+        {
+          "address": "0x18098cb12",
+          "count": 31
+        },
+        {
+          "address": "0x18098caab",
+          "count": 26
+        }
+      ]
+    },
+    {
+      "call_id": 2,
+      "samples": 23687,
+      "dropped": 0,
+      "verified": 23687,
+      "mismatches": 0,
+      "site_counts": [
+        {
+          "rva": "0xaf6547",
+          "op": "rol",
+          "count": 8541
+        },
+        {
+          "rva": "0xa164be",
+          "op": "rol",
+          "count": 7468
+        },
+        {
+          "rva": "0xa59e63",
+          "op": "ror",
+          "count": 2909
+        },
+        {
+          "rva": "0xb5f49c",
+          "op": "ror",
+          "count": 2890
+        },
+        {
+          "rva": "0xb3cbf4",
+          "op": "ror",
+          "count": 1879
+        }
+      ],
+      "rotation_counts": {
+        "0": 11,
+        "1": 4,
+        "2": 1245,
+        "3": 30,
+        "4": 24,
+        "5": 13,
+        "6": 9,
+        "7": 6,
+        "8": 7,
+        "9": 378,
+        "10": 10,
+        "11": 5793,
+        "12": 17,
+        "13": 33,
+        "14": 98,
+        "15": 54,
+        "16": 480,
+        "17": 382,
+        "18": 8762,
+        "19": 18,
+        "20": 4,
+        "21": 5070,
+        "22": 805,
+        "23": 263,
+        "24": 30,
+        "25": 16,
+        "26": 17,
+        "27": 49,
+        "28": 8,
+        "29": 12,
+        "30": 38,
+        "31": 1
+      },
+      "unique_target_addresses": 29,
+      "top_target_addresses": [
+        {
+          "address": "0x18098c9d6",
+          "count": 5601
+        },
+        {
+          "address": "0x18098c892",
+          "count": 3736
+        },
+        {
+          "address": "0x18098c91b",
+          "count": 3158
+        },
+        {
+          "address": "0x18098c9de",
+          "count": 2417
+        },
+        {
+          "address": "0x18098c9aa",
+          "count": 2197
+        },
+        {
+          "address": "0x18098c9ba",
+          "count": 2156
+        },
+        {
+          "address": "0x18098c92b",
+          "count": 1958
+        },
+        {
+          "address": "0x18098c992",
+          "count": 1332
+        },
+        {
+          "address": "0x18098c941",
+          "count": 137
+        },
+        {
+          "address": "0x18098cb56",
+          "count": 124
+        },
+        {
+          "address": "0x18098c98a",
+          "count": 122
+        },
+        {
+          "address": "0x18098ca9b",
+          "count": 96
+        },
+        {
+          "address": "0x18098c8e5",
+          "count": 89
+        },
+        {
+          "address": "0x18098ca12",
+          "count": 88
+        },
+        {
+          "address": "0x18098c939",
+          "count": 82
+        },
+        {
+          "address": "0x18098c95d",
+          "count": 73
+        },
+        {
+          "address": "0x18098c8aa",
+          "count": 57
+        },
+        {
+          "address": "0x18098cb5e",
+          "count": 56
+        },
+        {
+          "address": "0x18098caab",
+          "count": 48
+        },
+        {
+          "address": "0x18098cb3a",
+          "count": 45
+        }
+      ]
+    },
+    {
+      "call_id": 3,
+      "samples": 23723,
+      "dropped": 0,
+      "verified": 23723,
+      "mismatches": 0,
+      "site_counts": [
+        {
+          "rva": "0xaf6547",
+          "op": "rol",
+          "count": 8549
+        },
+        {
+          "rva": "0xa164be",
+          "op": "rol",
+          "count": 7472
+        },
+        {
+          "rva": "0xa59e63",
+          "op": "ror",
+          "count": 2913
+        },
+        {
+          "rva": "0xb5f49c",
+          "op": "ror",
+          "count": 2910
+        },
+        {
+          "rva": "0xb3cbf4",
+          "op": "ror",
+          "count": 1879
+        }
+      ],
+      "rotation_counts": {
+        "0": 11,
+        "1": 4,
+        "2": 1261,
+        "3": 30,
+        "4": 24,
+        "5": 13,
+        "6": 9,
+        "7": 6,
+        "8": 7,
+        "9": 378,
+        "10": 10,
+        "11": 5793,
+        "12": 17,
+        "13": 33,
+        "14": 98,
+        "15": 54,
+        "16": 490,
+        "17": 382,
+        "18": 8762,
+        "19": 18,
+        "20": 4,
+        "21": 5070,
+        "22": 815,
+        "23": 263,
+        "24": 30,
+        "25": 16,
+        "26": 17,
+        "27": 49,
+        "28": 8,
+        "29": 12,
+        "30": 38,
+        "31": 1
+      },
+      "unique_target_addresses": 29,
+      "top_target_addresses": [
+        {
+          "address": "0x18098c9d6",
+          "count": 3697
+        },
+        {
+          "address": "0x18098c892",
+          "count": 2314
+        },
+        {
+          "address": "0x18098c91b",
+          "count": 2121
+        },
+        {
+          "address": "0x18098cb56",
+          "count": 2038
+        },
+        {
+          "address": "0x18098c9aa",
+          "count": 1691
+        },
+        {
+          "address": "0x18098c9de",
+          "count": 1656
+        },
+        {
+          "address": "0x18098ca12",
+          "count": 1510
+        },
+        {
+          "address": "0x18098c9ba",
+          "count": 1372
+        },
+        {
+          "address": "0x18098c92b",
+          "count": 1229
+        },
+        {
+          "address": "0x18098ca9b",
+          "count": 1141
+        },
+        {
+          "address": "0x18098c992",
+          "count": 835
+        },
+        {
+          "address": "0x18098cb3a",
+          "count": 829
+        },
+        {
+          "address": "0x18098cb5e",
+          "count": 825
+        },
+        {
+          "address": "0x18098caab",
+          "count": 777
+        },
+        {
+          "address": "0x18098cb2a",
+          "count": 555
+        },
+        {
+          "address": "0x18098cb12",
+          "count": 542
+        },
+        {
+          "address": "0x18098cac1",
+          "count": 77
+        },
+        {
+          "address": "0x18098c941",
+          "count": 68
+        },
+        {
+          "address": "0x18098cb0a",
+          "count": 67
+        },
+        {
+          "address": "0x18098c98a",
+          "count": 56
+        }
+      ]
+    }
+  ],
+  "adjacent_call_comparisons": [
+    {
+      "left": 1,
+      "right": 2,
+      "common_semantic_prefix": 11586,
+      "common_semantic_suffix": 134
+    },
+    {
+      "left": 2,
+      "right": 3,
+      "common_semantic_prefix": 23552,
+      "common_semantic_suffix": 134
+    }
+  ]
+}

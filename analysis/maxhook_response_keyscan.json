@@ -1,0 +1,41 @@
+{
+  "response_nonce": "7c064bb3c59409649b2ab870",
+  "response_ciphertext": "eeded0bf945452ea1035206f189c788b0892b756c9f8f4d4d22977723dd3d35955d9939f8e1e3a5323cce34d707accc5f391241ab5ff9a4c63c30bb423b3571d28bfe4c778d83220",
+  "response_tag": "45eafe7f6c79dec182525fa4faa7a00c",
+  "aad_candidates": [
+    null,
+    "",
+    "3",
+    "7E6757FD8090153938CFF989ADFEC119",
+    "~gW\ufffd\ufffd\ufffd\u001598\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\u0019",
+    "{\"sv\":3}",
+    "{\"sv\":3,\"kid\":\"7E6757FD8090153938CFF989ADFEC119\"}",
+    "{\"sv\":3,\"kid\":\"7E6757FD8090153938CFF989ADFEC119\",\"nonce\":\"7c064bb3c59409649b2ab870\"}",
+    "{\"sv\":3,\"kid\":\"7E6757FD8090153938CFF989ADFEC119\",\"nonce\":\"7c064bb3c59409649b2ab870\",\"ciphertext\":\""
+  ],
+  "regions": [
+    {
+      "name": "native_stack_5962",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_0000005962cf8000.bin",
+      "base": "0x5962cf8000"
+    },
+    {
+      "name": "native_stack_5966",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_0000005966ff6000.bin",
+      "base": "0x5966ff6000"
+    },
+    {
+      "name": "maxhook_data",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_00000001806e0000.bin",
+      "base": "0x1806e0000"
+    },
+    {
+      "name": "maxhook_rdata",
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_00000001805e0000.bin",
+      "base": "0x1805e0000"
+    }
+  ],
+  "unique_keys_tested": 957233,
+  "found": [],
+  "seconds": 20.536103010177612
+}

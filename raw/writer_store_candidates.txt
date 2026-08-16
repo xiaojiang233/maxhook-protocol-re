@@ -1,0 +1,185 @@
+0x1800381f0 mov rax, rcx; xorps xmm0, xmm0; movups xmmword ptr [rcx], xmm0; mov qword ptr [rcx + 0x10], 0; ret ; int3 ; int3 ; int3 
+0x18001f4e0 mov rax, rcx; mov qword ptr [rcx], rdx; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x1800a6610 push rsi; sub rsp, 0x20; mov rsi, rcx; mov qword ptr [rcx], rdx; mov eax, dword ptr [rip + 0x7d826b]; lea ecx, [rax + 0xa]; mov edx, 0xffffffa7; ror edx, cl
+0x180021d20 mov rax, rcx; mov qword ptr [rcx], rdx; mov qword ptr [rcx + 8], rdx; ret ; int3 ; int3 ; int3 ; int3 
+0x18001f4f0 mov rax, rcx; mov qword ptr [rcx], rdx; mov qword ptr [rcx + 8], 0; ret ; int3 ; mov rdx, qword ptr [rcx + 8]; test rdx, rdx; je 0x18001f561
+0x1800fa130 push r14; push rsi; push rdi; push rbx; sub rsp, 0x28; mov rsi, rcx; lea rax, [rip + 0x52c155]; mov qword ptr [rcx], rax
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x180022710 mov rax, rcx; mov qword ptr [rcx], rdx; mov rcx, qword ptr [r8 + 8]; mov qword ptr [rax + 8], rcx; mov qword ptr [rax + 0x10], r8; ret ; int3 ; int3 
+0x180022710 mov rax, rcx; mov qword ptr [rcx], rdx; mov rcx, qword ptr [r8 + 8]; mov qword ptr [rax + 8], rcx; mov qword ptr [rax + 0x10], r8; ret ; int3 ; int3 
+0x1800d8490 push rsi; sub rsp, 0x20; mov rsi, rcx; mov qword ptr [rcx], rdx; mov qword ptr [rcx + 8], r8; mov ecx, dword ptr [rip + 0x7a6f3b]; add ecx, 9; mov eax, 0x2f392032
+0x180021d20 mov rax, rcx; mov qword ptr [rcx], rdx; mov qword ptr [rcx + 8], rdx; ret ; int3 ; int3 ; int3 ; int3 
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x180022cc0 mov rax, qword ptr [rcx]; mov qword ptr [rcx], 0; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x18001f4e0 mov rax, rcx; mov qword ptr [rcx], rdx; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x18001c1e0 mov rax, rcx; xorps xmm0, xmm0; movups xmmword ptr [rcx], xmm0; ret ; int3 ; int3 ; int3 ; int3 
+0x18001f4e0 mov rax, rcx; mov qword ptr [rcx], rdx; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x180037240 mov rax, qword ptr [rcx]; mov rdx, qword ptr [rdx]; mov qword ptr [rcx], rdx; ret ; int3 ; int3 ; int3 ; int3 
+0x1800381f0 mov rax, rcx; xorps xmm0, xmm0; movups xmmword ptr [rcx], xmm0; mov qword ptr [rcx + 0x10], 0; ret ; int3 ; int3 ; int3 
+0x18001c1e0 mov rax, rcx; xorps xmm0, xmm0; movups xmmword ptr [rcx], xmm0; ret ; int3 ; int3 ; int3 ; int3 
+0x18007e890 push rsi; sub rsp, 0x20; mov rsi, rcx; mov qword ptr [rcx], rdx; mov eax, dword ptr [rip + 0x7fe35f]; lea ecx, [rax + 0x17]; mov edx, 0x1bfeffff; ror edx, cl
+0x18001f4f0 mov rax, rcx; mov qword ptr [rcx], rdx; mov qword ptr [rcx + 8], 0; ret ; int3 ; mov rdx, qword ptr [rcx + 8]; test rdx, rdx; je 0x18001f561
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x1800d7e80 movups xmm0, xmmword ptr [rdx]; movups xmmword ptr [rcx], xmm0; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x180022cc0 mov rax, qword ptr [rcx]; mov qword ptr [rcx], 0; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x18001f4e0 mov rax, rcx; mov qword ptr [rcx], rdx; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x1800eb150 mov rdx, qword ptr [rcx]; lea rax, [rcx + 8]; test rdx, rdx; cmovne rax, rdx; ret ; int3 ; mov rax, rcx; mov qword ptr [rcx], 0
+0x18001f4e0 mov rax, rcx; mov qword ptr [rcx], rdx; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x1800381f0 mov rax, rcx; xorps xmm0, xmm0; movups xmmword ptr [rcx], xmm0; mov qword ptr [rcx + 0x10], 0; ret ; int3 ; int3 ; int3 
+0x18005c950 mov rax, qword ptr [rdx]; bswap rax; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 
+0x18001f4e0 mov rax, rcx; mov qword ptr [rcx], rdx; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x1800381f0 mov rax, rcx; xorps xmm0, xmm0; movups xmmword ptr [rcx], xmm0; mov qword ptr [rcx + 0x10], 0; ret ; int3 ; int3 ; int3 
+0x18001f4f0 mov rax, rcx; mov qword ptr [rcx], rdx; mov qword ptr [rcx + 8], 0; ret ; int3 ; mov rdx, qword ptr [rcx + 8]; test rdx, rdx; je 0x18001f561
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x1800ebd90 push r14; push rsi; push rdi; push rbx; sub rsp, 0x28; mov rsi, rcx; lea rax, [rip + 0x539ce5]; mov qword ptr [rcx], rax
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x180043540 mov rax, rcx; mov qword ptr [rcx], rdx; mov qword ptr [rcx + 8], rdx; mov qword ptr [rcx + 0x10], r8; ret ; int3 ; mov r8, qword ptr [rcx + 0x10]; mov rax, qword ptr [rcx]
+0x1800da530 push rsi; sub rsp, 0x20; mov rsi, rcx; mov qword ptr [rcx], rdx; mov eax, dword ptr [rip + 0x7a4efb]; lea ecx, [rax + 1]; mov edx, 0xa7ffffff; ror edx, cl
+0x18001f4f0 mov rax, rcx; mov qword ptr [rcx], rdx; mov qword ptr [rcx + 8], 0; ret ; int3 ; mov rdx, qword ptr [rcx + 8]; test rdx, rdx; je 0x18001f561
+0x1800ee190 mov rax, rcx; lea rcx, [rip + 0x537d86]; mov qword ptr [rax], rcx; mov dword ptr [rax + 8], edx; mov dword ptr [rax + 0xc], r8d; xorps xmm0, xmm0; movups xmmword ptr [rax + 0x10], xmm0; ret 
+0x1800fff70 mov qword ptr [rcx], rdx; mov qword ptr [rcx + 8], r8; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x180069470 mov rax, rcx; mov qword ptr [rcx], 0; movabs rcx, 0xa2d412df16990a10; xor rcx, qword ptr [rip + 0x683645]; movabs rdx, 0x7f6d932ba7ac45e5; add rdx, rcx; mov qword ptr [rax + 8], rdx; ret 
+0x1800e28e0 push rsi; sub rsp, 0x20; mov rsi, rcx; mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; mov ecx, 0x2a027115; sub ecx, dword ptr [rip + 0x79ccb3]; mov eax, 0x11ec
+0x180022cc0 mov rax, qword ptr [rcx]; mov qword ptr [rcx], 0; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x1800381f0 mov rax, rcx; xorps xmm0, xmm0; movups xmmword ptr [rcx], xmm0; mov qword ptr [rcx + 0x10], 0; ret ; int3 ; int3 ; int3 
+0x1800dcf30 push rsi; sub rsp, 0x20; mov rsi, rcx; mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; mov ecx, dword ptr [rip + 0x7a2578]; add ecx, 0x1e; mov eax, 0xfffffe6d
+0x18001f4e0 mov rax, rcx; mov qword ptr [rcx], rdx; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x180022710 mov rax, rcx; mov qword ptr [rcx], rdx; mov rcx, qword ptr [r8 + 8]; mov qword ptr [rax + 8], rcx; mov qword ptr [rax + 0x10], r8; ret ; int3 ; int3 
+0x1800a5da0 mov rax, rcx; mov qword ptr [rcx], 0; movabs rcx, 0xc06ebb9888cb0024; xor rcx, qword ptr [rip + 0x662d55]; movabs rdx, 0x4b4e8dad418c1844; add rdx, rcx; mov qword ptr [rax + 8], rdx; ret 
+0x18001f4e0 mov rax, rcx; mov qword ptr [rcx], rdx; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x180043540 mov rax, rcx; mov qword ptr [rcx], rdx; mov qword ptr [rcx + 8], rdx; mov qword ptr [rcx + 0x10], r8; ret ; int3 ; mov r8, qword ptr [rcx + 0x10]; mov rax, qword ptr [rcx]
+0x180036460 movabs rax, 0x96c33c623155a91; xor rax, qword ptr [rip + 0x6ae32f]; lea rax, [rcx + rax*8]; movabs rcx, 0x77cf0cd742e9f9e8; mov qword ptr [rcx + rax], rdx; ret ; int3 ; int3 
+0x18008a500 mov rax, qword ptr [rcx]; mov r8, qword ptr [rdx]; mov qword ptr [rcx], r8; mov qword ptr [rdx], rax; ret ; int3 ; int3 ; int3 
+0x180021d20 mov rax, rcx; mov qword ptr [rcx], rdx; mov qword ptr [rcx + 8], rdx; ret ; int3 ; int3 ; int3 ; int3 
+0x1800fde30 mov rax, rcx; mov qword ptr [rcx], 0; movabs rcx, 0x2b5a7694d521b00b; xor rcx, qword ptr [rip + 0x60e69d]; movabs rdx, 0x16b6ac23baa74dc8; add rdx, rcx; mov qword ptr [rax + 8], rdx; ret 
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x18001f4f0 mov rax, rcx; mov qword ptr [rcx], rdx; mov qword ptr [rcx + 8], 0; ret ; int3 ; mov rdx, qword ptr [rcx + 8]; test rdx, rdx; je 0x18001f561
+0x18001f4e0 mov rax, rcx; mov qword ptr [rcx], rdx; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x180022cc0 mov rax, qword ptr [rcx]; mov qword ptr [rcx], 0; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x1800554e0 push rsi; sub rsp, 0x20; mov rsi, rcx; movabs rax, 0xf03a32bc19821093; xor rax, qword ptr [rip + 0x6966ff]; movabs rcx, 0xb5cc8b91852e5413; add rcx, rax; mov qword ptr [rsi + 0x10], rcx
+0x180068610 mov rax, rcx; mov ecx, dword ptr [rip + 0x68448b]; xorps xmm0, xmm0; movups xmmword ptr [rax + 0x38], xmm0; movups xmmword ptr [rax + 0x28], xmm0; movups xmmword ptr [rax + 0x18], xmm0; mov ecx, dword ptr [rip + 0x68446e]; mov ecx, dword ptr [rip + 0x68446c]
+0x18001f4e0 mov rax, rcx; mov qword ptr [rcx], rdx; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x1800381f0 mov rax, rcx; xorps xmm0, xmm0; movups xmmword ptr [rcx], xmm0; mov qword ptr [rcx + 0x10], 0; ret ; int3 ; int3 ; int3 
+0x18001f4e0 mov rax, rcx; mov qword ptr [rcx], rdx; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x180022cc0 mov rax, qword ptr [rcx]; mov qword ptr [rcx], 0; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x1800214d0 mov rax, r8; mov r8, qword ptr [rdx + 8]; mov qword ptr [r8], rax; mov r9, qword ptr [rax + 8]; mov qword ptr [r9], rcx; mov r10, qword ptr [rcx + 8]; mov qword ptr [r10], rdx; mov qword ptr [rcx + 8], r9
+0x180022cc0 mov rax, qword ptr [rcx]; mov qword ptr [rcx], 0; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x1800c4690 mov rax, rcx; mov qword ptr [rcx], rdx; mov qword ptr [rcx + 8], r8; mov qword ptr [rcx + 0x10], r9; ret ; int3 ; push r15; push r14
+0x180021d20 mov rax, rcx; mov qword ptr [rcx], rdx; mov qword ptr [rcx + 8], rdx; ret ; int3 ; int3 ; int3 ; int3 
+0x1800381f0 mov rax, rcx; xorps xmm0, xmm0; movups xmmword ptr [rcx], xmm0; mov qword ptr [rcx + 0x10], 0; ret ; int3 ; int3 ; int3 
+0x1800214d0 mov rax, r8; mov r8, qword ptr [rdx + 8]; mov qword ptr [r8], rax; mov r9, qword ptr [rax + 8]; mov qword ptr [r9], rcx; mov r10, qword ptr [rcx + 8]; mov qword ptr [r10], rdx; mov qword ptr [rcx + 8], r9
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x18001f4f0 mov rax, rcx; mov qword ptr [rcx], rdx; mov qword ptr [rcx + 8], 0; ret ; int3 ; mov rdx, qword ptr [rcx + 8]; test rdx, rdx; je 0x18001f561
+0x18003cc00 mov rax, rcx; mov qword ptr [rcx], 0; movabs rcx, 0x81381e5ff8af890a; xor rcx, qword ptr [rip + 0x6a7e55]; movabs rdx, 0x7fb8d1460719fe1f; add rdx, rcx; mov qword ptr [rax + 8], rdx; ret 
+0x180062730 mov rax, rcx; mov qword ptr [rcx], 0; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x180022cc0 mov rax, qword ptr [rcx]; mov qword ptr [rcx], 0; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x1800214d0 mov rax, r8; mov r8, qword ptr [rdx + 8]; mov qword ptr [r8], rax; mov r9, qword ptr [rax + 8]; mov qword ptr [r9], rcx; mov r10, qword ptr [rcx + 8]; mov qword ptr [r10], rdx; mov qword ptr [rcx + 8], r9
+0x180062730 mov rax, rcx; mov qword ptr [rcx], 0; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x18008a500 mov rax, qword ptr [rcx]; mov r8, qword ptr [rdx]; mov qword ptr [rcx], r8; mov qword ptr [rdx], rax; ret ; int3 ; int3 ; int3 
+0x180084810 push rsi; sub rsp, 0x20; mov rsi, rcx; mov qword ptr [rcx], rdx; mov ecx, 0x34ce4bbe; sub ecx, dword ptr [rip + 0x7f851e]; mov eax, 0x1e400; rol eax, cl
+0x180022710 mov rax, rcx; mov qword ptr [rcx], rdx; mov rcx, qword ptr [r8 + 8]; mov qword ptr [rax + 8], rcx; mov qword ptr [rax + 0x10], r8; ret ; int3 ; int3 
+0x18001f4f0 mov rax, rcx; mov qword ptr [rcx], rdx; mov qword ptr [rcx + 8], 0; ret ; int3 ; mov rdx, qword ptr [rcx + 8]; test rdx, rdx; je 0x18001f561
+0x1800381f0 mov rax, rcx; xorps xmm0, xmm0; movups xmmword ptr [rcx], xmm0; mov qword ptr [rcx + 0x10], 0; ret ; int3 ; int3 ; int3 
+0x1800bb720 push rsi; sub rsp, 0x20; mov rsi, rcx; mov qword ptr [rcx], rdx; mov ecx, dword ptr [rip + 0x7c362b]; add ecx, 0xb; mov eax, 0x45db94a7; ror eax, cl
+0x18007e090 mov rax, rcx; mov qword ptr [rcx], 0; movabs rcx, 0xb9d212b1be54cd1c; xor rcx, qword ptr [rip + 0x678c25]; movabs rdx, 0xa6642659ece4179; add rdx, rcx; mov qword ptr [rax + 8], rdx; ret 
+0x180049bf0 push rsi; sub rsp, 0x20; mov rsi, rcx; mov qword ptr [rcx], rdx; mov ecx, dword ptr [rip + 0x831897]; add ecx, 0x17; mov eax, 0xec7fffff; ror eax, cl
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x1800b6690 mov rax, rcx; mov qword ptr [rcx], 0; movabs rcx, 0xdcd466342ad497e9; xor rcx, qword ptr [rip + 0x652fc5]; movabs rdx, 0xdf2acadef5f3a11a; add rdx, rcx; mov qword ptr [rax + 8], rdx; ret 
+0x1800381f0 mov rax, rcx; xorps xmm0, xmm0; movups xmmword ptr [rcx], xmm0; mov qword ptr [rcx + 0x10], 0; ret ; int3 ; int3 ; int3 
+0x180069c40 push rsi; sub rsp, 0x20; mov rsi, rcx; mov qword ptr [rcx], rdx; mov eax, dword ptr [rip + 0x811dc3]; mov ecx, 0xc4f257f1; sub ecx, eax; mov edx, 0x1380
+0x1800214d0 mov rax, r8; mov r8, qword ptr [rdx + 8]; mov qword ptr [r8], rax; mov r9, qword ptr [rax + 8]; mov qword ptr [r9], rcx; mov r10, qword ptr [rcx + 8]; mov qword ptr [r10], rdx; mov qword ptr [rcx + 8], r9
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x1800d4cf0 push rsi; sub rsp, 0x20; mov rsi, rcx; xorps xmm0, xmm0; movups xmmword ptr [rcx], xmm0; mov qword ptr [rcx + 0x10], 0; mov ecx, 0xdd64ce32; sub ecx, dword ptr [rip + 0x7aa61f]
+0x1800eb180 mov rax, rcx; mov qword ptr [rcx], 0; movzx ecx, word ptr [rip + 0x62049d]; xor ecx, 0x24a9; add ecx, 0x1a02; mov word ptr [rax + 8], cx; ret ; int3 
+0x1800e8d30 movabs rax, 0x1205152e149a8f01; xor rax, qword ptr [rip + 0x6225f7]; lea rax, [rcx + rax*8]; movabs rcx, 0xf92a5fb113faa138; mov qword ptr [rcx + rax], rdx; ret ; int3 ; int3 
+0x180021d20 mov rax, rcx; mov qword ptr [rcx], rdx; mov qword ptr [rcx + 8], rdx; ret ; int3 ; int3 ; int3 ; int3 
+0x180021d20 mov rax, rcx; mov qword ptr [rcx], rdx; mov qword ptr [rcx + 8], rdx; ret ; int3 ; int3 ; int3 ; int3 
+0x180022cc0 mov rax, qword ptr [rcx]; mov qword ptr [rcx], 0; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x180022cc0 mov rax, qword ptr [rcx]; mov qword ptr [rcx], 0; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x1800cbdf0 push r15; push r14; push rsi; push rdi; push rbx; sub rsp, 0x20; mov rsi, rcx; mov qword ptr [rcx], 0
+0x1800fae70 mov rax, qword ptr [rcx + 0x18]; mov qword ptr [rax + 0x10], rdx; mov rax, qword ptr [rcx + 0x18]; mov qword ptr [rdx + 0x18], rax; mov qword ptr [rcx + 0x18], rdx; mov qword ptr [rdx + 0x10], rcx; ret ; int3 
+0x1800381f0 mov rax, rcx; xorps xmm0, xmm0; movups xmmword ptr [rcx], xmm0; mov qword ptr [rcx + 0x10], 0; ret ; int3 ; int3 ; int3 
+0x1800214d0 mov rax, r8; mov r8, qword ptr [rdx + 8]; mov qword ptr [r8], rax; mov r9, qword ptr [rax + 8]; mov qword ptr [r9], rcx; mov r10, qword ptr [rcx + 8]; mov qword ptr [r10], rdx; mov qword ptr [rcx + 8], r9
+0x1800fe850 mov rax, rcx; mov qword ptr [rcx], 0; movabs rcx, 0x84244fee8d497c47; xor rcx, qword ptr [rip + 0x60dcb5]; movabs rdx, 0x9705ac3784a0683f; add rdx, rcx; mov qword ptr [rax + 8], rdx; ret 
+0x180022710 mov rax, rcx; mov qword ptr [rcx], rdx; mov rcx, qword ptr [r8 + 8]; mov qword ptr [rax + 8], rcx; mov qword ptr [rax + 0x10], r8; ret ; int3 ; int3 
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x18001f4e0 mov rax, rcx; mov qword ptr [rcx], rdx; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x18008a500 mov rax, qword ptr [rcx]; mov r8, qword ptr [rdx]; mov qword ptr [rcx], r8; mov qword ptr [rdx], rax; ret ; int3 ; int3 ; int3 
+0x18001c1e0 mov rax, rcx; xorps xmm0, xmm0; movups xmmword ptr [rcx], xmm0; ret ; int3 ; int3 ; int3 ; int3 
+0x18001c1e0 mov rax, rcx; xorps xmm0, xmm0; movups xmmword ptr [rcx], xmm0; ret ; int3 ; int3 ; int3 ; int3 
+0x180038820 push rsi; sub rsp, 0x20; mov rsi, rcx; mov qword ptr [rcx], rdx; mov ecx, 0xb5bba019; add ecx, dword ptr [rip + 0x8423c2]; mov eax, 0x28c00; ror eax, cl
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x180037240 mov rax, qword ptr [rcx]; mov rdx, qword ptr [rdx]; mov qword ptr [rcx], rdx; ret ; int3 ; int3 ; int3 ; int3 
+0x1800d9370 push rsi; sub rsp, 0x60; mov rsi, rcx; mov rax, qword ptr [rip + 0x79fac1]; xor rax, rsp; mov qword ptr [rsp + 0x58], rax; movups xmm0, xmmword ptr [r9]; movaps xmmword ptr [rsp + 0x40], xmm0
+0x18001f4e0 mov rax, rcx; mov qword ptr [rcx], rdx; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x18001f4e0 mov rax, rcx; mov qword ptr [rcx], rdx; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x1800868f0 mov rax, rcx; mov qword ptr [rcx], rdx; mov qword ptr [rcx + 8], r8; ret ; int3 ; int3 ; int3 ; int3 
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x1800fea60 push rsi; sub rsp, 0x20; mov rsi, rcx; mov qword ptr [rcx], rdx; mov ecx, 0x408b804; add ecx, dword ptr [rip + 0x7815e2]; mov edx, 0xffffa6ff; ror edx, cl
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x18012cd90 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; mov rax, qword ptr [rdx + 8]; mov qword ptr [rcx + 8], rax; xorps xmm0, xmm0; movups xmmword ptr [rdx], xmm0; ret ; int3 
+0x180083f80 mov rax, rcx; mov qword ptr [rcx], 0; movabs rcx, 0xf1ab6a5f7dc5acca; xor rcx, qword ptr [rip + 0x672f85]; movabs rdx, 0x3af3837f3b5862b8; add rdx, rcx; mov qword ptr [rax + 8], rdx; ret 
+0x180022710 mov rax, rcx; mov qword ptr [rcx], rdx; mov rcx, qword ptr [r8 + 8]; mov qword ptr [rax + 8], rcx; mov qword ptr [rax + 0x10], r8; ret ; int3 ; int3 
+0x18001f4f0 mov rax, rcx; mov qword ptr [rcx], rdx; mov qword ptr [rcx + 8], 0; ret ; int3 ; mov rdx, qword ptr [rcx + 8]; test rdx, rdx; je 0x18001f561
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x180022710 mov rax, rcx; mov qword ptr [rcx], rdx; mov rcx, qword ptr [r8 + 8]; mov qword ptr [rax + 8], rcx; mov qword ptr [rax + 0x10], r8; ret ; int3 ; int3 
+0x1800495c0 push rsi; sub rsp, 0x40; mov rsi, rcx; mov rax, qword ptr [rip + 0x82f871]; xor rax, rsp; mov qword ptr [rsp + 0x38], rax; lea rax, [rip + 0x59724a]; mov qword ptr [rcx], rax
+0x1800eb160 mov rax, rcx; mov qword ptr [rcx], 0; movzx ecx, byte ptr [rip + 0x6204bb]; xor cl, 0x62; add cl, 0xe4; mov byte ptr [rax + 8], cl; ret ; int3 
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x180043540 mov rax, rcx; mov qword ptr [rcx], rdx; mov qword ptr [rcx + 8], rdx; mov qword ptr [rcx + 0x10], r8; ret ; int3 ; mov r8, qword ptr [rcx + 0x10]; mov rax, qword ptr [rcx]
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x18001f4f0 mov rax, rcx; mov qword ptr [rcx], rdx; mov qword ptr [rcx + 8], 0; ret ; int3 ; mov rdx, qword ptr [rcx + 8]; test rdx, rdx; je 0x18001f561
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x1800e8a50 push rsi; sub rsp, 0x20; mov rsi, rcx; mov qword ptr [rcx], rdx; mov eax, dword ptr [rip + 0x796c83]; mov ecx, 0x14; sub ecx, eax; mov edx, 0x89b1454c
+0x18001b690 push rsi; sub rsp, 0x20; mov rsi, rcx; lea rax, [rip + 0x5c5189]; mov qword ptr [rcx], rax; xorps xmm0, xmm0; movups xmmword ptr [rcx + 8], xmm0; mov ecx, 0xc509f1d0
+0x1800214d0 mov rax, r8; mov r8, qword ptr [rdx + 8]; mov qword ptr [r8], rax; mov r9, qword ptr [rax + 8]; mov qword ptr [r9], rcx; mov r10, qword ptr [rcx + 8]; mov qword ptr [r10], rdx; mov qword ptr [rcx + 8], r9
+0x18008a500 mov rax, qword ptr [rcx]; mov r8, qword ptr [rdx]; mov qword ptr [rcx], r8; mov qword ptr [rdx], rax; ret ; int3 ; int3 ; int3 
+0x18005c950 mov rax, qword ptr [rdx]; bswap rax; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 
+0x1800381f0 mov rax, rcx; xorps xmm0, xmm0; movups xmmword ptr [rcx], xmm0; mov qword ptr [rcx + 0x10], 0; ret ; int3 ; int3 ; int3 
+0x180022cc0 mov rax, qword ptr [rcx]; mov qword ptr [rcx], 0; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x18001f4e0 mov rax, rcx; mov qword ptr [rcx], rdx; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x180043540 mov rax, rcx; mov qword ptr [rcx], rdx; mov qword ptr [rcx + 8], rdx; mov qword ptr [rcx + 0x10], r8; ret ; int3 ; mov r8, qword ptr [rcx + 0x10]; mov rax, qword ptr [rcx]
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x18001f4e0 mov rax, rcx; mov qword ptr [rcx], rdx; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x1800214d0 mov rax, r8; mov r8, qword ptr [rdx + 8]; mov qword ptr [r8], rax; mov r9, qword ptr [rax + 8]; mov qword ptr [r9], rcx; mov r10, qword ptr [rcx + 8]; mov qword ptr [r10], rdx; mov qword ptr [rcx + 8], r9
+0x180082a80 mov rax, rcx; mov qword ptr [rcx], 0; movabs rcx, 0xc3aac51011ba3a4a; xor rcx, qword ptr [rip + 0x67442d]; movabs rdx, 0x38c20acbf997a32c; add rdx, rcx; mov qword ptr [rax + 8], rdx; ret 
+0x180090b30 push rsi; sub rsp, 0x20; mov rsi, rcx; mov qword ptr [rcx], rdx; mov ecx, 0x1c; sub ecx, dword ptr [rip + 0x7ed1ae]; mov eax, 0xffffff2f; rol eax, cl
+0x180086820 push rsi; sub rsp, 0x20; mov rsi, rcx; mov qword ptr [rcx], rdx; mov ecx, dword ptr [rip + 0x7f65df]; add ecx, 0x1c; mov eax, 0x70000ff8; ror eax, cl
+0x1800381f0 mov rax, rcx; xorps xmm0, xmm0; movups xmmword ptr [rcx], xmm0; mov qword ptr [rcx + 0x10], 0; ret ; int3 ; int3 ; int3 
+0x180043540 mov rax, rcx; mov qword ptr [rcx], rdx; mov qword ptr [rcx + 8], rdx; mov qword ptr [rcx + 0x10], r8; ret ; int3 ; mov r8, qword ptr [rcx + 0x10]; mov rax, qword ptr [rcx]
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x18006c530 push rsi; push rdi; sub rsp, 0x28; mov rdi, rdx; mov rsi, rcx; mov qword ptr [rcx + 8], rdx; mov eax, dword ptr [rip + 0x80f592]; mov ecx, 0xd66fa4fd
+0x1800381f0 mov rax, rcx; xorps xmm0, xmm0; movups xmmword ptr [rcx], xmm0; mov qword ptr [rcx + 0x10], 0; ret ; int3 ; int3 ; int3 
+0x18001f4e0 mov rax, rcx; mov qword ptr [rcx], rdx; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x180043540 mov rax, rcx; mov qword ptr [rcx], rdx; mov qword ptr [rcx + 8], rdx; mov qword ptr [rcx + 0x10], r8; ret ; int3 ; mov r8, qword ptr [rcx + 0x10]; mov rax, qword ptr [rcx]
+0x180022cc0 mov rax, qword ptr [rcx]; mov qword ptr [rcx], 0; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x1800d5570 push rsi; sub rsp, 0x20; mov rsi, rdx; movups xmm0, xmmword ptr [rcx]; movups xmmword ptr [rdx], xmm0; mov eax, dword ptr [rip + 0x7a9dc4]; mov eax, dword ptr [rip + 0x64670e]; bswap eax
+0x18012d560 push rsi; sub rsp, 0x20; mov rsi, rcx; mov qword ptr [rcx], rdx; mov ecx, 0x12; sub ecx, dword ptr [rip + 0x75328e]; mov edx, 0xffe9bfff; rol edx, cl
+0x180043540 mov rax, rcx; mov qword ptr [rcx], rdx; mov qword ptr [rcx + 8], rdx; mov qword ptr [rcx + 0x10], r8; ret ; int3 ; mov r8, qword ptr [rcx + 0x10]; mov rax, qword ptr [rcx]
+0x180022cc0 mov rax, qword ptr [rcx]; mov qword ptr [rcx], 0; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x180038040 mov rax, rcx; mov qword ptr [rcx], 0; movabs rcx, 0xd4955e2051c821bd; xor rcx, qword ptr [rip + 0x6ac7ad]; movabs rdx, 0x3ed7dcc9c348a2db; add rdx, rcx; mov qword ptr [rax + 8], rdx; ret 
+0x1800b2d40 push rsi; sub rsp, 0x20; mov rsi, rcx; mov qword ptr [rcx], rdx; mov ecx, dword ptr [rip + 0x7cbe0f]; xor ecx, 0x10; mov eax, 0xc849e529; ror eax, cl
+0x18001c780 mov rax, qword ptr [rdx]; mov qword ptr [rcx], rax; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x1800c4690 mov rax, rcx; mov qword ptr [rcx], rdx; mov qword ptr [rcx + 8], r8; mov qword ptr [rcx + 0x10], r9; ret ; int3 ; push r15; push r14
+0x180022cc0 mov rax, qword ptr [rcx]; mov qword ptr [rcx], 0; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x180022cc0 mov rax, qword ptr [rcx]; mov qword ptr [rcx], 0; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x18001f4e0 mov rax, rcx; mov qword ptr [rcx], rdx; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x1800381f0 mov rax, rcx; xorps xmm0, xmm0; movups xmmword ptr [rcx], xmm0; mov qword ptr [rcx + 0x10], 0; ret ; int3 ; int3 ; int3 
+0x1800832b0 push rsi; sub rsp, 0x20; mov rsi, rcx; mov qword ptr [rcx], rdx; mov r9d, dword ptr [rip + 0x7f9a36]; lea eax, [r9 - 0x51731b5e]; mov r10d, 0xfffff86f; mov ecx, eax
+0x18001f4e0 mov rax, rcx; mov qword ptr [rcx], rdx; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x18001c1e0 mov rax, rcx; xorps xmm0, xmm0; movups xmmword ptr [rcx], xmm0; ret ; int3 ; int3 ; int3 ; int3 
+0x180021d20 mov rax, rcx; mov qword ptr [rcx], rdx; mov qword ptr [rcx + 8], rdx; ret ; int3 ; int3 ; int3 ; int3 
+0x18001f4e0 mov rax, rcx; mov qword ptr [rcx], rdx; ret ; int3 ; int3 ; int3 ; int3 ; int3 
+0x1800381f0 mov rax, rcx; xorps xmm0, xmm0; movups xmmword ptr [rcx], xmm0; mov qword ptr [rcx + 0x10], 0; ret ; int3 ; int3 ; int3 
+0x1800381f0 mov rax, rcx; xorps xmm0, xmm0; movups xmmword ptr [rcx], xmm0; mov qword ptr [rcx + 0x10], 0; ret ; int3 ; int3 ; int3 
+0x1800381f0 mov rax, rcx; xorps xmm0, xmm0; movups xmmword ptr [rcx], xmm0; mov qword ptr [rcx + 0x10], 0; ret ; int3 ; int3 ; int3 

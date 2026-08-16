@@ -1,0 +1,12 @@
+{
+  "schema": "maxhook.sha256-counter0-tag-search/v1",
+  "message_specs": 252,
+  "keys": [
+    "derived",
+    "raw",
+    "c0",
+    "c1"
+  ],
+  "sample0_hits": [],
+  "verified_all_samples": []
+}

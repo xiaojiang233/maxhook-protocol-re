@@ -1,0 +1,822 @@
+{
+  "schema": "maxhook.encrypt-boundary.analysis/v1",
+  "sensitive_values_omitted": true,
+  "source_directories": [
+    "E:\\Coding\\S1mple\\target\\encrypt_boundary_capture",
+    "E:\\Coding\\S1mple\\target\\encrypt_boundary_capture2"
+  ],
+  "sessions": [
+    {
+      "directory": "E:\\Coding\\S1mple\\target\\encrypt_boundary_capture",
+      "session_index": 0,
+      "installed_at": "2026-08-13T16:19:20.158068+08:00",
+      "calls": [
+        {
+          "call_id": 1,
+          "complete_and_hash_valid": true,
+          "valid_string_fields": 7,
+          "meta_files_valid": 0
+        },
+        {
+          "call_id": 2,
+          "complete_and_hash_valid": true,
+          "valid_string_fields": 7,
+          "meta_files_valid": 0
+        },
+        {
+          "call_id": 3,
+          "complete_and_hash_valid": true,
+          "valid_string_fields": 7,
+          "meta_files_valid": 0
+        },
+        {
+          "call_id": 4,
+          "complete_and_hash_valid": true,
+          "valid_string_fields": 7,
+          "meta_files_valid": 0
+        }
+      ]
+    },
+    {
+      "directory": "E:\\Coding\\S1mple\\target\\encrypt_boundary_capture2",
+      "session_index": 0,
+      "installed_at": "2026-08-13T16:25:19.970884+08:00",
+      "calls": [
+        {
+          "call_id": 1,
+          "complete_and_hash_valid": false,
+          "valid_string_fields": 4,
+          "meta_files_valid": 0
+        },
+        {
+          "call_id": 2,
+          "complete_and_hash_valid": true,
+          "valid_string_fields": 7,
+          "meta_files_valid": 2
+        },
+        {
+          "call_id": 3,
+          "complete_and_hash_valid": true,
+          "valid_string_fields": 7,
+          "meta_files_valid": 2
+        },
+        {
+          "call_id": 4,
+          "complete_and_hash_valid": true,
+          "valid_string_fields": 7,
+          "meta_files_valid": 2
+        },
+        {
+          "call_id": 5,
+          "complete_and_hash_valid": true,
+          "valid_string_fields": 7,
+          "meta_files_valid": 2
+        },
+        {
+          "call_id": 6,
+          "complete_and_hash_valid": true,
+          "valid_string_fields": 7,
+          "meta_files_valid": 2
+        },
+        {
+          "call_id": 7,
+          "complete_and_hash_valid": true,
+          "valid_string_fields": 7,
+          "meta_files_valid": 2
+        }
+      ]
+    },
+    {
+      "directory": "E:\\Coding\\S1mple\\target\\encrypt_boundary_capture2",
+      "session_index": 1,
+      "installed_at": "2026-08-13T16:28:34.127971+08:00",
+      "calls": [
+        {
+          "call_id": 1,
+          "complete_and_hash_valid": false,
+          "valid_string_fields": 3,
+          "meta_files_valid": 1
+        }
+      ]
+    },
+    {
+      "directory": "E:\\Coding\\S1mple\\target\\encrypt_boundary_capture2",
+      "session_index": 2,
+      "installed_at": "2026-08-13T16:28:43.366172+08:00",
+      "calls": [
+        {
+          "call_id": 1,
+          "complete_and_hash_valid": true,
+          "valid_string_fields": 7,
+          "meta_files_valid": 5
+        },
+        {
+          "call_id": 2,
+          "complete_and_hash_valid": true,
+          "valid_string_fields": 7,
+          "meta_files_valid": 5
+        },
+        {
+          "call_id": 3,
+          "complete_and_hash_valid": true,
+          "valid_string_fields": 7,
+          "meta_files_valid": 5
+        },
+        {
+          "call_id": 4,
+          "complete_and_hash_valid": true,
+          "valid_string_fields": 7,
+          "meta_files_valid": 5
+        }
+      ]
+    }
+  ],
+  "valid_call_count": 14,
+  "relations": [
+    {
+      "directory": "encrypt_boundary_capture",
+      "session_index": 0,
+      "call_id": 1,
+      "kid_equals_input32": true,
+      "plaintext_bytes": 745,
+      "ciphertext_bytes": 745,
+      "ciphertext_length_equals_plaintext": true,
+      "kid_fingerprint_sha256_12": "02b94b079d31",
+      "secret_fingerprint_sha256_12": "3ba8c1977db4"
+    },
+    {
+      "directory": "encrypt_boundary_capture",
+      "session_index": 0,
+      "call_id": 2,
+      "kid_equals_input32": true,
+      "plaintext_bytes": 1339,
+      "ciphertext_bytes": 1339,
+      "ciphertext_length_equals_plaintext": true,
+      "kid_fingerprint_sha256_12": "02b94b079d31",
+      "secret_fingerprint_sha256_12": "3ba8c1977db4"
+    },
+    {
+      "directory": "encrypt_boundary_capture",
+      "session_index": 0,
+      "call_id": 3,
+      "kid_equals_input32": true,
+      "plaintext_bytes": 1337,
+      "ciphertext_bytes": 1337,
+      "ciphertext_length_equals_plaintext": true,
+      "kid_fingerprint_sha256_12": "02b94b079d31",
+      "secret_fingerprint_sha256_12": "3ba8c1977db4"
+    },
+    {
+      "directory": "encrypt_boundary_capture",
+      "session_index": 0,
+      "call_id": 4,
+      "kid_equals_input32": true,
+      "plaintext_bytes": 761,
+      "ciphertext_bytes": 761,
+      "ciphertext_length_equals_plaintext": true,
+      "kid_fingerprint_sha256_12": "02b94b079d31",
+      "secret_fingerprint_sha256_12": "3ba8c1977db4"
+    },
+    {
+      "directory": "encrypt_boundary_capture2",
+      "session_index": 0,
+      "call_id": 2,
+      "kid_equals_input32": true,
+      "plaintext_bytes": 1304,
+      "ciphertext_bytes": 1304,
+      "ciphertext_length_equals_plaintext": true,
+      "kid_fingerprint_sha256_12": "02b94b079d31",
+      "secret_fingerprint_sha256_12": "3ba8c1977db4"
+    },
+    {
+      "directory": "encrypt_boundary_capture2",
+      "session_index": 0,
+      "call_id": 3,
+      "kid_equals_input32": true,
+      "plaintext_bytes": 758,
+      "ciphertext_bytes": 758,
+      "ciphertext_length_equals_plaintext": true,
+      "kid_fingerprint_sha256_12": "02b94b079d31",
+      "secret_fingerprint_sha256_12": "3ba8c1977db4"
+    },
+    {
+      "directory": "encrypt_boundary_capture2",
+      "session_index": 0,
+      "call_id": 4,
+      "kid_equals_input32": true,
+      "plaintext_bytes": 754,
+      "ciphertext_bytes": 754,
+      "ciphertext_length_equals_plaintext": true,
+      "kid_fingerprint_sha256_12": "02b94b079d31",
+      "secret_fingerprint_sha256_12": "3ba8c1977db4"
+    },
+    {
+      "directory": "encrypt_boundary_capture2",
+      "session_index": 0,
+      "call_id": 5,
+      "kid_equals_input32": true,
+      "plaintext_bytes": 1306,
+      "ciphertext_bytes": 1306,
+      "ciphertext_length_equals_plaintext": true,
+      "kid_fingerprint_sha256_12": "02b94b079d31",
+      "secret_fingerprint_sha256_12": "3ba8c1977db4"
+    },
+    {
+      "directory": "encrypt_boundary_capture2",
+      "session_index": 0,
+      "call_id": 6,
+      "kid_equals_input32": true,
+      "plaintext_bytes": 1082,
+      "ciphertext_bytes": 1082,
+      "ciphertext_length_equals_plaintext": true,
+      "kid_fingerprint_sha256_12": "02b94b079d31",
+      "secret_fingerprint_sha256_12": "3ba8c1977db4"
+    },
+    {
+      "directory": "encrypt_boundary_capture2",
+      "session_index": 0,
+      "call_id": 7,
+      "kid_equals_input32": true,
+      "plaintext_bytes": 792,
+      "ciphertext_bytes": 792,
+      "ciphertext_length_equals_plaintext": true,
+      "kid_fingerprint_sha256_12": "02b94b079d31",
+      "secret_fingerprint_sha256_12": "3ba8c1977db4"
+    },
+    {
+      "directory": "encrypt_boundary_capture2",
+      "session_index": 2,
+      "call_id": 1,
+      "kid_equals_input32": true,
+      "plaintext_bytes": 744,
+      "ciphertext_bytes": 744,
+      "ciphertext_length_equals_plaintext": true,
+      "kid_fingerprint_sha256_12": "5de50abd5021",
+      "secret_fingerprint_sha256_12": "ffea889b4fc2"
+    },
+    {
+      "directory": "encrypt_boundary_capture2",
+      "session_index": 2,
+      "call_id": 2,
+      "kid_equals_input32": true,
+      "plaintext_bytes": 1320,
+      "ciphertext_bytes": 1320,
+      "ciphertext_length_equals_plaintext": true,
+      "kid_fingerprint_sha256_12": "5de50abd5021",
+      "secret_fingerprint_sha256_12": "ffea889b4fc2"
+    },
+    {
+      "directory": "encrypt_boundary_capture2",
+      "session_index": 2,
+      "call_id": 3,
+      "kid_equals_input32": true,
+      "plaintext_bytes": 1325,
+      "ciphertext_bytes": 1325,
+      "ciphertext_length_equals_plaintext": true,
+      "kid_fingerprint_sha256_12": "5de50abd5021",
+      "secret_fingerprint_sha256_12": "ffea889b4fc2"
+    },
+    {
+      "directory": "encrypt_boundary_capture2",
+      "session_index": 2,
+      "call_id": 4,
+      "kid_equals_input32": true,
+      "plaintext_bytes": 691,
+      "ciphertext_bytes": 691,
+      "ciphertext_length_equals_plaintext": true,
+      "kid_fingerprint_sha256_12": "5de50abd5021",
+      "secret_fingerprint_sha256_12": "ffea889b4fc2"
+    }
+  ],
+  "plaintext_protocol": [
+    {
+      "directory": "encrypt_boundary_capture",
+      "session_index": 0,
+      "call_id": 1,
+      "key_order": [
+        "device_id",
+        "h2_cantor",
+        "nonce",
+        "report_packet",
+        "seq",
+        "session_id",
+        "sv",
+        "timestamp"
+      ],
+      "field_formats": {
+        "device_id": "hex/16",
+        "h2_cantor": "string/100",
+        "nonce": "hex/32",
+        "report_packet": "hex/446",
+        "seq": "int",
+        "session_id": "hex/32",
+        "sv": "int",
+        "timestamp": "int"
+      },
+      "seq": 90,
+      "sv": 3,
+      "report_packet_decoded_bytes": 223,
+      "report_packet_entropy_bits_per_byte": 7.0607,
+      "inner_nonce_equals_outer_nonce": false,
+      "input64_equals_any_string_field": false,
+      "field_fingerprints_sha256_12": {
+        "device_id": "90cb37c1e929",
+        "h2_cantor": "14dc5edf806b",
+        "nonce": "b66e021fd141",
+        "session_id": "0363db54847a"
+      }
+    },
+    {
+      "directory": "encrypt_boundary_capture",
+      "session_index": 0,
+      "call_id": 2,
+      "key_order": [
+        "device_id",
+        "h2_cantor",
+        "nonce",
+        "report_packet",
+        "seq",
+        "session_id",
+        "sv",
+        "timestamp"
+      ],
+      "field_formats": {
+        "device_id": "hex/16",
+        "h2_cantor": "string/100",
+        "nonce": "hex/32",
+        "report_packet": "hex/1040",
+        "seq": "int",
+        "session_id": "hex/32",
+        "sv": "int",
+        "timestamp": "int"
+      },
+      "seq": 91,
+      "sv": 3,
+      "report_packet_decoded_bytes": 520,
+      "report_packet_entropy_bits_per_byte": 7.5511,
+      "inner_nonce_equals_outer_nonce": false,
+      "input64_equals_any_string_field": false,
+      "field_fingerprints_sha256_12": {
+        "device_id": "90cb37c1e929",
+        "h2_cantor": "e2caffa8dc9b",
+        "nonce": "f9bceb4900bd",
+        "session_id": "0363db54847a"
+      }
+    },
+    {
+      "directory": "encrypt_boundary_capture",
+      "session_index": 0,
+      "call_id": 3,
+      "key_order": [
+        "device_id",
+        "h2_cantor",
+        "nonce",
+        "report_packet",
+        "seq",
+        "session_id",
+        "sv",
+        "timestamp"
+      ],
+      "field_formats": {
+        "device_id": "hex/16",
+        "h2_cantor": "string/100",
+        "nonce": "hex/32",
+        "report_packet": "hex/1038",
+        "seq": "int",
+        "session_id": "hex/32",
+        "sv": "int",
+        "timestamp": "int"
+      },
+      "seq": 92,
+      "sv": 3,
+      "report_packet_decoded_bytes": 519,
+      "report_packet_entropy_bits_per_byte": 7.6208,
+      "inner_nonce_equals_outer_nonce": false,
+      "input64_equals_any_string_field": false,
+      "field_fingerprints_sha256_12": {
+        "device_id": "90cb37c1e929",
+        "h2_cantor": "a2094a500340",
+        "nonce": "9293397f4bc2",
+        "session_id": "0363db54847a"
+      }
+    },
+    {
+      "directory": "encrypt_boundary_capture",
+      "session_index": 0,
+      "call_id": 4,
+      "key_order": [
+        "device_id",
+        "h2_cantor",
+        "nonce",
+        "report_packet",
+        "seq",
+        "session_id",
+        "sv",
+        "timestamp"
+      ],
+      "field_formats": {
+        "device_id": "hex/16",
+        "h2_cantor": "string/100",
+        "nonce": "hex/32",
+        "report_packet": "hex/462",
+        "seq": "int",
+        "session_id": "hex/32",
+        "sv": "int",
+        "timestamp": "int"
+      },
+      "seq": 93,
+      "sv": 3,
+      "report_packet_decoded_bytes": 231,
+      "report_packet_entropy_bits_per_byte": 7.1058,
+      "inner_nonce_equals_outer_nonce": false,
+      "input64_equals_any_string_field": false,
+      "field_fingerprints_sha256_12": {
+        "device_id": "90cb37c1e929",
+        "h2_cantor": "9182bec47064",
+        "nonce": "2a48df3dada0",
+        "session_id": "0363db54847a"
+      }
+    },
+    {
+      "directory": "encrypt_boundary_capture2",
+      "session_index": 0,
+      "call_id": 2,
+      "key_order": [
+        "device_id",
+        "h2_cantor",
+        "nonce",
+        "report_packet",
+        "seq",
+        "session_id",
+        "sv",
+        "timestamp"
+      ],
+      "field_formats": {
+        "device_id": "hex/16",
+        "h2_cantor": "string/100",
+        "nonce": "hex/32",
+        "report_packet": "hex/1004",
+        "seq": "int",
+        "session_id": "hex/32",
+        "sv": "int",
+        "timestamp": "int"
+      },
+      "seq": 117,
+      "sv": 3,
+      "report_packet_decoded_bytes": 502,
+      "report_packet_entropy_bits_per_byte": 7.5796,
+      "inner_nonce_equals_outer_nonce": false,
+      "input64_equals_any_string_field": false,
+      "field_fingerprints_sha256_12": {
+        "device_id": "90cb37c1e929",
+        "h2_cantor": "53047430cfd9",
+        "nonce": "ee7f534fe148",
+        "session_id": "0363db54847a"
+      }
+    },
+    {
+      "directory": "encrypt_boundary_capture2",
+      "session_index": 0,
+      "call_id": 3,
+      "key_order": [
+        "device_id",
+        "h2_cantor",
+        "nonce",
+        "report_packet",
+        "seq",
+        "session_id",
+        "sv",
+        "timestamp"
+      ],
+      "field_formats": {
+        "device_id": "hex/16",
+        "h2_cantor": "string/100",
+        "nonce": "hex/32",
+        "report_packet": "hex/458",
+        "seq": "int",
+        "session_id": "hex/32",
+        "sv": "int",
+        "timestamp": "int"
+      },
+      "seq": 118,
+      "sv": 3,
+      "report_packet_decoded_bytes": 229,
+      "report_packet_entropy_bits_per_byte": 7.1628,
+      "inner_nonce_equals_outer_nonce": false,
+      "input64_equals_any_string_field": false,
+      "field_fingerprints_sha256_12": {
+        "device_id": "90cb37c1e929",
+        "h2_cantor": "05e1c957391d",
+        "nonce": "a839b9f3cbec",
+        "session_id": "0363db54847a"
+      }
+    },
+    {
+      "directory": "encrypt_boundary_capture2",
+      "session_index": 0,
+      "call_id": 4,
+      "key_order": [
+        "device_id",
+        "h2_cantor",
+        "nonce",
+        "report_packet",
+        "seq",
+        "session_id",
+        "sv",
+        "timestamp"
+      ],
+      "field_formats": {
+        "device_id": "hex/16",
+        "h2_cantor": "string/100",
+        "nonce": "hex/32",
+        "report_packet": "hex/454",
+        "seq": "int",
+        "session_id": "hex/32",
+        "sv": "int",
+        "timestamp": "int"
+      },
+      "seq": 119,
+      "sv": 3,
+      "report_packet_decoded_bytes": 227,
+      "report_packet_entropy_bits_per_byte": 7.0168,
+      "inner_nonce_equals_outer_nonce": false,
+      "input64_equals_any_string_field": false,
+      "field_fingerprints_sha256_12": {
+        "device_id": "90cb37c1e929",
+        "h2_cantor": "7d4be12e1c78",
+        "nonce": "7a25eb781927",
+        "session_id": "0363db54847a"
+      }
+    },
+    {
+      "directory": "encrypt_boundary_capture2",
+      "session_index": 0,
+      "call_id": 5,
+      "key_order": [
+        "device_id",
+        "h2_cantor",
+        "nonce",
+        "report_packet",
+        "seq",
+        "session_id",
+        "sv",
+        "timestamp"
+      ],
+      "field_formats": {
+        "device_id": "hex/16",
+        "h2_cantor": "string/100",
+        "nonce": "hex/32",
+        "report_packet": "hex/1006",
+        "seq": "int",
+        "session_id": "hex/32",
+        "sv": "int",
+        "timestamp": "int"
+      },
+      "seq": 120,
+      "sv": 3,
+      "report_packet_decoded_bytes": 503,
+      "report_packet_entropy_bits_per_byte": 7.5734,
+      "inner_nonce_equals_outer_nonce": false,
+      "input64_equals_any_string_field": false,
+      "field_fingerprints_sha256_12": {
+        "device_id": "90cb37c1e929",
+        "h2_cantor": "3190d12f2e0a",
+        "nonce": "b202fc270874",
+        "session_id": "0363db54847a"
+      }
+    },
+    {
+      "directory": "encrypt_boundary_capture2",
+      "session_index": 0,
+      "call_id": 6,
+      "key_order": [
+        "device_id",
+        "h2_cantor",
+        "nonce",
+        "report_packet",
+        "seq",
+        "session_id",
+        "sv",
+        "timestamp"
+      ],
+      "field_formats": {
+        "device_id": "hex/16",
+        "h2_cantor": "string/100",
+        "nonce": "hex/32",
+        "report_packet": "hex/782",
+        "seq": "int",
+        "session_id": "hex/32",
+        "sv": "int",
+        "timestamp": "int"
+      },
+      "seq": 121,
+      "sv": 3,
+      "report_packet_decoded_bytes": 391,
+      "report_packet_entropy_bits_per_byte": 7.3972,
+      "inner_nonce_equals_outer_nonce": false,
+      "input64_equals_any_string_field": false,
+      "field_fingerprints_sha256_12": {
+        "device_id": "90cb37c1e929",
+        "h2_cantor": "289d77d47211",
+        "nonce": "8c0d9428f9f3",
+        "session_id": "0363db54847a"
+      }
+    },
+    {
+      "directory": "encrypt_boundary_capture2",
+      "session_index": 0,
+      "call_id": 7,
+      "key_order": [
+        "device_id",
+        "h2_cantor",
+        "nonce",
+        "report_packet",
+        "seq",
+        "session_id",
+        "sv",
+        "timestamp"
+      ],
+      "field_formats": {
+        "device_id": "hex/16",
+        "h2_cantor": "string/100",
+        "nonce": "hex/32",
+        "report_packet": "hex/492",
+        "seq": "int",
+        "session_id": "hex/32",
+        "sv": "int",
+        "timestamp": "int"
+      },
+      "seq": 122,
+      "sv": 3,
+      "report_packet_decoded_bytes": 246,
+      "report_packet_entropy_bits_per_byte": 7.1965,
+      "inner_nonce_equals_outer_nonce": false,
+      "input64_equals_any_string_field": false,
+      "field_fingerprints_sha256_12": {
+        "device_id": "90cb37c1e929",
+        "h2_cantor": "c245af3fc7f7",
+        "nonce": "306a216ab88e",
+        "session_id": "0363db54847a"
+      }
+    },
+    {
+      "directory": "encrypt_boundary_capture2",
+      "session_index": 2,
+      "call_id": 1,
+      "key_order": [
+        "device_id",
+        "h2_cantor",
+        "nonce",
+        "report_packet",
+        "seq",
+        "session_id",
+        "sv",
+        "timestamp"
+      ],
+      "field_formats": {
+        "device_id": "hex/16",
+        "h2_cantor": "string/100",
+        "nonce": "hex/32",
+        "report_packet": "hex/446",
+        "seq": "int",
+        "session_id": "hex/32",
+        "sv": "int",
+        "timestamp": "int"
+      },
+      "seq": 8,
+      "sv": 3,
+      "report_packet_decoded_bytes": 223,
+      "report_packet_entropy_bits_per_byte": 7.0799,
+      "inner_nonce_equals_outer_nonce": false,
+      "input64_equals_any_string_field": false,
+      "field_fingerprints_sha256_12": {
+        "device_id": "958fecbf9833",
+        "h2_cantor": "b3607381dedf",
+        "nonce": "29ef04efd14c",
+        "session_id": "59d16ad520c8"
+      }
+    },
+    {
+      "directory": "encrypt_boundary_capture2",
+      "session_index": 2,
+      "call_id": 2,
+      "key_order": [
+        "device_id",
+        "h2_cantor",
+        "nonce",
+        "report_packet",
+        "seq",
+        "session_id",
+        "sv",
+        "timestamp"
+      ],
+      "field_formats": {
+        "device_id": "hex/16",
+        "h2_cantor": "string/100",
+        "nonce": "hex/32",
+        "report_packet": "hex/1022",
+        "seq": "int",
+        "session_id": "hex/32",
+        "sv": "int",
+        "timestamp": "int"
+      },
+      "seq": 9,
+      "sv": 3,
+      "report_packet_decoded_bytes": 511,
+      "report_packet_entropy_bits_per_byte": 7.5681,
+      "inner_nonce_equals_outer_nonce": false,
+      "input64_equals_any_string_field": false,
+      "field_fingerprints_sha256_12": {
+        "device_id": "958fecbf9833",
+        "h2_cantor": "04cd545f4447",
+        "nonce": "c5af19f2d9ea",
+        "session_id": "59d16ad520c8"
+      }
+    },
+    {
+      "directory": "encrypt_boundary_capture2",
+      "session_index": 2,
+      "call_id": 3,
+      "key_order": [
+        "device_id",
+        "h2_cantor",
+        "nonce",
+        "report_packet",
+        "seq",
+        "session_id",
+        "sv",
+        "timestamp"
+      ],
+      "field_formats": {
+        "device_id": "hex/16",
+        "h2_cantor": "string/100",
+        "nonce": "hex/32",
+        "report_packet": "hex/1026",
+        "seq": "int",
+        "session_id": "hex/32",
+        "sv": "int",
+        "timestamp": "int"
+      },
+      "seq": 10,
+      "sv": 3,
+      "report_packet_decoded_bytes": 513,
+      "report_packet_entropy_bits_per_byte": 7.611,
+      "inner_nonce_equals_outer_nonce": false,
+      "input64_equals_any_string_field": false,
+      "field_fingerprints_sha256_12": {
+        "device_id": "958fecbf9833",
+        "h2_cantor": "c4a14a89284e",
+        "nonce": "f44de15a0e47",
+        "session_id": "59d16ad520c8"
+      }
+    },
+    {
+      "directory": "encrypt_boundary_capture2",
+      "session_index": 2,
+      "call_id": 4,
+      "key_order": [
+        "device_id",
+        "h2_cantor",
+        "nonce",
+        "report_packet",
+        "seq",
+        "session_id",
+        "sv",
+        "timestamp"
+      ],
+      "field_formats": {
+        "device_id": "hex/16",
+        "h2_cantor": "string/100",
+        "nonce": "hex/32",
+        "report_packet": "hex/392",
+        "seq": "int",
+        "session_id": "hex/32",
+        "sv": "int",
+        "timestamp": "int"
+      },
+      "seq": 11,
+      "sv": 3,
+      "report_packet_decoded_bytes": 196,
+      "report_packet_entropy_bits_per_byte": 6.8766,
+      "inner_nonce_equals_outer_nonce": false,
+      "input64_equals_any_string_field": false,
+      "field_fingerprints_sha256_12": {
+        "device_id": "958fecbf9833",
+        "h2_cantor": "8594bd010bd2",
+        "nonce": "5b30b17abe96",
+        "session_id": "59d16ad520c8"
+      }
+    }
+  ],
+  "crypto_tests": {
+    "common_candidate_count": 127,
+    "meta_sliding_candidate_count": 3055,
+    "hits": [],
+    "tested_call": {
+      "directory": "encrypt_boundary_capture2",
+      "session_index": 2,
+      "call_id": 4
+    },
+    "interpretation": "A hit identifies a matching first-block keystream independent of AEAD AAD/tag. No hit excludes only the enumerated direct/KDF/context candidates."
+  }
+}

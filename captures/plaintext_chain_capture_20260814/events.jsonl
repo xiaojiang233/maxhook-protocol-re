@@ -1,0 +1,1 @@
+{"sequence": 1, "captured_at": "2026-08-14T00:49:40.013001+08:00", "kind": "plaintext_chain_installed", "thread_id": 28740, "module": "MaxHook.dll", "module_base": "0x180000000", "encrypt": "0x180324610", "memcpy": "0x1805d0c30"}

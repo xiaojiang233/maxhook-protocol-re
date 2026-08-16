@@ -1,0 +1,147 @@
+{
+  "schema": "maxhook.encrypt-boundary.capture/v1",
+  "pid": 44328,
+  "finished_at": "2026-08-14T00:31:48.035211+08:00",
+  "sensitive_plaintext_and_key_material": true,
+  "event_count": 68,
+  "call_count": 2,
+  "complete_calls": 2,
+  "calls": [
+    {
+      "call_id": "1",
+      "thread_ids": [
+        6760
+      ],
+      "return_address": null,
+      "complete_inputs": true,
+      "complete_outputs": true,
+      "strings": [
+        {
+          "phase": "input",
+          "label": "input32",
+          "size": 32,
+          "capacity": 47,
+          "file": "000003_call_1_input_input32.bin",
+          "sha256": "8d704e8e214f7d9b30c9f0a627d7f6c96f0e196ca78dd79f58d44c66ea248793"
+        },
+        {
+          "phase": "input",
+          "label": "input64",
+          "size": 64,
+          "capacity": 79,
+          "file": "000004_call_1_input_input64.bin",
+          "sha256": "387e2a7654bde6eabbe8b6111b92f20b4213b39ca41f1655c58ceba6ad4c9f19"
+        },
+        {
+          "phase": "input",
+          "label": "plaintext_json",
+          "size": 745,
+          "capacity": 982,
+          "file": "000005_call_1_input_plaintext_json.bin",
+          "sha256": "c773e7a52d7dd8a866494c8708ab3777dfac5036326d2d24c81a19799982df37"
+        },
+        {
+          "phase": "output",
+          "label": "kid_hex",
+          "size": 32,
+          "capacity": 47,
+          "file": "000007_call_1_output_kid_hex.bin",
+          "sha256": "8d704e8e214f7d9b30c9f0a627d7f6c96f0e196ca78dd79f58d44c66ea248793"
+        },
+        {
+          "phase": "output",
+          "label": "nonce_hex",
+          "size": 24,
+          "capacity": 31,
+          "file": "000008_call_1_output_nonce_hex.bin",
+          "sha256": "656a4a9d315c5bf18fe14747c123513b38461696e06966ccef8004f957df25c5"
+        },
+        {
+          "phase": "output",
+          "label": "ciphertext_hex",
+          "size": 1490,
+          "capacity": 1503,
+          "file": "000009_call_1_output_ciphertext_hex.bin",
+          "sha256": "8db2b10d51e1573374ea1d9395fb6384fab917e486016d094c4d30445599a02d"
+        },
+        {
+          "phase": "output",
+          "label": "tag_hex",
+          "size": 32,
+          "capacity": 47,
+          "file": "000010_call_1_output_tag_hex.bin",
+          "sha256": "f7e1526acf7489048ab6cece3e5fbed585d74c6fc28ccd2964ee847f54bd94de"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "call_id": "2",
+      "thread_ids": [
+        6760
+      ],
+      "return_address": null,
+      "complete_inputs": true,
+      "complete_outputs": true,
+      "strings": [
+        {
+          "phase": "input",
+          "label": "input32",
+          "size": 32,
+          "capacity": 47,
+          "file": "000036_call_2_input_input32.bin",
+          "sha256": "8d704e8e214f7d9b30c9f0a627d7f6c96f0e196ca78dd79f58d44c66ea248793"
+        },
+        {
+          "phase": "input",
+          "label": "input64",
+          "size": 64,
+          "capacity": 79,
+          "file": "000037_call_2_input_input64.bin",
+          "sha256": "387e2a7654bde6eabbe8b6111b92f20b4213b39ca41f1655c58ceba6ad4c9f19"
+        },
+        {
+          "phase": "input",
+          "label": "plaintext_json",
+          "size": 1387,
+          "capacity": 1822,
+          "file": "000038_call_2_input_plaintext_json.bin",
+          "sha256": "101bd2437fe3698460de45e0593a9b4f35ee622bd6b575055ed39ef706930d36"
+        },
+        {
+          "phase": "output",
+          "label": "kid_hex",
+          "size": 32,
+          "capacity": 47,
+          "file": "000040_call_2_output_kid_hex.bin",
+          "sha256": "8d704e8e214f7d9b30c9f0a627d7f6c96f0e196ca78dd79f58d44c66ea248793"
+        },
+        {
+          "phase": "output",
+          "label": "nonce_hex",
+          "size": 24,
+          "capacity": 31,
+          "file": "000041_call_2_output_nonce_hex.bin",
+          "sha256": "025e79638213ed0f1456fc3c50389063e24541883ea189f845c9860f7afd546e"
+        },
+        {
+          "phase": "output",
+          "label": "ciphertext_hex",
+          "size": 2774,
+          "capacity": 2783,
+          "file": "000042_call_2_output_ciphertext_hex.bin",
+          "sha256": "a5851352a52ff4d8d0567060cab14a783015e75d74db4d3c4072b18881cfa906"
+        },
+        {
+          "phase": "output",
+          "label": "tag_hex",
+          "size": 32,
+          "capacity": 47,
+          "file": "000043_call_2_output_tag_hex.bin",
+          "sha256": "023afd9287f9d2f02547178ac9b1dcf7eee14e112d394fcd7c4759264c0347ed"
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

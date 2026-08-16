@@ -1,0 +1,6 @@
+{
+  "schema": "maxhook.keytrace.capture/v1",
+  "pid": 4592,
+  "finished_at": "2026-08-13T17:18:41.153475+08:00",
+  "calls": 8
+}

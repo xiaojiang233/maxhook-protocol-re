@@ -1,0 +1,187 @@
+{
+  "schema": "maxhook.live.report.callchain/v1",
+  "request_id": "3",
+  "rsp": "0xc9d34fef48",
+  "validated_call_returns": [
+    {
+      "stack_offset": "0x0",
+      "stack_va": "0xc9d34fef48",
+      "return_address": "0x180333271",
+      "call": {
+        "address": "0x18033326e",
+        "bytes": "ff14c4",
+        "op_str": "qword ptr [rsp + rax*8]"
+      },
+      "caller_function": {
+        "begin": "0x180332770",
+        "end": "0x180333c82",
+        "unwind_rva": "0x6c5428"
+      }
+    },
+    {
+      "stack_offset": "0xe0",
+      "stack_va": "0xc9d34ff028",
+      "return_address": "0x18001fd29",
+      "call": {
+        "address": "0x18001fd26",
+        "bytes": "ff14c7",
+        "op_str": "qword ptr [rdi + rax*8]"
+      },
+      "caller_function": {
+        "begin": "0x18001fc00",
+        "end": "0x18001fd55",
+        "unwind_rva": "0x6aa6c4"
+      }
+    },
+    {
+      "stack_offset": "0x140",
+      "stack_va": "0xc9d34ff088",
+      "return_address": "0x180019fec",
+      "call": {
+        "address": "0x180019fe7",
+        "bytes": "e8d41a0000",
+        "op_str": "0x18001bac0"
+      },
+      "caller_function": {
+        "begin": "0x180019ed0",
+        "end": "0x180019ffd",
+        "unwind_rva": "0x6aa318"
+      }
+    },
+    {
+      "stack_offset": "0x1b0",
+      "stack_va": "0xc9d34ff0f8",
+      "return_address": "0x1803d0ad4",
+      "call": {
+        "address": "0x1803d0acf",
+        "bytes": "e89c1cf6ff",
+        "op_str": "0x180332770"
+      },
+      "caller_function": {
+        "begin": "0x1803cd330",
+        "end": "0x1803d18b9",
+        "unwind_rva": "0x6cd7e8"
+      }
+    },
+    {
+      "stack_offset": "0x8c0",
+      "stack_va": "0xc9d34ff808",
+      "return_address": "0x18001c028",
+      "call": {
+        "address": "0x18001c025",
+        "bytes": "ff14c7",
+        "op_str": "qword ptr [rdi + rax*8]"
+      },
+      "caller_function": {
+        "begin": "0x18001bac0",
+        "end": "0x18001c099",
+        "unwind_rva": "0x6aa1a0"
+      }
+    },
+    {
+      "stack_offset": "0x990",
+      "stack_va": "0xc9d34ff8d8",
+      "return_address": "0x18001a0d7",
+      "call": {
+        "address": "0x18001a0d4",
+        "bytes": "ff14c6",
+        "op_str": "qword ptr [rsi + rax*8]"
+      },
+      "caller_function": {
+        "begin": "0x18001a080",
+        "end": "0x18001a12d",
+        "unwind_rva": "0x6aa390"
+      }
+    },
+    {
+      "stack_offset": "0x9e0",
+      "stack_va": "0xc9d34ff928",
+      "return_address": "0x1801a435b",
+      "call": {
+        "address": "0x1801a4358",
+        "bytes": "ff14c2",
+        "op_str": "qword ptr [rdx + rax*8]"
+      },
+      "caller_function": {
+        "begin": "0x1801a3f10",
+        "end": "0x1801a4372",
+        "unwind_rva": "0x6b1910"
+      }
+    },
+    {
+      "stack_offset": "0xac0",
+      "stack_va": "0xc9d34ffa08",
+      "return_address": "0x180410bd1",
+      "call": {
+        "address": "0x180410bcf",
+        "bytes": "ff10",
+        "op_str": "qword ptr [rax]"
+      },
+      "caller_function": {
+        "begin": "0x180410a60",
+        "end": "0x180410c75",
+        "unwind_rva": "0x6d087c"
+      }
+    },
+    {
+      "stack_offset": "0xad0",
+      "stack_va": "0xc9d34ffa18",
+      "return_address": "0x180068023",
+      "call": {
+        "address": "0x18006801e",
+        "bytes": "e82d040000",
+        "op_str": "0x180068450"
+      },
+      "caller_function": {
+        "begin": "0x180067fc0",
+        "end": "0x18006802c",
+        "unwind_rva": "0x6aa548"
+      }
+    },
+    {
+      "stack_offset": "0xae0",
+      "stack_va": "0xc9d34ffa28",
+      "return_address": "0x18001d53c",
+      "call": {
+        "address": "0x18001d539",
+        "bytes": "ff14c3",
+        "op_str": "qword ptr [rbx + rax*8]"
+      },
+      "caller_function": {
+        "begin": "0x18001d300",
+        "end": "0x18001d569",
+        "unwind_rva": "0x6aa57c"
+      }
+    },
+    {
+      "stack_offset": "0xb30",
+      "stack_va": "0xc9d34ffa78",
+      "return_address": "0x1805af5b7",
+      "call": {
+        "address": "0x1805af5b2",
+        "bytes": "e899130200",
+        "op_str": "0x1805d0950"
+      },
+      "caller_function": {
+        "begin": "0x1805af568",
+        "end": "0x1805af5cd",
+        "unwind_rva": "0x6db2e0"
+      }
+    },
+    {
+      "stack_offset": "0xb90",
+      "stack_va": "0xc9d34ffad8",
+      "return_address": "0x1801a0ed5",
+      "call": {
+        "address": "0x1801a0ed3",
+        "bytes": "ff10",
+        "op_str": "qword ptr [rax]"
+      },
+      "caller_function": {
+        "begin": "0x18019f1e0",
+        "end": "0x1801a0ef4",
+        "unwind_rva": "0x6b1620"
+      }
+    }
+  ]
+}

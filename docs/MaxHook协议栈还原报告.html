@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MaxHook.dll 上报加密协议栈还原报告</title>
+<style>
+  :root {
+    --done: #1a7f37;
+    --done-bg: #e6f4ea;
+    --wip: #9a6700;
+    --wip-bg: #fff8c5;
+    --fail: #cf222e;
+    --fail-bg: #ffebe9;
+    --info: #0a3069;
+    --info-bg: #ddf4ff;
+    --border: #d0d7de;
+    --muted: #57606a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+    margin: 0; padding: 0; color: #1f2328; background: #f6f8fa; line-height: 1.6;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+  header {
+    background: linear-gradient(135deg, #0a3069 0%, #1f6feb 100%);
+    color: #fff; padding: 32px 24px; border-radius: 12px; margin-bottom: 24px;
+  }
+  header h1 { margin: 0 0 8px 0; font-size: 26px; }
+  header p { margin: 4px 0; opacity: 0.9; }
+  .status-banner {
+    display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px;
+  }
+  .status-pill {
+    background: rgba(255,255,255,0.15); border-radius: 20px; padding: 6px 14px; font-size: 14px;
+  }
+  h2 {
+    font-size: 20px; border-bottom: 2px solid var(--border); padding-bottom: 8px; margin: 32px 0 16px;
+  }
+  h3 { font-size: 17px; margin: 20px 0 10px; }
+  .card {
+    background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; margin-bottom: 16px;
+  }
+  .card.stage { border-left: 5px solid #1f6feb; }
+  .tag-badge {
+    display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 13px; font-weight: 600;
+    margin-left: 8px; vertical-align: middle;
+  }
+  .badge-done { background: var(--done-bg); color: var(--done); }
+  .badge-wip { background: var(--wip-bg); color: var(--wip); }
+  .badge-fail { background: var(--fail-bg); color: var(--fail); }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 14px; }
+  th, td { border: 1px solid var(--border); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: #f6f8fa; font-weight: 600; }
+  code, .mono {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 13px; background: #f6f8fa; padding: 1px 5px; border-radius: 4px;
+  }
+  pre {
+    background: #0d1117; color: #c9d1d9; padding: 14px 16px; border-radius: 8px; overflow-x: auto; font-size: 13px; line-height: 1.5;
+  }
+  pre code { background: none; color: inherit; padding: 0; }
+  .note { background: var(--info-bg); border-left: 4px solid #54aeff; padding: 10px 14px; border-radius: 6px; font-size: 14px; margin: 10px 0; }
+  .warn { background: var(--wip-bg); border-left: 4px solid #d4a72c; padding: 10px 14px; border-radius: 6px; font-size: 14px; margin: 10px 0; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 800px) { .grid2 { grid-template-columns: 1fr; } }
+  .kv { margin: 4px 0; }
+  .kv b { color: var(--info); }
+  ul, ol { margin: 8px 0 8px 24px; }
+  li { margin: 4px 0; }
+  .progress-row { display: flex; align-items: center; gap: 10px; margin: 6px 0; }
+  .progress-label { width: 220px; font-size: 14px; }
+  .progress-bar { flex: 1; height: 18px; background: #eaeef2; border-radius: 9px; overflow: hidden; }
+  .progress-fill { height: 100%; background: linear-gradient(90deg, #1a7f37, #4ac26b); border-radius: 9px; }
+  .progress-fill.wip { background: linear-gradient(90deg, #9a6700, #d4a72c); }
+  .progress-fill.fail { background: linear-gradient(90deg, #cf222e, #ff8182); }
+  .progress-pct { font-size: 13px; width: 60px; text-align: right; font-weight: 600; }
+  .stack-diagram { background: #0d1117; color: #c9d1d9; padding: 18px; border-radius: 10px; font-family: monospace; font-size: 13px; line-height: 1.7; overflow-x: auto; }
+  .stack-diagram .c { color: #7ee787; }
+  .stack-diagram .x { color: #ff7b72; }
+  .stack-diagram .m { color: #79c0ff; }
+  .stack-diagram .dim { color: #8b949e; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>MaxHook.dll 上报加密协议栈 — 还原状态报告</h1>
+  <p>离线逆向 · 报告生成于 2026-08-14 · 纯离线研究，无真机注入/抓包</p>
+  <p>目标：独立复现 <code>encrypt()</code> 生成的完整上报 envelope</p>
+  <div class="status-banner">
+    <span class="status-pill">🔑 key 吸收: ✅ 完成</span>
+    <span class="status-pill">🔐 domain KDF: ✅ 完成</span>
+    <span class="status-pill">🎲 ChaCha20: ✅ 完成</span>
+    <span class="status-pill">📦 ciphertext: ✅ 44/44</span>
+    <span class="status-pill">🏷️ tag (MAC): ❌ 0/24</span>
+    <span class="status-pill">📋 envelope: ⚠️ 依赖 tag</span>
+  </div>
+</header>
+
+<h2>1. 总体完成度</h2>
+
+<div class="card">
+  <h3>协议栈进度总览</h3>
+  <div class="progress-row"><span class="progress-label">入口/参数解析</span><div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div><span class="progress-pct">100%</span></div>
+  <div class="progress-row"><span class="progress-label">key 吸收</span><div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div><span class="progress-pct">100%</span></div>
+  <div class="progress-row"><span class="progress-label">domain KDF (HMAC-SHA256)</span><div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div><span class="progress-pct">100%</span></div>
+  <div class="progress-row"><span class="progress-label">ChaCha20 payload</span><div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div><span class="progress-pct">100%</span></div>
+  <div class="progress-row"><span class="progress-label">ciphertext 复现</span><div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div><span class="progress-pct">100%</span></div>
+  <div class="progress-row"><span class="progress-label">16-byte tag (MAC)</span><div class="progress-bar"><div class="progress-fill fail" style="width:8%"></div></div><span class="progress-pct">~8%</span></div>
+  <div class="progress-row"><span class="progress-label">完整 envelope</span><div class="progress-bar"><div class="progress-fill wip" style="width:15%"></div></div><span class="progress-pct">~15%</span></div>
+</div>
+
+<div class="note">
+  <b>一句话结论：</b>整个协议栈 7 个环节中，6 个已完整还原并验证（ciphertext 44/44 复现）。
+  <b>唯一卡住的是第 16 字节 tag 的 MAC 构造（0/24）</b>，完整 envelope 也因它而未实现。
+</div>
+
+<div class="stack-diagram">
+<span class="dim">// 完整数据流 (已还原部分 = 绿色, 未还原 = 红色)</span>
+<span class="c">key64(hex-ASCII)</span> ──decode──▶ <span class="c">32B raw key</span>
+<span class="c">kid32(hex-ASCII)</span> ──decode──▶ <span class="c">16B kid</span>
+                              │
+                              ▼
+              <span class="c">derived_key = HMAC-SHA256(raw, "v3|hpac.v3.session.report.req")</span>
+                              │
+                              ▼
+              <span class="c">keystream = ChaCha20(derived_key, nonce, counter=1..N)</span>
+                              │
+              <span class="c">ciphertext = plaintext ⊕ keystream</span>  <span class="dim">✅ 44/44</span>
+                              │
+              <span class="c">counter0 = ChaCha20(derived_key, nonce, counter=0)</span> <span class="dim">✅ writer 3/3</span>
+                              │
+                              ▼
+              <span class="x">tag = ?MAC?( ... )  <span class="dim">// 16B, 构造未还原 ❌</span></span>
+                              │
+                              ▼
+              <span class="m">envelope = {"sv":3,"kid","nonce","ciphertext","tag"}</span> <span class="dim">// 结构已知</span>
+</div>
+
+<h2>2. 已完整还原并验证的环节</h2>
+
+<div class="card stage">
+  <h3>① 入口与参数解析 <span class="tag-badge badge-done">✅ 完成</span></h3>
+  <p><b>入口：</b><code>0x180324610</code>（MaxHook.runtime-unpacked.dll，基址 <code>0x180000000</code>）</p>
+  <table>
+    <tr><th>参数</th><th>文件标签</th><th>编码</th><th>解码后</th></tr>
+    <tr><td>raw key</td><td><code>input64</code></td><td>64 字符 hex-ASCII</td><td>32 字节</td></tr>
+    <tr><td>kid</td><td><code>input32</code></td><td>32 字符 hex-ASCII</td><td>16 字节</td></tr>
+    <tr><td>plaintext</td><td><code>plaintext_json</code></td><td>UTF-8 JSON</td><td>报告内容</td></tr>
+    <tr><td>nonce</td><td>输出 <code>nonce_hex</code></td><td>24 字符 hex</td><td>12 字节</td></tr>
+  </table>
+</div>
+
+<div class="card stage">
+  <h3>② key 吸收（VM key-schedule）<span class="tag-badge badge-done">✅ 完成</span></h3>
+  <p>32 字节 raw key 在受保护的 VM 中经 64 固定轮（每字节 26 次 VM 跳转）吸收。
+  离线证明了吸收后的 key 依赖完全等价于：</p>
+<pre><code>array_a[i] = block[i] ^ 0x5c      # key || zero32
+array_b[i] = block[i] ^ 0x36</code></pre>
+  <p>用随机 00..1f key 对完整 context/stack/寄存器/VIP/dispatch-key/target 做全等验证，替代 1664 次 VM 跳转。</p>
+</div>
+
+<div class="card stage">
+  <h3>③ domain KDF（HMAC-SHA256）<span class="tag-badge badge-done">✅ 完成</span></h3>
+  <p>通过 SHA 调用顺序和中间 digest 离线证明，derived key 精确为：</p>
+<pre><code>derived_key = HMAC-SHA256(raw_key, b"v3|hpac.v3.session.report.req")</code></pre>
+  <p>模块的 SHA-256 在 emulator 中被逐段验证为<b>完全标准</b>（4 次 update 数据 = 标准
+  HMAC 的 inner/outer 序列），derived_key = 标准值（如 sample1 的 derived_key 前缀 <code>2f0344…</code>）。</p>
+</div>
+
+<div class="card stage">
+  <h3>④ payload 加密（ChaCha20）<span class="tag-badge badge-done">✅ 完成</span></h3>
+  <p>精确为标准 RFC 8439 / IETF ChaCha20：</p>
+  <ul>
+    <li>20 rounds、32-bit counter、96-bit nonce、little-endian words</li>
+    <li>payload counter 从 1 开始</li>
+    <li><b>counter0 block（counter=0）</b>在 payload 前生成（认证材料）</li>
+  </ul>
+<pre><code>ciphertext = plaintext XOR ChaCha20(key=derived_key, nonce=nonce, initial_counter=1)</code></pre>
+</div>
+
+<div class="card stage">
+  <h3>⑤ ciphertext 复现 <span class="tag-badge badge-done">✅ 44/44</span></h3>
+  <p>对 <b>44 组全 key 真实样本（6 个不同 key）</b> 全部精确复现 ciphertext：</p>
+  <table>
+    <tr><th>来源</th><th>样本数</th></tr>
+    <tr><td>crypto_verify_set</td><td>7</td></tr>
+    <tr><td>vm_context_capture2</td><td>10</td></tr>
+    <tr><td>plaintext_xor_capture_20260814</td><td>7</td></tr>
+    <tr><td>encrypt_boundary_capture2</td><td>6</td></tr>
+    <tr><td>crypto_capture2 first-set</td><td>5</td></tr>
+    <tr><td>encrypt_boundary_capture</td><td>4</td></tr>
+    <tr><td>writer_sync_clean_20260814_014351</td><td>3</td></tr>
+    <tr><td>rot_tail_capture_20260814</td><td>2</td></tr>
+  </table>
+  <p>验证脚本：<code>target/verify_25_samples.py</code>（44 组全部 <code>ciphertext_ok=True</code>）</p>
+</div>
+
+<div class="card stage">
+  <h3>⑥ counter0 生成证据 <span class="tag-badge badge-done">✅ 3/3</span></h3>
+  <p>对 writer_sync 的 3 个调用逐条证明：</p>
+  <ul>
+    <li>前导 12 个 word == ChaCha20 counter-0 block 的 words 0..11</li>
+    <li>payload records == counters 1..N</li>
+    <li>验证脚本：<code>target/verify_writer_counter0.py</code> → <code>ALL VERIFIED</code></li>
+  </ul>
+</div>
+
+<h2>3. 未还原环节：16-byte tag（MAC）</h2>
+
+<div class="card" style="border-left-color: var(--fail);">
+  <h3>⑦ tag 构造 <span class="tag-badge badge-fail">❌ 0/24</span></h3>
+
+  <div class="warn">
+    <b>准确状态：</b>independent tag = <b>0/24</b>，<code>mac_tag()</code> 保持 <b>fail-closed</b>
+    （抛 <code>NotImplementedError</code>）。未用捕获的 tag 伪装成实现，未宣称完整复现。
+  </div>
+
+  <h3>已确认的事实</h3>
+  <ul>
+    <li><b>tag 值是可信的</b>：crypto_verify_set 与 crypto_capture2 两处来源完全一致（7/7 MATCH）</li>
+    <li><b>模块 SHA-256 是标准的</b>：emulator 内逐段验证 KDF 的 4 次 SHA update = 标准 HMAC 序列</li>
+    <li><b>模块是分离 MAC</b>：ciphertext 长度 == plaintext 长度，tag 独立 16 字节（非 AEAD 合并）</li>
+    <li><b>tag 输出 buffer 为 16 字节</b>（emulator fail 点观察到 alloc 16）</li>
+    <li><b>plaintext 含额外元数据字段</b>：<code>session_id</code>(16B)、独立 <code>nonce</code>(16B)、
+      <code>device_id</code>、<code>timestamp</code>、<code>seq</code>、<code>sv</code>、<code>h2_cantor</code>、<code>report_packet</code></li>
+  </ul>
+
+  <h3>已穷尽排除的构造（44 组样本，全 0 命中）</h3>
+  <table>
+    <tr><th>类别</th><th>覆盖</th></tr>
+    <tr><td>标准 hash MAC</td><td>SHA-256/512、HMAC-SHA256、SHA3-256/512、Shake128、BLAKE2b/s（含 keyed）、MD5、RIPEMD160、SipHash</td></tr>
+    <tr><td>AEAD</td><td>RFC 8439 ChaCha20-Poly1305（counter0 作 poly key，empty/aad/domain/kid/nonce/session AAD 全试）</td></tr>
+    <tr><td>Poly1305 变体</td><td>counter0/c1 作 key、SHA 派生 poly key、自定义 padding</td></tr>
+    <tr><td>Carter-Wegman</td><td>digest XOR/add/sub counter0/keystream pad</td></tr>
+    <tr><td>GHASH/GCM</td><td>raw/derived/counter0 各种 key 形式</td></tr>
+    <tr><td>双 key 派生</td><td>key2 = HMAC(raw, c0/nonce/c1) 等，再作 MAC</td></tr>
+    <tr><td>auth-nonce/auth-block</td><td>counter0/c1 任意位置作前缀或 key，任意 counter 位置</td></tr>
+    <tr><td>plaintext 字段作 AAD/key</td><td>session_id、plaintext-nonce、device_id、timestamp、seq、sv、h2_cantor 的各种排列组合</td></tr>
+    <tr><td>序列化形式</td><td>二进制/hex-ASCII/JSON compact/spaced/长度前缀</td></tr>
+  </table>
+  <p class="kv">搜索脚本：<code>search_sha256_tag_all.py</code>、<code>search_sha256_counter0_tag.py</code>、<code>search_tag_digest_pad.py</code>、<code>search_tag_kdf_labels.py</code>（1216 label，2700万+ 测试）</p>
+
+  <h3>卡住的根本原因</h3>
+  <div class="note">
+    <b>本地缺少 tag 阶段（SHA update）的真实运行数据。</b>
+    <ul>
+      <li>ciphertext 能恢复是因为有 <code>keystream_history</code>（52 个 VM snapshot）+ <code>writer_sync</code>（store32 输出）的真实数据</li>
+      <li>tag 没有对应数据——所有 capture 只覆盖 keystream 生成（writer/xor/rot），无任何 SHA update 输入记录</li>
+      <li>dump_out 5.5GB 完整进程内存：搜 44 组样本的 tag/nonce/ciphertext/counter0/SHA-IV/K-表 <b>全部 0 命中</b>，确认非该加密 session 的运行数据</li>
+      <li>emulator 被模块的 VM 反篡改（<code>__fastfail(0xc0000409)</code>）挡在 tag SHA init 之前，到不了 MAC 输入 staging</li>
+    </ul>
+  </div>
+</div>
+
+<h2>4. emulator 反篡改的深入调查</h2>
+<div class="card">
+  <h3>已确认的反篡改机制</h3>
+  <ul>
+    <li><b>模块自定义 IAT</b>：直接 PE import 仅 10 个（GetModuleHandleA/jvm/winhttp 等），其余 `.rdata` 槽位由自定义 loader 运行时解析，离线无法复现</li>
+    <li><b>VM 反篡改</b>：tag 阶段触发 <code>__fastfail(0xc0000409)</code>（STATUS_STACK_BUFFER_OVERRUN），由深度混淆的 VM bytecode 决策，且触发后 VM 返回垃圾栈地址、状态被破坏</li>
+    <li><b>绕过尝试全失败</b>：stub IsProcessorFeaturePresent/RtlCaptureContext/CRT helpers、skip int3、强制 cookie check、真实 VM context snapshot——均被同一反篡改拦截</li>
+  </ul>
+  <div class="warn">
+    结论：纯离线 emulator 无法绕过该反篡改到达真正的 tag SHA update。
+  </div>
+</div>
+
+<h2>5. 关键文件清单</h2>
+<div class="card">
+  <table>
+    <tr><th>文件</th><th>用途</th></tr>
+    <tr><td><code>target/maxhook_protocol_reference.py</code></td><td>已恢复的协议参考实现（ciphertext 完整，mac_tag fail-closed）</td></tr>
+    <tr><td><code>target/verify_recovered_chacha20.py</code></td><td>ciphertext 验证（20/20）</td></tr>
+    <tr><td><code>target/verify_25_samples.py</code></td><td>44 组全 key 样本 ciphertext 验证（44/44）</td></tr>
+    <tr><td><code>target/verify_writer_counter0.py</code></td><td>counter0 writer 证据（3/3）</td></tr>
+    <tr><td><code>target/tag_test_vectors.json</code></td><td>44 组全 key 真实样本（key/nonce/ct/tag）</td></tr>
+    <tr><td><code>target/emulate_maxhook_encrypt_boundary.py</code></td><td>离线 emulator（含多种反篡改测试选项）</td></tr>
+    <tr><td><code>target/MaxHook_tag恢复进展_2026-08-14_会话.md</code></td><td>详细进展记录</td></tr>
+  </table>
+</div>
+
+<h2>6. 下一步方向</h2>
+<div class="card">
+  <ol>
+    <li><b>获取 tag 阶段真实数据</b>：真实机在 tag SHA update 时的捕获（能直接看到被 hash 的字节），是确定 MAC 输入最可靠途径</li>
+    <li><b>工程性反向自定义 VM</b>：解析模块自定义 IAT + 定位并抑制反篡改决策（超出纯离线快速范围）</li>
+    <li><b>反推 MAC 输入隐藏字段</b>：确认 plaintext 的 session_id/plaintext-nonce 等是否参与 MAC，以及确切拼装</li>
+  </ol>
+  <p class="kv"><b>严格遵守：</b>未完成前不宣称完整复现；所有未恢复路径保持 fail-closed；不做真机注入/抓包。</p>
+</div>
+
+<footer style="text-align:center; color:var(--muted); font-size:13px; margin:24px 0;">
+  MaxHook.dll 上报协议栈还原状态报告 · 纯离线逆向 · 2026-08-14
+</footer>
+
+</div>
+</body>
+</html>

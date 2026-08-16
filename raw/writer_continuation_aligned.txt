@@ -1,0 +1,187 @@
+
+START 0x181ad61e7
+0x181ad61e7 9c pushfq 
+0x181ad61e8 4881ec08000000 sub rsp, 8
+0x181ad61ef 4c890424 mov qword ptr [rsp], r8
+0x181ad61f3 4d89c0 mov r8, r8
+0x181ad61f6 4881ec08000000 sub rsp, 8
+0x181ad61fd 48890c24 mov qword ptr [rsp], rcx
+0x181ad6201 48b94701000000000000 movabs rcx, 0x147
+0x181ad620b 48894c2408 mov qword ptr [rsp + 8], rcx
+0x181ad6210 488b0c24 mov rcx, qword ptr [rsp]
+0x181ad6214 4883c408 add rsp, 8
+0x181ad6218 4883ec08 sub rsp, 8
+0x181ad621c 4151 push r9
+0x181ad621e 8f0424 pop qword ptr [rsp]
+0x181ad6221 4d89c9 mov r9, r9
+0x181ad6224 4154 push r12
+0x181ad6226 50 push rax
+0x181ad6227 48b8ed0cf26b00000000 movabs rax, 0x6bf20ced
+0x181ad6231 49bc3e70446a00000000 movabs r12, 0x6a44703e
+0x181ad623b 4931c4 xor r12, rax
+0x181ad623e 58 pop rax
+0x181ad623f 4c89642408 mov qword ptr [rsp + 8], r12
+0x181ad6244 415c pop r12
+0x181ad6246 4883ec08 sub rsp, 8
+0x181ad624a 4881ec08000000 sub rsp, 8
+0x181ad6251 4883ec08 sub rsp, 8
+0x181ad6255 48890424 mov qword ptr [rsp], rax
+0x181ad6259 8f0424 pop qword ptr [rsp]
+0x181ad625c 8f0424 pop qword ptr [rsp]
+0x181ad625f 6886d7ec3f push 0x3fecd786
+0x181ad6264 4881ec08000000 sub rsp, 8
+0x181ad626b 68f050ff5f push 0x5fff50f0
+0x181ad6270 48891c24 mov qword ptr [rsp], rbx
+0x181ad6274 8f0424 pop qword ptr [rsp]
+0x181ad6277 8f0424 pop qword ptr [rsp]
+0x181ad627a ff742420 push qword ptr [rsp + 0x20]
+0x181ad627e ff3424 push qword ptr [rsp]
+0x181ad6281 ff3424 push qword ptr [rsp]
+0x181ad6284 58 pop rax
+0x181ad6285 4883c408 add rsp, 8
+0x181ad6289 4881c408000000 add rsp, 8
+0x181ad6290 ff742410 push qword ptr [rsp + 0x10]
+0x181ad6294 ff3424 push qword ptr [rsp]
+0x181ad6297 ff3424 push qword ptr [rsp]
+0x181ad629a 5b pop rbx
+0x181ad629b 4881c408000000 add rsp, 8
+0x181ad62a2 4883c408 add rsp, 8
+0x181ad62a6 4883ec08 sub rsp, 8
+0x181ad62aa 4881ec08000000 sub rsp, 8
+0x181ad62b1 4157 push r15
+0x181ad62b3 4989c7 mov r15, rax
+0x181ad62b6 4c897c2408 mov qword ptr [rsp + 8], r15
+0x181ad62bb 415f pop r15
+0x181ad62bd 8f0424 pop qword ptr [rsp]
+0x181ad62c0 8f442410 pop qword ptr [rsp + 0x10]
+0x181ad62c4 6897da6d74 push 0x746dda97
+0x181ad62c9 4881ec08000000 sub rsp, 8
+0x181ad62d0 53 push rbx
+0x181ad62d1 8f0424 pop qword ptr [rsp]
+0x181ad62d4 8f0424 pop qword ptr [rsp]
+0x181ad62d7 8f442420 pop qword ptr [rsp + 0x20]
+0x181ad62db ff3424 push qword ptr [rsp]
+0x181ad62de ff3424 push qword ptr [rsp]
+0x181ad62e1 488b1c24 mov rbx, qword ptr [rsp]
+0x181ad62e5 4883c408 add rsp, 8
+0x181ad62e9 4883c408 add rsp, 8
+0x181ad62ed 4881c408000000 add rsp, 8
+0x181ad62f4 ff3424 push qword ptr [rsp]
+0x181ad62f7 ff3424 push qword ptr [rsp]
+0x181ad62fa 488b0424 mov rax, qword ptr [rsp]
+0x181ad62fe 4881c408000000 add rsp, 8
+0x181ad6305 4883c408 add rsp, 8
+0x181ad6309 4881c408000000 add rsp, 8
+0x181ad6310 4883ec08 sub rsp, 8
+0x181ad6314 48893c24 mov qword ptr [rsp], rdi
+0x181ad6318 4883ec08 sub rsp, 8
+0x181ad631c 48893c24 mov qword ptr [rsp], rdi
+0x181ad6320 5f pop rdi
+0x181ad6321 56 push rsi
+0x181ad6322 48bee072410000000000 movabs rsi, 0x4172e0
+0x181ad632c 4889742408 mov qword ptr [rsp + 8], rsi
+0x181ad6331 5e pop rsi
+0x181ad6332 e9e61d19ff jmp 0x180c6811d
+0x181ad6337 99 cdq 
+0x181ad6338 4fe862e1e3cd call 0x14f9144a0
+0x181ad633e 0a4de5 or cl, byte ptr [rbp - 0x1b]
+
+START 0x181ad61df
+0x181ad61df 99 cdq 
+0x181ad61e0 35af0818ad xor eax, 0xad1808af
+0x181ad61e5 aa stosb byte ptr [rdi], al
+0x181ad61e6 139c4881ec0800 adc ebx, dword ptr [rax + rcx*2 + 0x8ec81]
+0x181ad61ed 0000 add byte ptr [rax], al
+0x181ad61ef 4c890424 mov qword ptr [rsp], r8
+0x181ad61f3 4d89c0 mov r8, r8
+0x181ad61f6 4881ec08000000 sub rsp, 8
+0x181ad61fd 48890c24 mov qword ptr [rsp], rcx
+0x181ad6201 48b94701000000000000 movabs rcx, 0x147
+0x181ad620b 48894c2408 mov qword ptr [rsp + 8], rcx
+0x181ad6210 488b0c24 mov rcx, qword ptr [rsp]
+0x181ad6214 4883c408 add rsp, 8
+0x181ad6218 4883ec08 sub rsp, 8
+0x181ad621c 4151 push r9
+0x181ad621e 8f0424 pop qword ptr [rsp]
+0x181ad6221 4d89c9 mov r9, r9
+0x181ad6224 4154 push r12
+0x181ad6226 50 push rax
+0x181ad6227 48b8ed0cf26b00000000 movabs rax, 0x6bf20ced
+0x181ad6231 49bc3e70446a00000000 movabs r12, 0x6a44703e
+0x181ad623b 4931c4 xor r12, rax
+0x181ad623e 58 pop rax
+0x181ad623f 4c89642408 mov qword ptr [rsp + 8], r12
+0x181ad6244 415c pop r12
+0x181ad6246 4883ec08 sub rsp, 8
+0x181ad624a 4881ec08000000 sub rsp, 8
+0x181ad6251 4883ec08 sub rsp, 8
+0x181ad6255 48890424 mov qword ptr [rsp], rax
+0x181ad6259 8f0424 pop qword ptr [rsp]
+0x181ad625c 8f0424 pop qword ptr [rsp]
+0x181ad625f 6886d7ec3f push 0x3fecd786
+0x181ad6264 4881ec08000000 sub rsp, 8
+0x181ad626b 68f050ff5f push 0x5fff50f0
+0x181ad6270 48891c24 mov qword ptr [rsp], rbx
+0x181ad6274 8f0424 pop qword ptr [rsp]
+0x181ad6277 8f0424 pop qword ptr [rsp]
+0x181ad627a ff742420 push qword ptr [rsp + 0x20]
+0x181ad627e ff3424 push qword ptr [rsp]
+0x181ad6281 ff3424 push qword ptr [rsp]
+0x181ad6284 58 pop rax
+0x181ad6285 4883c408 add rsp, 8
+0x181ad6289 4881c408000000 add rsp, 8
+0x181ad6290 ff742410 push qword ptr [rsp + 0x10]
+0x181ad6294 ff3424 push qword ptr [rsp]
+0x181ad6297 ff3424 push qword ptr [rsp]
+0x181ad629a 5b pop rbx
+0x181ad629b 4881c408000000 add rsp, 8
+0x181ad62a2 4883c408 add rsp, 8
+0x181ad62a6 4883ec08 sub rsp, 8
+0x181ad62aa 4881ec08000000 sub rsp, 8
+0x181ad62b1 4157 push r15
+0x181ad62b3 4989c7 mov r15, rax
+0x181ad62b6 4c897c2408 mov qword ptr [rsp + 8], r15
+0x181ad62bb 415f pop r15
+0x181ad62bd 8f0424 pop qword ptr [rsp]
+0x181ad62c0 8f442410 pop qword ptr [rsp + 0x10]
+0x181ad62c4 6897da6d74 push 0x746dda97
+0x181ad62c9 4881ec08000000 sub rsp, 8
+0x181ad62d0 53 push rbx
+0x181ad62d1 8f0424 pop qword ptr [rsp]
+0x181ad62d4 8f0424 pop qword ptr [rsp]
+0x181ad62d7 8f442420 pop qword ptr [rsp + 0x20]
+0x181ad62db ff3424 push qword ptr [rsp]
+0x181ad62de ff3424 push qword ptr [rsp]
+0x181ad62e1 488b1c24 mov rbx, qword ptr [rsp]
+0x181ad62e5 4883c408 add rsp, 8
+0x181ad62e9 4883c408 add rsp, 8
+0x181ad62ed 4881c408000000 add rsp, 8
+0x181ad62f4 ff3424 push qword ptr [rsp]
+0x181ad62f7 ff3424 push qword ptr [rsp]
+0x181ad62fa 488b0424 mov rax, qword ptr [rsp]
+0x181ad62fe 4881c408000000 add rsp, 8
+0x181ad6305 4883c408 add rsp, 8
+0x181ad6309 4881c408000000 add rsp, 8
+0x181ad6310 4883ec08 sub rsp, 8
+0x181ad6314 48893c24 mov qword ptr [rsp], rdi
+0x181ad6318 4883ec08 sub rsp, 8
+0x181ad631c 48893c24 mov qword ptr [rsp], rdi
+0x181ad6320 5f pop rdi
+0x181ad6321 56 push rsi
+0x181ad6322 48bee072410000000000 movabs rsi, 0x4172e0
+0x181ad632c 4889742408 mov qword ptr [rsp + 8], rsi
+0x181ad6331 5e pop rsi
+0x181ad6332 e9e61d19ff jmp 0x180c6811d
+0x181ad6337 99 cdq 
+0x181ad6338 4fe862e1e3cd call 0x14f9144a0
+0x181ad633e 0a4de5 or cl, byte ptr [rbp - 0x1b]
+
+START 0x181ad61d0
+0x181ad61d0 c3 ret 
+0x181ad61d1 df3a fistp qword ptr [rdx]
+
+START 0x181ad61c0
+0x181ad61c0 4fe96afdb75c jmp 0x1de655f30
+0x181ad61c6 4b02042a add al, byte ptr [r10 + r13]
+0x181ad61ca dae9 fucompp 
+0x181ad61cc c1357490c3df3a sal dword ptr [rip - 0x203c6f8c], 0x3a

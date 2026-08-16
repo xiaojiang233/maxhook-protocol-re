@@ -1,0 +1,12 @@
+{
+  "unique_envelopes": 18,
+  "candidate_keys": 88,
+  "attempt_families": 4692,
+  "algorithms": [
+    "AESGCM",
+    "AESCCM",
+    "ChaCha20Poly1305",
+    "AESGCMSIV"
+  ],
+  "hits": []
+}

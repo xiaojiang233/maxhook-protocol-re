@@ -1,0 +1,112 @@
+{
+  "schema": "maxhook.offline-vm-differential/v1",
+  "baseline": "target\\diff_nonce_zero_4100k.json",
+  "variant": "target\\diff_nonce_byte0bit0_4100k.json",
+  "jump_count": 4096,
+  "instruction_range": [
+    2896631,
+    4099992
+  ],
+  "decoded_key_reads": {
+    "baseline": [
+      {
+        "instruction": 1404053,
+        "rip": "0x1805d0c36",
+        "address": "0x200001000e0",
+        "offset": 0,
+        "size": 8,
+        "value": "0x0",
+        "vm_jump_count": 4096,
+        "vip": "0x181be2ccf",
+        "key_low32": "0xffff012f"
+      },
+      {
+        "instruction": 1404053,
+        "rip": "0x1805d0c36",
+        "address": "0x200001000e8",
+        "offset": 8,
+        "size": 8,
+        "value": "0x0",
+        "vm_jump_count": 4096,
+        "vip": "0x181be2ccf",
+        "key_low32": "0xffff012f"
+      },
+      {
+        "instruction": 1404054,
+        "rip": "0x1805d0c3a",
+        "address": "0x200001000f0",
+        "offset": 16,
+        "size": 8,
+        "value": "0x0",
+        "vm_jump_count": 4096,
+        "vip": "0x181be2ccf",
+        "key_low32": "0xffff012f"
+      },
+      {
+        "instruction": 1404054,
+        "rip": "0x1805d0c3a",
+        "address": "0x200001000f8",
+        "offset": 24,
+        "size": 8,
+        "value": "0x0",
+        "vm_jump_count": 4096,
+        "vip": "0x181be2ccf",
+        "key_low32": "0xffff012f"
+      }
+    ],
+    "variant": [
+      {
+        "instruction": 1404053,
+        "rip": "0x1805d0c36",
+        "address": "0x200001000e0",
+        "offset": 0,
+        "size": 8,
+        "value": "0x0",
+        "vm_jump_count": 4096,
+        "vip": "0x181be2ccf",
+        "key_low32": "0xffff012f"
+      },
+      {
+        "instruction": 1404053,
+        "rip": "0x1805d0c36",
+        "address": "0x200001000e8",
+        "offset": 8,
+        "size": 8,
+        "value": "0x0",
+        "vm_jump_count": 4096,
+        "vip": "0x181be2ccf",
+        "key_low32": "0xffff012f"
+      },
+      {
+        "instruction": 1404054,
+        "rip": "0x1805d0c3a",
+        "address": "0x200001000f0",
+        "offset": 16,
+        "size": 8,
+        "value": "0x0",
+        "vm_jump_count": 4096,
+        "vip": "0x181be2ccf",
+        "key_low32": "0xffff012f"
+      },
+      {
+        "instruction": 1404054,
+        "rip": "0x1805d0c3a",
+        "address": "0x200001000f8",
+        "offset": 24,
+        "size": 8,
+        "value": "0x0",
+        "vm_jump_count": 4096,
+        "vip": "0x181be2ccf",
+        "key_low32": "0xffff012f"
+      }
+    ]
+  },
+  "first_any_difference_step": null,
+  "control_flow_difference_count": 0,
+  "control_flow_identical": true,
+  "differing_steps": 0,
+  "first_context_influence": {},
+  "first_stack_influence": {},
+  "affected_target_counts": {},
+  "timeline": []
+}

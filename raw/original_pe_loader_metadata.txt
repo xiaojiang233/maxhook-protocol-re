@@ -1,0 +1,38 @@
+IMAGE_DIRECTORY_ENTRY_EXPORT 0x0 0x0
+IMAGE_DIRECTORY_ENTRY_IMPORT 0x96011d 0x184
+IMAGE_DIRECTORY_ENTRY_RESOURCE 0x930000 0xf0
+IMAGE_DIRECTORY_ENTRY_EXCEPTION 0x1e65618 0x3e148
+IMAGE_DIRECTORY_ENTRY_SECURITY 0x17c3610 0x2b58
+IMAGE_DIRECTORY_ENTRY_BASERELOC 0x2e30000 0x10
+IMAGE_DIRECTORY_ENTRY_DEBUG 0x0 0x0
+IMAGE_DIRECTORY_ENTRY_COPYRIGHT 0x0 0x0
+IMAGE_DIRECTORY_ENTRY_GLOBALPTR 0x0 0x0
+IMAGE_DIRECTORY_ENTRY_TLS 0x970020 0x28
+IMAGE_DIRECTORY_ENTRY_LOAD_CONFIG 0x0 0x0
+IMAGE_DIRECTORY_ENTRY_BOUND_IMPORT 0x0 0x0
+IMAGE_DIRECTORY_ENTRY_IAT 0x0 0x0
+IMAGE_DIRECTORY_ENTRY_DELAY_IMPORT 0x0 0x0
+IMAGE_DIRECTORY_ENTRY_COM_DESCRIPTOR 0x0 0x0
+IMAGE_DIRECTORY_ENTRY_RESERVED 0x0 0x0
+imports
+kernel32.dll
+[('0x180960200', 'GetModuleHandleA')]
+jvm.dll
+[('0x180960210', 'JNI_GetCreatedJavaVMs')]
+WINHTTP.dll
+[('0x180960220', 'WinHttpCloseHandle')]
+ole32.dll
+[('0x180960230', 'CoCreateInstance')]
+OLEAUT32.dll
+[('0x180960240', 'SysAllocString')]
+ADVAPI32.dll
+[('0x180960250', 'RegGetValueW')]
+WS2_32.dll
+[('0x180960260', 'inet_ntop')]
+USER32.dll
+[('0x180960270', 'MessageBoxA')]
+VERSION.dll
+[('0x180960280', 'GetFileVersionInfoA')]
+IPHLPAPI.DLL
+[('0x180960290', 'GetAdaptersAddresses')]
+tls {'__format_str__': '<QQQQII', '__keys__': [['StartAddressOfRawData'], ['EndAddressOfRawData'], ['AddressOfIndex'], ['AddressOfCallBacks'], ['SizeOfZeroFill'], ['Characteristics']], '__format_length__': 40, '__field_offsets__': {'StartAddressOfRawData': 0, 'EndAddressOfRawData': 8, 'AddressOfIndex': 16, 'AddressOfCallBacks': 24, 'SizeOfZeroFill': 32, 'Characteristics': 36}, '__unpacked_data_elms__': (6452346880, 6452346888, 6452346888, 6452346896, 0, 3145728), '__all_zeroes__': False, '__file_offset__': 9004064, 'name': 'IMAGE_TLS_DIRECTORY', 'StartAddressOfRawData': 6452346880, 'EndAddressOfRawData': 6452346888, 'AddressOfIndex': 6452346888, 'AddressOfCallBacks': 6452346896, 'SizeOfZeroFill': 0, 'Characteristics': 3145728}

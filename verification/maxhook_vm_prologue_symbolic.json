@@ -1,0 +1,595 @@
+{
+  "schema": "maxhook.vm.prologue-symbolic/v1",
+  "range": [
+    "0x181523001",
+    "0x18152315d"
+  ],
+  "dispatcher": "0x180c43fdd",
+  "instruction_count": 80,
+  "dispatcher_rsp_minus_entry_rsp": -32,
+  "all_gprs_preserved": true,
+  "preserved_registers": {
+    "rax": true,
+    "rbx": true,
+    "rcx": true,
+    "rdx": true,
+    "rsi": true,
+    "rdi": true,
+    "rbp": true,
+    "r8": true,
+    "r9": true,
+    "r10": true,
+    "r11": true,
+    "r12": true,
+    "r13": true,
+    "r14": true,
+    "r15": true
+  },
+  "final_registers": {
+    "rax": "ENTRY_RAX",
+    "rbx": "ENTRY_RBX",
+    "rcx": "ENTRY_RCX",
+    "rdx": "ENTRY_RDX",
+    "rsi": "ENTRY_RSI",
+    "rdi": "ENTRY_RDI",
+    "rbp": "ENTRY_RBP",
+    "r8": "ENTRY_R8",
+    "r9": "ENTRY_R9",
+    "r10": "ENTRY_R10",
+    "r11": "ENTRY_R11",
+    "r12": "ENTRY_R12",
+    "r13": "ENTRY_R13",
+    "r14": "ENTRY_R14",
+    "r15": "ENTRY_R15"
+  },
+  "dispatcher_stack": [
+    {
+      "dispatcher_rsp_offset": "0x0",
+      "entry_rsp_offset": "-0x20",
+      "value": "0x324610"
+    },
+    {
+      "dispatcher_rsp_offset": "0x8",
+      "entry_rsp_offset": "-0x18",
+      "value": "ENTRY_RFLAGS"
+    },
+    {
+      "dispatcher_rsp_offset": "0x10",
+      "entry_rsp_offset": "-0x10",
+      "value": "0x2ca"
+    },
+    {
+      "dispatcher_rsp_offset": "0x18",
+      "entry_rsp_offset": "-0x8",
+      "value": "0x1555629"
+    },
+    {
+      "dispatcher_rsp_offset": "0x20",
+      "entry_rsp_offset": "0x0",
+      "value": "ENTRY_STACK[+0x0]"
+    },
+    {
+      "dispatcher_rsp_offset": "0x28",
+      "entry_rsp_offset": "0x8",
+      "value": "ENTRY_STACK[+0x8]"
+    },
+    {
+      "dispatcher_rsp_offset": "0x30",
+      "entry_rsp_offset": "0x10",
+      "value": "ENTRY_STACK[+0x10]"
+    },
+    {
+      "dispatcher_rsp_offset": "0x38",
+      "entry_rsp_offset": "0x18",
+      "value": "ENTRY_STACK[+0x18]"
+    },
+    {
+      "dispatcher_rsp_offset": "0x40",
+      "entry_rsp_offset": "0x20",
+      "value": "ENTRY_STACK[+0x20]"
+    },
+    {
+      "dispatcher_rsp_offset": "0x48",
+      "entry_rsp_offset": "0x28",
+      "value": "ENTRY_STACK[+0x28]"
+    },
+    {
+      "dispatcher_rsp_offset": "0x50",
+      "entry_rsp_offset": "0x30",
+      "value": "ENTRY_STACK[+0x30]"
+    }
+  ],
+  "abi_taint_origins": {
+    "output_object": "RCX",
+    "kid_string_object": "RDX",
+    "key_material_string_object": "R8",
+    "context_object": "R9",
+    "plaintext_string_object_at_entry": "[ENTRY_RSP+0x28]",
+    "plaintext_string_object_at_dispatcher": "[DISPATCHER_RSP+0x48]"
+  },
+  "trace": [
+    {
+      "address": "0x181523001",
+      "instruction": "pushfq",
+      "rsp_before": 0,
+      "rsp_after": -8
+    },
+    {
+      "address": "0x181523002",
+      "instruction": "push r9",
+      "rsp_before": -8,
+      "rsp_after": -16
+    },
+    {
+      "address": "0x181523004",
+      "instruction": "mov r9, r9",
+      "rsp_before": -16,
+      "rsp_after": -16
+    },
+    {
+      "address": "0x181523007",
+      "instruction": "push rsi",
+      "rsp_before": -16,
+      "rsp_after": -24
+    },
+    {
+      "address": "0x181523008",
+      "instruction": "push r8",
+      "rsp_before": -24,
+      "rsp_after": -32
+    },
+    {
+      "address": "0x18152300a",
+      "instruction": "movabs r8, 0x7dff786d",
+      "rsp_before": -32,
+      "rsp_after": -32
+    },
+    {
+      "address": "0x181523014",
+      "instruction": "movabs rsi, 0x6af57d4f",
+      "rsp_before": -32,
+      "rsp_after": -32
+    },
+    {
+      "address": "0x18152301e",
+      "instruction": "shr rsi, 4",
+      "rsp_before": -32,
+      "rsp_after": -32
+    },
+    {
+      "address": "0x181523022",
+      "instruction": "xor rsi, 0x7b502d73",
+      "rsp_before": -32,
+      "rsp_after": -32
+    },
+    {
+      "address": "0x181523029",
+      "instruction": "xor rsi, r8",
+      "rsp_before": -32,
+      "rsp_after": -32
+    },
+    {
+      "address": "0x18152302c",
+      "instruction": "mov r8, qword ptr [rsp]",
+      "rsp_before": -32,
+      "rsp_after": -32
+    },
+    {
+      "address": "0x181523030",
+      "instruction": "add rsp, 8",
+      "rsp_before": -32,
+      "rsp_after": -24
+    },
+    {
+      "address": "0x181523034",
+      "instruction": "mov qword ptr [rsp + 8], rsi",
+      "rsp_before": -24,
+      "rsp_after": -24
+    },
+    {
+      "address": "0x181523039",
+      "instruction": "pop rsi",
+      "rsp_before": -24,
+      "rsp_after": -16
+    },
+    {
+      "address": "0x18152303a",
+      "instruction": "sub rsp, 8",
+      "rsp_before": -16,
+      "rsp_after": -24
+    },
+    {
+      "address": "0x181523041",
+      "instruction": "mov qword ptr [rsp], r11",
+      "rsp_before": -24,
+      "rsp_after": -24
+    },
+    {
+      "address": "0x181523045",
+      "instruction": "mov r11, r11",
+      "rsp_before": -24,
+      "rsp_after": -24
+    },
+    {
+      "address": "0x181523048",
+      "instruction": "push 0x4ff65abc",
+      "rsp_before": -24,
+      "rsp_after": -32
+    },
+    {
+      "address": "0x18152304d",
+      "instruction": "mov qword ptr [rsp], r9",
+      "rsp_before": -32,
+      "rsp_after": -32
+    },
+    {
+      "address": "0x181523051",
+      "instruction": "movabs r9, 0x1555629",
+      "rsp_before": -32,
+      "rsp_after": -32
+    },
+    {
+      "address": "0x18152305b",
+      "instruction": "mov qword ptr [rsp + 8], r9",
+      "rsp_before": -32,
+      "rsp_after": -32
+    },
+    {
+      "address": "0x181523060",
+      "instruction": "mov r9, qword ptr [rsp]",
+      "rsp_before": -32,
+      "rsp_after": -32
+    },
+    {
+      "address": "0x181523064",
+      "instruction": "add rsp, 8",
+      "rsp_before": -32,
+      "rsp_after": -24
+    },
+    {
+      "address": "0x18152306b",
+      "instruction": "push 0x75fd3d76",
+      "rsp_before": -24,
+      "rsp_after": -32
+    },
+    {
+      "address": "0x181523070",
+      "instruction": "sub rsp, 8",
+      "rsp_before": -32,
+      "rsp_after": -40
+    },
+    {
+      "address": "0x181523077",
+      "instruction": "push 0x7d0d59a6",
+      "rsp_before": -40,
+      "rsp_after": -48
+    },
+    {
+      "address": "0x18152307c",
+      "instruction": "mov qword ptr [rsp], rax",
+      "rsp_before": -48,
+      "rsp_after": -48
+    },
+    {
+      "address": "0x181523080",
+      "instruction": "pop qword ptr [rsp]",
+      "rsp_before": -48,
+      "rsp_after": -40
+    },
+    {
+      "address": "0x181523083",
+      "instruction": "pop qword ptr [rsp]",
+      "rsp_before": -40,
+      "rsp_after": -32
+    },
+    {
+      "address": "0x181523086",
+      "instruction": "sub rsp, 8",
+      "rsp_before": -32,
+      "rsp_after": -40
+    },
+    {
+      "address": "0x18152308a",
+      "instruction": "sub rsp, 8",
+      "rsp_before": -40,
+      "rsp_after": -48
+    },
+    {
+      "address": "0x181523091",
+      "instruction": "push 0x67edc547",
+      "rsp_before": -48,
+      "rsp_after": -56
+    },
+    {
+      "address": "0x181523096",
+      "instruction": "mov qword ptr [rsp], rbx",
+      "rsp_before": -56,
+      "rsp_after": -56
+    },
+    {
+      "address": "0x18152309a",
+      "instruction": "pop qword ptr [rsp]",
+      "rsp_before": -56,
+      "rsp_after": -48
+    },
+    {
+      "address": "0x18152309d",
+      "instruction": "pop qword ptr [rsp]",
+      "rsp_before": -48,
+      "rsp_after": -40
+    },
+    {
+      "address": "0x1815230a0",
+      "instruction": "push qword ptr [rsp + 0x20]",
+      "rsp_before": -40,
+      "rsp_after": -48
+    },
+    {
+      "address": "0x1815230a4",
+      "instruction": "push qword ptr [rsp]",
+      "rsp_before": -48,
+      "rsp_after": -56
+    },
+    {
+      "address": "0x1815230a7",
+      "instruction": "mov rax, qword ptr [rsp]",
+      "rsp_before": -56,
+      "rsp_after": -56
+    },
+    {
+      "address": "0x1815230ab",
+      "instruction": "add rsp, 8",
+      "rsp_before": -56,
+      "rsp_after": -48
+    },
+    {
+      "address": "0x1815230b2",
+      "instruction": "add rsp, 8",
+      "rsp_before": -48,
+      "rsp_after": -40
+    },
+    {
+      "address": "0x1815230b9",
+      "instruction": "push qword ptr [rsp + 0x10]",
+      "rsp_before": -40,
+      "rsp_after": -48
+    },
+    {
+      "address": "0x1815230bd",
+      "instruction": "push qword ptr [rsp]",
+      "rsp_before": -48,
+      "rsp_after": -56
+    },
+    {
+      "address": "0x1815230c0",
+      "instruction": "pop rbx",
+      "rsp_before": -56,
+      "rsp_after": -48
+    },
+    {
+      "address": "0x1815230c1",
+      "instruction": "add rsp, 8",
+      "rsp_before": -48,
+      "rsp_after": -40
+    },
+    {
+      "address": "0x1815230c5",
+      "instruction": "sub rsp, 8",
+      "rsp_before": -40,
+      "rsp_after": -48
+    },
+    {
+      "address": "0x1815230c9",
+      "instruction": "push 0x7ff19dc2",
+      "rsp_before": -48,
+      "rsp_after": -56
+    },
+    {
+      "address": "0x1815230ce",
+      "instruction": "push rax",
+      "rsp_before": -56,
+      "rsp_after": -64
+    },
+    {
+      "address": "0x1815230cf",
+      "instruction": "pop qword ptr [rsp]",
+      "rsp_before": -64,
+      "rsp_after": -56
+    },
+    {
+      "address": "0x1815230d2",
+      "instruction": "pop qword ptr [rsp]",
+      "rsp_before": -56,
+      "rsp_after": -48
+    },
+    {
+      "address": "0x1815230d5",
+      "instruction": "pop qword ptr [rsp + 0x10]",
+      "rsp_before": -48,
+      "rsp_after": -40
+    },
+    {
+      "address": "0x1815230d9",
+      "instruction": "sub rsp, 8",
+      "rsp_before": -40,
+      "rsp_after": -48
+    },
+    {
+      "address": "0x1815230e0",
+      "instruction": "mov qword ptr [rsp], rax",
+      "rsp_before": -48,
+      "rsp_after": -48
+    },
+    {
+      "address": "0x1815230e4",
+      "instruction": "mov rax, rbx",
+      "rsp_before": -48,
+      "rsp_after": -48
+    },
+    {
+      "address": "0x1815230e7",
+      "instruction": "push 0x4bff3555",
+      "rsp_before": -48,
+      "rsp_after": -56
+    },
+    {
+      "address": "0x1815230ec",
+      "instruction": "push rax",
+      "rsp_before": -56,
+      "rsp_after": -64
+    },
+    {
+      "address": "0x1815230ed",
+      "instruction": "pop qword ptr [rsp]",
+      "rsp_before": -64,
+      "rsp_after": -56
+    },
+    {
+      "address": "0x1815230f0",
+      "instruction": "pop qword ptr [rsp + 0x28]",
+      "rsp_before": -56,
+      "rsp_after": -48
+    },
+    {
+      "address": "0x1815230f4",
+      "instruction": "pop rax",
+      "rsp_before": -48,
+      "rsp_after": -40
+    },
+    {
+      "address": "0x1815230f5",
+      "instruction": "push qword ptr [rsp]",
+      "rsp_before": -40,
+      "rsp_after": -48
+    },
+    {
+      "address": "0x1815230f8",
+      "instruction": "push qword ptr [rsp]",
+      "rsp_before": -48,
+      "rsp_after": -56
+    },
+    {
+      "address": "0x1815230fb",
+      "instruction": "mov rbx, qword ptr [rsp]",
+      "rsp_before": -56,
+      "rsp_after": -56
+    },
+    {
+      "address": "0x1815230ff",
+      "instruction": "add rsp, 8",
+      "rsp_before": -56,
+      "rsp_after": -48
+    },
+    {
+      "address": "0x181523106",
+      "instruction": "add rsp, 8",
+      "rsp_before": -48,
+      "rsp_after": -40
+    },
+    {
+      "address": "0x18152310a",
+      "instruction": "add rsp, 8",
+      "rsp_before": -40,
+      "rsp_after": -32
+    },
+    {
+      "address": "0x181523111",
+      "instruction": "push qword ptr [rsp]",
+      "rsp_before": -32,
+      "rsp_after": -40
+    },
+    {
+      "address": "0x181523114",
+      "instruction": "push qword ptr [rsp]",
+      "rsp_before": -40,
+      "rsp_after": -48
+    },
+    {
+      "address": "0x181523117",
+      "instruction": "mov rax, qword ptr [rsp]",
+      "rsp_before": -48,
+      "rsp_after": -48
+    },
+    {
+      "address": "0x18152311b",
+      "instruction": "add rsp, 8",
+      "rsp_before": -48,
+      "rsp_after": -40
+    },
+    {
+      "address": "0x181523122",
+      "instruction": "add rsp, 8",
+      "rsp_before": -40,
+      "rsp_after": -32
+    },
+    {
+      "address": "0x181523129",
+      "instruction": "add rsp, 8",
+      "rsp_before": -32,
+      "rsp_after": -24
+    },
+    {
+      "address": "0x181523130",
+      "instruction": "push 0x77ab4330",
+      "rsp_before": -24,
+      "rsp_after": -32
+    },
+    {
+      "address": "0x181523135",
+      "instruction": "push r14",
+      "rsp_before": -32,
+      "rsp_after": -40
+    },
+    {
+      "address": "0x181523137",
+      "instruction": "pop qword ptr [rsp]",
+      "rsp_before": -40,
+      "rsp_after": -32
+    },
+    {
+      "address": "0x18152313a",
+      "instruction": "mov r14, r14",
+      "rsp_before": -32,
+      "rsp_after": -32
+    },
+    {
+      "address": "0x18152313d",
+      "instruction": "push rdx",
+      "rsp_before": -32,
+      "rsp_after": -40
+    },
+    {
+      "address": "0x18152313e",
+      "instruction": "movabs rdx, 0x324610",
+      "rsp_before": -40,
+      "rsp_after": -40
+    },
+    {
+      "address": "0x181523148",
+      "instruction": "mov qword ptr [rsp + 8], rdx",
+      "rsp_before": -40,
+      "rsp_after": -40
+    },
+    {
+      "address": "0x18152314d",
+      "instruction": "mov rdx, qword ptr [rsp]",
+      "rsp_before": -40,
+      "rsp_after": -40
+    },
+    {
+      "address": "0x181523151",
+      "instruction": "add rsp, 8",
+      "rsp_before": -40,
+      "rsp_after": -32
+    },
+    {
+      "address": "0x181523158",
+      "instruction": "jmp 0x180c43fdd",
+      "rsp_before": -32,
+      "rsp_after": -32
+    }
+  ],
+  "inputs": {
+    "runtime_bugland_sha256": "3a8e093afbf678fec5b4a84e5759b4d030f8ad39b52eac81a872dfe581449f26"
+  }
+}

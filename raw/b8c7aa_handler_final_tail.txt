@@ -1,0 +1,16 @@
+0x180b8cfc9 4c8b32 mov r14, qword ptr [rdx]
+0x180b8cfcc 4889ee mov rsi, rbp
+0x180b8cfcf 4981e008000000 and r8, 8
+0x180b8cfd6 49c7c712000000 mov r15, 0x12
+0x180b8cfdd 4881c66d000000 add rsi, 0x6d
+0x180b8cfe4 4c01f0 add rax, r14
+0x180b8cfe7 488b36 mov rsi, qword ptr [rsi]
+0x180b8cfea 4981e800040000 sub r8, 0x400
+0x180b8cff1 4881c614000000 add rsi, 0x14
+0x180b8cff8 4981cf00080000 or r15, 0x800
+0x180b8cfff 4909f7 or r15, rsi
+0x180b8d002 486316 movsxd rdx, dword ptr [rsi]
+0x180b8d005 4989ed mov r13, rbp
+0x180b8d008 4981c56d000000 add r13, 0x6d
+0x180b8d00f 49015500 add qword ptr [r13], rdx
+0x180b8d013 41ffe6 jmp r14

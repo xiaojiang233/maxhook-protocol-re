@@ -1,0 +1,67 @@
+{
+  "final_rip": "0x180b6c570",
+  "instructions_phase3": 15799,
+  "api_calls": 0,
+  "arg_objects": {
+    "output": "0x7ff000000000",
+    "input32": "0x7ff000002000",
+    "input64": "0x7ff000004000",
+    "context": "0x7ff000007000",
+    "plaintext": "0x7ff000006000"
+  },
+  "phase2_crash": {
+    "rip": "0xdf09e59",
+    "registers": {
+      "rax": "0x1",
+      "rbx": "0x0",
+      "rcx": "0x0",
+      "rdx": "0x0",
+      "rsi": "0x0",
+      "rdi": "0x0",
+      "rbp": "0x0",
+      "rsp": "0x7ffe1ff008",
+      "r8": "0x0",
+      "r9": "0x0",
+      "r10": "0x0",
+      "r11": "0x0",
+      "r12": "0x0",
+      "r13": "0x0",
+      "r14": "0x0",
+      "r15": "0x0"
+    }
+  },
+  "invalid_accesses": [
+    {
+      "access": 21,
+      "address": "0xdf09e59",
+      "size": 1,
+      "rip": "0xdf09e59"
+    },
+    {
+      "access": 19,
+      "address": "0x290f51",
+      "size": 8,
+      "rip": "0x180b6c570"
+    }
+  ],
+  "log": [
+    "[boundary] session2/call4: input32=32B input64=64B plaintext=691B keystream_oracle=691B",
+    "[phase1] mapping original MaxHook.dll (empty .bugland)",
+    "[phase1] decompressed in 1.6s, RIP=0x181f00246, rax=0x180c0eb27",
+    "[score] .bugland matches oracle: 99.9608% (8841 bytes differ)",
+    "[phase2] continuing from real entry 0x180c0eb27 with WinEnv stubs",
+    "  [phase2 invalid] addr=0xdf09e59 rip=0xdf09e59",
+    "[phase2] UcError Invalid memory fetch (UC_ERR_FETCH_UNMAPPED): RIP=0xdf09e59 in 0.1s",
+    "  API calls: 0",
+    "  crash registers: {'rax': '0x1', 'rbx': '0x0', 'rcx': '0x0', 'rdx': '0x0', 'rsi': '0x0', 'rdi': '0x0', 'rbp': '0x0', 'rsp': '0x7ffe1ff008', 'r8': '0x0', 'r9': '0x0', 'r10': '0x0', 'r11': '0x0', 'r12': '0x0', 'r13': '0x0', 'r14': '0x0', 'r15': '0x0'}",
+    "[score] .bugland matches oracle: 99.9752% (5588 bytes differ)",
+    "[phase3] calling 0x180324610 with boundary session2/call4 args",
+    "  string obj input32: obj=0x7ff000002000 data=0x7ff000001000 size=32",
+    "  string obj input64: obj=0x7ff000004000 data=0x7ff000003000 size=64",
+    "  string obj plaintext: obj=0x7ff000006000 data=0x7ff000005000 size=691",
+    "  [phase2 invalid] addr=0x290f51 rip=0x180b6c570",
+    "[phase3] UcError Invalid memory read (UC_ERR_READ_UNMAPPED): RIP=0x180b6c570 after 15799 instr in 0.0s",
+    "  API calls: 0",
+    "[score] .bugland matches oracle: 99.9751% (5613 bytes differ)"
+  ]
+}

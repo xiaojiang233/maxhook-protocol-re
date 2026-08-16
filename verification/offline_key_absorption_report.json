@@ -1,0 +1,258 @@
+{
+  "schema": "maxhook.offline-key-absorption/v1",
+  "decoded_key_copy": {
+    "source_heap": "0x200001000e0",
+    "destination_stack": "0x7ffe1fec70",
+    "bytes": 32,
+    "copy_instruction": "0x1805d0c36/0x1805d0c3a",
+    "copy_write_instruction": "0x1805d0c41/0x1805d0c45"
+  },
+  "round": {
+    "count": 32,
+    "vm_jumps_per_byte": 26,
+    "native_instructions_per_byte": 14070,
+    "producer_target": "0x18098abf8",
+    "producer_body": "0x180aa57d7",
+    "producer_vip": "0x181be1445",
+    "key_pointer_context_slot": "0x45",
+    "injection_context_slot": "0x0e",
+    "injection_instruction": "0x180aa5bce"
+  },
+  "round_entries": [
+    {
+      "step": 3026,
+      "instruction": 1421258,
+      "pointer": 549724351600,
+      "byte_index": 0
+    },
+    {
+      "step": 3052,
+      "instruction": 1435328,
+      "pointer": 549724351601,
+      "byte_index": 1
+    },
+    {
+      "step": 3078,
+      "instruction": 1449398,
+      "pointer": 549724351602,
+      "byte_index": 2
+    },
+    {
+      "step": 3104,
+      "instruction": 1463468,
+      "pointer": 549724351603,
+      "byte_index": 3
+    },
+    {
+      "step": 3130,
+      "instruction": 1477538,
+      "pointer": 549724351604,
+      "byte_index": 4
+    },
+    {
+      "step": 3156,
+      "instruction": 1491608,
+      "pointer": 549724351605,
+      "byte_index": 5
+    },
+    {
+      "step": 3182,
+      "instruction": 1505678,
+      "pointer": 549724351606,
+      "byte_index": 6
+    },
+    {
+      "step": 3208,
+      "instruction": 1519748,
+      "pointer": 549724351607,
+      "byte_index": 7
+    },
+    {
+      "step": 3234,
+      "instruction": 1533818,
+      "pointer": 549724351608,
+      "byte_index": 8
+    },
+    {
+      "step": 3260,
+      "instruction": 1547888,
+      "pointer": 549724351609,
+      "byte_index": 9
+    },
+    {
+      "step": 3286,
+      "instruction": 1561958,
+      "pointer": 549724351610,
+      "byte_index": 10
+    },
+    {
+      "step": 3312,
+      "instruction": 1576028,
+      "pointer": 549724351611,
+      "byte_index": 11
+    },
+    {
+      "step": 3338,
+      "instruction": 1590098,
+      "pointer": 549724351612,
+      "byte_index": 12
+    },
+    {
+      "step": 3364,
+      "instruction": 1604168,
+      "pointer": 549724351613,
+      "byte_index": 13
+    },
+    {
+      "step": 3390,
+      "instruction": 1618238,
+      "pointer": 549724351614,
+      "byte_index": 14
+    },
+    {
+      "step": 3416,
+      "instruction": 1632308,
+      "pointer": 549724351615,
+      "byte_index": 15
+    },
+    {
+      "step": 3442,
+      "instruction": 1646378,
+      "pointer": 549724351616,
+      "byte_index": 16
+    },
+    {
+      "step": 3468,
+      "instruction": 1660448,
+      "pointer": 549724351617,
+      "byte_index": 17
+    },
+    {
+      "step": 3494,
+      "instruction": 1674518,
+      "pointer": 549724351618,
+      "byte_index": 18
+    },
+    {
+      "step": 3520,
+      "instruction": 1688588,
+      "pointer": 549724351619,
+      "byte_index": 19
+    },
+    {
+      "step": 3546,
+      "instruction": 1702658,
+      "pointer": 549724351620,
+      "byte_index": 20
+    },
+    {
+      "step": 3572,
+      "instruction": 1716728,
+      "pointer": 549724351621,
+      "byte_index": 21
+    },
+    {
+      "step": 3598,
+      "instruction": 1730798,
+      "pointer": 549724351622,
+      "byte_index": 22
+    },
+    {
+      "step": 3624,
+      "instruction": 1744868,
+      "pointer": 549724351623,
+      "byte_index": 23
+    },
+    {
+      "step": 3650,
+      "instruction": 1758938,
+      "pointer": 549724351624,
+      "byte_index": 24
+    },
+    {
+      "step": 3676,
+      "instruction": 1773008,
+      "pointer": 549724351625,
+      "byte_index": 25
+    },
+    {
+      "step": 3702,
+      "instruction": 1787078,
+      "pointer": 549724351626,
+      "byte_index": 26
+    },
+    {
+      "step": 3728,
+      "instruction": 1801148,
+      "pointer": 549724351627,
+      "byte_index": 27
+    },
+    {
+      "step": 3754,
+      "instruction": 1815218,
+      "pointer": 549724351628,
+      "byte_index": 28
+    },
+    {
+      "step": 3780,
+      "instruction": 1829288,
+      "pointer": 549724351629,
+      "byte_index": 29
+    },
+    {
+      "step": 3806,
+      "instruction": 1843358,
+      "pointer": 549724351630,
+      "byte_index": 30
+    },
+    {
+      "step": 3832,
+      "instruction": 1857428,
+      "pointer": 549724351631,
+      "byte_index": 31
+    }
+  ],
+  "differential_vectors": {
+    "0": {
+      "first_context_instruction": 1422141,
+      "first_context_offset": "0xe",
+      "baseline_byte": 187,
+      "variant_byte": 186,
+      "first_stack_offsets": [
+        "0x90",
+        "0x50"
+      ]
+    },
+    "1": {
+      "first_context_instruction": 1436211,
+      "first_context_offset": "0xe",
+      "baseline_byte": 187,
+      "variant_byte": 186,
+      "first_stack_offsets": [
+        "0x91",
+        "0x51"
+      ]
+    },
+    "2": {
+      "first_context_instruction": 1450281,
+      "first_context_offset": "0xe",
+      "baseline_byte": 187,
+      "variant_byte": 186,
+      "first_stack_offsets": [
+        "0x92",
+        "0x52"
+      ]
+    },
+    "31": {
+      "first_context_instruction": 1858311,
+      "first_context_offset": "0xe",
+      "baseline_byte": 187,
+      "variant_byte": 186,
+      "first_stack_offsets": [
+        "0xaf",
+        "0x6f"
+      ]
+    }
+  },
+  "control_flow_identical": true
+}

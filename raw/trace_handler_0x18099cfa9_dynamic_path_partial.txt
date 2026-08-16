@@ -1,0 +1,891 @@
+164110 0x18099cfa9: jmp      0x180c2ea8b ***
+164111 0x180c2ea8b: sub      rsp, 8
+164112 0x180c2ea8f: mov      qword ptr [rsp], rbp ***
+164113 0x180c2ea93: sub      rsp, 8
+164114 0x180c2ea9a: mov      qword ptr [rsp], r9 ***
+164115 0x180c2ea9e: movabs   r9, 0x7bee93ee
+164116 0x180c2eaa8: jmp      0x180c2e48b ***
+164117 0x180c2e48b: xor      qword ptr [rsp + 8], r9 ***
+164118 0x180c2e490: pop      r9 ***
+164119 0x180c2e492: pop      rax ***
+164120 0x180c2e493: xor      rax, 0x7bee93ee
+164121 0x180c2e499: add      rax, 0x6d
+164122 0x180c2e49f: push     qword ptr [rax] ***
+164123 0x180c2e4a1: push     r14 ***
+164124 0x180c2e4a3: push     r9 ***
+164125 0x180c2e4a5: jmp      0x180c2e20b ***
+164126 0x180c2e20b: movabs   r9, 0x60bf197d
+164127 0x180c2e215: mov      r14, r9
+164128 0x180c2e218: pop      r9 ***
+164129 0x180c2e21a: add      qword ptr [rsp + 8], r14 ***
+164130 0x180c2e21f: pop      r14 ***
+164131 0x180c2e221: pop      rax ***
+164132 0x180c2e222: sub      rax, 0x60bf197d
+164133 0x180c2e228: jmp      0x180c2e9f6 ***
+164134 0x180c2e9f6: add      rax, 0
+164135 0x180c2e9fc: mov      r9b, byte ptr [rax] ***
+164136 0x180c2e9ff: cmp      r9b, 1
+164137 0x180c2ea03: je       0x180c2dd63 ***
+164138 0x180c2ea09: jmp      0x180c2dd54 ***
+164139 0x180c2dd54: cmp      r9b, 2
+164140 0x180c2dd58: je       0x180c2dd63 ***
+164141 0x180c2dd5e: jmp      0x180c2e7a7 ***
+164142 0x180c2e7a7: push     r15 ***
+164143 0x180c2e7a9: mov      r15, rbp ***
+164144 0x180c2e7ac: push     r15 ***
+164145 0x180c2e7ae: jmp      0x180c2e4aa ***
+164146 0x180c2e4aa: pop      r8 ***
+164147 0x180c2e4ac: push     qword ptr [rsp] ***
+164148 0x180c2e4af: mov      r15, qword ptr [rsp] ***
+164149 0x180c2e4b3: add      rsp, 8
+164150 0x180c2e4ba: add      rsp, 8
+164151 0x180c2e4c1: add      r8, 0x163
+164152 0x180c2e4c8: push     qword ptr [r8] ***
+164153 0x180c2e4cb: push     rcx ***
+164154 0x180c2e4cc: movabs   rcx, 0x9fa7d3e
+164155 0x180c2e4d6: jmp      0x180c2e881 ***
+164156 0x180c2e881: sub      qword ptr [rsp + 8], rcx ***
+164157 0x180c2e886: pop      rcx ***
+164158 0x180c2e887: mov      r9, qword ptr [rsp] ***
+164159 0x180c2e88b: add      rsp, 8
+164160 0x180c2e88f: add      r9, 0x9fa7d3e
+164161 0x180c2e896: cmp      r9, 0
+164162 0x180c2e89d: je       0x180c2e6c7 ***
+164163 0x180c2e8a3: jmp      0x180c2e2ba ***
+164164 0x180c2e2ba: push     r12 ***
+164165 0x180c2e2bc: push     0x74ff418a ***
+164166 0x180c2e2c1: mov      qword ptr [rsp], r8 ***
+164167 0x180c2e2c5: movabs   r8, 0x479ac76a
+164168 0x180c2e2cf: jmp      0x180c2e5ad ***
+164169 0x180c2e5ad: movabs   r12, 0x34254445
+164170 0x180c2e5b7: xor      r12, r8
+164171 0x180c2e5ba: pop      r8 ***
+164172 0x180c2e5bc: or       r12, 0x7ffb8583
+164173 0x180c2e5c3: jae      0x180c2e677 ***
+164174 0x180c2e677: sub      r12, 0x7efb26cf
+164175 0x180c2e67e: jb       0x180c2df81 ***
+164176 0x180c2e684: jmp      0x180c2e9e8 ***
+164177 0x180c2e9e8: dec      r12
+164178 0x180c2e9eb: js       0x180c2df81 ***
+164179 0x180c2e9f1: jmp      0x180c2e6ae ***
+164180 0x180c2e6ae: add      r12, -0x10460df
+164181 0x180c2e6b5: push     r13 ***
+164182 0x180c2e6b7: mov      r13, r12
+164183 0x180c2e6ba: mov      qword ptr [r9], r13 ***
+164184 0x180c2e6bd: pop      r13 ***
+164185 0x180c2e6bf: mov      r12, qword ptr [rsp] ***
+164186 0x180c2e6c3: add      rsp, 8
+164187 0x180c2e6c7: push     0x7f6919b1 ***
+164188 0x180c2e6cc: mov      qword ptr [rsp], rdi ***
+164189 0x180c2e6d0: push     0x334e5a04 ***
+164190 0x180c2e6d5: jmp      0x180c2e958 ***
+164191 0x180c2e958: pop      rdi ***
+164192 0x180c2e959: xchg     rdi, r9
+164193 0x180c2e95c: not      r9
+164194 0x180c2e95f: xor      rdi, r9
+164195 0x180c2e962: xor      r9, rdi
+164196 0x180c2e965: xor      rdi, r9
+164197 0x180c2e968: push     rax ***
+164198 0x180c2e969: mov      eax, 0x7dfb80db
+164199 0x180c2e96e: xor      eax, 0x35ffb802
+164200 0x180c2e973: shr      eax, 5
+164201 0x180c2e976: sub      eax, 0x358e7bcb
+164202 0x180c2e97b: jmp      0x180c2e3fb ***
+164203 0x180c2e3fb: xor      edi, eax
+164204 0x180c2e3fd: pop      rax ***
+164205 0x180c2e3fe: mov      r14, rdi
+164206 0x180c2e401: pop      rdi ***
+164207 0x180c2e402: push     0x7ef90a6f ***
+164208 0x180c2e407: mov      qword ptr [rsp], rdi ***
+164209 0x180c2e40b: mov      rdi, rbp ***
+164210 0x180c2e40e: push     rbx ***
+164211 0x180c2e40f: mov      rbx, rdi
+164212 0x180c2e412: push     rbp ***
+164213 0x180c2e413: mov      rbp, rbx ***
+164214 0x180c2e416: mov      r10, rbp ***
+164215 0x180c2e419: pop      rbp ***
+164216 0x180c2e41a: mov      rbx, qword ptr [rsp] ***
+164217 0x180c2e41e: add      rsp, 8
+164218 0x180c2e422: pop      rdi ***
+164219 0x180c2e423: add      r10, 0x6d
+164220 0x180c2e42a: jmp      0x180c2e8a8 ***
+164221 0x180c2e8a8: push     qword ptr [r10] ***
+164222 0x180c2e8ab: push     r15 ***
+164223 0x180c2e8ad: movabs   r15, 0x3ab93204
+164224 0x180c2e8b7: push     rbp ***
+164225 0x180c2e8b8: mov      rbp, r15 ***
+164226 0x180c2e8bb: add      qword ptr [rsp + 0x10], rbp ***
+164227 0x180c2e8c0: pop      rbp ***
+164228 0x180c2e8c1: mov      r15, qword ptr [rsp] ***
+164229 0x180c2e8c5: jmp      0x180c2e759 ***
+164230 0x180c2e759: add      rsp, 8
+164231 0x180c2e760: mov      r10, qword ptr [rsp] ***
+164232 0x180c2e764: add      rsp, 8
+164233 0x180c2e76b: sub      r10, 0x3ab93204
+164234 0x180c2e772: add      r10, 7
+164235 0x180c2e779: mov      r14d, dword ptr [r10] ***
+164236 0x180c2e77c: push     rbp ***
+164237 0x180c2e77d: push     qword ptr [rsp] ***
+164238 0x180c2e780: push     qword ptr [rsp] ***
+164239 0x180c2e783: jmp      0x180c2df1e ***
+164240 0x180c2df1e: pop      rsi ***
+164241 0x180c2df1f: add      rsp, 8
+164242 0x180c2df26: add      rsp, 8
+164243 0x180c2df2a: add      rsi, 0x9f
+164244 0x180c2df31: add      r14, 0x7ef84ef6
+164245 0x180c2df38: push     0x6b7e98ff ***
+164246 0x180c2df3d: jmp      0x180c2e7b3 ***
+164247 0x180c2e7b3: push     rbp ***
+164248 0x180c2e7b4: mov      rbp, rdx ***
+164249 0x180c2e7b7: mov      qword ptr [rsp + 8], rbp ***
+164250 0x180c2e7bc: pop      rbp ***
+164251 0x180c2e7bd: mov      rdx, 0
+164252 0x180c2e7c4: add      rdx, 0x6ff154b8
+164253 0x180c2e7cb: jmp      0x180c2de0c ***
+164254 0x180c2de0c: add      rdx, rsi
+164255 0x180c2de0f: sub      rdx, 0x6ff154b8
+164256 0x180c2de16: add      r14, qword ptr [rdx] ***
+164257 0x180c2de19: pop      rdx ***
+164258 0x180c2de1a: sub      r14, 0x7ef84ef6
+164259 0x180c2de21: sub      rsp, 8
+164260 0x180c2de25: mov      qword ptr [rsp], r14 ***
+164261 0x180c2de29: mov      r14, 0
+164262 0x180c2de30: mov      rcx, r14
+164263 0x180c2de33: push     qword ptr [rsp] ***
+164264 0x180c2de36: mov      r14, qword ptr [rsp] ***
+164265 0x180c2de3a: add      rsp, 8
+164266 0x180c2de41: jmp      0x180c2e7d0 ***
+164267 0x180c2e7d0: add      rsp, 8
+164268 0x180c2e7d7: sub      rsp, 8
+164269 0x180c2e7de: mov      qword ptr [rsp], rbp ***
+164270 0x180c2e7e2: push     qword ptr [rsp] ***
+164271 0x180c2e7e5: mov      r11, qword ptr [rsp] ***
+164272 0x180c2e7e9: add      rsp, 8
+164273 0x180c2e7ed: jmp      0x180c2de6f ***
+164274 0x180c2de6f: add      rsp, 8
+164275 0x180c2de76: add      r11, 0x6d
+164276 0x180c2de7d: push     qword ptr [r11] ***
+164277 0x180c2de80: sub      qword ptr [rsp], 0x7bfbb5e5 ***
+164278 0x180c2de88: mov      r11, qword ptr [rsp] ***
+164279 0x180c2de8c: add      rsp, 8
+164280 0x180c2de93: jmp      0x180c2e84c ***
+164281 0x180c2e84c: add      r11, 0x7bfbb5e5
+164282 0x180c2e853: add      r11, 0xb
+164283 0x180c2e85a: push     word ptr [r11] ***
+164284 0x180c2e85e: push     bx ***
+164285 0x180c2e860: mov      bx, 0x3a8d
+164286 0x180c2e864: jmp      0x180c2e4db ***
+164287 0x180c2e4db: add      word ptr [rsp + 2], bx ***
+164288 0x180c2e4e0: pop      bx ***
+164289 0x180c2e4e2: pop      cx ***
+164290 0x180c2e4e4: push     rbp ***
+164291 0x180c2e4e5: mov      bp, 0xe2b5
+164292 0x180c2e4e9: dec      bp
+164293 0x180c2e4ec: sub      bp, 0x7cef
+164294 0x180c2e4f1: and      bp, 0x6740
+164295 0x180c2e4f6: dec      bp
+164296 0x180c2e4f9: sub      rsp, 8
+164297 0x180c2e4fd: mov      qword ptr [rsp], r13 ***
+164298 0x180c2e501: jmp      0x180c2e99b ***
+164299 0x180c2e99b: mov      r13w, 0x42af
+164300 0x180c2e9a0: add      r13w, 0xa5f8
+164301 0x180c2e9a6: jmp      0x180c2e0a2 ***
+164302 0x180c2e0a2: add      r13w, 0xb755
+164303 0x180c2e0a8: xor      r13w, 0xc04e
+164304 0x180c2e0ae: xor      bp, r13w
+164305 0x180c2e0b2: pop      r13 ***
+164306 0x180c2e0b4: sub      cx, bp
+164307 0x180c2e0b7: pop      rbp ***
+164308 0x180c2e0b8: add      rcx, rsp
+164309 0x180c2e0bb: push     r10 ***
+164310 0x180c2e0bd: mov      r10, r14
+164311 0x180c2e0c0: push     r10 ***
+164312 0x180c2e0c2: push     r14 ***
+164313 0x180c2e0c4: movabs   r14, 0x7ffd0e1e
+164314 0x180c2e0ce: jmp      0x180c2e3cb ***
+164315 0x180c2e3cb: add      qword ptr [rsp + 8], r14 ***
+164316 0x180c2e3d0: pop      r14 ***
+164317 0x180c2e3d2: pop      qword ptr [rcx] ***
+164318 0x180c2e3d4: sub      qword ptr [rcx], 0x7ffd0e1e ***
+164319 0x180c2e3db: pop      r10 ***
+164320 0x180c2e3dd: push     0x78eb5565 ***
+164321 0x180c2e3e2: mov      qword ptr [rsp], r11 ***
+164322 0x180c2e3e6: mov      r11, rbp ***
+164323 0x180c2e3e9: push     rbx ***
+164324 0x180c2e3ea: mov      rbx, r11
+164325 0x180c2e3ed: push     rbx ***
+164326 0x180c2e3ee: add      qword ptr [rsp], 0x7af6c145 ***
+164327 0x180c2e3f6: jmp      0x180c2e902 ***
+164328 0x180c2e902: mov      r14, qword ptr [rsp] ***
+164329 0x180c2e906: add      rsp, 8
+164330 0x180c2e90d: sub      r14, 0x7af6c145
+164331 0x180c2e914: pop      rbx ***
+164332 0x180c2e915: pop      r11 ***
+164333 0x180c2e917: add      r14, 0xe7
+164334 0x180c2e91e: jmp      0x180c2e255 ***
+164335 0x180c2e255: lock sub dword ptr [r14], 1 ***
+164336 0x180c2e25d: push     qword ptr [rsp] ***
+164337 0x180c2e260: push     qword ptr [rsp] ***
+164338 0x180c2e263: jmp      0x180c2e5ce ***
+164339 0x180c2e5ce: mov      r8, qword ptr [rsp] ***
+164340 0x180c2e5d2: add      rsp, 8
+164341 0x180c2e5d6: add      rsp, 8
+164342 0x180c2e5da: add      rsp, 8
+164343 0x180c2e5de: push     qword ptr [rsp] ***
+164344 0x180c2e5e1: push     qword ptr [rsp] ***
+164345 0x180c2e5e4: mov      r9, qword ptr [rsp] ***
+164346 0x180c2e5e8: jmp      0x180c2e199 ***
+164347 0x180c2e199: add      rsp, 8
+164348 0x180c2e19d: add      rsp, 8
+164349 0x180c2e1a1: add      rsp, 8
+164350 0x180c2e1a8: push     qword ptr [rsp] ***
+164351 0x180c2e1ab: push     qword ptr [rsp] ***
+164352 0x180c2e1ae: pop      r10 ***
+164353 0x180c2e1b0: add      rsp, 8
+164354 0x180c2e1b4: jmp      0x180c2e601 ***
+164355 0x180c2e601: add      rsp, 8
+164356 0x180c2e608: push     qword ptr [rsp] ***
+164357 0x180c2e60b: mov      r11, qword ptr [rsp] ***
+164358 0x180c2e60f: add      rsp, 8
+164359 0x180c2e616: add      rsp, 8
+164360 0x180c2e61a: push     qword ptr [rsp] ***
+164361 0x180c2e61d: push     qword ptr [rsp] ***
+164362 0x180c2e620: mov      r12, qword ptr [rsp] ***
+164363 0x180c2e624: jmp      0x180c2e9ab ***
+164364 0x180c2e9ab: add      rsp, 8
+164365 0x180c2e9af: add      rsp, 8
+164366 0x180c2e9b3: add      rsp, 8
+164367 0x180c2e9b7: push     qword ptr [rsp] ***
+164368 0x180c2e9ba: push     qword ptr [rsp] ***
+164369 0x180c2e9bd: mov      r13, qword ptr [rsp] ***
+164370 0x180c2e9c1: add      rsp, 8
+164371 0x180c2e9c5: add      rsp, 8
+164372 0x180c2e9cc: jmp      0x180c2ddd6 ***
+164373 0x180c2ddd6: add      rsp, 8
+164374 0x180c2ddda: push     qword ptr [rsp] ***
+164375 0x180c2dddd: push     qword ptr [rsp] ***
+164376 0x180c2dde0: mov      r14, qword ptr [rsp] ***
+164377 0x180c2dde4: add      rsp, 8
+164378 0x180c2dde8: add      rsp, 8
+164379 0x180c2ddef: add      rsp, 8
+164380 0x180c2ddf6: push     qword ptr [rsp] ***
+164381 0x180c2ddf9: push     qword ptr [rsp] ***
+164382 0x180c2ddfc: mov      r15, qword ptr [rsp] ***
+164383 0x180c2de00: add      rsp, 8
+164384 0x180c2de07: jmp      0x180c2e587 ***
+164385 0x180c2e587: add      rsp, 8
+164386 0x180c2e58b: add      rsp, 8
+164387 0x180c2e58f: push     qword ptr [rsp] ***
+164388 0x180c2e592: push     qword ptr [rsp] ***
+164389 0x180c2e595: jmp      0x180c2dd39 ***
+164390 0x180c2dd39: mov      rdi, qword ptr [rsp] ***
+164391 0x180c2dd3d: add      rsp, 8
+164392 0x180c2dd44: add      rsp, 8
+164393 0x180c2dd48: add      rsp, 8
+164394 0x180c2dd4f: jmp      0x180c2dffd ***
+164395 0x180c2dffd: push     qword ptr [rsp] ***
+164396 0x180c2e000: push     qword ptr [rsp] ***
+164397 0x180c2e003: mov      rsi, qword ptr [rsp] ***
+164398 0x180c2e007: add      rsp, 8
+164399 0x180c2e00e: add      rsp, 8
+164400 0x180c2e012: add      rsp, 8
+164401 0x180c2e019: push     qword ptr [rsp] ***
+164402 0x180c2e01c: jmp      0x180c2dcb5 ***
+164403 0x180c2dcb5: push     qword ptr [rsp] ***
+164404 0x180c2dcb8: pop      rbp ***
+164405 0x180c2dcb9: add      rsp, 8
+164406 0x180c2dcbd: add      rsp, 8
+164407 0x180c2dcc4: push     qword ptr [rsp] ***
+164408 0x180c2dcc7: push     qword ptr [rsp] ***
+164409 0x180c2dcca: pop      rbx ***
+164410 0x180c2dccb: add      rsp, 8
+164411 0x180c2dcd2: jmp      0x180c2e447 ***
+164412 0x180c2e447: add      rsp, 8
+164413 0x180c2e44e: push     qword ptr [rsp] ***
+164414 0x180c2e451: push     qword ptr [rsp] ***
+164415 0x180c2e454: jmp      0x180c2ea54 ***
+164416 0x180c2ea54: pop      rdx ***
+164417 0x180c2ea55: add      rsp, 8
+164418 0x180c2ea59: add      rsp, 8
+164419 0x180c2ea60: push     qword ptr [rsp] ***
+164420 0x180c2ea63: push     qword ptr [rsp] ***
+164421 0x180c2ea66: pop      rcx ***
+164422 0x180c2ea67: add      rsp, 8
+164423 0x180c2ea6e: add      rsp, 8
+164424 0x180c2ea75: push     qword ptr [rsp] ***
+164425 0x180c2ea78: push     qword ptr [rsp] ***
+164426 0x180c2ea7b: mov      rax, qword ptr [rsp] ***
+164427 0x180c2ea7f: add      rsp, 8
+164428 0x180c2ea86: jmp      0x180c2e5ed ***
+164429 0x180c2e5ed: add      rsp, 8
+164430 0x180c2e5f4: add      rsp, 8
+164431 0x180c2e5f8: popfq    
+164432 0x180c2e5f9: ret      0 ***
+164433 0x181245e6e: bswap    esi
+164434 0x181245e70: jmp      0x1814febce ***
+164435 0x1814febce: pushfq   
+164436 0x1814febcf: push     r14 ***
+164437 0x1814febd1: push     rdx ***
+164438 0x1814febd2: mov      rdx, r14
+164439 0x1814febd5: push     rdx ***
+164440 0x1814febd6: pop      r14 ***
+164441 0x1814febd8: push     qword ptr [rsp] ***
+164442 0x1814febdb: pop      rdx ***
+164443 0x1814febdc: add      rsp, 8
+164444 0x1814febe0: mov      qword ptr [rsp], 0x628 ***
+164445 0x1814febe8: push     r9 ***
+164446 0x1814febea: mov      r9, r9
+164447 0x1814febed: sub      rsp, 8
+164448 0x1814febf1: mov      qword ptr [rsp], rdi ***
+164449 0x1814febf5: movabs   rdi, 0x7efb6263
+164450 0x1814febff: or       rdi, 0x7e9fa42d
+164451 0x1814fec06: xor      rdi, 0x7fac7f63
+164452 0x1814fec0d: mov      qword ptr [rsp + 8], rdi ***
+164453 0x1814fec12: pop      rdi ***
+164454 0x1814fec13: sub      rsp, 8
+164455 0x1814fec17: push     0x3f7f107d ***
+164456 0x1814fec1c: sub      rsp, 8
+164457 0x1814fec20: mov      qword ptr [rsp], rax ***
+164458 0x1814fec24: pop      qword ptr [rsp] ***
+164459 0x1814fec27: pop      qword ptr [rsp] ***
+164460 0x1814fec2a: push     0x3dff63c3 ***
+164461 0x1814fec2f: push     0x65f64b9a ***
+164462 0x1814fec34: push     rbx ***
+164463 0x1814fec35: pop      qword ptr [rsp] ***
+164464 0x1814fec38: pop      qword ptr [rsp] ***
+164465 0x1814fec3b: push     qword ptr [rsp + 0x20] ***
+164466 0x1814fec3f: push     qword ptr [rsp] ***
+164467 0x1814fec42: push     qword ptr [rsp] ***
+164468 0x1814fec45: pop      rax ***
+164469 0x1814fec46: add      rsp, 8
+164470 0x1814fec4d: add      rsp, 8
+164471 0x1814fec54: push     qword ptr [rsp + 0x10] ***
+164472 0x1814fec58: push     qword ptr [rsp] ***
+164473 0x1814fec5b: push     qword ptr [rsp] ***
+164474 0x1814fec5e: pop      rbx ***
+164475 0x1814fec5f: add      rsp, 8
+164476 0x1814fec63: add      rsp, 8
+164477 0x1814fec6a: sub      rsp, 8
+164478 0x1814fec71: sub      rsp, 8
+164479 0x1814fec75: mov      qword ptr [rsp], rax ***
+164480 0x1814fec79: pop      qword ptr [rsp] ***
+164481 0x1814fec7c: pop      qword ptr [rsp + 0x10] ***
+164482 0x1814fec80: sub      rsp, 8
+164483 0x1814fec84: sub      rsp, 8
+164484 0x1814fec8b: mov      qword ptr [rsp], rbx ***
+164485 0x1814fec8f: pop      qword ptr [rsp] ***
+164486 0x1814fec92: pop      qword ptr [rsp + 0x20] ***
+164487 0x1814fec96: push     qword ptr [rsp] ***
+164488 0x1814fec99: push     qword ptr [rsp] ***
+164489 0x1814fec9c: mov      rbx, qword ptr [rsp] ***
+164490 0x1814feca0: add      rsp, 8
+164491 0x1814feca4: add      rsp, 8
+164492 0x1814feca8: add      rsp, 8
+164493 0x1814fecac: push     qword ptr [rsp] ***
+164494 0x1814fecaf: push     qword ptr [rsp] ***
+164495 0x1814fecb2: pop      rax ***
+164496 0x1814fecb3: add      rsp, 8
+164497 0x1814fecba: add      rsp, 8
+164498 0x1814fecc1: sub      rsp, 8
+164499 0x1814fecc8: push     rdi ***
+164500 0x1814fecc9: pop      qword ptr [rsp] ***
+164501 0x1814feccc: push     rdi ***
+164502 0x1814feccd: pop      rdi ***
+164503 0x1814fecce: push     r15 ***
+164504 0x1814fecd0: movabs   r15, 0x324610
+164505 0x1814fecda: mov      qword ptr [rsp + 8], r15 ***
+164506 0x1814fecdf: pop      r15 ***
+164507 0x1814fece1: jmp      0x180c43fdd ***
+164508 0x180c43fdd: call     0x180c43fe2
+164509 0x180c43fe2: sub      rsp, 8
+164510 0x180c43fe6: push     r11 ***
+164511 0x180c43fe8: push     rdx ***
+164512 0x180c43fe9: push     rcx ***
+164513 0x180c43fea: movabs   rcx, 0x2fbf5a51
+164514 0x180c43ff4: sub      qword ptr [rsp + 8], rcx ***
+164515 0x180c43ff9: pop      rcx ***
+164516 0x180c43ffa: mov      r11, qword ptr [rsp] ***
+164517 0x180c43ffe: add      rsp, 8
+164518 0x180c44002: add      r11, 0x2fbf5a51
+164519 0x180c44009: mov      qword ptr [rsp + 8], r11 ***
+164520 0x180c4400e: pop      r11 ***
+164521 0x180c44010: push     0x676d39e5 ***
+164522 0x180c44015: push     0x6cffa285 ***
+164523 0x180c4401a: push     rax ***
+164524 0x180c4401b: mov      rax, rbx
+164525 0x180c4401e: push     rax ***
+164526 0x180c4401f: pop      qword ptr [rsp + 8] ***
+164527 0x180c44023: pop      rax ***
+164528 0x180c44024: pop      qword ptr [rsp] ***
+164529 0x180c44027: sub      rsp, 8
+164530 0x180c4402b: sub      rsp, 8
+164531 0x180c4402f: push     0x7fd611ac ***
+164532 0x180c44034: mov      qword ptr [rsp], rbx ***
+164533 0x180c44038: pop      qword ptr [rsp] ***
+164534 0x180c4403b: pop      qword ptr [rsp] ***
+164535 0x180c4403e: sub      rsp, 8
+164536 0x180c44042: push     0x4ff54222 ***
+164537 0x180c44047: push     0x5f5faa94 ***
+164538 0x180c4404c: mov      qword ptr [rsp], rbp ***
+164539 0x180c44050: pop      qword ptr [rsp] ***
+164540 0x180c44053: pop      qword ptr [rsp] ***
+164541 0x180c44056: push     0x77ff312f ***
+164542 0x180c4405b: push     0x6f3e904c ***
+164543 0x180c44060: push     rsi ***
+164544 0x180c44061: pop      qword ptr [rsp] ***
+164545 0x180c44064: pop      qword ptr [rsp] ***
+164546 0x180c44067: push     0x3feb0cbb ***
+164547 0x180c4406c: push     rbp ***
+164548 0x180c4406d: mov      rbp, rdi ***
+164549 0x180c44070: push     0x7db7355f ***
+164550 0x180c44075: mov      qword ptr [rsp], rbp ***
+164551 0x180c44079: pop      qword ptr [rsp + 8] ***
+164552 0x180c4407d: mov      rbp, qword ptr [rsp] ***
+164553 0x180c44081: add      rsp, 8
+164554 0x180c44088: sub      rsp, 8
+164555 0x180c4408f: push     rcx ***
+164556 0x180c44090: push     rdi ***
+164557 0x180c44091: mov      rdi, r15
+164558 0x180c44094: mov      rcx, rdi
+164559 0x180c44097: pop      rdi ***
+164560 0x180c44098: mov      qword ptr [rsp + 8], rcx ***
+164561 0x180c4409d: push     qword ptr [rsp] ***
+164562 0x180c440a0: pop      rcx ***
+164563 0x180c440a1: add      rsp, 8
+164564 0x180c440a5: sub      rsp, 8
+164565 0x180c440ac: push     0x67f738ff ***
+164566 0x180c440b1: mov      qword ptr [rsp], r14 ***
+164567 0x180c440b5: pop      qword ptr [rsp] ***
+164568 0x180c440b8: push     0x5ff75c99 ***
+164569 0x180c440bd: push     r11 ***
+164570 0x180c440bf: mov      r11, r13
+164571 0x180c440c2: push     0x5d9f3679 ***
+164572 0x180c440c7: mov      qword ptr [rsp], r11 ***
+164573 0x180c440cb: pop      qword ptr [rsp + 8] ***
+164574 0x180c440cf: mov      r11, qword ptr [rsp] ***
+164575 0x180c440d3: add      rsp, 8
+164576 0x180c440d7: sub      rsp, 8
+164577 0x180c440de: push     0x77dd7a84 ***
+164578 0x180c440e3: push     rbx ***
+164579 0x180c440e4: mov      rbx, r12
+164580 0x180c440e7: mov      qword ptr [rsp + 8], rbx ***
+164581 0x180c440ec: mov      rbx, qword ptr [rsp] ***
+164582 0x180c440f0: add      rsp, 8
+164583 0x180c440f4: pop      qword ptr [rsp] ***
+164584 0x180c440f7: push     0x7f570c84 ***
+164585 0x180c440fc: push     0x56dfcba1 ***
+164586 0x180c44101: push     r11 ***
+164587 0x180c44103: pop      qword ptr [rsp] ***
+164588 0x180c44106: pop      qword ptr [rsp] ***
+164589 0x180c44109: push     0x1b9ac1cf ***
+164590 0x180c4410e: push     0x5fb2b5cb ***
+164591 0x180c44113: sub      rsp, 8
+164592 0x180c44117: mov      qword ptr [rsp], r10 ***
+164593 0x180c4411b: pop      qword ptr [rsp] ***
+164594 0x180c4411e: pop      qword ptr [rsp] ***
+164595 0x180c44121: push     0x5fff6ed0 ***
+164596 0x180c44126: push     0x3df59ac9 ***
+164597 0x180c4412b: push     r9 ***
+164598 0x180c4412d: pop      qword ptr [rsp] ***
+164599 0x180c44130: pop      qword ptr [rsp] ***
+164600 0x180c44133: push     0x2aaf1b7b ***
+164601 0x180c44138: push     0x7f3f4532 ***
+164602 0x180c4413d: push     r8 ***
+164603 0x180c4413f: pop      qword ptr [rsp] ***
+164604 0x180c44142: pop      qword ptr [rsp] ***
+164605 0x180c44145: push     0x6bdfcfa7 ***
+164606 0x180c4414a: push     rdx ***
+164607 0x180c4414b: mov      rdx, rcx
+164608 0x180c4414e: mov      qword ptr [rsp + 8], rdx ***
+164609 0x180c44153: pop      rdx ***
+164610 0x180c44154: push     qword ptr [rsp] ***
+164611 0x180c44157: pop      r8 ***
+164612 0x180c44159: add      rsp, 8
+164613 0x180c4415d: push     qword ptr [rsp + 0x78] ***
+164614 0x180c44161: push     qword ptr [rsp] ***
+164615 0x180c44164: push     qword ptr [rsp] ***
+164616 0x180c44167: pop      r9 ***
+164617 0x180c44169: add      rsp, 8
+164618 0x180c4416d: add      rsp, 8
+164619 0x180c44174: push     qword ptr [rsp + 0x70] ***
+164620 0x180c44178: push     qword ptr [rsp] ***
+164621 0x180c4417b: push     qword ptr [rsp] ***
+164622 0x180c4417e: pop      rcx ***
+164623 0x180c4417f: add      rsp, 8
+164624 0x180c44183: add      rsp, 8
+164625 0x180c4418a: push     r9 ***
+164626 0x180c4418c: sub      rsp, 8
+164627 0x180c44193: mov      qword ptr [rsp], rax ***
+164628 0x180c44197: mov      r9, qword ptr [rsp] ***
+164629 0x180c4419b: add      rsp, 8
+164630 0x180c4419f: push     r9 ***
+164631 0x180c441a1: pop      qword ptr [rsp + 0x80] ***
+164632 0x180c441a8: pop      r9 ***
+164633 0x180c441aa: sub      rcx, 5
+164634 0x180c441ae: sub      rcx, 0xc43fdd
+164635 0x180c441b5: push     rbx ***
+164636 0x180c441b6: sub      rsp, 8
+164637 0x180c441ba: mov      qword ptr [rsp], rbx ***
+164638 0x180c441be: push     rbx ***
+164639 0x180c441bf: xor      qword ptr [rsp], 0x7f2be4c7 ***
+164640 0x180c441c7: pop      rbx ***
+164641 0x180c441c8: xor      rbx, 0x7f2be4c7
+164642 0x180c441cf: mov      qword ptr [rsp], 0x38ffc137 ***
+164643 0x180c441d7: pop      rbx ***
+164644 0x180c441d8: sub      ebx, -1
+164645 0x180c441db: and      ebx, 0x7f2c79bd
+164646 0x180c441e1: sub      ebx, 0x379378b4
+164647 0x180c441e7: mov      ebp, ebx
+164648 0x180c441e9: pop      rbx ***
+164649 0x180c441ea: sub      rbp, 0x6fbff7db ***
+164650 0x180c441f1: sub      rbp, 0x48ffd5ef ***
+164651 0x180c441f8: add      rbp, 0x6f6fc7be ***
+164652 0x180c441ff: add      rbp, 0x77bf28b0 ***
+164653 0x180c44206: sub      rbp, 0x5fee8d78 ***
+164654 0x180c4420d: add      rbp, rcx ***
+164655 0x180c44210: add      rbp, 0x5fee8d78 ***
+164656 0x180c44217: sub      rbp, 0x77bf28b0 ***
+164657 0x180c4421e: sub      rbp, 0x6f6fc7be ***
+164658 0x180c44225: add      rbp, 0x48ffd5ef ***
+164659 0x180c4422c: add      rbp, 0x6fbff7db ***
+164660 0x180c44233: sub      rsp, 8
+164661 0x180c4423a: mov      qword ptr [rsp], rbp ***
+164662 0x180c4423e: push     rax ***
+164663 0x180c4423f: movabs   rax, 0x7ff7d9d1
+164664 0x180c44249: sub      qword ptr [rsp + 8], rax ***
+164665 0x180c4424e: pop      rax ***
+164666 0x180c4424f: mov      rsi, qword ptr [rsp] ***
+164667 0x180c44253: add      rsp, 8
+164668 0x180c4425a: add      rsi, 0x7ff7d9d1
+164669 0x180c44261: push     rax ***
+164670 0x180c44262: mov      eax, 0x7bff1404
+164671 0x180c44267: push     r8 ***
+164672 0x180c44269: push     r13 ***
+164673 0x180c4426b: mov      r13d, 0x7e575006
+164674 0x180c44271: not      r13d
+164675 0x180c44274: inc      r13d
+164676 0x180c44277: add      r13d, 0xbe4f02fe
+164677 0x180c4427e: mov      r8d, r13d
+164678 0x180c44281: pop      r13 ***
+164679 0x180c44283: shl      r8d, 8
+164680 0x180c44287: inc      r8d
+164681 0x180c4428a: push     rdx ***
+164682 0x180c4428b: mov      edx, 0x7fbb34f5
+164683 0x180c44290: dec      edx
+164684 0x180c44292: xor      edx, 0x6fd71c5b
+164685 0x180c44298: and      edx, 0x3fd70d8c
+164686 0x180c4429e: add      edx, 0x37ddf8e6
+164687 0x180c442a4: shr      edx, 3
+164688 0x180c442a7: sub      edx, 0x1ebeb895
+164689 0x180c442ad: xor      r8d, edx
+164690 0x180c442b0: pop      rdx ***
+164691 0x180c442b1: sub      eax, r8d
+164692 0x180c442b4: pop      r8 ***
+164693 0x180c442b6: sub      eax, 0x5e0792ec
+164694 0x180c442bb: mov      edx, eax
+164695 0x180c442bd: pop      rax ***
+164696 0x180c442be: push     0x7fcf0fe5 ***
+164697 0x180c442c3: sub      rsp, 8
+164698 0x180c442c7: push     rcx ***
+164699 0x180c442c8: pop      qword ptr [rsp] ***
+164700 0x180c442cb: pop      qword ptr [rsp] ***
+164701 0x180c442ce: sub      rsp, 8
+164702 0x180c442d5: sub      rsp, 8
+164703 0x180c442dc: push     rdi ***
+164704 0x180c442dd: pop      qword ptr [rsp] ***
+164705 0x180c442e0: pop      qword ptr [rsp] ***
+164706 0x180c442e3: push     r8 ***
+164707 0x180c442e5: push     r10 ***
+164708 0x180c442e7: push     0x57db36cd ***
+164709 0x180c442ec: pop      r10 ***
+164710 0x180c442ee: and      r10d, 0x77ff023d
+164711 0x180c442f5: sub      r10d, 0x7d9de7d8
+164712 0x180c442fc: sub      r10d, 0x5e5ed2ae
+164713 0x180c44303: mov      r8d, r10d
+164714 0x180c44306: pop      r10 ***
+164715 0x180c44308: mov      ecx, 0x7bde4786
+164716 0x180c4430d: xor      ecx, r8d
+164717 0x180c44310: push     qword ptr [rsp] ***
+164718 0x180c44313: mov      r8, qword ptr [rsp] ***
+164719 0x180c44317: add      rsp, 8
+164720 0x180c4431e: add      rsp, 8
+164721 0x180c44325: push     0x5fe78d0b ***
+164722 0x180c4432a: sub      rsp, 8
+164723 0x180c44331: mov      qword ptr [rsp], rbx ***
+164724 0x180c44335: mov      rbx, r9
+164725 0x180c44338: push     rbx ***
+164726 0x180c44339: pop      qword ptr [rsp + 8] ***
+164727 0x180c4433d: pop      rbx ***
+164728 0x180c4433e: push     0x29eff865 ***
+164729 0x180c44343: pop      r9 ***
+164730 0x180c44345: xor      r9d, 0x29eff882
+164731 0x180c4434c: mov      ebx, r9d
+164732 0x180c4434f: pop      r9 ***
+164733 0x180c44351: push     r15 ***
+164734 0x180c44353: push     rbp ***
+164735 0x180c44354: mov      ebp, 0x7ffc1744
+164736 0x180c44359: push     rbx ***
+164737 0x180c4435a: mov      ebx, 0x6ffe930c
+164738 0x180c4435f: inc      ebx
+164739 0x180c44361: add      ebx, 0x7d7bde04
+164740 0x180c44367: mov      r15d, ebx
+164741 0x180c4436a: pop      rbx ***
+164742 0x180c4436b: sub      r15d, ebp
+164743 0x180c4436e: pop      rbp ***
+164744 0x180c4436f: dec      r15d
+164745 0x180c44372: sub      r15d, 0x7fc7b774
+164746 0x180c44379: push     0x7fff65a4 ***
+164747 0x180c4437e: mov      qword ptr [rsp], r14 ***
+164748 0x180c44382: mov      r14d, 0x7bdf6034
+164749 0x180c44388: inc      r14d
+164750 0x180c4438b: xor      r14d, 0x408f7d0
+164751 0x180c44392: and      r15d, r14d
+164752 0x180c44395: pop      r14 ***
+164753 0x180c44397: add      r15d, 0x92697de0
+164754 0x180c4439e: mov      edi, r15d
+164755 0x180c443a1: pop      r15 ***
+164756 0x180c443a3: xor      eax, eax
+164757 0x180c443a5: lock cmpxchg dword ptr [rbx + rbp], ecx ***
+164758 0x180c443aa: je       0x180c4440d ***
+164759 0x180c4440d: push     qword ptr [rsp] ***
+164760 0x180c44410: push     qword ptr [rsp] ***
+164761 0x180c44413: mov      rdi, qword ptr [rsp] ***
+164762 0x180c44417: add      rsp, 8
+164763 0x180c4441b: add      rsp, 8
+164764 0x180c4441f: add      rsp, 8
+164765 0x180c44426: push     qword ptr [rsp] ***
+164766 0x180c44429: push     qword ptr [rsp] ***
+164767 0x180c4442c: mov      rcx, qword ptr [rsp] ***
+164768 0x180c44430: add      rsp, 8
+164769 0x180c44437: add      rsp, 8
+164770 0x180c4443b: add      rsp, 8
+164771 0x180c44442: push     rcx ***
+164772 0x180c44443: mov      ecx, 0x76efae6e
+164773 0x180c44448: push     r11 ***
+164774 0x180c4444a: mov      r11d, 0x3ddd3c0e
+164775 0x180c44450: inc      r11d
+164776 0x180c44453: dec      r11d
+164777 0x180c44456: xor      r11d, 0x636b897b
+164778 0x180c4445d: sub      r11d, 0x73b0ec9c
+164779 0x180c44464: xor      r11d, 0xbdf4992
+164780 0x180c4446b: sub      r11d, 0x9b293ddc
+164781 0x180c44472: add      ecx, r11d
+164782 0x180c44475: pop      r11 ***
+164783 0x180c44477: shl      ecx, 4
+164784 0x180c4447a: not      ecx
+164785 0x180c4447c: inc      ecx
+164786 0x180c4447e: inc      ecx
+164787 0x180c44480: push     r13 ***
+164788 0x180c44482: mov      r13d, 0x5ffbb1d2
+164789 0x180c44488: add      r13d, 0x95f7016b
+164790 0x180c4448f: sub      ecx, r13d
+164791 0x180c44492: pop      r13 ***
+164792 0x180c44494: mov      ebx, 0xc001d1ab
+164793 0x180c44499: add      ebx, ecx
+164794 0x180c4449b: pop      rcx ***
+164795 0x180c4449c: push     r10 ***
+164796 0x180c4449e: push     0x5fcb9c47 ***
+164797 0x180c444a3: mov      qword ptr [rsp], rcx ***
+164798 0x180c444a7: pop      r10 ***
+164799 0x180c444a9: push     r10 ***
+164800 0x180c444ab: pop      qword ptr [rbx + rbp] ***
+164801 0x180c444ae: mov      r10, qword ptr [rsp] ***
+164802 0x180c444b2: add      rsp, 8
+164803 0x180c444b6: push     r13 ***
+164804 0x180c444b8: mov      r13d, 0x5ffab90c
+164805 0x180c444be: mov      edx, 0x77ab7368
+164806 0x180c444c3: inc      edx
+164807 0x180c444c5: dec      edx
+164808 0x180c444c7: and      edx, 0x7fbe25a0
+164809 0x180c444cd: not      edx
+164810 0x180c444cf: sub      edx, -1
+164811 0x180c444d2: sub      edx, 0xe85097ec
+164812 0x180c444d8: add      edx, 0x4bde0bad
+164813 0x180c444de: add      edx, r13d
+164814 0x180c444e1: sub      edx, 0x4bde0bad
+164815 0x180c444e7: pop      r13 ***
+164816 0x180c444e9: test     edx, edx
+164817 0x180c444eb: je       0x180c44642 ***
+164818 0x180c44642: push     0x7dff5525 ***
+164819 0x180c44647: push     r10 ***
+164820 0x180c44649: pop      qword ptr [rsp] ***
+164821 0x180c4464c: push     0x37ef4b86 ***
+164822 0x180c44651: mov      r10, qword ptr [rsp] ***
+164823 0x180c44655: add      rsp, 8
+164824 0x180c4465c: xor      r10d, 0x37772e8e
+164825 0x180c44663: push     r10 ***
+164826 0x180c44665: xor      dword ptr [rsp], 0x7dbfe525 ***
+164827 0x180c4466c: pop      rbx ***
+164828 0x180c4466d: xor      ebx, 0x7dbfe525
+164829 0x180c44673: pop      r10 ***
+164830 0x180c44675: push     0x3fe36cb3 ***
+164831 0x180c4467a: push     rdx ***
+164832 0x180c4467b: pop      qword ptr [rsp] ***
+164833 0x180c4467e: mov      edx, 0x59f5bad9
+164834 0x180c44683: add      edx, 0xa60a4528
+164835 0x180c44689: push     rdx ***
+164836 0x180c4468a: xor      dword ptr [rsp], 0x4f7fe723 ***
+164837 0x180c44691: pop      rax ***
+164838 0x180c44692: xor      eax, 0x4f7fe723
+164839 0x180c44697: mov      rdx, qword ptr [rsp] ***
+164840 0x180c4469b: add      rsp, 8
+164841 0x180c4469f: test     eax, eax
+164842 0x180c446a1: je       0x180c4470a ***
+164843 0x180c446a7: push     0x7f779b32 ***
+164844 0x180c446ac: mov      qword ptr [rsp], r14 ***
+164845 0x180c446b0: mov      r14d, 0x35ff9f9f
+164846 0x180c446b6: neg      r14d
+164847 0x180c446b9: push     r11 ***
+164848 0x180c446bb: mov      r11d, 0x54fff438
+164849 0x180c446c1: add      r11d, 0x18ef2fcf
+164850 0x180c446c8: sub      r14d, r11d
+164851 0x180c446cb: pop      r11 ***
+164852 0x180c446cd: shr      r14d, 4
+164853 0x180c446d1: dec      r14d
+164854 0x180c446d4: add      r14d, 0xfa3eec3c
+164855 0x180c446db: mov      eax, r14d
+164856 0x180c446de: push     qword ptr [rsp] ***
+164857 0x180c446e1: pop      r14 ***
+164858 0x180c446e3: add      rsp, 8
+164859 0x180c446e7: test     eax, eax
+164860 0x180c446e9: je       0x180c446ff ***
+164861 0x180c446ff: movabs   rax, qword ptr gs:[0x30]
+164862 0x180c4470a: cmp      rbp, rsi ***
+164863 0x180c4470d: jne      0x180c448a6 ***
+164864 0x180c44713: shl      rax, 0x20
+164865 0x180c44717: xor      edx, edx
+164866 0x180c44719: push     r13 ***
+164867 0x180c4471b: push     rax ***
+164868 0x180c4471c: add      qword ptr [rsp], 0x7effb4b5 ***
+164869 0x180c44724: pop      r13 ***
+164870 0x180c44726: sub      r13, 0x7effb4b5
+164871 0x180c4472d: push     r14 ***
+164872 0x180c4472f: push     r13 ***
+164873 0x180c44731: pop      r14 ***
+164874 0x180c44733: mov      rdx, r14
+164875 0x180c44736: pop      r14 ***
+164876 0x180c44738: mov      r13, qword ptr [rsp] ***
+164877 0x180c4473c: add      rsp, 8
+164878 0x180c44743: push     r9 ***
+164879 0x180c44745: push     rbp ***
+164880 0x180c44746: push     r11 ***
+164881 0x180c44748: mov      r11d, 0x73efd04d
+164882 0x180c4474e: shr      r11d, 1
+164883 0x180c44752: not      r11d
+164884 0x180c44755: sub      r11d, 0x47efc1ab
+164885 0x180c4475c: or       r11d, 0x4fd72adc
+164886 0x180c44763: shr      r11d, 6
+164887 0x180c44767: sub      r11d, 0x93a10520
+164888 0x180c4476e: push     r11 ***
+164889 0x180c44770: add      dword ptr [rsp], 0x3efb81f0 ***
+164890 0x180c44777: pop      rbp ***
+164891 0x180c44778: sub      ebp, 0x3efb81f0
+164892 0x180c4477e: pop      r11 ***
+164893 0x180c44780: sub      dword ptr [rsp + 8], ebp ***
+164894 0x180c44784: pop      rbp ***
+164895 0x180c44785: mov      rax, qword ptr [rsp] ***
+164896 0x180c44789: add      rsp, 8
+164897 0x180c44790: add      eax, 0x6e5e78db
+164898 0x180c44795: or       rdx, rax
+164899 0x180c44798: push     rdx ***
+164900 0x180c44799: sub      rsp, 8
+164901 0x180c4479d: mov      qword ptr [rsp], rcx ***
+164902 0x180c447a1: movabs   rcx, 0x32ed8648
+164903 0x180c447ab: sub      qword ptr [rsp + 8], rcx ***
+164904 0x180c447b0: mov      rcx, qword ptr [rsp] ***
+164905 0x180c447b4: add      rsp, 8
+164906 0x180c447bb: pop      qword ptr [rcx + rbx] ***
+164907 0x180c447be: add      qword ptr [rcx + rbx], 0x32ed8648 ***
+164908 0x180c447c6: sub      rsp, 8
+164909 0x180c447cd: mov      qword ptr [rsp], r12 ***
+164910 0x180c447d1: push     0x744f1c62 ***
+164911 0x180c447d6: mov      qword ptr [rsp], r13 ***
+164912 0x180c447da: mov      r13, r13
+164913 0x180c447dd: mov      qword ptr [rsp], 0x7bff993d ***
+164914 0x180c447e5: pop      r12 ***
+164915 0x180c447e7: push     rbp ***
+164916 0x180c447e8: mov      ebp, 0x6b9ee9fc
+164917 0x180c447ed: shl      ebp, 2
+164918 0x180c447f0: sub      ebp, 0x2e941585
+164919 0x180c447f6: or       r12d, ebp
+164920 0x180c447f9: pop      rbp ***
+164921 0x180c447fa: neg      r12d
+164922 0x180c447fd: xor      r12d, 0x800065e2
+164923 0x180c44804: mov      edx, r12d
+164924 0x180c44807: pop      r12 ***
+164925 0x180c44809: push     rbx ***
+164926 0x180c4480a: push     0x7bf73e6e ***
+164927 0x180c4480f: mov      qword ptr [rsp], r12 ***
+164928 0x180c44813: push     rax ***
+164929 0x180c44814: push     0x7a5f3345 ***
+164930 0x180c44819: pop      rax ***
+164931 0x180c4481a: not      eax
+164932 0x180c4481c: sub      eax, 0x6a135b7
+164933 0x180c44821: mov      r12d, eax
+164934 0x180c44824: pop      rax ***
+164935 0x180c44825: sub      dword ptr [rsp + 8], r12d ***
+164936 0x180c4482a: mov      r12, qword ptr [rsp] ***
+164937 0x180c4482e: add      rsp, 8
+164938 0x180c44832: pop      rax ***
+164939 0x180c44833: add      eax, 0x7eff9703
+164940 0x180c44838: sub      rax, 0x766dd231
+164941 0x180c4483e: sub      rax, 0x76ef007a
+164942 0x180c44844: add      rax, 0x7fb7389f
+164943 0x180c4484a: add      rax, 0x5af738ee
+164944 0x180c44850: add      rax, 0x76f5b066
+164945 0x180c44856: add      rax, rcx
+164946 0x180c44859: sub      rax, 0x76f5b066
+164947 0x180c4485f: sub      rax, 0x5af738ee
+164948 0x180c44865: sub      rax, 0x7fb7389f
+164949 0x180c4486b: add      rax, 0x76ef007a
+164950 0x180c44871: add      rax, 0x766dd231
+164951 0x180c44877: push     rdi ***
+164952 0x180c44878: mov      rdi, rax
+164953 0x180c4487b: push     r9 ***
+164954 0x180c4487d: mov      r9, rdi
+164955 0x180c44880: push     rsi ***
+164956 0x180c44881: mov      rsi, r9
+164957 0x180c44884: push     rsi ***
+164958 0x180c44885: add      qword ptr [rsp], 0x645ec714 ***
+164959 0x180c4488d: pop      qword ptr [rdx + rbp] ***
+164960 0x180c44890: sub      qword ptr [rdx + rbp], 0x645ec714 ***
+164961 0x180c44898: pop      rsi ***
+164962 0x180c44899: pop      r9 ***
+164963 0x180c4489b: mov      rdi, qword ptr [rsp] ***
+164964 0x180c4489f: add      rsp, 8
+164965 0x180c448a6: sub      rsp, 8
+164966 0x180c448aa: push     rdi ***
+164967 0x180c448ab: pop      qword ptr [rsp] ***
+164968 0x180c448ae: mov      rdi, r8
+164969 0x180c448b1: mov      qword ptr [rsp + 0x78], rdi ***
+164970 0x180c448b6: push     qword ptr [rsp] ***
+164971 0x180c448b9: pop      rdi ***
+164972 0x180c448ba: add      rsp, 8
+164973 0x180c448c1: push     r10 ***
+164974 0x180c448c3: mov      r10d, 0x79ffb08d
+164975 0x180c448c9: sub      r10d, 0x3b6799db
+164976 0x180c448d0: not      r10d
+164977 0x180c448d3: shr      r10d, 3
+164978 0x180c448d7: push     r14 ***
+164979 0x180c448d9: mov      r14d, 0x387e03cd
+164980 0x180c448df: not      r14d
+164981 0x180c448e2: sub      r14d, 0x39f70786
+164982 0x180c448e9: neg      r14d
+164983 0x180c448ec: push     rdi ***
+164984 0x180c448ed: mov      edi, 0x537fd551
+164985 0x180c448f2: xor      edi, 0x6deeda7a
+164986 0x180c448f8: sub      edi, 0x98d91d8c
+164987 0x180c448fe: add      r14d, 0x65fbbb26
+164988 0x180c44905: add      r14d, edi
+164989 0x180c44908: sub      r14d, 0x65fbbb26
+164990 0x180c4490f: pop      rdi ***
+164991 0x180c44910: sub      r10d, r14d
+164992 0x180c44913: mov      r14, qword ptr [rsp] ***
+164993 0x180c44917: add      rsp, 8
+164994 0x180c4491e: mov      ebx, r10d
+164995 0x180c44921: pop      r10 ***
+164996 0x180c44923: push     qword ptr [rsp + 0x50] ***
+164997 0x180c44927: push     qword ptr [rsp] ***
+164998 0x180c4492a: mov      rax, qword ptr [rsp] ***
+164999 0x180c4492e: add      rsp, 8
+165000 0x180c44935: add      rsp, 8

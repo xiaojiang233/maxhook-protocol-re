@@ -1,0 +1,114 @@
+# MaxHook.dll 逆向续攻任务（自包含 Prompt）
+
+## 任务背景
+
+**目标文件**: `E:\MCLDownload\Game\.minecraft\native\MaxHook.dll`（25MB，PE64）
+- 网易我的世界（MCLDownload）里"布吉岛"服务器的客户端反作弊，随 heypixel mod 分发（jar 内 `lib/MaxHook.x64.dll`）
+- 开发路径 `NativeAntiCheat\x64\Release\anti-cheat.dll`（PDB 名 anti-cheat.pdb）
+- **Themida/WinLicense（Oreans）商业壳**：`.boot` 节高熵加密载荷 + `.bugland` 解压区 + VM 保护部分代码
+
+**终极目标**: 提取 VM 字节码内加密存储的**检测名单（进程/工具/VM 特征）与上报 URL/请求体**，产出已反混淆代码。
+
+**当前结论（已证实）**:
+1. 检测名单/URL **加密存储于 Themida VM 字节码**，运行时即时解密到寄存器/栈，**从不落明文内存**——三份全内存 dump + 1028 个监控快照交叉验证
+2. VM 模拟已推进到 105 块（~4s 执行），能调 API，但最终崩溃在垃圾跳转地址——**VM rolling key 无法与真机同步（架构性卡点）**
+
+## 已完成的里程碑（全部验证通过）
+
+1. **解压 .boot**：Unicorn 模拟入口 `BASE+0x1F00058`（LZ77 stub）→ 解压 22.5MB 到 `.bugland`（RVA 0x980000）。产物 `boot_unpacked.bin` 与真机 runtime dump **99.99% 一致**
+2. **真实入口**：`BASE+0xC0EB27`（= .bugland 偏移 0x28EB27，E9 跳板链）
+3. **部分保护模式确认**：.text/.rdata **100% 明文**（真实代码+证书+RTTI），.boot/.bugland 是 WinLicense 运行时
+4. **运行时 .bugland 重建**（关键突破）：监控抓 VM 初始化解密写入 → 重建 `runtime_bugland2.bin`：数据表 `0xf97c` 从垃圾 `0x0df09e59` → 合法指针 `0x1809a62b3`；VM 上下文（rbp=0x18098c884）3→71/256 字节；handler 解密态
+5. **VM 执行推进**：phase2 系列用 runtime_bugland2 + vmsnap 预映射 + API 分发 → VM 从"立即崩"到 **105 块（3.9s）**
+6. **API 函数指针表识别**（重大收获）:123 个 `0x7ff8` 指针 → 83 个函数名。**MaxHook 反作弊行为实锤**:
+   - kernel32!Thread32First（线程枚举查注入）、GetSystemFirmwareTable（BIOS/VM 检测）、SetCurrentDirectoryW、VirtualProtect、GetModuleFileNameW
+   - ntdll!ZwQueryObject（句柄检测）
+   - advapi32!RegCreateKeyA/RegSetValueExA/RegCloseKey（写 `Software\WLkt` WinLicense 授权）
+   - jvm.dll（nmethod RTTI，JNI 交互）
+7. **网易侧反作弊实锤**（JVM 堆 dump 发现）:envsdk(windows)/4.2.3.162299 + `acsdk.gameyw.netease.com:443`(117.147.201.72) 上报路径 `/acsdk/v3/ip/{init,fut,common_op,ss_fup,ss_uc,ss_ssup,sst_v2,lu}` + `nos.gameyw.netease.com` 上传 `regular_encode_g79_1786531634_a2409804f2b2d3f7cd4c578025a66d8f.json`（设备指纹）+ VM 检测 DLL 名单 30+（vm3dgl64/vboxhook/vmGuestLib/qemu-ga/vmicres…）+ 进程检测（cheatengine-x86_64/immunitydebugger/vmware-authd 被跟踪，**无** wireshark/fiddler/ollydbg）
+
+## 关键文件清单（绝对路径）
+
+**样本**:
+- 原始 DLL: `E:\MCLDownload\Game\.minecraft\native\MaxHook.dll`
+- 真机 runtime dump: `E:\Coding\S1mple\target\MaxHook.runtime-unpacked.dll`（= 原始文件+回填解压 .bugland，仅加载早期）
+- 模拟解压产物: `E:\Coding\S1mple\target\boot_unpacked.bin`（22.5MB）
+- **运行时重建 .bugland: `E:\Coding\S1mple\target\runtime_bugland2.bin`（本轮游戏运行，VM 初始化后）**
+- VM 运行后模拟内存: `E:\Coding\S1mple\target\vm_final_mem.bin`（48MB）
+- 旧模拟内存: `E:\Coding\S1mple\target\mem_after_vm.bin`
+
+**监控/抓取数据**:
+- `E:\Coding\S1mple\target\monitor_out\`：baseline.bin（运行时 .bugland 快照）+ change_*.bin（314+1028 个变化快照）+ vmsnap_*.bin（36 个 VM 虚拟地址页，**实为 JVM 堆**）
+- `E:\Coding\S1mple\target\dump_out\41264\`：5.6GB 全内存 dump（regions.csv 区域清单）
+- `E:\Coding\S1mple\target\modules_37988.txt`：javaw 模块表（DLL 基址，用于 API 指针→函数名映射）
+- `E:\Coding\S1mple\target\api_map.json`：83 个 API 指针→函数名
+- `E:\Coding\S1mple\target\etw_out\`：WinHTTP ETW 抓包结果（抓上报 URL）
+
+**分析产物**:
+- `E:\Coding\S1mple\target\disasm_text.asm`（175 万行，.text 全量反汇编）
+- `E:\Coding\S1mple\target\disasm_unpacked.asm`（67.7 万行，.bugland VM handler）
+- `E:\Coding\S1mple\target\strings_table.txt`（4.5 万串）
+- `E:\Coding\S1mple\target\MaxHook分析报告.html` / `MaxHook分析报告_v2.html`
+
+**脚本（E:\Coding\S1mple\target\ 下）**:
+- `unpack_boot.py`：Unicorn 解压 .boot（PHASE1，入口 BASE+0x1F00058）
+- `winenv.py`：最小 Windows 环境（PEB/TEB/LDR + API 分发）
+- `phase2_rbp3.py` / `phase2_vmsnap.py` / `phase2_api.py` / `phase2_api2.py` / `phase2_final3.py`：VM 模拟演进（**phase2_final3.py 是最终版**：runtime_bugland2 + vmsnap 预映射 + 完整导出表 API 分发 + 时间对策）
+- `monitor_javaw2.py`：后台监控（.bugland 变化 + VM 虚拟地址抓取）
+- `dump_process.py` / `dump_process_all.py`：全内存 dump（--all 含 guard 页）
+- `dump_modules.py`：javaw 模块表枚举
+- `etw_capture.py`：WinHTTP ETW 抓包
+- `hash_match.py` / `hash_match2.py`：FNV 哈希还原 API
+- `scan_constructed.py`：movabs 字符串构造扫描
+
+**mod/协议侧材料**:
+- mod jar: `E:\MCLDownload\Game\.minecraft\mods\4689645918625526379@2@8.jar`（1128 个 heypixel 类，ZKM 24.0.2 混淆）
+- 已逆向源码: `E:\Coding\S1mple\.codex\research\com\heypixel\client\`（112 个类，含 network/message/* 37 个消息类、NetworkMessageRegistry 消息 ID 表）
+- 代理日志: `E:\Coding\S1mple\target\remote-log-3h.txt`（169MB）
+- payload 样本: `E:\Coding\S1mple\target\payload\`（heypixel_s2cevent/floodgate/sync_skins/minecraft_brand 各 4 份）
+
+## 核心技术细节
+
+**模块布局**（ImageBase 0x180000000 固定）:
+- .text RVA 0x10000（明文真实代码，含 net/minecraft 匹配器 @RVA 0x18D790 用 movabs 0x656e696d2f74656e 构造 "net/minecraft"）
+- .bugland RVA 0x980000（22.5MB，VM 工作区；数据表 @+0xf97c；VM 上下文 rbp=0x18098C884 @+0xc884）
+- .boot RVA 0x1F00000（15.9MB 加密载荷，入口 @+0x58）
+- VM handler 解密位 @+0x1E0400（每 ~200ms 检测周期重新解密写入）
+
+**Unicorn 模拟要点**:
+- 环境: `C:\Users\34166\.workbuddy\binaries\python\envs\default\Scripts\python.exe`（unicorn 2.1.4）
+- `emu_start` 的 `count=0` 语义异常（立即返回）→ 用显式大 count 或 until
+- 范围 code hook 会对范围内**每条指令**触发 → 回调需精确过滤地址（begin=pt,end=pt+1）
+- 大块 mem_map/mem_write 偶发崩溃 → 分块 + 显式清零
+- 循环重建 Uc 会全局状态污染 → 必须独立进程
+- `struct.pack('<I', 负数)` 会崩 → 用 `<i`
+- 坑：MEM_IMAGE 区域排除、导出目录可能在 raw 尾部之外
+
+**VM 模拟当前配置（phase2_final3.py）**:
+1. 跳过 PHASE1 解压，直接读 runtime_bugland2.bin 作为 .bugland
+2. rbp=0x18098C884, RIP=0x180C0EB27（真实入口）
+3. 预映射 36 个 vmsnap 页（JVM 堆，价值有限但无害）
+4. 完整导出表 API 分发（24 模块 19324 hook）: 拦截 0x7ff8 函数指针调用，打印参数，按函数返回合理值
+5. 时间 API 递增（GetTickCount/GetSystemTimeAsFileTime/QueryPerformanceCounter）
+6. 按需映射未映射读写
+
+**最终卡点**:
+- VM 执行 70-105 块后崩 `UC_ERR_FETCH_UNMAPPED` 于垃圾地址（如 0xceb869f6dc4b65bb、0x34681024448f2404）——操作数解密错误
+- 根因：Themida VM rolling key 依赖运行时状态，模拟无法与真机完全同步
+- 已排除：RDTSC（路径无 RDTSC 调用）、guard page（真机 0 个 guard 页）、堆内容（vmsnap 是 JVM 堆）
+
+## 下一步候选方向（按性价比排序）
+
+1. **ETW 抓包分析**（已开始）: `etw_capture.py` 抓 WinHTTP 事件 → URL/headers。若 MaxHook 走原生 socket+TLS，需补抓 Kernel-Network/schannel ETW 或 npcap 抓包（目标 IP 至少可拿）
+2. **VM 字节码反编译**（终极路线）: runtime_bugland2.bin 是解密态（数据表合法指针 + handler 解密），可尝试静态跟随 VM 指令流。Themida VM 指令集分析 + 反编译器是数周工程，但这是唯一能拿到检测名单的路径
+3. **API 调用参数深挖**: 已证实 VM 调 SetCurrentDirectoryW 等，若能 hook 到 RegCreateKeyA 写 `Software\WLkt` 的时机、或 GetSystemFirmwareTable 的结果，能侧面确认检测行为
+4. **真机 x64dbg**（用户可配合，有反作弊检测风险）: ScyllaHide 对抗 + 等 VM 初始化后 dump
+5. **网易 acsdk 侧**: envsdk 是 Java 侧（JNA），可反编译其类拿到上报字段定义（与 MaxHook 共享服务器判定）
+
+## 重要背景知识（避免重复踩坑）
+
+- MaxHook 用 FNV 变体哈希（seed 0x1c258cc9, prime 0x1000193）按名解析 API（WinLicense 导入混淆）
+- 网易 MC 的检测分两层: Java 侧 envsdk/acsdk（网易官方，明文字符串可挖）+ native 侧 MaxHook（布吉岛 mod 自带，VM 加密）
+- heypixel mod 协议（Java 侧，已全逆向）: heypixel:s2cevent 通道（MuxFragmentCodec 分片，消息 ID 0-11 发送/100-121 接收）、floodgate:form/netease、heypixel:sync_skins
+- 用户代理项目 `E:\Coding\S1mple\src\`（S1mple，MCProtocolLib 代理）用于分析 payload，可参考 `src/main/java/top/xiaojiang233/proxy/`
+- 分析日志/报告: `E:\Coding\S1mple\.workbuddy\memory\2026-08-12.md`、`2026-08-13.md`（完整工作日志）

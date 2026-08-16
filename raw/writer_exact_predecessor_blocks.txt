@@ -1,0 +1,102 @@
+
+BLOCK 0x180c27652
+0x180c27652 4881c408000000 add rsp, 8
+0x180c27659 ff3424 push qword ptr [rsp]
+0x180c2765c 4c8b3424 mov r14, qword ptr [rsp]
+0x180c27660 4883c408 add rsp, 8
+0x180c27664 4881c408000000 add rsp, 8
+0x180c2766b ff3424 push qword ptr [rsp]
+0x180c2766e e986050000 jmp 0x180c27bf9
+
+BLOCK 0x180c27bf9
+0x180c27bf9 ff3424 push qword ptr [rsp]
+0x180c27bfc 4c8b3c24 mov r15, qword ptr [rsp]
+0x180c27c00 4881c408000000 add rsp, 8
+0x180c27c07 4881c408000000 add rsp, 8
+0x180c27c0e 4881c408000000 add rsp, 8
+0x180c27c15 ff3424 push qword ptr [rsp]
+0x180c27c18 e997fdffff jmp 0x180c279b4
+
+BLOCK 0x180c279b4
+0x180c279b4 ff3424 push qword ptr [rsp]
+0x180c279b7 488b3c24 mov rdi, qword ptr [rsp]
+0x180c279bb 4883c408 add rsp, 8
+0x180c279bf 4883c408 add rsp, 8
+0x180c279c3 4883c408 add rsp, 8
+0x180c279c7 ff3424 push qword ptr [rsp]
+0x180c279ca ff3424 push qword ptr [rsp]
+0x180c279cd 488b3424 mov rsi, qword ptr [rsp]
+0x180c279d1 4881c408000000 add rsp, 8
+0x180c279d8 4881c408000000 add rsp, 8
+0x180c279df e98ffcffff jmp 0x180c27673
+
+BLOCK 0x180c27673
+0x180c27673 4881c408000000 add rsp, 8
+0x180c2767a ff3424 push qword ptr [rsp]
+0x180c2767d ff3424 push qword ptr [rsp]
+0x180c27680 488b2c24 mov rbp, qword ptr [rsp]
+0x180c27684 4881c408000000 add rsp, 8
+0x180c2768b 4883c408 add rsp, 8
+0x180c2768f 4883c408 add rsp, 8
+0x180c27693 ff3424 push qword ptr [rsp]
+0x180c27696 e935050000 jmp 0x180c27bd0
+0x180c2769b 4801da add rdx, rbx
+0x180c2769e 4881ea7d8ef77e sub rdx, 0x7ef78e7d
+0x180c276a5 488b1c24 mov rbx, qword ptr [rsp]
+0x180c276a9 4883c408 add rsp, 8
+0x180c276ad 4989d2 mov r10, rdx
+0x180c276b0 5a pop rdx
+0x180c276b1 68c25ffb57 push 0x57fb5fc2
+0x180c276b6 4c890424 mov qword ptr [rsp], r8
+0x180c276ba 6895a73f79 push 0x793fa795
+0x180c276bf 55 push rbp
+0x180c276c0 e952000000 jmp 0x180c27717
+
+BLOCK 0x180c27bd0
+0x180c27bd0 ff3424 push qword ptr [rsp]
+0x180c27bd3 5b pop rbx
+0x180c27bd4 4883c408 add rsp, 8
+0x180c27bd8 4883c408 add rsp, 8
+0x180c27bdc ff3424 push qword ptr [rsp]
+0x180c27bdf ff3424 push qword ptr [rsp]
+0x180c27be2 488b1424 mov rdx, qword ptr [rsp]
+0x180c27be6 4881c408000000 add rsp, 8
+0x180c27bed 4881c408000000 add rsp, 8
+0x180c27bf4 e962feffff jmp 0x180c27a5b
+
+BLOCK 0x180c27a5b
+0x180c27a5b 4883c408 add rsp, 8
+0x180c27a5f ff3424 push qword ptr [rsp]
+0x180c27a62 ff3424 push qword ptr [rsp]
+0x180c27a65 488b0c24 mov rcx, qword ptr [rsp]
+0x180c27a69 e992feffff jmp 0x180c27900
+0x180c27a6e 4881c66d000000 add rsi, 0x6d
+0x180c27a75 ff36 push qword ptr [rsi]
+0x180c27a77 4155 push r13
+0x180c27a79 49bd11d6775f00000000 movabs r13, 0x5f77d611
+0x180c27a83 4157 push r15
+0x180c27a85 4d89ef mov r15, r13
+0x180c27a88 e972ffffff jmp 0x180c279ff
+
+BLOCK 0x180c27900
+0x180c27900 4883c408 add rsp, 8
+0x180c27904 4881c408000000 add rsp, 8
+0x180c2790b 4881c408000000 add rsp, 8
+0x180c27912 ff3424 push qword ptr [rsp]
+0x180c27915 ff3424 push qword ptr [rsp]
+0x180c27918 488b0424 mov rax, qword ptr [rsp]
+0x180c2791c 4881c408000000 add rsp, 8
+0x180c27923 4881c408000000 add rsp, 8
+0x180c2792a 4881c408000000 add rsp, 8
+0x180c27931 e926feffff jmp 0x180c2775c
+
+BLOCK 0x180c2775c
+0x180c2775c 9d popfq 
+0x180c2775d c20000 ret 0
+0x180c27760 e99e050000 jmp 0x180c27d03
+0x180c27765 66ff36 push word ptr [rsi]
+0x180c27768 6656 push si
+0x180c2776a 66be1636 mov si, 0x3616
+0x180c2776e 6631742402 xor word ptr [rsp + 2], si
+0x180c27773 665e pop si
+0x180c27775 66448b3c24 mov r15w, word ptr [rsp]

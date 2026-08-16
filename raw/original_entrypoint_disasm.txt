@@ -1,0 +1,215 @@
+0x181f00058 call 0x181f001df
+0x181f0005d push r10
+0x181f0005f mov r10, rsp
+0x181f00062 push r10
+0x181f00064 mov rsi, qword ptr [r10 + 0x10]
+0x181f00068 mov rdi, qword ptr [r10 + 0x20]
+0x181f0006c cld 
+0x181f0006d mov dl, 0x80
+0x181f0006f mov al, byte ptr [rsi]
+0x181f00071 inc rsi
+0x181f00074 mov byte ptr [rdi], al
+0x181f00076 inc rdi
+0x181f00079 mov ebx, 2
+0x181f0007e add dl, dl
+0x181f00080 jne 0x181f00089
+0x181f00082 mov dl, byte ptr [rsi]
+0x181f00084 inc rsi
+0x181f00087 adc dl, dl
+0x181f00089 jae 0x181f0006f
+0x181f0008b add dl, dl
+0x181f0008d jne 0x181f00096
+0x181f0008f mov dl, byte ptr [rsi]
+0x181f00091 inc rsi
+0x181f00094 adc dl, dl
+0x181f00096 jae 0x181f000f6
+0x181f00098 xor eax, eax
+0x181f0009a add dl, dl
+0x181f0009c jne 0x181f000a5
+0x181f0009e mov dl, byte ptr [rsi]
+0x181f000a0 inc rsi
+0x181f000a3 adc dl, dl
+0x181f000a5 jae 0x181f001ad
+0x181f000ab add dl, dl
+0x181f000ad jne 0x181f000b6
+0x181f000af mov dl, byte ptr [rsi]
+0x181f000b1 inc rsi
+0x181f000b4 adc dl, dl
+0x181f000b6 adc eax, eax
+0x181f000b8 add dl, dl
+0x181f000ba jne 0x181f000c3
+0x181f000bc mov dl, byte ptr [rsi]
+0x181f000be inc rsi
+0x181f000c1 adc dl, dl
+0x181f000c3 adc eax, eax
+0x181f000c5 add dl, dl
+0x181f000c7 jne 0x181f000d0
+0x181f000c9 mov dl, byte ptr [rsi]
+0x181f000cb inc rsi
+0x181f000ce adc dl, dl
+0x181f000d0 adc eax, eax
+0x181f000d2 add dl, dl
+0x181f000d4 jne 0x181f000dd
+0x181f000d6 mov dl, byte ptr [rsi]
+0x181f000d8 inc rsi
+0x181f000db adc dl, dl
+0x181f000dd adc eax, eax
+0x181f000df je 0x181f000ea
+0x181f000e1 push rdi
+0x181f000e2 mov eax, eax
+0x181f000e4 sub rdi, rax
+0x181f000e7 mov al, byte ptr [rdi]
+0x181f000e9 pop rdi
+0x181f000ea mov byte ptr [rdi], al
+0x181f000ec inc rdi
+0x181f000ef mov ebx, 2
+0x181f000f4 jmp 0x181f0007e
+0x181f000f6 mov eax, 1
+0x181f000fb add dl, dl
+0x181f000fd jne 0x181f00106
+0x181f000ff mov dl, byte ptr [rsi]
+0x181f00101 inc rsi
+0x181f00104 adc dl, dl
+0x181f00106 adc eax, eax
+0x181f00108 add dl, dl
+0x181f0010a jne 0x181f00113
+0x181f0010c mov dl, byte ptr [rsi]
+0x181f0010e inc rsi
+0x181f00111 adc dl, dl
+0x181f00113 jb 0x181f000fb
+0x181f00115 sub eax, ebx
+0x181f00117 mov ebx, 1
+0x181f0011c jne 0x181f0014c
+0x181f0011e mov ecx, 1
+0x181f00123 add dl, dl
+0x181f00125 jne 0x181f0012e
+0x181f00127 mov dl, byte ptr [rsi]
+0x181f00129 inc rsi
+0x181f0012c adc dl, dl
+0x181f0012e adc ecx, ecx
+0x181f00130 add dl, dl
+0x181f00132 jne 0x181f0013b
+0x181f00134 mov dl, byte ptr [rsi]
+0x181f00136 inc rsi
+0x181f00139 adc dl, dl
+0x181f0013b jb 0x181f00123
+0x181f0013d push rsi
+0x181f0013e mov rsi, rdi
+0x181f00141 sub rsi, rbp
+0x181f00144 rep movsb byte ptr [rdi], byte ptr [rsi]
+0x181f00146 pop rsi
+0x181f00147 jmp 0x181f0007e
+0x181f0014c dec eax
+0x181f0014e shl eax, 8
+0x181f00151 mov al, byte ptr [rsi]
+0x181f00153 inc rsi
+0x181f00156 mov ebp, eax
+0x181f00158 mov ecx, 1
+0x181f0015d add dl, dl
+0x181f0015f jne 0x181f00168
+0x181f00161 mov dl, byte ptr [rsi]
+0x181f00163 inc rsi
+0x181f00166 adc dl, dl
+0x181f00168 adc ecx, ecx
+0x181f0016a add dl, dl
+0x181f0016c jne 0x181f00175
+0x181f0016e mov dl, byte ptr [rsi]
+0x181f00170 inc rsi
+0x181f00173 adc dl, dl
+0x181f00175 jb 0x181f0015d
+0x181f00177 cmp eax, 0x7d00
+0x181f0017c jae 0x181f0019b
+0x181f0017e cmp eax, 0x500
+0x181f00183 jb 0x181f00196
+0x181f00185 inc ecx
+0x181f00187 push rsi
+0x181f00188 mov rsi, rdi
+0x181f0018b sub rsi, rax
+0x181f0018e rep movsb byte ptr [rdi], byte ptr [rsi]
+0x181f00190 pop rsi
+0x181f00191 jmp 0x181f0007e
+0x181f00196 cmp eax, 0x7f
+0x181f00199 ja 0x181f0019e
+0x181f0019b add ecx, 2
+0x181f0019e push rsi
+0x181f0019f mov rsi, rdi
+0x181f001a2 sub rsi, rax
+0x181f001a5 rep movsb byte ptr [rdi], byte ptr [rsi]
+0x181f001a7 pop rsi
+0x181f001a8 jmp 0x181f0007e
+0x181f001ad mov al, byte ptr [rsi]
+0x181f001af inc rsi
+0x181f001b2 xor ecx, ecx
+0x181f001b4 shr al, 1
+0x181f001b7 je 0x181f001d2
+0x181f001b9 adc ecx, 2
+0x181f001bc mov ebp, eax
+0x181f001be push rsi
+0x181f001bf mov rsi, rdi
+0x181f001c2 sub rsi, rax
+0x181f001c5 rep movsb byte ptr [rdi], byte ptr [rsi]
+0x181f001c7 pop rsi
+0x181f001c8 mov ebx, 1
+0x181f001cd jmp 0x181f0007e
+0x181f001d2 pop r10
+0x181f001d4 sub rdi, qword ptr [r10 + 0x20]
+0x181f001d8 mov eax, edi
+0x181f001da pop r10
+0x181f001dc ret 0x20
+0x181f001df pop rax
+0x181f001e0 push rbx
+0x181f001e1 push rcx
+0x181f001e2 push rdx
+0x181f001e3 push rsi
+0x181f001e4 push rdi
+0x181f001e5 push rbp
+0x181f001e6 mov rbx, rax
+0x181f001e9 sub rbx, 5
+0x181f001ed mov ecx, 0x1580058
+0x181f001f2 sub rbx, rcx
+0x181f001f5 push rax
+0x181f001f6 mov eax, 0x28eb27
+0x181f001fb add rax, rbx
+0x181f001fe cmp dword ptr [rax], 0
+0x181f00201 je 0x181f00206
+0x181f00203 pop rax
+0x181f00204 jmp 0x181f00238
+0x181f00206 pop rax
+0x181f00207 mov ecx, 0x1f0
+0x181f0020c sub ecx, 5
+0x181f0020f add rcx, rax
+0x181f00212 push rbx
+0x181f00213 mov rsi, rcx
+0x181f00216 mov rdi, rbx
+0x181f00219 mov cl, byte ptr [rsi]
+0x181f0021b inc rsi
+0x181f0021e test cl, cl
+0x181f00220 je 0x181f00237
+0x181f00222 push rcx
+0x181f00223 push rax
+0x181f00224 push rdi
+0x181f00225 push 0
+0x181f00227 push rdi
+0x181f00228 push 0
+0x181f0022a push rsi
+0x181f0022b call rax
+0x181f0022d pop rdi
+0x181f0022e add rdi, rax
+0x181f00231 pop rax
+0x181f00232 pop rcx
+0x181f00233 dec cl
+0x181f00235 jmp 0x181f0021e
+0x181f00237 pop rbx
+0x181f00238 mov eax, 0x28eb27
+0x181f0023d add rax, rbx
+0x181f00240 pop rbp
+0x181f00241 pop rdi
+0x181f00242 pop rsi
+0x181f00243 pop rdx
+0x181f00244 pop rcx
+0x181f00245 pop rbx
+0x181f00246 jmp rax
+0x181f00248 adc cl, ch
+0x181f0024a sbb al, 0xea
+0x181f0024c cdq 
+0x181f0024d xor dword ptr [rdx], edi

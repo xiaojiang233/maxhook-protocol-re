@@ -1,0 +1,348 @@
+{
+  "schema": "maxhook.writer-sync.analysis/v1",
+  "capture": "E:\\Coding\\S1mple\\target\\writer_sync_clean_20260814_014351",
+  "calls": [
+    {
+      "call_id": 1,
+      "plaintext_bytes": 745,
+      "writer_records": 204,
+      "discarded_leading_records": 12,
+      "blocks": [
+        {
+          "index": 0,
+          "hex": "32e4a1df74ddfaa6f4eddd1c82937e0fe60bcf609658c6b72565a6b5ddcb3658afbb81828e057f598d6e73566c53d81ad261811b9a375ea22cbf218ac9d148f5",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 1,
+          "hex": "b74f0400db7071d2eca6147641ddaf230e3e71fbd23b17374456281f7c5c7bcf416da77c42cbf6c0a07b0d9863b54cc2f09cf21d5ec491feb5e8366a98124106",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 2,
+          "hex": "7c6ef3275b69af1de0c1b9310b6411c510fbb192c3e852f20f5f6e4d328d8c3ece7bbd18a5e3ac2441c2cd04da981466099b4bb5d3a361ad05877de320e3cd20",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 3,
+          "hex": "71abde7e9a165865f6b463394b7a28f9782755922265a37e11b88feb868a9df1150385fb62ad1af62229444395a8957b0a14fa13c4ace3d5f3a41a217a706206",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 4,
+          "hex": "d72440057d32f74e09f60a3f37b9cdc1cf6ea9281fd5eb414557c45107539ca4bdff4f7f4825427c1e246ee2698aec1f760d85b673c31d084befbcaa34387ddc",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 5,
+          "hex": "cc490cb49dc793903363e4a0b0b6174a5392294278227ac846ac50ee38debc30eb76476ec1426adbf72bb8c41625d3af943f4b95f1f3fe9f9f641bc590d5da71",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 6,
+          "hex": "1423803145267c0ca1cb2aa81642aa70a791aa16ee1883efea1987e6783bc6195a30c134164e2244bac7a032afc3eb486a0117145550d63dbc9d664fa737b8c2",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 7,
+          "hex": "5a85eabfc05de9a38835e35506bdb52ac6ff7ae5d37055aabcf8707c168e4c14433ae5ee20bd68bda1ad592f5554d597cd779f5eb28efb2c9a7b1e8cd82fb0e4",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 8,
+          "hex": "b68574b1aa2c5a858c3ca6de4c9db3103c41b6b1b35039a886faf85dbd16ff67f9518fd7eb136178de1ad4a06db21378801227fe7f4e65af88658c737833fe1e",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 9,
+          "hex": "9fdc9c7e677abe405e176a98e92c5500b9e356a657f24e3e2dcfe6d9cde55ce6a61e111b72c2047e080feee83f024d4173300a72ada7f27e7d3911808a522bd1",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 10,
+          "hex": "621664721cfb67d274405ee1d07e63447f3f8a1c761f133e8071cb0d2cf93a89758b6345c52c54051d1360042588366cc6fa1d02874a92d989409527a9c4d3d4",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 11,
+          "hex": "1ad6569ccd4cc201b4e12d53331fa0aea854d35889ccac7865ad0f1aa22781b8615c63ef4a8fafc1a0135806e82dfb7a2981f52ed657a3aa0b0b4bb640859e4d",
+          "keystream_prefix_bytes": 41,
+          "equals_keystream": true
+        }
+      ],
+      "all_blocks_equal_keystream": true,
+      "keystream_hex": "32e4a1df74ddfaa6f4eddd1c82937e0fe60bcf609658c6b72565a6b5ddcb3658afbb81828e057f598d6e73566c53d81ad261811b9a375ea22cbf218ac9d148f5b74f0400db7071d2eca6147641ddaf230e3e71fbd23b17374456281f7c5c7bcf416da77c42cbf6c0a07b0d9863b54cc2f09cf21d5ec491feb5e8366a981241067c6ef3275b69af1de0c1b9310b6411c510fbb192c3e852f20f5f6e4d328d8c3ece7bbd18a5e3ac2441c2cd04da981466099b4bb5d3a361ad05877de320e3cd2071abde7e9a165865f6b463394b7a28f9782755922265a37e11b88feb868a9df1150385fb62ad1af62229444395a8957b0a14fa13c4ace3d5f3a41a217a706206d72440057d32f74e09f60a3f37b9cdc1cf6ea9281fd5eb414557c45107539ca4bdff4f7f4825427c1e246ee2698aec1f760d85b673c31d084befbcaa34387ddccc490cb49dc793903363e4a0b0b6174a5392294278227ac846ac50ee38debc30eb76476ec1426adbf72bb8c41625d3af943f4b95f1f3fe9f9f641bc590d5da711423803145267c0ca1cb2aa81642aa70a791aa16ee1883efea1987e6783bc6195a30c134164e2244bac7a032afc3eb486a0117145550d63dbc9d664fa737b8c25a85eabfc05de9a38835e35506bdb52ac6ff7ae5d37055aabcf8707c168e4c14433ae5ee20bd68bda1ad592f5554d597cd779f5eb28efb2c9a7b1e8cd82fb0e4b68574b1aa2c5a858c3ca6de4c9db3103c41b6b1b35039a886faf85dbd16ff67f9518fd7eb136178de1ad4a06db21378801227fe7f4e65af88658c737833fe1e9fdc9c7e677abe405e176a98e92c5500b9e356a657f24e3e2dcfe6d9cde55ce6a61e111b72c2047e080feee83f024d4173300a72ada7f27e7d3911808a522bd1621664721cfb67d274405ee1d07e63447f3f8a1c761f133e8071cb0d2cf93a89758b6345c52c54051d1360042588366cc6fa1d02874a92d989409527a9c4d3d41ad6569ccd4cc201b4e12d53331fa0aea854d35889ccac7865ad0f1aa22781b8615c63ef4a8fafc1a0"
+    },
+    {
+      "call_id": 2,
+      "plaintext_bytes": 1353,
+      "writer_records": 364,
+      "discarded_leading_records": 12,
+      "blocks": [
+        {
+          "index": 0,
+          "hex": "d5d8dc2de4dbe727d2e6c2bbf221a674f6de59bd7909f3b40865247abd29381b1ce4efbf975fc7665b91ed3d20a5e581a867799c50c518034efb5d0981bb892a",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 1,
+          "hex": "31f400c1a1e97659b5fddb1ca6be974b6406411d196aa6288eb8aa4b1d7ed4d86becec85a38ae96aa4a89b726a2ac105932624c9e35f817f933aa35630bc673a",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 2,
+          "hex": "bcbf2a417021df753467bb6b6ab84ab1b774ee9e332584a6de72ae34b5dd8506fe032ee04dbd8b1a3f7202eafd0b01761b8c5b3c197a75d40b719f718c2d1ca2",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 3,
+          "hex": "17e7db164bbce951043a7535acd0604a2ddfbe36ae54626cb12f38e9a4fb17255b454191b87e121ce24c4ba9c3821470bdbeef569ad897b9431e10616d1229f2",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 4,
+          "hex": "11c3e46dade3ed11160a7303335b4ffcdf2bf3695e89b4e8ad9e02d563e8a846c9d9743ffbadefc896b9a9f5535de2bc0e2eac361ddc21716102c617604ac7bc",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 5,
+          "hex": "58773cdf31c5ab4d5b7b840771e332d26cc229271e40facea6714bf890fe78db66752ca0ebb48cfe27844070904c8484983e5698a1a020573e73710e0cd6bac9",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 6,
+          "hex": "0d8e860302e06e7c26d9b7273a9dac987d070a7875c5980b0d67b5145799408e358ead3a243a2a4b3d46599f1a6c1ef326816de4b946b8a4a350c6b24cf621ef",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 7,
+          "hex": "434996977642d51f2385a0f7224257b90b790f95436b099ace2545db1566a776e453a2d50e11a44ebd4392af3aff6fed4aecd098538b5ca1b71bd345e5d652f9",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 8,
+          "hex": "4d7905c8e546c8b4d40e75fcb81d98b10b08760829d0d86e4c666de4e9bb1f3762c158f26bcd0733c113b02612c34bb78023457337028dd9bc08860fe40875b3",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 9,
+          "hex": "dc573520cd761336bef88fc75c4a49ddac1b4596d901833dbb43093be7aa32d61a03b560a30585a690dcdae2b3940024d0c3607385495eecf7a08aa4fb54d29d",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 10,
+          "hex": "154cabf4773ad55ef23c9a64f469d02edb856732fd9220fb17978d762291be06d0f8f15f706a116cb0814ebddbca725064207b31710f3b0ee8d4fbefc4659a55",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 11,
+          "hex": "e069e69096ddf95b1f9336432d8c564aefee4990ac0d5f278fcd6beec27157fd3ffb44f14f01e74600bf80dc0215619630848789a1a2ddc141555d00606585e9",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 12,
+          "hex": "157d3feca347cabc691833267fec554f98024803432d9d95815886372cf7a8d453507c7d6fce5593a2573979006e4f51c8b52b4d9524c6f57cb533a2315affd7",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 13,
+          "hex": "1669c3ab5f410778af30b1ca3bc89cacf130fe933e049818f981db6cc2a97d3581de57fe101b77ec151bb5b8062313f4aa1a7aa71f0dd5e135ee63676e0f194f",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 14,
+          "hex": "95f7d64ae66e4e39989ae715d4663c95ecd260a421ea93ee2dff7f16ebabac60e07ce4cac6187d472e76dac57e8ffb6f45ca50e9e268a673f2b1262f7231d47a",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 15,
+          "hex": "3cf0b08e2b34b613cbb75f076ebf860e6869009ce2bd5b975684e88e7351a8865361a69d574b7821ef112da83129b97cc8213e7493b2ede692a569a7e8f23459",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 16,
+          "hex": "aba1ee8ec836d41b54a845129026dabd90f72776d01a13c2087c9ff5bf4aa96abca71f12cb82a9c03f3c8d2ad720333c474d6d7c71fa424ae928100a5cab807d",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 17,
+          "hex": "2c8fe731befcb4c3d72360ab0e0ecce4636e1465a8a0d00e0d04897bd2102b80cd08152694d77367109c4bb169d7777782d76b7f070f52d0ef02a32402c64676",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 18,
+          "hex": "dea068028aceb6ba53fbb12e42ce792eda7b541d36693907a8dc3028a70d4dab6bf6dc0d1677d0328702e24ddb14d701439c1b1f1cbd5e76d2540910077b1c2d",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 19,
+          "hex": "80f078619fceaaa7fc446566d469b9bcc86fc965a1b84fd1e33b2d6287d632bf29c387055ae4c596730aa2e2d43b503ecb3b011e6d39f19ca8d470644a520f78",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 20,
+          "hex": "5355c1b2a61a8f68e8edc77049d2f705c7cd87321298457a0bee3e389f182437d012b3e55e99c47e633446b74a69f8caa8d5c848ef4c1464d40e9383f5cbf3c0",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 21,
+          "hex": "84f5d8c1b74884675b4aec852b04205cd8c9f88cb19633e7773d64b9332e7685399a99a61144c87b2fa285042435879cd9c3f83c98a51acd8f2376e2f9f99adc",
+          "keystream_prefix_bytes": 9,
+          "equals_keystream": true
+        }
+      ],
+      "all_blocks_equal_keystream": true,
+      "keystream_hex": "d5d8dc2de4dbe727d2e6c2bbf221a674f6de59bd7909f3b40865247abd29381b1ce4efbf975fc7665b91ed3d20a5e581a867799c50c518034efb5d0981bb892a31f400c1a1e97659b5fddb1ca6be974b6406411d196aa6288eb8aa4b1d7ed4d86becec85a38ae96aa4a89b726a2ac105932624c9e35f817f933aa35630bc673abcbf2a417021df753467bb6b6ab84ab1b774ee9e332584a6de72ae34b5dd8506fe032ee04dbd8b1a3f7202eafd0b01761b8c5b3c197a75d40b719f718c2d1ca217e7db164bbce951043a7535acd0604a2ddfbe36ae54626cb12f38e9a4fb17255b454191b87e121ce24c4ba9c3821470bdbeef569ad897b9431e10616d1229f211c3e46dade3ed11160a7303335b4ffcdf2bf3695e89b4e8ad9e02d563e8a846c9d9743ffbadefc896b9a9f5535de2bc0e2eac361ddc21716102c617604ac7bc58773cdf31c5ab4d5b7b840771e332d26cc229271e40facea6714bf890fe78db66752ca0ebb48cfe27844070904c8484983e5698a1a020573e73710e0cd6bac90d8e860302e06e7c26d9b7273a9dac987d070a7875c5980b0d67b5145799408e358ead3a243a2a4b3d46599f1a6c1ef326816de4b946b8a4a350c6b24cf621ef434996977642d51f2385a0f7224257b90b790f95436b099ace2545db1566a776e453a2d50e11a44ebd4392af3aff6fed4aecd098538b5ca1b71bd345e5d652f94d7905c8e546c8b4d40e75fcb81d98b10b08760829d0d86e4c666de4e9bb1f3762c158f26bcd0733c113b02612c34bb78023457337028dd9bc08860fe40875b3dc573520cd761336bef88fc75c4a49ddac1b4596d901833dbb43093be7aa32d61a03b560a30585a690dcdae2b3940024d0c3607385495eecf7a08aa4fb54d29d154cabf4773ad55ef23c9a64f469d02edb856732fd9220fb17978d762291be06d0f8f15f706a116cb0814ebddbca725064207b31710f3b0ee8d4fbefc4659a55e069e69096ddf95b1f9336432d8c564aefee4990ac0d5f278fcd6beec27157fd3ffb44f14f01e74600bf80dc0215619630848789a1a2ddc141555d00606585e9157d3feca347cabc691833267fec554f98024803432d9d95815886372cf7a8d453507c7d6fce5593a2573979006e4f51c8b52b4d9524c6f57cb533a2315affd71669c3ab5f410778af30b1ca3bc89cacf130fe933e049818f981db6cc2a97d3581de57fe101b77ec151bb5b8062313f4aa1a7aa71f0dd5e135ee63676e0f194f95f7d64ae66e4e39989ae715d4663c95ecd260a421ea93ee2dff7f16ebabac60e07ce4cac6187d472e76dac57e8ffb6f45ca50e9e268a673f2b1262f7231d47a3cf0b08e2b34b613cbb75f076ebf860e6869009ce2bd5b975684e88e7351a8865361a69d574b7821ef112da83129b97cc8213e7493b2ede692a569a7e8f23459aba1ee8ec836d41b54a845129026dabd90f72776d01a13c2087c9ff5bf4aa96abca71f12cb82a9c03f3c8d2ad720333c474d6d7c71fa424ae928100a5cab807d2c8fe731befcb4c3d72360ab0e0ecce4636e1465a8a0d00e0d04897bd2102b80cd08152694d77367109c4bb169d7777782d76b7f070f52d0ef02a32402c64676dea068028aceb6ba53fbb12e42ce792eda7b541d36693907a8dc3028a70d4dab6bf6dc0d1677d0328702e24ddb14d701439c1b1f1cbd5e76d2540910077b1c2d80f078619fceaaa7fc446566d469b9bcc86fc965a1b84fd1e33b2d6287d632bf29c387055ae4c596730aa2e2d43b503ecb3b011e6d39f19ca8d470644a520f785355c1b2a61a8f68e8edc77049d2f705c7cd87321298457a0bee3e389f182437d012b3e55e99c47e633446b74a69f8caa8d5c848ef4c1464d40e9383f5cbf3c084f5d8c1b74884675b"
+    },
+    {
+      "call_id": 3,
+      "plaintext_bytes": 1127,
+      "writer_records": 300,
+      "discarded_leading_records": 12,
+      "blocks": [
+        {
+          "index": 0,
+          "hex": "0cee6182d5512cff15cb6f15ae03e503e7434f0988cc339603b1cb590f5d1b88f2e798f86049c398fbf4a29aec8caf5e795592d885f719ad819f44054ee04c3e",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 1,
+          "hex": "c28285c02fe3440e2c77a343ff881d9256b276ae1b84facc41c7d6f85558c25236cb1a24d029b6e43d71e4f3adcdd3f2ea479795838b22a0ae72b44bb3f96941",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 2,
+          "hex": "a8e33b055cc31f55bdb0335230969338d1b76bdec97ef99c5f8d7c639761acc2e7faf77565aba76a3308501e42515bdfc21ca9deb1c4c3b1385292143eea7e4d",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 3,
+          "hex": "486fcd2a14b0de4991de83e7861ce06332a62bd4ad52bee685590c0acdcedc779a78cdd773ffe35efe4fe8f812cbe45292b7107e9de15f335d3aed6a63ceda02",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 4,
+          "hex": "85ea16b6431ddee5a8b3798624e5e0145ff2e5a21165a49cb73120790c764e65c60cf8eca53a9bf00f068bd9f28b74d8ff7a6410142a62f6c926b47b69b37884",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 5,
+          "hex": "9d7bba50b4348a728a3f97b521c2a5a756c6c57b2dbb7a314169db295a07c369cb24d68e23c6f076a9f2f120d34690b0a34378252f2d875edbdcfc416bb00cde",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 6,
+          "hex": "311c1a905266147f0eadad82dc46907dd69dd3da8f4abdc0bb98b45514085ebef1f5a6547cc2c2f03279ea4de3a9969c139b0444ba8a1022560eb6cd672c5a83",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 7,
+          "hex": "6252bc850345a2e6b97acab70e0ad10140095ada56651bf42333f62cf32bce208e0d4f0d51b3fe564a61a6056249b64111aa25f85a19f4fec475aef0f61b680e",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 8,
+          "hex": "535816550f3c50229f1ef3b87ea8806810b3d5acd5514759683a02260c13cfaa3b683b379ff25a39751c76258018799196c4f77bdc328b9e7e005de4d2e0e3b7",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 9,
+          "hex": "45743062a9e3c0d011f3631d0daeeeedd56a770e7aa791a2ae0af5c4d3f824df6b4c08679654abd7a796d7fb1cd5dbfae91d5e7232ae41a560be749bed46d348",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 10,
+          "hex": "2d56b1b122a0fb4515b27c2dd0b4662b07c711a206067203236ad11864a7c03926852733f4eea21ca3470835f0cb012c5f10ad4b3b005d867a8f4d08e4c0189f",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 11,
+          "hex": "6ab2dcf2cb0a98924ddf307549ebc3ebe58c0ed0122995d2d9cf3f846edad4b7f10e70528c87106566389d625ac19a50f3bc997af2fed02ba57e12cd63bb05dc",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 12,
+          "hex": "257d93a263bb9401fefcd1794135ef6f8b65f7df0943b04a488ff33cec598b800241bf58632e947df94b9fc990c077e28be6be57c8ea95f06a835aff81e4609d",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 13,
+          "hex": "5403bc8f599fa389ae3bd6f2f5559111bc52433a8ad08de54a2595da1c6fd4539317a66968fcb08d780ee6733eaa63ba79b4717d896188bc9e6f34f29104337a",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 14,
+          "hex": "65a76a06bfc6e2f90d492ad403b3683ba3a8caa0aec9e1ccc8e8e68d63827ae5c7539439740e3ea3486572c83e54e12060cfe62c39328f37b753cf9127cccf6e",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 15,
+          "hex": "75afcc518619557a916690ad79858929bc9ece583d332c124cc9bd6bd898c5d48b4f5db8e82da14e5db0e2b882bb616ca08c07056a24a42a36aca35067211c84",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 16,
+          "hex": "12bd8a12b68a50dd63aef56889620a9ec02de5301a8d50b91251396c014e64d80752e8138780849f817fb73d41dc8452b8e65b6e861dfe9883402b23b2deb050",
+          "keystream_prefix_bytes": 64,
+          "equals_keystream": true
+        },
+        {
+          "index": 17,
+          "hex": "ed939532ee63346278bdbb48ecb52b17562f459f305941559c68fad6a0078005102a20323e05396dc33e1e1d94370eb2a7969fb92521332abb3b5a99d5cdc28c",
+          "keystream_prefix_bytes": 39,
+          "equals_keystream": true
+        }
+      ],
+      "all_blocks_equal_keystream": true,
+      "keystream_hex": "0cee6182d5512cff15cb6f15ae03e503e7434f0988cc339603b1cb590f5d1b88f2e798f86049c398fbf4a29aec8caf5e795592d885f719ad819f44054ee04c3ec28285c02fe3440e2c77a343ff881d9256b276ae1b84facc41c7d6f85558c25236cb1a24d029b6e43d71e4f3adcdd3f2ea479795838b22a0ae72b44bb3f96941a8e33b055cc31f55bdb0335230969338d1b76bdec97ef99c5f8d7c639761acc2e7faf77565aba76a3308501e42515bdfc21ca9deb1c4c3b1385292143eea7e4d486fcd2a14b0de4991de83e7861ce06332a62bd4ad52bee685590c0acdcedc779a78cdd773ffe35efe4fe8f812cbe45292b7107e9de15f335d3aed6a63ceda0285ea16b6431ddee5a8b3798624e5e0145ff2e5a21165a49cb73120790c764e65c60cf8eca53a9bf00f068bd9f28b74d8ff7a6410142a62f6c926b47b69b378849d7bba50b4348a728a3f97b521c2a5a756c6c57b2dbb7a314169db295a07c369cb24d68e23c6f076a9f2f120d34690b0a34378252f2d875edbdcfc416bb00cde311c1a905266147f0eadad82dc46907dd69dd3da8f4abdc0bb98b45514085ebef1f5a6547cc2c2f03279ea4de3a9969c139b0444ba8a1022560eb6cd672c5a836252bc850345a2e6b97acab70e0ad10140095ada56651bf42333f62cf32bce208e0d4f0d51b3fe564a61a6056249b64111aa25f85a19f4fec475aef0f61b680e535816550f3c50229f1ef3b87ea8806810b3d5acd5514759683a02260c13cfaa3b683b379ff25a39751c76258018799196c4f77bdc328b9e7e005de4d2e0e3b745743062a9e3c0d011f3631d0daeeeedd56a770e7aa791a2ae0af5c4d3f824df6b4c08679654abd7a796d7fb1cd5dbfae91d5e7232ae41a560be749bed46d3482d56b1b122a0fb4515b27c2dd0b4662b07c711a206067203236ad11864a7c03926852733f4eea21ca3470835f0cb012c5f10ad4b3b005d867a8f4d08e4c0189f6ab2dcf2cb0a98924ddf307549ebc3ebe58c0ed0122995d2d9cf3f846edad4b7f10e70528c87106566389d625ac19a50f3bc997af2fed02ba57e12cd63bb05dc257d93a263bb9401fefcd1794135ef6f8b65f7df0943b04a488ff33cec598b800241bf58632e947df94b9fc990c077e28be6be57c8ea95f06a835aff81e4609d5403bc8f599fa389ae3bd6f2f5559111bc52433a8ad08de54a2595da1c6fd4539317a66968fcb08d780ee6733eaa63ba79b4717d896188bc9e6f34f29104337a65a76a06bfc6e2f90d492ad403b3683ba3a8caa0aec9e1ccc8e8e68d63827ae5c7539439740e3ea3486572c83e54e12060cfe62c39328f37b753cf9127cccf6e75afcc518619557a916690ad79858929bc9ece583d332c124cc9bd6bd898c5d48b4f5db8e82da14e5db0e2b882bb616ca08c07056a24a42a36aca35067211c8412bd8a12b68a50dd63aef56889620a9ec02de5301a8d50b91251396c014e64d80752e8138780849f817fb73d41dc8452b8e65b6e861dfe9883402b23b2deb050ed939532ee63346278bdbb48ecb52b17562f459f305941559c68fad6a0078005102a20323e0539"
+    }
+  ]
+}

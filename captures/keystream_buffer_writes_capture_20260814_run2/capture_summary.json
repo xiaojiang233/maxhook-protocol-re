@@ -1,0 +1,10 @@
+{
+  "schema": "maxhook.encrypt-boundary.capture/v1",
+  "pid": 42948,
+  "finished_at": "2026-08-14T01:16:51.506143+08:00",
+  "sensitive_plaintext_and_key_material": true,
+  "event_count": 1,
+  "call_count": 0,
+  "complete_calls": 0,
+  "calls": []
+}

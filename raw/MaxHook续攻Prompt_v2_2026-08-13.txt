@@ -1,0 +1,163 @@
+# MaxHook.dll 外层加密 VM 续攻任务（自包含 Prompt，2026-08-13 21:30 版）
+
+## 一、任务背景与终极目标
+
+**目标文件**: `E:\MCLDownload\Game\.minecraft\native\MaxHook.dll`（25MB，PE64，ImageBase 0x180000000）
+- 网易我的世界"布吉岛"服务器客户端反作弊，随 heypixel mod 分发，开发路径 `NativeAntiCheat\x64\Release\anti-cheat.dll`
+- **Themida/WinLicense 壳**：`.boot` 加密载荷 + `.bugland` 运行时区 + **上报加密逻辑全部 VM 化**
+
+**当前终极目标（已聚焦）**: 恢复 **外层上报加密算法**（`security.mcbjd.net/api/v3/report` 的 JSON 信封加密），目标是拿到可独立实现的 key 派生 + 流密码/轮函数，用 7 组真实样本 7/7 验证。
+
+**一句话现状**: 协议/信封/明文/参数布局已 100% 闭合；input64 第一步 = 直接 hex 解码为 32-byte 会话材料；VM 已静态恢复启动链（context/VIP/首四级 dispatch）；离线模拟在 545691 条指令处确定性崩溃，**崩溃点语义已完全解析**（base+index*8 表查找，base 槽被零写）——这是模拟器栈恢复缺口，不是加密算法问题。
+
+## 二、已确认的协议事实（不要重新验证）
+
+1. 上报端点 `security.mcbjd.net/api/v3/report`，POST JSON，三层流程：bootstrap/redeem → session/exchange → 周期 report
+2. 信封 `{sv:3, kid, nonce(12B), ciphertext, tag(16B)}`，密文与明文等长 + 16B tag
+3. 明文 JSON 字段：`{"device_id","h2_cantor":"v2:<MD5>:<SHA-256>","nonce","report_packet":"<104B hex 内层>","seq","session_id","sv":3,"timestamp"}`（**双层加密**：外层信封 + 内层 report_packet）
+4. **外层加密是 VM 字节码化的私有流密码**：AES-GCM/CCM/CTR/OFB/CFB/ChaCha20/Salsa/RC4 及 key 派生组合 7 样本全 0 命中；.bugland 无任何标准密码常量
+5. **input64（64-char hex，会话级）第一步就是直接 hex 解码成 32-byte 原始会话材料**，无额外 KDF/哈希（里程碑 18 已证明，heap 输出逐字节 == bytes.fromhex(input64)）
+6. 参数布局（hook 验证 7/7）：RCX=output envelope（4 个 std::string: kid+0x00/nonce+0x20/ciphertext+0x40/tag+0x60）、RDX=KID hex、R8=64-char key material、R9=context、[RSP+0x20]=plaintext JSON
+
+## 三、硬坐标（静态+动态双重验证）
+
+### 加密函数与 VM 入口
+```
+明文 .text:    0x180324610  = jmp 0x181523001      （外层信封加密边界，hook 点）
+VM 入口:       0x181523001  = VM 序言（保存寄存器）
+序言结束:      0x181523158  jmp 0x180c43fdd       （VM dispatcher）
+dispatcher:    0x180c43fdd  = 明文（boot/runtime 一致）
+handler 表 T:  0x180c64ebd，连续 0x0000..0x064b 共 1612 个 qword 指向 .bugland
+VM context:    0x18098c884（= module_base + 0x98c884，静态化简证明，里程碑 17）
+```
+
+### 关键坐标（本轮新增，里程碑 18/19）
+```
+key 材料扫描:   0x180322e30   （KID 32 次、input64 64 次逐字符扫描/验证）
+hex 解码读:     0x1804ad4e8 偶数位 / 0x1804ad566 奇数位（字符→nibble 映射）
+解码写:         0x18001c563  → 32-byte heap 缓冲（离线地址 0x20000100000）
+VM 槽位:        context+0x45 = slot（通用指针槽）
+                context+0x26 = base 槽（表查找基址，成功时 0x1807b6980）
+                context+0xbd = index 槽（表查找索引，崩溃时 0x2b）
+                context+0x6d = VIP、context+0x85 = handler 表指针、context+0xa = rolling key
+崩溃点 handler: 0x1809bd54c/0x1809bd556 = vm_load 原语
+               （movzx r11,r11w; add r11,rbp; mov r11,[r11]; mov r11,[r11]）
+零写 base 的 handler: 0x1809c0078 = mov [rdx],r8，r8 来自 pop r8 = [0x7ffe1fec50] = 0
+```
+
+### 静态恢复的 VM 启动链（里程碑 16/17，可重复校验）
+```
+bootstrap index = 0x2ca（序言常量，非 count 推断）
+table[0x2ca] = 0x1809894ba = jmp 0x180a97f70（dispatcher）
+RBP = 0x18098c884；首个 VIP = 0x181555629（序言常量 0x1555629 + base）
+首四级真实 dispatch 索引: 0x147 -> 0x321 -> 0x5d -> 0xe0
+  0x147 -> 0x1809ac48d -> 0x1809f4736（VIP=0x1815631ee, key_low32 变换 0xffffffa5->0x02dba4ba）
+  0x321 -> 0x180981ac9 -> 0x1809da384（VIP=0x18155b3ab）
+  0x5d  -> 0x18098257f -> 0x1809bfebb（清零 rolling key/context+0xf6，初始化 handler）
+  0xe0  -> 0x1809a3b86（首次 rolling key 参与索引解码: key = word[VIP+0xa] = 0x36d2）
+```
+
+## 四、崩溃点 0x158 构建链（里程碑 19，已完全闭合）
+
+离线模拟（session2/call4，max 650k）在 **inst=545691** 崩于 `0x1809bd556 mov r11,[r11]`，r11=0x158。完整数据流：
+
+```
+533727  0x180a353e9 mov [context+0xbd], edx     ; edx=[0x1808a4a40](.data dword)=0x2b
+544693  0x180bd46b7 mov [slot], r10             ; r10=[context+0xbd]=0x2b -> slot=0x2b
+544964  0x180a728e5 shl [slot], cl              ; cl=3 -> 0x2b<<3 = 0x158
+545297  0x180bceca2 add [slot], r9              ; r9=[context+0x26]=0（被零写）-> 0x158
+545689  0x1809bd54c vm_load: [context+0x45]=0x158 -> [0x158] CRASH
+```
+
+**根因**: `context+0x26`（base 槽）在 **inst=543464** 被 `0x1809c0078`（`mov [rdx],r8`，r8 来自 `pop r8`=[0x7ffe1fec50]=0）清零。成功对照组（inst 514336 组）同一序列 base=0x1807b6980，最终 `0x564+0x1807b6980=0x1807b6ee4` 可读。
+
+**语义归纳**: 该 handler 序列 = `base + index*8` 的表查找。崩溃 = 离线模拟栈 [0x7ffe1fec50] 未恢复（boundary capture 只恢复了 builder frame/字符串对象/context），**不是 VM 字节码错误**。
+
+## 五、7 组验证集（VM 硬破的验收标准）
+
+文件: `E:\Coding\S1mple\target\crypto_verify_set.json`
+7 组同会话样本，每组含 `kid / key_material_64hex / plaintext / nonce / ciphertext / tag / output_kid`。**只要还原出算法，必须 7/7 正向匹配 ciphertext+tag 才算完成**。
+
+样本举例（session 2 用）:
+```text
+input64 ASCII: 9626DA95F889109AD83C2238CA7959639CB76FDCA6569283A1E727C376CF9D40
+decoded 32B:   96 26 da 95 f8 89 10 9a d8 3c 22 38 ca 79 59 63 9c b7 6f dc a6 56 92 83 a1 e7 27 c3 76 cf 9d 40
+```
+
+## 六、关键文件与工具
+
+### 二进制
+- `E:\Coding\S1mple\target\MaxHook.runtime-unpacked.dll`（真机早期 dump）
+- `E:\Coding\S1mple\target\boot_unpacked.bin`（模拟解压 .boot，22.5MB，与真机 99.99% 一致）
+- `E:\Coding\S1mple\target\runtime_bugland2.bin`（二次 monitor 末态，**注意：这是末态不是入口初态，旧模拟跨 epoch 拼状态是崩溃根因**）
+
+### 捕获数据（本地敏感数据，勿外传）
+- `encrypt_boundary_capture2/`（7 调用边界捕获：enter/strings/context/builder_frame，`--boundary-session 2 --boundary-call 4` 是主样本）
+- `crypto_capture2/`、`vm_trace_capture3/4/`、`keyread_capture/`、`dump_out/41264/`（5.4GB 全内存）
+- `crypto_verify_set.json`（7 组验证集）
+
+### 核心脚本（E:\Coding\S1mple\target\）
+- **`emulate_maxhook_encrypt_boundary.py`**：离线 Unicorn 重放（核心工具）。已支持 `--trace-window-start N`（全寄存器指令窗口）、`vm_pointer_slot_writes[]`（全 context 写跟踪含 old_bytes）、`watched_memory_accesses[]`、`heap_writes/heap_reads[]`、`vm_indirect_jumps[]`
+- `analyze_maxhook_vm_input_accesses.py`：里程碑 18 验证器（KID/key 扫描 + hex 解码闭合）
+- `analyze_maxhook_vm_initial_chain.py`：里程碑 17 静态校验器（context/VIP/首四级 dispatch 链）
+- `analyze_maxhook_vm_bootstrap_dispatch.py`：里程碑 16 静态校验器（bootstrap index=0x2ca）
+- `capture_maxhook_encrypt_boundary.py/.js`：线上 hook（Frida）
+- `analyze_maxhook_crypto_verify_set.py`：验证集分析
+
+### 常用命令
+```powershell
+# 复现崩溃 + 指令窗口（里程碑 19 主命令）
+python target\emulate_maxhook_encrypt_boundary.py `
+  --boundary-dir target\encrypt_boundary_capture2 `
+  --boundary-session 2 --boundary-call 4 `
+  --max-instructions 650000 --timeout-ms 30000 `
+  --trace-window-start 544000 `
+  --output target\encrypt_vm_tracewin_544k.json
+
+# 里程碑 18 验证器
+python target\analyze_maxhook_vm_input_accesses.py `
+  --emulation-json target\encrypt_vm_watched_350k.json `
+  --boundary-dir target\encrypt_boundary_capture2 `
+  --boundary-session 2 --boundary-call 4 `
+  --output target\maxhook_vm_input_accesses.json
+
+# 里程碑 17 静态校验器
+python target\analyze_maxhook_vm_initial_chain.py `
+  --runtime-bugland target\runtime_bugland2.bin `
+  --prologue-json target\maxhook_vm_prologue_symbolic.json `
+  --output target\maxhook_vm_initial_chain.json
+```
+
+**Python 环境**: `C:\Users\34166\.workbuddy\binaries\python\envs\default\Scripts\python.exe`（unicorn 2.1.4, capstone, pefile）。依赖已装在 `target\.pydeps\`。
+
+## 七、下一步建议（按性价比排序）
+
+1. **修复模拟器栈缺口继续前推（最短路径）**：崩溃唯一原因是 base 槽被零写。两个做法任选：
+   - 改 `emulate_maxhook_encrypt_boundary.py` 的 boundary 恢复，把 `0x7ffe1fec50` 附近调用栈内容从 capture 恢复；
+   - 或做 patch 实验：在 `0x1809c0078` 执行前把 `[rsp]` patch 成 `0x1807b6980`（成功组 base），验证能否越过 545691，看能否推进到 PLAINTEXT/OUTPUT 首次解引用。
+2. **追踪 32-byte 解码 key buffer 的第一位 consumer**（里程碑 18 遗留）：监控 allocation `0x20000100000`（离线）的读取，记录读取者 RIP/VIP/rolling key，传播标签到密码状态。目前 400K 指令内该缓冲仍无读取。
+3. **继续静态 handler 语义归一化**：崩溃 handler 组（0x180bd46b7 / 0x180a728e5 / 0x180bceca2 / 0x1809bd54c / 0x1809c0078 / 0x180a353e9）已确认是槽拷贝/左移/加法/vm_load 原语，可作为语义基准继续标注其它 handler。
+4. **另一条线（已可用）**：方案 1 Envelope 服务（proxy 集成真实 MaxHook 加密输出）已 7/7 验证可落地，与 VM 硬破并行，谁先出结果都能推进。
+
+## 八、避免重复踩坑（重要）
+
+- **Frida Stalker transform 回调统计的是"翻译次数"不是"运行时执行次数"**——所有依赖 count 的结论已降级，不要再用
+- `runtime_bugland2.bin` 是异步末态，**不能当作同步函数入口状态**；正确做法是 boundary capture 同步快照
+- hook 明文混淆函数会触发 Themida 反篡改崩溃（改 .text 字节），用 Stalker 动态插桩或离线 Unicorn
+- `struct.pack('<I', 负数)` 溢出会被误判为 unicorn 崩溃，用 `<i`
+- input64 在 capture 里被二次 hex 编码（readStr hex 解码后是 ASCII 字符串）
+- 里程碑 09-15 的"执行次数=1"论证已降级为"首翻译顺序"，仅作 CFG 交叉校验，不作运行时目标证据
+- **确定性崩溃 ≠ epoch 垃圾**：0x158 = 0x2b<<3 是精确计算值，先追数据流再怀疑状态
+
+## 九、报告文件（可参考，均在 E:\Coding\S1mple\target\）
+
+- `MaxHook_native协议里程碑_16_静态证明bootstrap_dispatch索引_0x2ca_2026-08-13.md`
+- `MaxHook_native协议里程碑_17_静态恢复VM_context与首四级dispatch链_2026-08-13.md`
+- `MaxHook_native协议里程碑_18_定位输入读取并证明input64直接hex解码_2026-08-13.md`
+- `MaxHook_native协议里程碑_19_崩溃点语义解析与0x158构建链闭合_2026-08-13.md`
+- `MaxHook_native协议续攻进度_2026-08-13.md`（里程碑 02-15 汇总）
+- `MaxHook加密破译交接_验证集_2026-08-13.md`（7 组验证集说明）
+- `MaxHook_native上报_方案1_加密边界复用_流程报告.html`
+
+---
+*所有敏感原始数据（真实 KID/nonce/ciphertext/明文）仅存于本地 capture 目录，未上传未公开。*

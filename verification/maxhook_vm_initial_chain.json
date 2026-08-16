@@ -1,0 +1,75 @@
+{
+  "schema": "maxhook.vm.initial-chain/v1",
+  "vm_context": {
+    "rva": "0x98c884",
+    "va": "0x18098c884",
+    "derivation": "module_base + zero_extend32(((0x38ffc137+1)&0x7f2c79bd)-0x379378b4)",
+    "initial_key_low32_from_runtime_blob": "0xffffffa5",
+    "key_after_first_dispatcher": "0x2dba4ba",
+    "handler_table": "0x180c64ebd"
+  },
+  "bootstrap_path": {
+    "instruction_count": 626,
+    "vip_seed_source": "[ENTRY_RSP-0x8]",
+    "vip_seed_rva": "0x1555629",
+    "initial_vip": "0x181555629",
+    "bootstrap_table_index_source": "[ENTRY_RSP-0x10]",
+    "bootstrap_table_index": "0x2ca"
+  },
+  "dispatch_chain": [
+    {
+      "ordinal": 1,
+      "dispatcher": "0x180a97f70",
+      "vip_before": "0x181555629",
+      "index_source": "word[VIP+0]",
+      "index": "0x147",
+      "advance_source": "i32[VIP+2]",
+      "advance": 56261,
+      "vip_after": "0x1815631ee",
+      "table_target": "0x1809ac48d",
+      "handler_body": "0x1809f4736"
+    },
+    {
+      "ordinal": 2,
+      "handler_body": "0x1809f4736",
+      "vip_before": "0x1815631ee",
+      "index_source": "word[VIP+6]",
+      "index": "0x321",
+      "advance_source": "i32[VIP+2]",
+      "advance": -32323,
+      "vip_after": "0x18155b3ab",
+      "table_target": "0x180981ac9",
+      "next_handler_body": "0x1809da384"
+    },
+    {
+      "ordinal": 3,
+      "handler_body": "0x1809da384",
+      "vip_before": "0x18155b3ab",
+      "index_source": "word[VIP+0xc]",
+      "index": "0x5d",
+      "advance_source": "i32[VIP+4]",
+      "advance": 49523,
+      "vip_after": "0x18156751e",
+      "table_target": "0x18098257f",
+      "next_handler_body": "0x1809bfebb"
+    },
+    {
+      "ordinal": 4,
+      "handler_body": "0x1809bfebb",
+      "vip_before": "0x18156751e",
+      "key_input_source": "word[VIP+0xa] with prior context+0xf6=0",
+      "key_before_dispatch": "0x36d2",
+      "index_expression": "(word[VIP+0] - key + 0x5214a88c) & 0xffff",
+      "index": "0xe0",
+      "key_after_dispatch": "0xadeb35f2",
+      "advance_source": "i32[VIP+6]",
+      "advance": -41064,
+      "vip_after": "0x18155d4b6",
+      "table_target": "0x1809a3b86"
+    }
+  ],
+  "inputs": {
+    "runtime_bugland_sha256": "3a8e093afbf678fec5b4a84e5759b4d030f8ad39b52eac81a872dfe581449f26",
+    "prologue_json_sha256": "c40e9de68bbd0428d472451422d9b202fc4ae0bb76b15fd31b39c964b1766cf6"
+  }
+}

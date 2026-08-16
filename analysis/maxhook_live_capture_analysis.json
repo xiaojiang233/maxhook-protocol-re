@@ -1,0 +1,3423 @@
+{
+  "schema": "maxhook.live-capture.analysis/v1",
+  "source": {
+    "capture_directory": "E:\\Coding\\S1mple\\target\\target\\native_capture_live",
+    "events_sha256": "00496476be8f3af977c85cc85ac7b4b6f08c514237c6ba13d7262655490ee480",
+    "sensitive_raw_capture": true
+  },
+  "sanitization": {
+    "raw_envelopes_included": false,
+    "raw_kids_included": false,
+    "raw_nonces_included": false,
+    "raw_ciphertexts_included": false,
+    "raw_tags_included": false,
+    "raw_pointers_included": false
+  },
+  "event_count": 146,
+  "event_kind_counts": {
+    "hook_installed": 11,
+    "read": 25,
+    "receive_begin": 22,
+    "request_open": 22,
+    "send_begin": 22,
+    "send_optional": 22,
+    "send_stack": 22
+  },
+  "request_count": 22,
+  "endpoint_counts": {
+    "/api/v3/report": 20,
+    "/api/v3/session/bootstrap/redeem": 1,
+    "/api/v3/session/exchange": 1
+  },
+  "valid_request_envelopes": 22,
+  "valid_response_envelopes": 22,
+  "request_response_kid_matches": 22,
+  "kid_transitions": [
+    {
+      "request_id": "1",
+      "path": "/api/v3/session/bootstrap/redeem",
+      "kid_fingerprint_sha256": "2170a47b8c774c4bdc2cc7af09f9a36bbe3129de83bcfc85c6b3d8adf0faea07"
+    },
+    {
+      "request_id": "3",
+      "path": "/api/v3/report",
+      "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698"
+    }
+  ],
+  "endpoint_request_kid_fingerprints": {
+    "/api/v3/report": [
+      "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698"
+    ],
+    "/api/v3/session/bootstrap/redeem": [
+      "2170a47b8c774c4bdc2cc7af09f9a36bbe3129de83bcfc85c6b3d8adf0faea07"
+    ],
+    "/api/v3/session/exchange": [
+      "2170a47b8c774c4bdc2cc7af09f9a36bbe3129de83bcfc85c6b3d8adf0faea07"
+    ]
+  },
+  "endpoint_response_kid_fingerprints": {
+    "/api/v3/report": [
+      "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698"
+    ],
+    "/api/v3/session/bootstrap/redeem": [
+      "2170a47b8c774c4bdc2cc7af09f9a36bbe3129de83bcfc85c6b3d8adf0faea07"
+    ],
+    "/api/v3/session/exchange": [
+      "2170a47b8c774c4bdc2cc7af09f9a36bbe3129de83bcfc85c6b3d8adf0faea07"
+    ]
+  },
+  "report_builder": {
+    "function": "0x1803cd330-0x1803d18b9",
+    "call_wrapper": "0x1803d0acf",
+    "return_after_call": "0x1803d0ad4",
+    "wrapper": "0x180332770-0x180333c82",
+    "winhttp_return": "0x180333271",
+    "builder_rbp_from_winhttp_rsp": 568
+  },
+  "native_encrypt_boundary": {
+    "call_address": "0x1803cf7e1",
+    "callee": "0x180324610-0x1803261bc",
+    "protected_entry_jump": "0x180324610 -> 0x181523001 (.bugland)",
+    "arguments": {
+      "rcx": "output envelope struct at builder RBP+0x290",
+      "rdx": "32-character std::string at builder RBP+0xe0",
+      "r8": "64-character std::string at builder RBP+0x1a0 (key-material candidate)",
+      "r9": "fresh context/object at builder RBP+0x38",
+      "stack_0x20": "plaintext JSON std::string at builder RBP+0x100"
+    },
+    "plaintext_destructor_call": "0x1803cf7ed -> 0x18031b970"
+  },
+  "session_exchange_builder": {
+    "function": "0x18033ef60-0x180348545",
+    "call_wrapper": "0x18034503f",
+    "return_after_call": "0x180345044",
+    "builder_rbp_from_winhttp_rsp": 568,
+    "native_encrypt_call": "0x18034406d -> 0x180324610",
+    "encrypt_arguments": {
+      "rcx": "output envelope struct at builder RBP+0xba0",
+      "rdx": "32-character std::string at builder RBP+0x200",
+      "r8": "64-character std::string at builder RBP+0x580",
+      "r9": "fresh context/object at builder RBP+0x50",
+      "stack_0x20": "plaintext JSON std::string at builder RBP+0x220"
+    },
+    "final_envelope": "std::string at builder RBP+0x240"
+  },
+  "report_frame_count": 20,
+  "fully_validated_report_frames": 20,
+  "requests": [
+    {
+      "request_id": "1",
+      "method": "POST",
+      "path": "/api/v3/session/bootstrap/redeem",
+      "thread_id": 11436,
+      "request_bytes": 387,
+      "request_sha256": "d60e066d6e2fc54adebb8e46732468c4ed297ec39bc6474ab32dafaf4e86ce3e",
+      "request_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "ciphertext",
+          "kid",
+          "nonce",
+          "sv",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "2170a47b8c774c4bdc2cc7af09f9a36bbe3129de83bcfc85c6b3d8adf0faea07",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 123,
+        "tag_bytes": 16
+      },
+      "response_bytes": 3045,
+      "response_sha256": "f4938d7aa1e5c1df28d17e3fd5ada1b54d85c16f38af6fd86c7f29c736dd4623",
+      "response_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "sv",
+          "kid",
+          "nonce",
+          "ciphertext",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "2170a47b8c774c4bdc2cc7af09f9a36bbe3129de83bcfc85c6b3d8adf0faea07",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 1452,
+        "tag_bytes": 16
+      },
+      "request_response_kid_match": true,
+      "winhttp_caller": "0x180333271"
+    },
+    {
+      "request_id": "2",
+      "method": "POST",
+      "path": "/api/v3/session/exchange",
+      "thread_id": 11436,
+      "request_bytes": 1473,
+      "request_sha256": "3fad6810b70fd160eb3391a69d44ad7df5e1f1aa8476c159650842a1f02f9378",
+      "request_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "ciphertext",
+          "kid",
+          "nonce",
+          "sv",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "2170a47b8c774c4bdc2cc7af09f9a36bbe3129de83bcfc85c6b3d8adf0faea07",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 666,
+        "tag_bytes": 16
+      },
+      "response_bytes": 1943,
+      "response_sha256": "8e4e94ce98d2c3ad584f77b7e13307797f9a0c23d293546a5836dad1eec55951",
+      "response_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "sv",
+          "kid",
+          "nonce",
+          "ciphertext",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "2170a47b8c774c4bdc2cc7af09f9a36bbe3129de83bcfc85c6b3d8adf0faea07",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 901,
+        "tag_bytes": 16
+      },
+      "request_response_kid_match": true,
+      "winhttp_caller": "0x180333271",
+      "session_exchange_builder_frame": {
+        "function": "0x18033ef60-0x180348545",
+        "call_wrapper": "0x18034503f",
+        "return_after_call": "0x180345044",
+        "builder_rbp_from_winhttp_rsp": 568,
+        "native_encrypt_call": "0x18034406d -> 0x180324610",
+        "encrypt_arguments": {
+          "rcx": "output envelope struct at builder RBP+0xba0",
+          "rdx": "32-character std::string at builder RBP+0x200",
+          "r8": "64-character std::string at builder RBP+0x580",
+          "r9": "fresh context/object at builder RBP+0x50",
+          "stack_0x20": "plaintext JSON std::string at builder RBP+0x220"
+        },
+        "final_envelope": {
+          "rbp_offset": "0x240",
+          "stack_offset": "0x478",
+          "size": 1473,
+          "capacity": 1534,
+          "pointer_matches_send_buffer": true,
+          "expected_size": 1473,
+          "size_matches": true
+        },
+        "msvc_string_layout": "union@+0x0,size@+0x10,capacity@+0x18",
+        "input_32": {
+          "rbp_offset": "0x200",
+          "stack_offset": "0x438",
+          "size": 32,
+          "capacity": 47,
+          "pointer_matches_send_buffer": false
+        },
+        "input_64": {
+          "rbp_offset": "0x580",
+          "stack_offset": "0x7b8",
+          "size": 64,
+          "capacity": 79,
+          "pointer_matches_send_buffer": false
+        },
+        "plaintext_after_destructor": {
+          "rbp_offset": "0x220",
+          "stack_offset": "0x458",
+          "size": 0,
+          "capacity": 717,
+          "pointer_matches_send_buffer": false,
+          "size_is_zero": true,
+          "capacity_covers_ciphertext_bytes": true
+        },
+        "output_fields": [
+          {
+            "rbp_offset": "0xba0",
+            "stack_offset": "0xdd8",
+            "size": 32,
+            "capacity": 47,
+            "pointer_matches_send_buffer": false,
+            "name": "kid_hex",
+            "expected_size": 32,
+            "size_matches": true
+          },
+          {
+            "rbp_offset": "0xbc0",
+            "stack_offset": "0xdf8",
+            "size": 24,
+            "capacity": 31,
+            "pointer_matches_send_buffer": false,
+            "name": "nonce_hex",
+            "expected_size": 24,
+            "size_matches": true
+          },
+          {
+            "rbp_offset": "0xbe0",
+            "stack_offset": "0xe18",
+            "size": 1332,
+            "capacity": 1343,
+            "pointer_matches_send_buffer": false,
+            "name": "ciphertext_hex",
+            "expected_size": 1332,
+            "size_matches": true
+          },
+          {
+            "rbp_offset": "0xc00",
+            "stack_offset": "0xe38",
+            "size": 32,
+            "capacity": 47,
+            "pointer_matches_send_buffer": false,
+            "name": "tag_hex",
+            "expected_size": 32,
+            "size_matches": true
+          }
+        ],
+        "all_output_lengths_match": true
+      }
+    },
+    {
+      "request_id": "3",
+      "method": "POST",
+      "path": "/api/v3/report",
+      "thread_id": 17352,
+      "request_bytes": 1625,
+      "request_sha256": "d6401c4d14d4c9b0fe1ec43f33afdcd6217757769abfab342763ad55e517d370",
+      "request_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "ciphertext",
+          "kid",
+          "nonce",
+          "sv",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 742,
+        "tag_bytes": 16
+      },
+      "response_bytes": 283,
+      "response_sha256": "443eacbea0cc8e1b0f2011a5bdf653e6e307c8b15fa760ec345adecba671cc2b",
+      "response_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "sv",
+          "kid",
+          "nonce",
+          "ciphertext",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 71,
+        "tag_bytes": 16
+      },
+      "request_response_kid_match": true,
+      "winhttp_caller": "0x180333271",
+      "report_builder_frame": {
+        "layout": "msvc_basic_string_char: union@+0x0,size@+0x10,capacity@+0x18",
+        "builder_rbp_from_captured_rsp": "+0x238",
+        "fields": [
+          {
+            "name": "unknown_len_100",
+            "rbp_offset": "0xc0",
+            "stack_offset": "0x2f8",
+            "size": 100,
+            "capacity": 111,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "unknown_len_32",
+            "rbp_offset": "0xe0",
+            "stack_offset": "0x318",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "envelope_json",
+            "rbp_offset": "0x120",
+            "stack_offset": "0x358",
+            "size": 1625,
+            "capacity": 2301,
+            "expected_size": 1625,
+            "size_matches": true,
+            "pointer_matches_send_buffer": true
+          },
+          {
+            "name": "unknown_len_64",
+            "rbp_offset": "0x1a0",
+            "stack_offset": "0x3d8",
+            "size": 64,
+            "capacity": 79,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "kid_hex",
+            "rbp_offset": "0x290",
+            "stack_offset": "0x4c8",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "nonce_hex",
+            "rbp_offset": "0x2b0",
+            "stack_offset": "0x4e8",
+            "size": 24,
+            "capacity": 31,
+            "expected_size": 24,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "ciphertext_hex",
+            "rbp_offset": "0x2d0",
+            "stack_offset": "0x508",
+            "size": 1484,
+            "capacity": 1487,
+            "expected_size": 1484,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "tag_hex",
+            "rbp_offset": "0x2f0",
+            "stack_offset": "0x528",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          }
+        ],
+        "all_protocol_field_lengths_match": true,
+        "envelope_pointer_matches_send_buffer": true,
+        "native_encrypt_boundary": {
+          "call_address": "0x1803cf7e1",
+          "callee": "0x180324610-0x1803261bc",
+          "protected_entry_jump": "0x180324610 -> 0x181523001 (.bugland)",
+          "arguments": {
+            "rcx": "output envelope struct at builder RBP+0x290",
+            "rdx": "32-character std::string at builder RBP+0xe0",
+            "r8": "64-character std::string at builder RBP+0x1a0 (key-material candidate)",
+            "r9": "fresh context/object at builder RBP+0x38",
+            "stack_0x20": "plaintext JSON std::string at builder RBP+0x100"
+          },
+          "plaintext_destructor_call": "0x1803cf7ed -> 0x18031b970",
+          "post_call_output_shape": {
+            "kid_hex_chars": 32,
+            "nonce_hex_chars": 24,
+            "ciphertext_hex_chars": 1484,
+            "tag_hex_chars": 32
+          },
+          "input_objects_at_send_time": {
+            "rbp_plus_e0_size": 32,
+            "rbp_plus_1a0_size": 64,
+            "plaintext_rbp_plus_100_size_after_destructor": 0,
+            "plaintext_rbp_plus_100_retained_capacity": 982,
+            "plaintext_capacity_covers_ciphertext_bytes": true,
+            "plaintext_union_residual_is_json_schema_fragment": true
+          }
+        }
+      }
+    },
+    {
+      "request_id": "4",
+      "method": "POST",
+      "path": "/api/v3/report",
+      "thread_id": 17352,
+      "request_bytes": 2845,
+      "request_sha256": "30458c535fc8289f8e6c41abf00f74fbf991e23b145c0cc18b26d07c61333ae3",
+      "request_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "ciphertext",
+          "kid",
+          "nonce",
+          "sv",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 1352,
+        "tag_bytes": 16
+      },
+      "response_bytes": 283,
+      "response_sha256": "47557b5a69e840ac18f072a9c9f4b9c0b1027d7f2f0bf64858a2c1e15472b3b9",
+      "response_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "sv",
+          "kid",
+          "nonce",
+          "ciphertext",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 71,
+        "tag_bytes": 16
+      },
+      "request_response_kid_match": true,
+      "winhttp_caller": "0x180333271",
+      "report_builder_frame": {
+        "layout": "msvc_basic_string_char: union@+0x0,size@+0x10,capacity@+0x18",
+        "builder_rbp_from_captured_rsp": "+0x238",
+        "fields": [
+          {
+            "name": "unknown_len_100",
+            "rbp_offset": "0xc0",
+            "stack_offset": "0x2f8",
+            "size": 100,
+            "capacity": 111,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "unknown_len_32",
+            "rbp_offset": "0xe0",
+            "stack_offset": "0x318",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "envelope_json",
+            "rbp_offset": "0x120",
+            "stack_offset": "0x358",
+            "size": 2845,
+            "capacity": 3451,
+            "expected_size": 2845,
+            "size_matches": true,
+            "pointer_matches_send_buffer": true
+          },
+          {
+            "name": "unknown_len_64",
+            "rbp_offset": "0x1a0",
+            "stack_offset": "0x3d8",
+            "size": 64,
+            "capacity": 79,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "kid_hex",
+            "rbp_offset": "0x290",
+            "stack_offset": "0x4c8",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "nonce_hex",
+            "rbp_offset": "0x2b0",
+            "stack_offset": "0x4e8",
+            "size": 24,
+            "capacity": 31,
+            "expected_size": 24,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "ciphertext_hex",
+            "rbp_offset": "0x2d0",
+            "stack_offset": "0x508",
+            "size": 2704,
+            "capacity": 2719,
+            "expected_size": 2704,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "tag_hex",
+            "rbp_offset": "0x2f0",
+            "stack_offset": "0x528",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          }
+        ],
+        "all_protocol_field_lengths_match": true,
+        "envelope_pointer_matches_send_buffer": true,
+        "native_encrypt_boundary": {
+          "call_address": "0x1803cf7e1",
+          "callee": "0x180324610-0x1803261bc",
+          "protected_entry_jump": "0x180324610 -> 0x181523001 (.bugland)",
+          "arguments": {
+            "rcx": "output envelope struct at builder RBP+0x290",
+            "rdx": "32-character std::string at builder RBP+0xe0",
+            "r8": "64-character std::string at builder RBP+0x1a0 (key-material candidate)",
+            "r9": "fresh context/object at builder RBP+0x38",
+            "stack_0x20": "plaintext JSON std::string at builder RBP+0x100"
+          },
+          "plaintext_destructor_call": "0x1803cf7ed -> 0x18031b970",
+          "post_call_output_shape": {
+            "kid_hex_chars": 32,
+            "nonce_hex_chars": 24,
+            "ciphertext_hex_chars": 2704,
+            "tag_hex_chars": 32
+          },
+          "input_objects_at_send_time": {
+            "rbp_plus_e0_size": 32,
+            "rbp_plus_1a0_size": 64,
+            "plaintext_rbp_plus_100_size_after_destructor": 0,
+            "plaintext_rbp_plus_100_retained_capacity": 1822,
+            "plaintext_capacity_covers_ciphertext_bytes": true,
+            "plaintext_union_residual_is_json_schema_fragment": true
+          }
+        }
+      }
+    },
+    {
+      "request_id": "5",
+      "method": "POST",
+      "path": "/api/v3/report",
+      "thread_id": 17352,
+      "request_bytes": 3845,
+      "request_sha256": "2a6bd8cbd7eea34aa4dc4f4d6beabe7a7d866c8ae2a11f197838492f413af932",
+      "request_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "ciphertext",
+          "kid",
+          "nonce",
+          "sv",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 1852,
+        "tag_bytes": 16
+      },
+      "response_bytes": 283,
+      "response_sha256": "edd888208dc9570519c9776cdb61a7672c88261bf05d5b75617aec5180e6ed6f",
+      "response_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "sv",
+          "kid",
+          "nonce",
+          "ciphertext",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 71,
+        "tag_bytes": 16
+      },
+      "request_response_kid_match": true,
+      "winhttp_caller": "0x180333271",
+      "report_builder_frame": {
+        "layout": "msvc_basic_string_char: union@+0x0,size@+0x10,capacity@+0x18",
+        "builder_rbp_from_captured_rsp": "+0x238",
+        "fields": [
+          {
+            "name": "unknown_len_100",
+            "rbp_offset": "0xc0",
+            "stack_offset": "0x2f8",
+            "size": 100,
+            "capacity": 111,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "unknown_len_32",
+            "rbp_offset": "0xe0",
+            "stack_offset": "0x318",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "envelope_json",
+            "rbp_offset": "0x120",
+            "stack_offset": "0x358",
+            "size": 3845,
+            "capacity": 5176,
+            "expected_size": 3845,
+            "size_matches": true,
+            "pointer_matches_send_buffer": true
+          },
+          {
+            "name": "unknown_len_64",
+            "rbp_offset": "0x1a0",
+            "stack_offset": "0x3d8",
+            "size": 64,
+            "capacity": 79,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "kid_hex",
+            "rbp_offset": "0x290",
+            "stack_offset": "0x4c8",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "nonce_hex",
+            "rbp_offset": "0x2b0",
+            "stack_offset": "0x4e8",
+            "size": 24,
+            "capacity": 31,
+            "expected_size": 24,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "ciphertext_hex",
+            "rbp_offset": "0x2d0",
+            "stack_offset": "0x508",
+            "size": 3704,
+            "capacity": 3711,
+            "expected_size": 3704,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "tag_hex",
+            "rbp_offset": "0x2f0",
+            "stack_offset": "0x528",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          }
+        ],
+        "all_protocol_field_lengths_match": true,
+        "envelope_pointer_matches_send_buffer": true,
+        "native_encrypt_boundary": {
+          "call_address": "0x1803cf7e1",
+          "callee": "0x180324610-0x1803261bc",
+          "protected_entry_jump": "0x180324610 -> 0x181523001 (.bugland)",
+          "arguments": {
+            "rcx": "output envelope struct at builder RBP+0x290",
+            "rdx": "32-character std::string at builder RBP+0xe0",
+            "r8": "64-character std::string at builder RBP+0x1a0 (key-material candidate)",
+            "r9": "fresh context/object at builder RBP+0x38",
+            "stack_0x20": "plaintext JSON std::string at builder RBP+0x100"
+          },
+          "plaintext_destructor_call": "0x1803cf7ed -> 0x18031b970",
+          "post_call_output_shape": {
+            "kid_hex_chars": 32,
+            "nonce_hex_chars": 24,
+            "ciphertext_hex_chars": 3704,
+            "tag_hex_chars": 32
+          },
+          "input_objects_at_send_time": {
+            "rbp_plus_e0_size": 32,
+            "rbp_plus_1a0_size": 64,
+            "plaintext_rbp_plus_100_size_after_destructor": 0,
+            "plaintext_rbp_plus_100_retained_capacity": 2733,
+            "plaintext_capacity_covers_ciphertext_bytes": true,
+            "plaintext_union_residual_is_json_schema_fragment": true
+          }
+        }
+      }
+    },
+    {
+      "request_id": "6",
+      "method": "POST",
+      "path": "/api/v3/report",
+      "thread_id": 17352,
+      "request_bytes": 4769,
+      "request_sha256": "5e9ce8e87347b05da56ba49da4c931a380d54aef61eb9ab4e5ceb2119bc1e136",
+      "request_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "ciphertext",
+          "kid",
+          "nonce",
+          "sv",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 2314,
+        "tag_bytes": 16
+      },
+      "response_bytes": 283,
+      "response_sha256": "3b0ee544a8a200e0718d13adf40969a30d9e0ee189816a57033b2ffb963c9826",
+      "response_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "sv",
+          "kid",
+          "nonce",
+          "ciphertext",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 71,
+        "tag_bytes": 16
+      },
+      "request_response_kid_match": true,
+      "winhttp_caller": "0x180333271",
+      "report_builder_frame": {
+        "layout": "msvc_basic_string_char: union@+0x0,size@+0x10,capacity@+0x18",
+        "builder_rbp_from_captured_rsp": "+0x238",
+        "fields": [
+          {
+            "name": "unknown_len_100",
+            "rbp_offset": "0xc0",
+            "stack_offset": "0x2f8",
+            "size": 100,
+            "capacity": 111,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "unknown_len_32",
+            "rbp_offset": "0xe0",
+            "stack_offset": "0x318",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "envelope_json",
+            "rbp_offset": "0x120",
+            "stack_offset": "0x358",
+            "size": 4769,
+            "capacity": 5176,
+            "expected_size": 4769,
+            "size_matches": true,
+            "pointer_matches_send_buffer": true
+          },
+          {
+            "name": "unknown_len_64",
+            "rbp_offset": "0x1a0",
+            "stack_offset": "0x3d8",
+            "size": 64,
+            "capacity": 79,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "kid_hex",
+            "rbp_offset": "0x290",
+            "stack_offset": "0x4c8",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "nonce_hex",
+            "rbp_offset": "0x2b0",
+            "stack_offset": "0x4e8",
+            "size": 24,
+            "capacity": 31,
+            "expected_size": 24,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "ciphertext_hex",
+            "rbp_offset": "0x2d0",
+            "stack_offset": "0x508",
+            "size": 4628,
+            "capacity": 4639,
+            "expected_size": 4628,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "tag_hex",
+            "rbp_offset": "0x2f0",
+            "stack_offset": "0x528",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          }
+        ],
+        "all_protocol_field_lengths_match": true,
+        "envelope_pointer_matches_send_buffer": true,
+        "native_encrypt_boundary": {
+          "call_address": "0x1803cf7e1",
+          "callee": "0x180324610-0x1803261bc",
+          "protected_entry_jump": "0x180324610 -> 0x181523001 (.bugland)",
+          "arguments": {
+            "rcx": "output envelope struct at builder RBP+0x290",
+            "rdx": "32-character std::string at builder RBP+0xe0",
+            "r8": "64-character std::string at builder RBP+0x1a0 (key-material candidate)",
+            "r9": "fresh context/object at builder RBP+0x38",
+            "stack_0x20": "plaintext JSON std::string at builder RBP+0x100"
+          },
+          "plaintext_destructor_call": "0x1803cf7ed -> 0x18031b970",
+          "post_call_output_shape": {
+            "kid_hex_chars": 32,
+            "nonce_hex_chars": 24,
+            "ciphertext_hex_chars": 4628,
+            "tag_hex_chars": 32
+          },
+          "input_objects_at_send_time": {
+            "rbp_plus_e0_size": 32,
+            "rbp_plus_1a0_size": 64,
+            "plaintext_rbp_plus_100_size_after_destructor": 0,
+            "plaintext_rbp_plus_100_retained_capacity": 2733,
+            "plaintext_capacity_covers_ciphertext_bytes": true,
+            "plaintext_union_residual_is_json_schema_fragment": true
+          }
+        }
+      }
+    },
+    {
+      "request_id": "7",
+      "method": "POST",
+      "path": "/api/v3/report",
+      "thread_id": 17352,
+      "request_bytes": 2597,
+      "request_sha256": "8ad4839d78b571d8c13a383aefc0b1c1942ca684f0e46d86026a20370be394ab",
+      "request_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "ciphertext",
+          "kid",
+          "nonce",
+          "sv",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 1228,
+        "tag_bytes": 16
+      },
+      "response_bytes": 283,
+      "response_sha256": "7a7440961bca854563570f73418d62a41c757e43073ba1b5f162e7351a839ff1",
+      "response_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "sv",
+          "kid",
+          "nonce",
+          "ciphertext",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 71,
+        "tag_bytes": 16
+      },
+      "request_response_kid_match": true,
+      "winhttp_caller": "0x180333271",
+      "report_builder_frame": {
+        "layout": "msvc_basic_string_char: union@+0x0,size@+0x10,capacity@+0x18",
+        "builder_rbp_from_captured_rsp": "+0x238",
+        "fields": [
+          {
+            "name": "unknown_len_100",
+            "rbp_offset": "0xc0",
+            "stack_offset": "0x2f8",
+            "size": 100,
+            "capacity": 111,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "unknown_len_32",
+            "rbp_offset": "0xe0",
+            "stack_offset": "0x318",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "envelope_json",
+            "rbp_offset": "0x120",
+            "stack_offset": "0x358",
+            "size": 2597,
+            "capacity": 3451,
+            "expected_size": 2597,
+            "size_matches": true,
+            "pointer_matches_send_buffer": true
+          },
+          {
+            "name": "unknown_len_64",
+            "rbp_offset": "0x1a0",
+            "stack_offset": "0x3d8",
+            "size": 64,
+            "capacity": 79,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "kid_hex",
+            "rbp_offset": "0x290",
+            "stack_offset": "0x4c8",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "nonce_hex",
+            "rbp_offset": "0x2b0",
+            "stack_offset": "0x4e8",
+            "size": 24,
+            "capacity": 31,
+            "expected_size": 24,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "ciphertext_hex",
+            "rbp_offset": "0x2d0",
+            "stack_offset": "0x508",
+            "size": 2456,
+            "capacity": 2463,
+            "expected_size": 2456,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "tag_hex",
+            "rbp_offset": "0x2f0",
+            "stack_offset": "0x528",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          }
+        ],
+        "all_protocol_field_lengths_match": true,
+        "envelope_pointer_matches_send_buffer": true,
+        "native_encrypt_boundary": {
+          "call_address": "0x1803cf7e1",
+          "callee": "0x180324610-0x1803261bc",
+          "protected_entry_jump": "0x180324610 -> 0x181523001 (.bugland)",
+          "arguments": {
+            "rcx": "output envelope struct at builder RBP+0x290",
+            "rdx": "32-character std::string at builder RBP+0xe0",
+            "r8": "64-character std::string at builder RBP+0x1a0 (key-material candidate)",
+            "r9": "fresh context/object at builder RBP+0x38",
+            "stack_0x20": "plaintext JSON std::string at builder RBP+0x100"
+          },
+          "plaintext_destructor_call": "0x1803cf7ed -> 0x18031b970",
+          "post_call_output_shape": {
+            "kid_hex_chars": 32,
+            "nonce_hex_chars": 24,
+            "ciphertext_hex_chars": 2456,
+            "tag_hex_chars": 32
+          },
+          "input_objects_at_send_time": {
+            "rbp_plus_e0_size": 32,
+            "rbp_plus_1a0_size": 64,
+            "plaintext_rbp_plus_100_size_after_destructor": 0,
+            "plaintext_rbp_plus_100_retained_capacity": 1726,
+            "plaintext_capacity_covers_ciphertext_bytes": true,
+            "plaintext_union_residual_is_json_schema_fragment": true
+          }
+        }
+      }
+    },
+    {
+      "request_id": "8",
+      "method": "POST",
+      "path": "/api/v3/report",
+      "thread_id": 17352,
+      "request_bytes": 16453,
+      "request_sha256": "6f970fa441ac58fcf061d77f8f854844db2850bc13b50f18d0bd7f238329ac7e",
+      "request_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "ciphertext",
+          "kid",
+          "nonce",
+          "sv",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 8156,
+        "tag_bytes": 16
+      },
+      "response_bytes": 283,
+      "response_sha256": "baa1e38f530abc7ee13bf2cb486d44b945f07b14deb8b5b55421c835756c4af2",
+      "response_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "sv",
+          "kid",
+          "nonce",
+          "ciphertext",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 71,
+        "tag_bytes": 16
+      },
+      "request_response_kid_match": true,
+      "winhttp_caller": "0x180333271",
+      "report_builder_frame": {
+        "layout": "msvc_basic_string_char: union@+0x0,size@+0x10,capacity@+0x18",
+        "builder_rbp_from_captured_rsp": "+0x238",
+        "fields": [
+          {
+            "name": "unknown_len_100",
+            "rbp_offset": "0xc0",
+            "stack_offset": "0x2f8",
+            "size": 100,
+            "capacity": 111,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "unknown_len_32",
+            "rbp_offset": "0xe0",
+            "stack_offset": "0x318",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "envelope_json",
+            "rbp_offset": "0x120",
+            "stack_offset": "0x358",
+            "size": 16453,
+            "capacity": 17469,
+            "expected_size": 16453,
+            "size_matches": true,
+            "pointer_matches_send_buffer": true
+          },
+          {
+            "name": "unknown_len_64",
+            "rbp_offset": "0x1a0",
+            "stack_offset": "0x3d8",
+            "size": 64,
+            "capacity": 79,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "kid_hex",
+            "rbp_offset": "0x290",
+            "stack_offset": "0x4c8",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "nonce_hex",
+            "rbp_offset": "0x2b0",
+            "stack_offset": "0x4e8",
+            "size": 24,
+            "capacity": 31,
+            "expected_size": 24,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "ciphertext_hex",
+            "rbp_offset": "0x2d0",
+            "stack_offset": "0x508",
+            "size": 16312,
+            "capacity": 16319,
+            "expected_size": 16312,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "tag_hex",
+            "rbp_offset": "0x2f0",
+            "stack_offset": "0x528",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          }
+        ],
+        "all_protocol_field_lengths_match": true,
+        "envelope_pointer_matches_send_buffer": true,
+        "native_encrypt_boundary": {
+          "call_address": "0x1803cf7e1",
+          "callee": "0x180324610-0x1803261bc",
+          "protected_entry_jump": "0x180324610 -> 0x181523001 (.bugland)",
+          "arguments": {
+            "rcx": "output envelope struct at builder RBP+0x290",
+            "rdx": "32-character std::string at builder RBP+0xe0",
+            "r8": "64-character std::string at builder RBP+0x1a0 (key-material candidate)",
+            "r9": "fresh context/object at builder RBP+0x38",
+            "stack_0x20": "plaintext JSON std::string at builder RBP+0x100"
+          },
+          "plaintext_destructor_call": "0x1803cf7ed -> 0x18031b970",
+          "post_call_output_shape": {
+            "kid_hex_chars": 32,
+            "nonce_hex_chars": 24,
+            "ciphertext_hex_chars": 16312,
+            "tag_hex_chars": 32
+          },
+          "input_objects_at_send_time": {
+            "rbp_plus_e0_size": 32,
+            "rbp_plus_1a0_size": 64,
+            "plaintext_rbp_plus_100_size_after_destructor": 0,
+            "plaintext_rbp_plus_100_retained_capacity": 9222,
+            "plaintext_capacity_covers_ciphertext_bytes": true,
+            "plaintext_union_residual_is_json_schema_fragment": true
+          }
+        }
+      }
+    },
+    {
+      "request_id": "9",
+      "method": "POST",
+      "path": "/api/v3/report",
+      "thread_id": 17352,
+      "request_bytes": 8133,
+      "request_sha256": "f98d08a91c7ab915c00b925a1dea8c287ce1d9b8af6ad37b3c6093a6f190d2bd",
+      "request_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "ciphertext",
+          "kid",
+          "nonce",
+          "sv",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 3996,
+        "tag_bytes": 16
+      },
+      "response_bytes": 283,
+      "response_sha256": "e5627635c10c4e68ad07a4884073445fe13899547423602adc49a803045c817d",
+      "response_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "sv",
+          "kid",
+          "nonce",
+          "ciphertext",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 71,
+        "tag_bytes": 16
+      },
+      "request_response_kid_match": true,
+      "winhttp_caller": "0x180333271",
+      "report_builder_frame": {
+        "layout": "msvc_basic_string_char: union@+0x0,size@+0x10,capacity@+0x18",
+        "builder_rbp_from_captured_rsp": "+0x238",
+        "fields": [
+          {
+            "name": "unknown_len_100",
+            "rbp_offset": "0xc0",
+            "stack_offset": "0x2f8",
+            "size": 100,
+            "capacity": 111,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "unknown_len_32",
+            "rbp_offset": "0xe0",
+            "stack_offset": "0x318",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "envelope_json",
+            "rbp_offset": "0x120",
+            "stack_offset": "0x358",
+            "size": 8133,
+            "capacity": 11646,
+            "expected_size": 8133,
+            "size_matches": true,
+            "pointer_matches_send_buffer": true
+          },
+          {
+            "name": "unknown_len_64",
+            "rbp_offset": "0x1a0",
+            "stack_offset": "0x3d8",
+            "size": 64,
+            "capacity": 79,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "kid_hex",
+            "rbp_offset": "0x290",
+            "stack_offset": "0x4c8",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "nonce_hex",
+            "rbp_offset": "0x2b0",
+            "stack_offset": "0x4e8",
+            "size": 24,
+            "capacity": 31,
+            "expected_size": 24,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "ciphertext_hex",
+            "rbp_offset": "0x2d0",
+            "stack_offset": "0x508",
+            "size": 7992,
+            "capacity": 7999,
+            "expected_size": 7992,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "tag_hex",
+            "rbp_offset": "0x2f0",
+            "stack_offset": "0x528",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          }
+        ],
+        "all_protocol_field_lengths_match": true,
+        "envelope_pointer_matches_send_buffer": true,
+        "native_encrypt_boundary": {
+          "call_address": "0x1803cf7e1",
+          "callee": "0x180324610-0x1803261bc",
+          "protected_entry_jump": "0x180324610 -> 0x181523001 (.bugland)",
+          "arguments": {
+            "rcx": "output envelope struct at builder RBP+0x290",
+            "rdx": "32-character std::string at builder RBP+0xe0",
+            "r8": "64-character std::string at builder RBP+0x1a0 (key-material candidate)",
+            "r9": "fresh context/object at builder RBP+0x38",
+            "stack_0x20": "plaintext JSON std::string at builder RBP+0x100"
+          },
+          "plaintext_destructor_call": "0x1803cf7ed -> 0x18031b970",
+          "post_call_output_shape": {
+            "kid_hex_chars": 32,
+            "nonce_hex_chars": 24,
+            "ciphertext_hex_chars": 7992,
+            "tag_hex_chars": 32
+          },
+          "input_objects_at_send_time": {
+            "rbp_plus_e0_size": 32,
+            "rbp_plus_1a0_size": 64,
+            "plaintext_rbp_plus_100_size_after_destructor": 0,
+            "plaintext_rbp_plus_100_retained_capacity": 4099,
+            "plaintext_capacity_covers_ciphertext_bytes": true,
+            "plaintext_union_residual_is_json_schema_fragment": true
+          }
+        }
+      }
+    },
+    {
+      "request_id": "10",
+      "method": "POST",
+      "path": "/api/v3/report",
+      "thread_id": 17352,
+      "request_bytes": 2765,
+      "request_sha256": "2efbe392a91febd75018e5350da872a5285dcb6193dc387c00dcf742b82e215d",
+      "request_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "ciphertext",
+          "kid",
+          "nonce",
+          "sv",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 1312,
+        "tag_bytes": 16
+      },
+      "response_bytes": 283,
+      "response_sha256": "31c5a3736459acb2b46f2c68a4460716d6ef23335b090bee5ee377500dbf2168",
+      "response_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "sv",
+          "kid",
+          "nonce",
+          "ciphertext",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 71,
+        "tag_bytes": 16
+      },
+      "request_response_kid_match": true,
+      "winhttp_caller": "0x180333271",
+      "report_builder_frame": {
+        "layout": "msvc_basic_string_char: union@+0x0,size@+0x10,capacity@+0x18",
+        "builder_rbp_from_captured_rsp": "+0x238",
+        "fields": [
+          {
+            "name": "unknown_len_100",
+            "rbp_offset": "0xc0",
+            "stack_offset": "0x2f8",
+            "size": 100,
+            "capacity": 111,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "unknown_len_32",
+            "rbp_offset": "0xe0",
+            "stack_offset": "0x318",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "envelope_json",
+            "rbp_offset": "0x120",
+            "stack_offset": "0x358",
+            "size": 2765,
+            "capacity": 3451,
+            "expected_size": 2765,
+            "size_matches": true,
+            "pointer_matches_send_buffer": true
+          },
+          {
+            "name": "unknown_len_64",
+            "rbp_offset": "0x1a0",
+            "stack_offset": "0x3d8",
+            "size": 64,
+            "capacity": 79,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "kid_hex",
+            "rbp_offset": "0x290",
+            "stack_offset": "0x4c8",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "nonce_hex",
+            "rbp_offset": "0x2b0",
+            "stack_offset": "0x4e8",
+            "size": 24,
+            "capacity": 31,
+            "expected_size": 24,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "ciphertext_hex",
+            "rbp_offset": "0x2d0",
+            "stack_offset": "0x508",
+            "size": 2624,
+            "capacity": 2639,
+            "expected_size": 2624,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "tag_hex",
+            "rbp_offset": "0x2f0",
+            "stack_offset": "0x528",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          }
+        ],
+        "all_protocol_field_lengths_match": true,
+        "envelope_pointer_matches_send_buffer": true,
+        "native_encrypt_boundary": {
+          "call_address": "0x1803cf7e1",
+          "callee": "0x180324610-0x1803261bc",
+          "protected_entry_jump": "0x180324610 -> 0x181523001 (.bugland)",
+          "arguments": {
+            "rcx": "output envelope struct at builder RBP+0x290",
+            "rdx": "32-character std::string at builder RBP+0xe0",
+            "r8": "64-character std::string at builder RBP+0x1a0 (key-material candidate)",
+            "r9": "fresh context/object at builder RBP+0x38",
+            "stack_0x20": "plaintext JSON std::string at builder RBP+0x100"
+          },
+          "plaintext_destructor_call": "0x1803cf7ed -> 0x18031b970",
+          "post_call_output_shape": {
+            "kid_hex_chars": 32,
+            "nonce_hex_chars": 24,
+            "ciphertext_hex_chars": 2624,
+            "tag_hex_chars": 32
+          },
+          "input_objects_at_send_time": {
+            "rbp_plus_e0_size": 32,
+            "rbp_plus_1a0_size": 64,
+            "plaintext_rbp_plus_100_size_after_destructor": 0,
+            "plaintext_rbp_plus_100_retained_capacity": 1822,
+            "plaintext_capacity_covers_ciphertext_bytes": true,
+            "plaintext_union_residual_is_json_schema_fragment": true
+          }
+        }
+      }
+    },
+    {
+      "request_id": "11",
+      "method": "POST",
+      "path": "/api/v3/report",
+      "thread_id": 17352,
+      "request_bytes": 2905,
+      "request_sha256": "9d36d09e4468a0e59a68f45a8789f17c2693aafdcd99eb8734bacdb344fee184",
+      "request_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "ciphertext",
+          "kid",
+          "nonce",
+          "sv",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 1382,
+        "tag_bytes": 16
+      },
+      "response_bytes": 283,
+      "response_sha256": "7b94fdfbfe7284543f39be844028214983c704206074a684985ed08c10021d4c",
+      "response_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "sv",
+          "kid",
+          "nonce",
+          "ciphertext",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 71,
+        "tag_bytes": 16
+      },
+      "request_response_kid_match": true,
+      "winhttp_caller": "0x180333271",
+      "report_builder_frame": {
+        "layout": "msvc_basic_string_char: union@+0x0,size@+0x10,capacity@+0x18",
+        "builder_rbp_from_captured_rsp": "+0x238",
+        "fields": [
+          {
+            "name": "unknown_len_100",
+            "rbp_offset": "0xc0",
+            "stack_offset": "0x2f8",
+            "size": 100,
+            "capacity": 111,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "unknown_len_32",
+            "rbp_offset": "0xe0",
+            "stack_offset": "0x318",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "envelope_json",
+            "rbp_offset": "0x120",
+            "stack_offset": "0x358",
+            "size": 2905,
+            "capacity": 3451,
+            "expected_size": 2905,
+            "size_matches": true,
+            "pointer_matches_send_buffer": true
+          },
+          {
+            "name": "unknown_len_64",
+            "rbp_offset": "0x1a0",
+            "stack_offset": "0x3d8",
+            "size": 64,
+            "capacity": 79,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "kid_hex",
+            "rbp_offset": "0x290",
+            "stack_offset": "0x4c8",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "nonce_hex",
+            "rbp_offset": "0x2b0",
+            "stack_offset": "0x4e8",
+            "size": 24,
+            "capacity": 31,
+            "expected_size": 24,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "ciphertext_hex",
+            "rbp_offset": "0x2d0",
+            "stack_offset": "0x508",
+            "size": 2764,
+            "capacity": 2767,
+            "expected_size": 2764,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "tag_hex",
+            "rbp_offset": "0x2f0",
+            "stack_offset": "0x528",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          }
+        ],
+        "all_protocol_field_lengths_match": true,
+        "envelope_pointer_matches_send_buffer": true,
+        "native_encrypt_boundary": {
+          "call_address": "0x1803cf7e1",
+          "callee": "0x180324610-0x1803261bc",
+          "protected_entry_jump": "0x180324610 -> 0x181523001 (.bugland)",
+          "arguments": {
+            "rcx": "output envelope struct at builder RBP+0x290",
+            "rdx": "32-character std::string at builder RBP+0xe0",
+            "r8": "64-character std::string at builder RBP+0x1a0 (key-material candidate)",
+            "r9": "fresh context/object at builder RBP+0x38",
+            "stack_0x20": "plaintext JSON std::string at builder RBP+0x100"
+          },
+          "plaintext_destructor_call": "0x1803cf7ed -> 0x18031b970",
+          "post_call_output_shape": {
+            "kid_hex_chars": 32,
+            "nonce_hex_chars": 24,
+            "ciphertext_hex_chars": 2764,
+            "tag_hex_chars": 32
+          },
+          "input_objects_at_send_time": {
+            "rbp_plus_e0_size": 32,
+            "rbp_plus_1a0_size": 64,
+            "plaintext_rbp_plus_100_size_after_destructor": 0,
+            "plaintext_rbp_plus_100_retained_capacity": 1822,
+            "plaintext_capacity_covers_ciphertext_bytes": true,
+            "plaintext_union_residual_is_json_schema_fragment": true
+          }
+        }
+      }
+    },
+    {
+      "request_id": "12",
+      "method": "POST",
+      "path": "/api/v3/report",
+      "thread_id": 17352,
+      "request_bytes": 2199,
+      "request_sha256": "a60101ddd94a0529349f5a7a8224cc93ab6b495af6aef083c311ca911f47650d",
+      "request_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "ciphertext",
+          "kid",
+          "nonce",
+          "sv",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 1029,
+        "tag_bytes": 16
+      },
+      "response_bytes": 285,
+      "response_sha256": "68ead933b37b38d6c6acc42d1daaa356535fe9071ff29898dd6c4e852c0ada1f",
+      "response_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "sv",
+          "kid",
+          "nonce",
+          "ciphertext",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 72,
+        "tag_bytes": 16
+      },
+      "request_response_kid_match": true,
+      "winhttp_caller": "0x180333271",
+      "report_builder_frame": {
+        "layout": "msvc_basic_string_char: union@+0x0,size@+0x10,capacity@+0x18",
+        "builder_rbp_from_captured_rsp": "+0x238",
+        "fields": [
+          {
+            "name": "unknown_len_100",
+            "rbp_offset": "0xc0",
+            "stack_offset": "0x2f8",
+            "size": 100,
+            "capacity": 111,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "unknown_len_32",
+            "rbp_offset": "0xe0",
+            "stack_offset": "0x318",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "envelope_json",
+            "rbp_offset": "0x120",
+            "stack_offset": "0x358",
+            "size": 2199,
+            "capacity": 2301,
+            "expected_size": 2199,
+            "size_matches": true,
+            "pointer_matches_send_buffer": true
+          },
+          {
+            "name": "unknown_len_64",
+            "rbp_offset": "0x1a0",
+            "stack_offset": "0x3d8",
+            "size": 64,
+            "capacity": 79,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "kid_hex",
+            "rbp_offset": "0x290",
+            "stack_offset": "0x4c8",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "nonce_hex",
+            "rbp_offset": "0x2b0",
+            "stack_offset": "0x4e8",
+            "size": 24,
+            "capacity": 31,
+            "expected_size": 24,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "ciphertext_hex",
+            "rbp_offset": "0x2d0",
+            "stack_offset": "0x508",
+            "size": 2058,
+            "capacity": 2063,
+            "expected_size": 2058,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "tag_hex",
+            "rbp_offset": "0x2f0",
+            "stack_offset": "0x528",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          }
+        ],
+        "all_protocol_field_lengths_match": true,
+        "envelope_pointer_matches_send_buffer": true,
+        "native_encrypt_boundary": {
+          "call_address": "0x1803cf7e1",
+          "callee": "0x180324610-0x1803261bc",
+          "protected_entry_jump": "0x180324610 -> 0x181523001 (.bugland)",
+          "arguments": {
+            "rcx": "output envelope struct at builder RBP+0x290",
+            "rdx": "32-character std::string at builder RBP+0xe0",
+            "r8": "64-character std::string at builder RBP+0x1a0 (key-material candidate)",
+            "r9": "fresh context/object at builder RBP+0x38",
+            "stack_0x20": "plaintext JSON std::string at builder RBP+0x100"
+          },
+          "plaintext_destructor_call": "0x1803cf7ed -> 0x18031b970",
+          "post_call_output_shape": {
+            "kid_hex_chars": 32,
+            "nonce_hex_chars": 24,
+            "ciphertext_hex_chars": 2058,
+            "tag_hex_chars": 32
+          },
+          "input_objects_at_send_time": {
+            "rbp_plus_e0_size": 32,
+            "rbp_plus_1a0_size": 64,
+            "plaintext_rbp_plus_100_size_after_destructor": 0,
+            "plaintext_rbp_plus_100_retained_capacity": 1078,
+            "plaintext_capacity_covers_ciphertext_bytes": true,
+            "plaintext_union_residual_is_json_schema_fragment": true
+          }
+        }
+      }
+    },
+    {
+      "request_id": "13",
+      "method": "POST",
+      "path": "/api/v3/report",
+      "thread_id": 17352,
+      "request_bytes": 2843,
+      "request_sha256": "44e5ead03ea6ceb578f001c2129f5c8f65f2ad8e688b32422d24d03c167fc33b",
+      "request_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "ciphertext",
+          "kid",
+          "nonce",
+          "sv",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 1351,
+        "tag_bytes": 16
+      },
+      "response_bytes": 285,
+      "response_sha256": "42eba52ff6f4741ea1416ea85f96cd71d4957011a08362a01bb123b2c1e5adf9",
+      "response_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "sv",
+          "kid",
+          "nonce",
+          "ciphertext",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 72,
+        "tag_bytes": 16
+      },
+      "request_response_kid_match": true,
+      "winhttp_caller": "0x180333271",
+      "report_builder_frame": {
+        "layout": "msvc_basic_string_char: union@+0x0,size@+0x10,capacity@+0x18",
+        "builder_rbp_from_captured_rsp": "+0x238",
+        "fields": [
+          {
+            "name": "unknown_len_100",
+            "rbp_offset": "0xc0",
+            "stack_offset": "0x2f8",
+            "size": 100,
+            "capacity": 111,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "unknown_len_32",
+            "rbp_offset": "0xe0",
+            "stack_offset": "0x318",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "envelope_json",
+            "rbp_offset": "0x120",
+            "stack_offset": "0x358",
+            "size": 2843,
+            "capacity": 3451,
+            "expected_size": 2843,
+            "size_matches": true,
+            "pointer_matches_send_buffer": true
+          },
+          {
+            "name": "unknown_len_64",
+            "rbp_offset": "0x1a0",
+            "stack_offset": "0x3d8",
+            "size": 64,
+            "capacity": 79,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "kid_hex",
+            "rbp_offset": "0x290",
+            "stack_offset": "0x4c8",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "nonce_hex",
+            "rbp_offset": "0x2b0",
+            "stack_offset": "0x4e8",
+            "size": 24,
+            "capacity": 31,
+            "expected_size": 24,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "ciphertext_hex",
+            "rbp_offset": "0x2d0",
+            "stack_offset": "0x508",
+            "size": 2702,
+            "capacity": 2703,
+            "expected_size": 2702,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "tag_hex",
+            "rbp_offset": "0x2f0",
+            "stack_offset": "0x528",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          }
+        ],
+        "all_protocol_field_lengths_match": true,
+        "envelope_pointer_matches_send_buffer": true,
+        "native_encrypt_boundary": {
+          "call_address": "0x1803cf7e1",
+          "callee": "0x180324610-0x1803261bc",
+          "protected_entry_jump": "0x180324610 -> 0x181523001 (.bugland)",
+          "arguments": {
+            "rcx": "output envelope struct at builder RBP+0x290",
+            "rdx": "32-character std::string at builder RBP+0xe0",
+            "r8": "64-character std::string at builder RBP+0x1a0 (key-material candidate)",
+            "r9": "fresh context/object at builder RBP+0x38",
+            "stack_0x20": "plaintext JSON std::string at builder RBP+0x100"
+          },
+          "plaintext_destructor_call": "0x1803cf7ed -> 0x18031b970",
+          "post_call_output_shape": {
+            "kid_hex_chars": 32,
+            "nonce_hex_chars": 24,
+            "ciphertext_hex_chars": 2702,
+            "tag_hex_chars": 32
+          },
+          "input_objects_at_send_time": {
+            "rbp_plus_e0_size": 32,
+            "rbp_plus_1a0_size": 64,
+            "plaintext_rbp_plus_100_size_after_destructor": 0,
+            "plaintext_rbp_plus_100_retained_capacity": 1822,
+            "plaintext_capacity_covers_ciphertext_bytes": true,
+            "plaintext_union_residual_is_json_schema_fragment": true
+          }
+        }
+      }
+    },
+    {
+      "request_id": "14",
+      "method": "POST",
+      "path": "/api/v3/report",
+      "thread_id": 17352,
+      "request_bytes": 2955,
+      "request_sha256": "3a04e53f3589e8f30a6d3f253cf3e7d07995628427018a274c914b7696f11fd5",
+      "request_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "ciphertext",
+          "kid",
+          "nonce",
+          "sv",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 1407,
+        "tag_bytes": 16
+      },
+      "response_bytes": 285,
+      "response_sha256": "fc3b3653d4659ed299bb4a2bfffab8077fc9d1d14fc85ace3cefbf21aaabeedc",
+      "response_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "sv",
+          "kid",
+          "nonce",
+          "ciphertext",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 72,
+        "tag_bytes": 16
+      },
+      "request_response_kid_match": true,
+      "winhttp_caller": "0x180333271",
+      "report_builder_frame": {
+        "layout": "msvc_basic_string_char: union@+0x0,size@+0x10,capacity@+0x18",
+        "builder_rbp_from_captured_rsp": "+0x238",
+        "fields": [
+          {
+            "name": "unknown_len_100",
+            "rbp_offset": "0xc0",
+            "stack_offset": "0x2f8",
+            "size": 100,
+            "capacity": 111,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "unknown_len_32",
+            "rbp_offset": "0xe0",
+            "stack_offset": "0x318",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "envelope_json",
+            "rbp_offset": "0x120",
+            "stack_offset": "0x358",
+            "size": 2955,
+            "capacity": 3451,
+            "expected_size": 2955,
+            "size_matches": true,
+            "pointer_matches_send_buffer": true
+          },
+          {
+            "name": "unknown_len_64",
+            "rbp_offset": "0x1a0",
+            "stack_offset": "0x3d8",
+            "size": 64,
+            "capacity": 79,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "kid_hex",
+            "rbp_offset": "0x290",
+            "stack_offset": "0x4c8",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "nonce_hex",
+            "rbp_offset": "0x2b0",
+            "stack_offset": "0x4e8",
+            "size": 24,
+            "capacity": 31,
+            "expected_size": 24,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "ciphertext_hex",
+            "rbp_offset": "0x2d0",
+            "stack_offset": "0x508",
+            "size": 2814,
+            "capacity": 2815,
+            "expected_size": 2814,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "tag_hex",
+            "rbp_offset": "0x2f0",
+            "stack_offset": "0x528",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          }
+        ],
+        "all_protocol_field_lengths_match": true,
+        "envelope_pointer_matches_send_buffer": true,
+        "native_encrypt_boundary": {
+          "call_address": "0x1803cf7e1",
+          "callee": "0x180324610-0x1803261bc",
+          "protected_entry_jump": "0x180324610 -> 0x181523001 (.bugland)",
+          "arguments": {
+            "rcx": "output envelope struct at builder RBP+0x290",
+            "rdx": "32-character std::string at builder RBP+0xe0",
+            "r8": "64-character std::string at builder RBP+0x1a0 (key-material candidate)",
+            "r9": "fresh context/object at builder RBP+0x38",
+            "stack_0x20": "plaintext JSON std::string at builder RBP+0x100"
+          },
+          "plaintext_destructor_call": "0x1803cf7ed -> 0x18031b970",
+          "post_call_output_shape": {
+            "kid_hex_chars": 32,
+            "nonce_hex_chars": 24,
+            "ciphertext_hex_chars": 2814,
+            "tag_hex_chars": 32
+          },
+          "input_objects_at_send_time": {
+            "rbp_plus_e0_size": 32,
+            "rbp_plus_1a0_size": 64,
+            "plaintext_rbp_plus_100_size_after_destructor": 0,
+            "plaintext_rbp_plus_100_retained_capacity": 1822,
+            "plaintext_capacity_covers_ciphertext_bytes": true,
+            "plaintext_union_residual_is_json_schema_fragment": true
+          }
+        }
+      }
+    },
+    {
+      "request_id": "15",
+      "method": "POST",
+      "path": "/api/v3/report",
+      "thread_id": 17352,
+      "request_bytes": 1763,
+      "request_sha256": "73bf8d4d2611cdaf7c942f167812cacfb021fa70f2d347db36a8aef524fc295c",
+      "request_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "ciphertext",
+          "kid",
+          "nonce",
+          "sv",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 811,
+        "tag_bytes": 16
+      },
+      "response_bytes": 285,
+      "response_sha256": "b22e4ebba6c6bbf30f9c9d56c066dcad8df86374b949cf5c966c4177e60220f8",
+      "response_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "sv",
+          "kid",
+          "nonce",
+          "ciphertext",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 72,
+        "tag_bytes": 16
+      },
+      "request_response_kid_match": true,
+      "winhttp_caller": "0x180333271",
+      "report_builder_frame": {
+        "layout": "msvc_basic_string_char: union@+0x0,size@+0x10,capacity@+0x18",
+        "builder_rbp_from_captured_rsp": "+0x238",
+        "fields": [
+          {
+            "name": "unknown_len_100",
+            "rbp_offset": "0xc0",
+            "stack_offset": "0x2f8",
+            "size": 100,
+            "capacity": 111,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "unknown_len_32",
+            "rbp_offset": "0xe0",
+            "stack_offset": "0x318",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "envelope_json",
+            "rbp_offset": "0x120",
+            "stack_offset": "0x358",
+            "size": 1763,
+            "capacity": 2301,
+            "expected_size": 1763,
+            "size_matches": true,
+            "pointer_matches_send_buffer": true
+          },
+          {
+            "name": "unknown_len_64",
+            "rbp_offset": "0x1a0",
+            "stack_offset": "0x3d8",
+            "size": 64,
+            "capacity": 79,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "kid_hex",
+            "rbp_offset": "0x290",
+            "stack_offset": "0x4c8",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "nonce_hex",
+            "rbp_offset": "0x2b0",
+            "stack_offset": "0x4e8",
+            "size": 24,
+            "capacity": 31,
+            "expected_size": 24,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "ciphertext_hex",
+            "rbp_offset": "0x2d0",
+            "stack_offset": "0x508",
+            "size": 1622,
+            "capacity": 1631,
+            "expected_size": 1622,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "tag_hex",
+            "rbp_offset": "0x2f0",
+            "stack_offset": "0x528",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          }
+        ],
+        "all_protocol_field_lengths_match": true,
+        "envelope_pointer_matches_send_buffer": true,
+        "native_encrypt_boundary": {
+          "call_address": "0x1803cf7e1",
+          "callee": "0x180324610-0x1803261bc",
+          "protected_entry_jump": "0x180324610 -> 0x181523001 (.bugland)",
+          "arguments": {
+            "rcx": "output envelope struct at builder RBP+0x290",
+            "rdx": "32-character std::string at builder RBP+0xe0",
+            "r8": "64-character std::string at builder RBP+0x1a0 (key-material candidate)",
+            "r9": "fresh context/object at builder RBP+0x38",
+            "stack_0x20": "plaintext JSON std::string at builder RBP+0x100"
+          },
+          "plaintext_destructor_call": "0x1803cf7ed -> 0x18031b970",
+          "post_call_output_shape": {
+            "kid_hex_chars": 32,
+            "nonce_hex_chars": 24,
+            "ciphertext_hex_chars": 1622,
+            "tag_hex_chars": 32
+          },
+          "input_objects_at_send_time": {
+            "rbp_plus_e0_size": 32,
+            "rbp_plus_1a0_size": 64,
+            "plaintext_rbp_plus_100_size_after_destructor": 0,
+            "plaintext_rbp_plus_100_retained_capacity": 1078,
+            "plaintext_capacity_covers_ciphertext_bytes": true,
+            "plaintext_union_residual_is_json_schema_fragment": true
+          }
+        }
+      }
+    },
+    {
+      "request_id": "16",
+      "method": "POST",
+      "path": "/api/v3/report",
+      "thread_id": 17352,
+      "request_bytes": 2915,
+      "request_sha256": "f20fe641c381e6b01e875981a3a4c631f0447927aeefadeebf481ebbb6ff7121",
+      "request_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "ciphertext",
+          "kid",
+          "nonce",
+          "sv",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 1387,
+        "tag_bytes": 16
+      },
+      "response_bytes": 285,
+      "response_sha256": "7d40f6917934991b8dd605c572e859cb91037815c24984dcd9e0ee6c0f38b17e",
+      "response_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "sv",
+          "kid",
+          "nonce",
+          "ciphertext",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 72,
+        "tag_bytes": 16
+      },
+      "request_response_kid_match": true,
+      "winhttp_caller": "0x180333271",
+      "report_builder_frame": {
+        "layout": "msvc_basic_string_char: union@+0x0,size@+0x10,capacity@+0x18",
+        "builder_rbp_from_captured_rsp": "+0x238",
+        "fields": [
+          {
+            "name": "unknown_len_100",
+            "rbp_offset": "0xc0",
+            "stack_offset": "0x2f8",
+            "size": 100,
+            "capacity": 111,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "unknown_len_32",
+            "rbp_offset": "0xe0",
+            "stack_offset": "0x318",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "envelope_json",
+            "rbp_offset": "0x120",
+            "stack_offset": "0x358",
+            "size": 2915,
+            "capacity": 3451,
+            "expected_size": 2915,
+            "size_matches": true,
+            "pointer_matches_send_buffer": true
+          },
+          {
+            "name": "unknown_len_64",
+            "rbp_offset": "0x1a0",
+            "stack_offset": "0x3d8",
+            "size": 64,
+            "capacity": 79,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "kid_hex",
+            "rbp_offset": "0x290",
+            "stack_offset": "0x4c8",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "nonce_hex",
+            "rbp_offset": "0x2b0",
+            "stack_offset": "0x4e8",
+            "size": 24,
+            "capacity": 31,
+            "expected_size": 24,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "ciphertext_hex",
+            "rbp_offset": "0x2d0",
+            "stack_offset": "0x508",
+            "size": 2774,
+            "capacity": 2783,
+            "expected_size": 2774,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "tag_hex",
+            "rbp_offset": "0x2f0",
+            "stack_offset": "0x528",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          }
+        ],
+        "all_protocol_field_lengths_match": true,
+        "envelope_pointer_matches_send_buffer": true,
+        "native_encrypt_boundary": {
+          "call_address": "0x1803cf7e1",
+          "callee": "0x180324610-0x1803261bc",
+          "protected_entry_jump": "0x180324610 -> 0x181523001 (.bugland)",
+          "arguments": {
+            "rcx": "output envelope struct at builder RBP+0x290",
+            "rdx": "32-character std::string at builder RBP+0xe0",
+            "r8": "64-character std::string at builder RBP+0x1a0 (key-material candidate)",
+            "r9": "fresh context/object at builder RBP+0x38",
+            "stack_0x20": "plaintext JSON std::string at builder RBP+0x100"
+          },
+          "plaintext_destructor_call": "0x1803cf7ed -> 0x18031b970",
+          "post_call_output_shape": {
+            "kid_hex_chars": 32,
+            "nonce_hex_chars": 24,
+            "ciphertext_hex_chars": 2774,
+            "tag_hex_chars": 32
+          },
+          "input_objects_at_send_time": {
+            "rbp_plus_e0_size": 32,
+            "rbp_plus_1a0_size": 64,
+            "plaintext_rbp_plus_100_size_after_destructor": 0,
+            "plaintext_rbp_plus_100_retained_capacity": 1822,
+            "plaintext_capacity_covers_ciphertext_bytes": true,
+            "plaintext_union_residual_is_json_schema_fragment": true
+          }
+        }
+      }
+    },
+    {
+      "request_id": "17",
+      "method": "POST",
+      "path": "/api/v3/report",
+      "thread_id": 17352,
+      "request_bytes": 1735,
+      "request_sha256": "16d32cb7a63fc1a489d3f1618d255064a4b4c1c7984d4cf941b6e80bc24ea4d5",
+      "request_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "ciphertext",
+          "kid",
+          "nonce",
+          "sv",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 797,
+        "tag_bytes": 16
+      },
+      "response_bytes": 285,
+      "response_sha256": "055ef7b7fa0521f6954b916fca6f01128d3981c047155712a833c7c79dc272d2",
+      "response_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "sv",
+          "kid",
+          "nonce",
+          "ciphertext",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 72,
+        "tag_bytes": 16
+      },
+      "request_response_kid_match": true,
+      "winhttp_caller": "0x180333271",
+      "report_builder_frame": {
+        "layout": "msvc_basic_string_char: union@+0x0,size@+0x10,capacity@+0x18",
+        "builder_rbp_from_captured_rsp": "+0x238",
+        "fields": [
+          {
+            "name": "unknown_len_100",
+            "rbp_offset": "0xc0",
+            "stack_offset": "0x2f8",
+            "size": 100,
+            "capacity": 111,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "unknown_len_32",
+            "rbp_offset": "0xe0",
+            "stack_offset": "0x318",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "envelope_json",
+            "rbp_offset": "0x120",
+            "stack_offset": "0x358",
+            "size": 1735,
+            "capacity": 2301,
+            "expected_size": 1735,
+            "size_matches": true,
+            "pointer_matches_send_buffer": true
+          },
+          {
+            "name": "unknown_len_64",
+            "rbp_offset": "0x1a0",
+            "stack_offset": "0x3d8",
+            "size": 64,
+            "capacity": 79,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "kid_hex",
+            "rbp_offset": "0x290",
+            "stack_offset": "0x4c8",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "nonce_hex",
+            "rbp_offset": "0x2b0",
+            "stack_offset": "0x4e8",
+            "size": 24,
+            "capacity": 31,
+            "expected_size": 24,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "ciphertext_hex",
+            "rbp_offset": "0x2d0",
+            "stack_offset": "0x508",
+            "size": 1594,
+            "capacity": 1599,
+            "expected_size": 1594,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "tag_hex",
+            "rbp_offset": "0x2f0",
+            "stack_offset": "0x528",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          }
+        ],
+        "all_protocol_field_lengths_match": true,
+        "envelope_pointer_matches_send_buffer": true,
+        "native_encrypt_boundary": {
+          "call_address": "0x1803cf7e1",
+          "callee": "0x180324610-0x1803261bc",
+          "protected_entry_jump": "0x180324610 -> 0x181523001 (.bugland)",
+          "arguments": {
+            "rcx": "output envelope struct at builder RBP+0x290",
+            "rdx": "32-character std::string at builder RBP+0xe0",
+            "r8": "64-character std::string at builder RBP+0x1a0 (key-material candidate)",
+            "r9": "fresh context/object at builder RBP+0x38",
+            "stack_0x20": "plaintext JSON std::string at builder RBP+0x100"
+          },
+          "plaintext_destructor_call": "0x1803cf7ed -> 0x18031b970",
+          "post_call_output_shape": {
+            "kid_hex_chars": 32,
+            "nonce_hex_chars": 24,
+            "ciphertext_hex_chars": 1594,
+            "tag_hex_chars": 32
+          },
+          "input_objects_at_send_time": {
+            "rbp_plus_e0_size": 32,
+            "rbp_plus_1a0_size": 64,
+            "plaintext_rbp_plus_100_size_after_destructor": 0,
+            "plaintext_rbp_plus_100_retained_capacity": 1078,
+            "plaintext_capacity_covers_ciphertext_bytes": true,
+            "plaintext_union_residual_is_json_schema_fragment": true
+          }
+        }
+      }
+    },
+    {
+      "request_id": "18",
+      "method": "POST",
+      "path": "/api/v3/report",
+      "thread_id": 17352,
+      "request_bytes": 1507,
+      "request_sha256": "13a8f9372ec4273df4a5514d61b4e56acde54bfd975bd4ef06eed682b65e051f",
+      "request_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "ciphertext",
+          "kid",
+          "nonce",
+          "sv",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 683,
+        "tag_bytes": 16
+      },
+      "response_bytes": 285,
+      "response_sha256": "3d5c4b5e8cb28e19cbe815b4fa8bb5a2a5fda34b9aa0cdff5b0a2e0da07e0079",
+      "response_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "sv",
+          "kid",
+          "nonce",
+          "ciphertext",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 72,
+        "tag_bytes": 16
+      },
+      "request_response_kid_match": true,
+      "winhttp_caller": "0x180333271",
+      "report_builder_frame": {
+        "layout": "msvc_basic_string_char: union@+0x0,size@+0x10,capacity@+0x18",
+        "builder_rbp_from_captured_rsp": "+0x238",
+        "fields": [
+          {
+            "name": "unknown_len_100",
+            "rbp_offset": "0xc0",
+            "stack_offset": "0x2f8",
+            "size": 100,
+            "capacity": 111,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "unknown_len_32",
+            "rbp_offset": "0xe0",
+            "stack_offset": "0x318",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "envelope_json",
+            "rbp_offset": "0x120",
+            "stack_offset": "0x358",
+            "size": 1507,
+            "capacity": 1534,
+            "expected_size": 1507,
+            "size_matches": true,
+            "pointer_matches_send_buffer": true
+          },
+          {
+            "name": "unknown_len_64",
+            "rbp_offset": "0x1a0",
+            "stack_offset": "0x3d8",
+            "size": 64,
+            "capacity": 79,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "kid_hex",
+            "rbp_offset": "0x290",
+            "stack_offset": "0x4c8",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "nonce_hex",
+            "rbp_offset": "0x2b0",
+            "stack_offset": "0x4e8",
+            "size": 24,
+            "capacity": 31,
+            "expected_size": 24,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "ciphertext_hex",
+            "rbp_offset": "0x2d0",
+            "stack_offset": "0x508",
+            "size": 1366,
+            "capacity": 1375,
+            "expected_size": 1366,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "tag_hex",
+            "rbp_offset": "0x2f0",
+            "stack_offset": "0x528",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          }
+        ],
+        "all_protocol_field_lengths_match": true,
+        "envelope_pointer_matches_send_buffer": true,
+        "native_encrypt_boundary": {
+          "call_address": "0x1803cf7e1",
+          "callee": "0x180324610-0x1803261bc",
+          "protected_entry_jump": "0x180324610 -> 0x181523001 (.bugland)",
+          "arguments": {
+            "rcx": "output envelope struct at builder RBP+0x290",
+            "rdx": "32-character std::string at builder RBP+0xe0",
+            "r8": "64-character std::string at builder RBP+0x1a0 (key-material candidate)",
+            "r9": "fresh context/object at builder RBP+0x38",
+            "stack_0x20": "plaintext JSON std::string at builder RBP+0x100"
+          },
+          "plaintext_destructor_call": "0x1803cf7ed -> 0x18031b970",
+          "post_call_output_shape": {
+            "kid_hex_chars": 32,
+            "nonce_hex_chars": 24,
+            "ciphertext_hex_chars": 1366,
+            "tag_hex_chars": 32
+          },
+          "input_objects_at_send_time": {
+            "rbp_plus_e0_size": 32,
+            "rbp_plus_1a0_size": 64,
+            "plaintext_rbp_plus_100_size_after_destructor": 0,
+            "plaintext_rbp_plus_100_retained_capacity": 886,
+            "plaintext_capacity_covers_ciphertext_bytes": true,
+            "plaintext_union_residual_is_json_schema_fragment": true
+          }
+        }
+      }
+    },
+    {
+      "request_id": "19",
+      "method": "POST",
+      "path": "/api/v3/report",
+      "thread_id": 17352,
+      "request_bytes": 2839,
+      "request_sha256": "2235143bc32672bda1143122d53c510a902e83b4abf91cfdcdf535399da004b2",
+      "request_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "ciphertext",
+          "kid",
+          "nonce",
+          "sv",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 1349,
+        "tag_bytes": 16
+      },
+      "response_bytes": 285,
+      "response_sha256": "21b9435bf89ecba98fcc99b13e6220ddd7daf04bc47ef54a03a7f43cfd76ce17",
+      "response_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "sv",
+          "kid",
+          "nonce",
+          "ciphertext",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 72,
+        "tag_bytes": 16
+      },
+      "request_response_kid_match": true,
+      "winhttp_caller": "0x180333271",
+      "report_builder_frame": {
+        "layout": "msvc_basic_string_char: union@+0x0,size@+0x10,capacity@+0x18",
+        "builder_rbp_from_captured_rsp": "+0x238",
+        "fields": [
+          {
+            "name": "unknown_len_100",
+            "rbp_offset": "0xc0",
+            "stack_offset": "0x2f8",
+            "size": 100,
+            "capacity": 111,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "unknown_len_32",
+            "rbp_offset": "0xe0",
+            "stack_offset": "0x318",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "envelope_json",
+            "rbp_offset": "0x120",
+            "stack_offset": "0x358",
+            "size": 2839,
+            "capacity": 3451,
+            "expected_size": 2839,
+            "size_matches": true,
+            "pointer_matches_send_buffer": true
+          },
+          {
+            "name": "unknown_len_64",
+            "rbp_offset": "0x1a0",
+            "stack_offset": "0x3d8",
+            "size": 64,
+            "capacity": 79,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "kid_hex",
+            "rbp_offset": "0x290",
+            "stack_offset": "0x4c8",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "nonce_hex",
+            "rbp_offset": "0x2b0",
+            "stack_offset": "0x4e8",
+            "size": 24,
+            "capacity": 31,
+            "expected_size": 24,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "ciphertext_hex",
+            "rbp_offset": "0x2d0",
+            "stack_offset": "0x508",
+            "size": 2698,
+            "capacity": 2703,
+            "expected_size": 2698,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "tag_hex",
+            "rbp_offset": "0x2f0",
+            "stack_offset": "0x528",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          }
+        ],
+        "all_protocol_field_lengths_match": true,
+        "envelope_pointer_matches_send_buffer": true,
+        "native_encrypt_boundary": {
+          "call_address": "0x1803cf7e1",
+          "callee": "0x180324610-0x1803261bc",
+          "protected_entry_jump": "0x180324610 -> 0x181523001 (.bugland)",
+          "arguments": {
+            "rcx": "output envelope struct at builder RBP+0x290",
+            "rdx": "32-character std::string at builder RBP+0xe0",
+            "r8": "64-character std::string at builder RBP+0x1a0 (key-material candidate)",
+            "r9": "fresh context/object at builder RBP+0x38",
+            "stack_0x20": "plaintext JSON std::string at builder RBP+0x100"
+          },
+          "plaintext_destructor_call": "0x1803cf7ed -> 0x18031b970",
+          "post_call_output_shape": {
+            "kid_hex_chars": 32,
+            "nonce_hex_chars": 24,
+            "ciphertext_hex_chars": 2698,
+            "tag_hex_chars": 32
+          },
+          "input_objects_at_send_time": {
+            "rbp_plus_e0_size": 32,
+            "rbp_plus_1a0_size": 64,
+            "plaintext_rbp_plus_100_size_after_destructor": 0,
+            "plaintext_rbp_plus_100_retained_capacity": 1822,
+            "plaintext_capacity_covers_ciphertext_bytes": true,
+            "plaintext_union_residual_is_json_schema_fragment": true
+          }
+        }
+      }
+    },
+    {
+      "request_id": "20",
+      "method": "POST",
+      "path": "/api/v3/report",
+      "thread_id": 17352,
+      "request_bytes": 2759,
+      "request_sha256": "c6eade2886ce9033b7bba226f9fc18b5e2cc77773f245c3e35a1eb2f9b6480fe",
+      "request_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "ciphertext",
+          "kid",
+          "nonce",
+          "sv",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 1309,
+        "tag_bytes": 16
+      },
+      "response_bytes": 285,
+      "response_sha256": "a65903a505b2d3933c2fdf2752c2d90390b03e9067858aadba89e0da1e49b3bf",
+      "response_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "sv",
+          "kid",
+          "nonce",
+          "ciphertext",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 72,
+        "tag_bytes": 16
+      },
+      "request_response_kid_match": true,
+      "winhttp_caller": "0x180333271",
+      "report_builder_frame": {
+        "layout": "msvc_basic_string_char: union@+0x0,size@+0x10,capacity@+0x18",
+        "builder_rbp_from_captured_rsp": "+0x238",
+        "fields": [
+          {
+            "name": "unknown_len_100",
+            "rbp_offset": "0xc0",
+            "stack_offset": "0x2f8",
+            "size": 100,
+            "capacity": 111,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "unknown_len_32",
+            "rbp_offset": "0xe0",
+            "stack_offset": "0x318",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "envelope_json",
+            "rbp_offset": "0x120",
+            "stack_offset": "0x358",
+            "size": 2759,
+            "capacity": 3451,
+            "expected_size": 2759,
+            "size_matches": true,
+            "pointer_matches_send_buffer": true
+          },
+          {
+            "name": "unknown_len_64",
+            "rbp_offset": "0x1a0",
+            "stack_offset": "0x3d8",
+            "size": 64,
+            "capacity": 79,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "kid_hex",
+            "rbp_offset": "0x290",
+            "stack_offset": "0x4c8",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "nonce_hex",
+            "rbp_offset": "0x2b0",
+            "stack_offset": "0x4e8",
+            "size": 24,
+            "capacity": 31,
+            "expected_size": 24,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "ciphertext_hex",
+            "rbp_offset": "0x2d0",
+            "stack_offset": "0x508",
+            "size": 2618,
+            "capacity": 2623,
+            "expected_size": 2618,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "tag_hex",
+            "rbp_offset": "0x2f0",
+            "stack_offset": "0x528",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          }
+        ],
+        "all_protocol_field_lengths_match": true,
+        "envelope_pointer_matches_send_buffer": true,
+        "native_encrypt_boundary": {
+          "call_address": "0x1803cf7e1",
+          "callee": "0x180324610-0x1803261bc",
+          "protected_entry_jump": "0x180324610 -> 0x181523001 (.bugland)",
+          "arguments": {
+            "rcx": "output envelope struct at builder RBP+0x290",
+            "rdx": "32-character std::string at builder RBP+0xe0",
+            "r8": "64-character std::string at builder RBP+0x1a0 (key-material candidate)",
+            "r9": "fresh context/object at builder RBP+0x38",
+            "stack_0x20": "plaintext JSON std::string at builder RBP+0x100"
+          },
+          "plaintext_destructor_call": "0x1803cf7ed -> 0x18031b970",
+          "post_call_output_shape": {
+            "kid_hex_chars": 32,
+            "nonce_hex_chars": 24,
+            "ciphertext_hex_chars": 2618,
+            "tag_hex_chars": 32
+          },
+          "input_objects_at_send_time": {
+            "rbp_plus_e0_size": 32,
+            "rbp_plus_1a0_size": 64,
+            "plaintext_rbp_plus_100_size_after_destructor": 0,
+            "plaintext_rbp_plus_100_retained_capacity": 1822,
+            "plaintext_capacity_covers_ciphertext_bytes": true,
+            "plaintext_union_residual_is_json_schema_fragment": true
+          }
+        }
+      }
+    },
+    {
+      "request_id": "21",
+      "method": "POST",
+      "path": "/api/v3/report",
+      "thread_id": 17352,
+      "request_bytes": 2387,
+      "request_sha256": "f8f5c78b3ec5ace204dc4b5a5fda164ae58f600136f099c41b69282d73a7eb0d",
+      "request_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "ciphertext",
+          "kid",
+          "nonce",
+          "sv",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 1123,
+        "tag_bytes": 16
+      },
+      "response_bytes": 285,
+      "response_sha256": "5afa685e113361b88a695b37d89226799a765a89d0b53fb1c0049833aac4cf4c",
+      "response_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "sv",
+          "kid",
+          "nonce",
+          "ciphertext",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 72,
+        "tag_bytes": 16
+      },
+      "request_response_kid_match": true,
+      "winhttp_caller": "0x180333271",
+      "report_builder_frame": {
+        "layout": "msvc_basic_string_char: union@+0x0,size@+0x10,capacity@+0x18",
+        "builder_rbp_from_captured_rsp": "+0x238",
+        "fields": [
+          {
+            "name": "unknown_len_100",
+            "rbp_offset": "0xc0",
+            "stack_offset": "0x2f8",
+            "size": 100,
+            "capacity": 111,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "unknown_len_32",
+            "rbp_offset": "0xe0",
+            "stack_offset": "0x318",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "envelope_json",
+            "rbp_offset": "0x120",
+            "stack_offset": "0x358",
+            "size": 2387,
+            "capacity": 3451,
+            "expected_size": 2387,
+            "size_matches": true,
+            "pointer_matches_send_buffer": true
+          },
+          {
+            "name": "unknown_len_64",
+            "rbp_offset": "0x1a0",
+            "stack_offset": "0x3d8",
+            "size": 64,
+            "capacity": 79,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "kid_hex",
+            "rbp_offset": "0x290",
+            "stack_offset": "0x4c8",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "nonce_hex",
+            "rbp_offset": "0x2b0",
+            "stack_offset": "0x4e8",
+            "size": 24,
+            "capacity": 31,
+            "expected_size": 24,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "ciphertext_hex",
+            "rbp_offset": "0x2d0",
+            "stack_offset": "0x508",
+            "size": 2246,
+            "capacity": 2255,
+            "expected_size": 2246,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "tag_hex",
+            "rbp_offset": "0x2f0",
+            "stack_offset": "0x528",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          }
+        ],
+        "all_protocol_field_lengths_match": true,
+        "envelope_pointer_matches_send_buffer": true,
+        "native_encrypt_boundary": {
+          "call_address": "0x1803cf7e1",
+          "callee": "0x180324610-0x1803261bc",
+          "protected_entry_jump": "0x180324610 -> 0x181523001 (.bugland)",
+          "arguments": {
+            "rcx": "output envelope struct at builder RBP+0x290",
+            "rdx": "32-character std::string at builder RBP+0xe0",
+            "r8": "64-character std::string at builder RBP+0x1a0 (key-material candidate)",
+            "r9": "fresh context/object at builder RBP+0x38",
+            "stack_0x20": "plaintext JSON std::string at builder RBP+0x100"
+          },
+          "plaintext_destructor_call": "0x1803cf7ed -> 0x18031b970",
+          "post_call_output_shape": {
+            "kid_hex_chars": 32,
+            "nonce_hex_chars": 24,
+            "ciphertext_hex_chars": 2246,
+            "tag_hex_chars": 32
+          },
+          "input_objects_at_send_time": {
+            "rbp_plus_e0_size": 32,
+            "rbp_plus_1a0_size": 64,
+            "plaintext_rbp_plus_100_size_after_destructor": 0,
+            "plaintext_rbp_plus_100_retained_capacity": 1617,
+            "plaintext_capacity_covers_ciphertext_bytes": true,
+            "plaintext_union_residual_is_json_schema_fragment": true
+          }
+        }
+      }
+    },
+    {
+      "request_id": "22",
+      "method": "POST",
+      "path": "/api/v3/report",
+      "thread_id": 17352,
+      "request_bytes": 2339,
+      "request_sha256": "161697dd1482b172306567d2d23717d0d9da7b7d57e677fe5277121a63e2b8c6",
+      "request_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "ciphertext",
+          "kid",
+          "nonce",
+          "sv",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 1099,
+        "tag_bytes": 16
+      },
+      "response_bytes": 285,
+      "response_sha256": "5bf089e83e97c03d9a89f6cef0ec842e1b8998f49761f607bab3f8e81304502e",
+      "response_envelope": {
+        "valid": true,
+        "serialized_member_order": [
+          "sv",
+          "kid",
+          "nonce",
+          "ciphertext",
+          "tag"
+        ],
+        "sv": 3,
+        "kid_fingerprint_sha256": "906afdaa312127a16a1b00b1d7f486fde2db647d0b9d9f842e0857f6bea72698",
+        "nonce_bytes": 12,
+        "ciphertext_bytes": 72,
+        "tag_bytes": 16
+      },
+      "request_response_kid_match": true,
+      "winhttp_caller": "0x180333271",
+      "report_builder_frame": {
+        "layout": "msvc_basic_string_char: union@+0x0,size@+0x10,capacity@+0x18",
+        "builder_rbp_from_captured_rsp": "+0x238",
+        "fields": [
+          {
+            "name": "unknown_len_100",
+            "rbp_offset": "0xc0",
+            "stack_offset": "0x2f8",
+            "size": 100,
+            "capacity": 111,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "unknown_len_32",
+            "rbp_offset": "0xe0",
+            "stack_offset": "0x318",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "envelope_json",
+            "rbp_offset": "0x120",
+            "stack_offset": "0x358",
+            "size": 2339,
+            "capacity": 3451,
+            "expected_size": 2339,
+            "size_matches": true,
+            "pointer_matches_send_buffer": true
+          },
+          {
+            "name": "unknown_len_64",
+            "rbp_offset": "0x1a0",
+            "stack_offset": "0x3d8",
+            "size": 64,
+            "capacity": 79,
+            "expected_size": null,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "kid_hex",
+            "rbp_offset": "0x290",
+            "stack_offset": "0x4c8",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "nonce_hex",
+            "rbp_offset": "0x2b0",
+            "stack_offset": "0x4e8",
+            "size": 24,
+            "capacity": 31,
+            "expected_size": 24,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "ciphertext_hex",
+            "rbp_offset": "0x2d0",
+            "stack_offset": "0x508",
+            "size": 2198,
+            "capacity": 2207,
+            "expected_size": 2198,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          },
+          {
+            "name": "tag_hex",
+            "rbp_offset": "0x2f0",
+            "stack_offset": "0x528",
+            "size": 32,
+            "capacity": 47,
+            "expected_size": 32,
+            "size_matches": true,
+            "pointer_matches_send_buffer": false
+          }
+        ],
+        "all_protocol_field_lengths_match": true,
+        "envelope_pointer_matches_send_buffer": true,
+        "native_encrypt_boundary": {
+          "call_address": "0x1803cf7e1",
+          "callee": "0x180324610-0x1803261bc",
+          "protected_entry_jump": "0x180324610 -> 0x181523001 (.bugland)",
+          "arguments": {
+            "rcx": "output envelope struct at builder RBP+0x290",
+            "rdx": "32-character std::string at builder RBP+0xe0",
+            "r8": "64-character std::string at builder RBP+0x1a0 (key-material candidate)",
+            "r9": "fresh context/object at builder RBP+0x38",
+            "stack_0x20": "plaintext JSON std::string at builder RBP+0x100"
+          },
+          "plaintext_destructor_call": "0x1803cf7ed -> 0x18031b970",
+          "post_call_output_shape": {
+            "kid_hex_chars": 32,
+            "nonce_hex_chars": 24,
+            "ciphertext_hex_chars": 2198,
+            "tag_hex_chars": 32
+          },
+          "input_objects_at_send_time": {
+            "rbp_plus_e0_size": 32,
+            "rbp_plus_1a0_size": 64,
+            "plaintext_rbp_plus_100_size_after_destructor": 0,
+            "plaintext_rbp_plus_100_retained_capacity": 1617,
+            "plaintext_capacity_covers_ciphertext_bytes": true,
+            "plaintext_union_residual_is_json_schema_fragment": true
+          }
+        }
+      }
+    }
+  ]
+}

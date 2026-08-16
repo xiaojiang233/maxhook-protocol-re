@@ -1,0 +1,43 @@
+{
+  "schema": "maxhook.hex64-keyscan/v1",
+  "constraint_source": {
+    "native_call": "0x1803cf7e1 -> 0x180324610",
+    "candidate_argument": "R8 = &std::string at report-builder RBP+0x1a0",
+    "observed_candidate_length": 64,
+    "protected_entry_jump": "0x180324610 -> 0x181523001 (.bugland)"
+  },
+  "dump_dir": "E:\\Coding\\S1mple\\target\\dump_out\\41264",
+  "files_scanned": 10765,
+  "bytes_scanned": 5756531235,
+  "bounded_hex64_occurrences": 674,
+  "unique_hex64_candidates": 290,
+  "candidate_fingerprint_histogram": {
+    "32": 1,
+    "5": 7,
+    "3": 40,
+    "4": 3,
+    "2": 52,
+    "9": 2,
+    "1": 182,
+    "7": 1,
+    "158": 1,
+    "6": 1
+  },
+  "unique_envelopes_tested": 18,
+  "key_variants": [
+    "hex_decoded",
+    "sha256_ascii_exact/lower/upper",
+    "sha256_hex_decoded"
+  ],
+  "algorithms": [
+    "AESGCM",
+    "AESCCM",
+    "ChaCha20Poly1305",
+    "AESGCMSIV"
+  ],
+  "aad_candidate_count": 16,
+  "attempts_against_first_envelope": 73920,
+  "hits": [],
+  "raw_non_hit_candidates_written": false,
+  "elapsed_seconds": 130.546
+}

@@ -1,0 +1,88 @@
+{
+  "targets": {
+    "url": "0x5962cff870",
+    "fields": "0x5962cff530",
+    "request_header": "0x1efa9337950",
+    "response_json": "0x1efa4d9f532",
+    "request_tail": "0x1efa4d9f683",
+    "request_tag": "0x1efa4d9fca7",
+    "vm_context": "0x18098c884"
+  },
+  "hits": {
+    "url": [],
+    "fields": [],
+    "request_header": [
+      {
+        "file": "region_000001efa1d80000.bin",
+        "offset": "0x40780",
+        "va": "0x1efa1dc0780",
+        "aligned": true
+      },
+      {
+        "file": "region_000001efb5437000.bin",
+        "offset": "0x26040",
+        "va": "0x1efb545d040",
+        "aligned": true
+      },
+      {
+        "file": "region_000001f0c0bd6000.bin",
+        "offset": "0x10b668",
+        "va": "0x1f0c0ce1668",
+        "aligned": true
+      },
+      {
+        "file": "region_000001f0c0bd6000.bin",
+        "offset": "0x10bf58",
+        "va": "0x1f0c0ce1f58",
+        "aligned": true
+      }
+    ],
+    "response_json": [],
+    "request_tail": [],
+    "request_tag": [],
+    "vm_context": [
+      {
+        "file": "region_0000005962cf8000.bin",
+        "offset": "0x1240",
+        "va": "0x5962cf9240",
+        "aligned": true
+      },
+      {
+        "file": "region_0000005962cf8000.bin",
+        "offset": "0x6fd0",
+        "va": "0x5962cfefd0",
+        "aligned": true
+      },
+      {
+        "file": "region_0000005962cf8000.bin",
+        "offset": "0x77f8",
+        "va": "0x5962cff7f8",
+        "aligned": true
+      },
+      {
+        "file": "region_0000005962cf8000.bin",
+        "offset": "0x7890",
+        "va": "0x5962cff890",
+        "aligned": true
+      },
+      {
+        "file": "region_0000005966ff6000.bin",
+        "offset": "0x5550",
+        "va": "0x5966ffb550",
+        "aligned": true
+      },
+      {
+        "file": "region_0000005966ff6000.bin",
+        "offset": "0x5580",
+        "va": "0x5966ffb580",
+        "aligned": true
+      },
+      {
+        "file": "region_0000005966ff6000.bin",
+        "offset": "0x91e0",
+        "va": "0x5966fff1e0",
+        "aligned": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,473 @@
+{
+  "trace": "target\\encrypt_vm_trace_handler_99cfa9_trace_step13_complete_647750.json",
+  "start_instruction": 646522,
+  "end_instruction": 647685,
+  "executed_instructions": 1163,
+  "entry": {
+    "target": "0x18099cfa9",
+    "vip": "0x1814e9ef4",
+    "key": "0xffff02f7",
+    "rsp": "0x7ffe1fec78"
+  },
+  "exit": {
+    "target": "0x1809ceaf1",
+    "vip": "0x1814ea92c",
+    "key": "0xffff02f7",
+    "rsp": "0x7ffe1fec68"
+  },
+  "rsp_delta": -16,
+  "executed_handler_entries": [
+    {
+      "kind": "stub",
+      "index": "0x119",
+      "address": "0x18099cfa9"
+    },
+    {
+      "kind": "body",
+      "index": "0x119",
+      "stub": "0x18099cfa9",
+      "address": "0x180c2ea8b"
+    },
+    {
+      "kind": "stub",
+      "index": "0x147",
+      "address": "0x1809ac48d"
+    },
+    {
+      "kind": "body",
+      "index": "0x147",
+      "stub": "0x1809ac48d",
+      "address": "0x1809f4736"
+    }
+  ],
+  "context_writes": [
+    {
+      "instruction": 646748,
+      "rip": "0x180c2e255",
+      "mnemonic": "lock sub",
+      "op_str": "dword ptr [r14], 1",
+      "context_offset": "0xe7",
+      "registers": {
+        "rax": "0x1814e9ef4",
+        "rbx": "0x180c66f95",
+        "rcx": "0x7ffe1fecf8",
+        "rdx": "0x8c8",
+        "rsi": "0x18098c923",
+        "rdi": "0x18098c8f1",
+        "rbp": "0x18098c884",
+        "rsp": "0x7ffe1fec78",
+        "r8": "0x18098c9e7",
+        "r9": "0x180986508",
+        "r10": "0x1814e9efb",
+        "r11": "0x1814e9eff",
+        "r12": "0xc9",
+        "r13": "0x232b",
+        "r14": "0x18098c96b",
+        "r15": "0x4",
+        "rip": "0x180c2e255"
+      }
+    },
+    {
+      "instruction": 647227,
+      "rip": "0x180c3c4c5",
+      "mnemonic": "mov",
+      "op_str": "qword ptr [rbx + rbp], r11",
+      "context_offset": "0x9f",
+      "registers": {
+        "rax": "0x0",
+        "rbx": "0x9f",
+        "rcx": "0x180000000",
+        "rdx": "0x180",
+        "rsi": "0x18098c884",
+        "rdi": "0x7ffe1feed0",
+        "rbp": "0x18098c884",
+        "rsp": "0x7ffe1fec60",
+        "r8": "0xc250c513",
+        "r9": "0x322ed0",
+        "r10": "0x1807cdf10",
+        "r11": "0x180000000",
+        "r12": "0x1807bdc70",
+        "r13": "0x1807c3ad0",
+        "r14": "0x1807bdc70",
+        "r15": "0x180658b70",
+        "rip": "0x180c3c4c5"
+      }
+    },
+    {
+      "instruction": 647386,
+      "rip": "0x180c3c87c",
+      "mnemonic": "pop",
+      "op_str": "qword ptr [rdx + rbp]",
+      "context_offset": "0x163",
+      "registers": {
+        "rax": "0x180986508",
+        "rbx": "0x986508",
+        "rcx": "0x180000000",
+        "rdx": "0x163",
+        "rsi": "0x18098c884",
+        "rdi": "0x7ffe1feed0",
+        "rbp": "0x18098c884",
+        "rsp": "0x7ffe1fec60",
+        "r8": "0xc250c513",
+        "r9": "0x322ed0",
+        "r10": "0x1807cdf10",
+        "r11": "0x358",
+        "r12": "0x1807bdc70",
+        "r13": "0x1807c3ad0",
+        "r14": "0x1807bdc70",
+        "r15": "0x180658b70",
+        "rip": "0x180c3c87c"
+      }
+    },
+    {
+      "instruction": 647387,
+      "rip": "0x180c3c87f",
+      "mnemonic": "xor",
+      "op_str": "qword ptr [rdx + rbp], 0x6fdfe0a3",
+      "context_offset": "0x163",
+      "registers": {
+        "rax": "0x180986508",
+        "rbx": "0x986508",
+        "rcx": "0x180000000",
+        "rdx": "0x163",
+        "rsi": "0x18098c884",
+        "rdi": "0x7ffe1feed0",
+        "rbp": "0x18098c884",
+        "rsp": "0x7ffe1fec68",
+        "r8": "0xc250c513",
+        "r9": "0x322ed0",
+        "r10": "0x1807cdf10",
+        "r11": "0x358",
+        "r12": "0x1807bdc70",
+        "r13": "0x1807c3ad0",
+        "r14": "0x1807bdc70",
+        "r15": "0x180658b70",
+        "rip": "0x180c3c87f"
+      }
+    },
+    {
+      "instruction": 647429,
+      "rip": "0x180c3c91a",
+      "mnemonic": "pop",
+      "op_str": "qword ptr [rbx + rbp]",
+      "context_offset": "0x36",
+      "registers": {
+        "rax": "0x7ffe1fed80",
+        "rbx": "0x36",
+        "rcx": "0x180000000",
+        "rdx": "0x163",
+        "rsi": "0x18098c884",
+        "rdi": "0x7ffe1feed0",
+        "rbp": "0x18098c884",
+        "rsp": "0x7ffe1fec60",
+        "r8": "0xc250c513",
+        "r9": "0x322ed0",
+        "r10": "0x1807cdf10",
+        "r11": "0x358",
+        "r12": "0x1807bdc70",
+        "r13": "0x1807c3ad0",
+        "r14": "0x1807bdc70",
+        "r15": "0x180658b70",
+        "rip": "0x180c3c91a"
+      }
+    },
+    {
+      "instruction": 647430,
+      "rip": "0x180c3c91d",
+      "mnemonic": "sub",
+      "op_str": "qword ptr [rbx + rbp], 0x3beed78d",
+      "context_offset": "0x36",
+      "registers": {
+        "rax": "0x7ffe1fed80",
+        "rbx": "0x36",
+        "rcx": "0x180000000",
+        "rdx": "0x163",
+        "rsi": "0x18098c884",
+        "rdi": "0x7ffe1feed0",
+        "rbp": "0x18098c884",
+        "rsp": "0x7ffe1fec68",
+        "r8": "0xc250c513",
+        "r9": "0x322ed0",
+        "r10": "0x1807cdf10",
+        "r11": "0x358",
+        "r12": "0x1807bdc70",
+        "r13": "0x1807c3ad0",
+        "r14": "0x1807bdc70",
+        "r15": "0x180658b70",
+        "rip": "0x180c3c91d"
+      }
+    },
+    {
+      "instruction": 647480,
+      "rip": "0x180c3c9f7",
+      "mnemonic": "pop",
+      "op_str": "qword ptr [rbx + rbp]",
+      "context_offset": "0x6d",
+      "registers": {
+        "rax": "0x1814e6a34",
+        "rbx": "0x6d",
+        "rcx": "0x180000000",
+        "rdx": "0x163",
+        "rsi": "0x18098c884",
+        "rdi": "0x7ffe1feed0",
+        "rbp": "0x18098c884",
+        "rsp": "0x7ffe1fec60",
+        "r8": "0xc250c513",
+        "r9": "0x322ed0",
+        "r10": "0x1807cdf10",
+        "r11": "0x358",
+        "r12": "0x1807bdc70",
+        "r13": "0x1807c3ad0",
+        "r14": "0x1807bdc70",
+        "r15": "0x180658b70",
+        "rip": "0x180c3c9f7"
+      }
+    },
+    {
+      "instruction": 647481,
+      "rip": "0x180c3c9fa",
+      "mnemonic": "add",
+      "op_str": "qword ptr [rbx + rbp], 0x2edb55ee",
+      "context_offset": "0x6d",
+      "registers": {
+        "rax": "0x1814e6a34",
+        "rbx": "0x6d",
+        "rcx": "0x180000000",
+        "rdx": "0x163",
+        "rsi": "0x18098c884",
+        "rdi": "0x7ffe1feed0",
+        "rbp": "0x18098c884",
+        "rsp": "0x7ffe1fec68",
+        "r8": "0xc250c513",
+        "r9": "0x322ed0",
+        "r10": "0x1807cdf10",
+        "r11": "0x358",
+        "r12": "0x1807bdc70",
+        "r13": "0x1807c3ad0",
+        "r14": "0x1807bdc70",
+        "r15": "0x180658b70",
+        "rip": "0x180c3c9fa"
+      }
+    },
+    {
+      "instruction": 647593,
+      "rip": "0x1809f47c5",
+      "mnemonic": "or",
+      "op_str": "dword ptr [r11], ebx",
+      "context_offset": "0x5d",
+      "registers": {
+        "rax": "0x180c658f5",
+        "rbx": "0x44ea80b1",
+        "rcx": "0x1807c3ad0",
+        "rdx": "0x180c64ebd",
+        "rsi": "0x18098c884",
+        "rdi": "0x7ffe1feed0",
+        "rbp": "0x18098c884",
+        "rsp": "0x7ffe1fec68",
+        "r8": "0x2",
+        "r9": "0x1814e6a40",
+        "r10": "0x1814e6a34",
+        "r11": "0x18098c8e1",
+        "r12": "0x1807c3ad0",
+        "r13": "0x1814e6a3c",
+        "r14": "0x1814e6a3e",
+        "r15": "0x180658b70",
+        "rip": "0x1809f47c5"
+      }
+    },
+    {
+      "instruction": 647619,
+      "rip": "0x1809f4852",
+      "mnemonic": "mov",
+      "op_str": "qword ptr [r13], rsp",
+      "context_offset": "0xc5",
+      "registers": {
+        "rax": "0x180c658f5",
+        "rbx": "0x44ea80b1",
+        "rcx": "0x1807c3ad0",
+        "rdx": "0x1814e6a34",
+        "rsi": "0x18098c884",
+        "rdi": "0x0",
+        "rbp": "0x18098c884",
+        "rsp": "0x7ffe1fec68",
+        "r8": "0x0",
+        "r9": "0xc9",
+        "r10": "0x1814e6a42",
+        "r11": "0x400",
+        "r12": "0x180658b70",
+        "r13": "0x18098c949",
+        "r14": "0x1814e62c6",
+        "r15": "0x88",
+        "rip": "0x1809f4852"
+      }
+    },
+    {
+      "instruction": 647675,
+      "rip": "0x1809f4996",
+      "mnemonic": "add",
+      "op_str": "qword ptr [rdi], r15",
+      "context_offset": "0x6d",
+      "registers": {
+        "rax": "0xfffffffe7f6837e6",
+        "rbx": "0x4f8",
+        "rcx": "0xffffffff80000800",
+        "rdx": "0x1814e6a34",
+        "rsi": "0x1814e6a36",
+        "rdi": "0x18098c8f1",
+        "rbp": "0x18098c884",
+        "rsp": "0x7ffe1fec68",
+        "r8": "0xffffffffffffffff",
+        "r9": "0xffffffffffffff11",
+        "r10": "0x12",
+        "r11": "0xfffffffffffffe00",
+        "r12": "0x1814e6a3a",
+        "r13": "0x18098c949",
+        "r14": "0x1814e62a2",
+        "r15": "0x3ef8",
+        "rip": "0x1809f4996"
+      }
+    }
+  ],
+  "context_diff_ranges": [
+    {
+      "start": "0x5d",
+      "end": "0x60",
+      "before": "c0410004",
+      "after": "f1c1ea44"
+    },
+    {
+      "start": "0x6d",
+      "end": "0x6e",
+      "before": "f49e",
+      "after": "2ca9"
+    },
+    {
+      "start": "0xc5",
+      "end": "0xc5",
+      "before": "78",
+      "after": "68"
+    }
+  ],
+  "stack_diff_ranges": [
+    {
+      "start": "0x0",
+      "end": "0x3",
+      "before": "00000895",
+      "after": "95080000"
+    },
+    {
+      "start": "0x60",
+      "end": "0x6b",
+      "before": "020000000000000013c550c2",
+      "after": "7064a3271ec32c8302000000"
+    },
+    {
+      "start": "0x70",
+      "end": "0x73",
+      "before": "02000000",
+      "after": "13c550c2"
+    },
+    {
+      "start": "0x78",
+      "end": "0x79",
+      "before": "8208",
+      "after": "0200"
+    },
+    {
+      "start": "0x80",
+      "end": "0x81",
+      "before": "0200",
+      "after": "8208"
+    },
+    {
+      "start": "0x88",
+      "end": "0x8c",
+      "before": "18ee1ffe7f",
+      "after": "4701000000"
+    },
+    {
+      "start": "0x90",
+      "end": "0x93",
+      "before": "673f4873",
+      "after": "346a4e01"
+    },
+    {
+      "start": "0x98",
+      "end": "0x9c",
+      "before": "60f24fd3c9",
+      "after": "18ee1ffe7f"
+    },
+    {
+      "start": "0xa0",
+      "end": "0xa4",
+      "before": "e1c8988001",
+      "after": "673f487300"
+    },
+    {
+      "start": "0xa8",
+      "end": "0xac",
+      "before": "e1c8988001",
+      "after": "60f24fd3c9"
+    },
+    {
+      "start": "0xb0",
+      "end": "0xb5",
+      "before": "e00010000002",
+      "after": "e1c898800100"
+    },
+    {
+      "start": "0xb8",
+      "end": "0xbd",
+      "before": "000110000002",
+      "after": "e1c898800100"
+    },
+    {
+      "start": "0xc0",
+      "end": "0xc1",
+      "before": "0001",
+      "after": "e000"
+    },
+    {
+      "start": "0xc8",
+      "end": "0xca",
+      "before": "c90000",
+      "after": "000110"
+    },
+    {
+      "start": "0xcd",
+      "end": "0xcd",
+      "before": "00",
+      "after": "02"
+    },
+    {
+      "start": "0xd1",
+      "end": "0xd2",
+      "before": "0000",
+      "after": "0110"
+    },
+    {
+      "start": "0xd5",
+      "end": "0xd5",
+      "before": "00",
+      "after": "02"
+    },
+    {
+      "start": "0xd8",
+      "end": "0xd8",
+      "before": "20",
+      "after": "c9"
+    },
+    {
+      "start": "0xe8",
+      "end": "0xe8",
+      "before": "00",
+      "after": "20"
+    },
+    {
+      "start": "0xf8",
+      "end": "0xf8",
+      "before": "0f",
+      "after": "00"
+    }
+  ]
+}

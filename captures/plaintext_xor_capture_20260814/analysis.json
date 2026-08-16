@@ -1,0 +1,161 @@
+{
+  "schema": "maxhook.plaintext-xor.analysis/v1",
+  "capture": "E:\\Coding\\S1mple\\target\\plaintext_xor_capture_20260814",
+  "xor_boundary": {
+    "load_pointer": "0x1809c552a",
+    "load_plaintext_byte": "0x1809c552e",
+    "xor_plaintext_into_keystream": "0x1809c5561",
+    "semantics": "ciphertext_byte = preexisting_keystream_byte XOR plaintext_byte",
+    "block_bytes": 64
+  },
+  "calls": [
+    {
+      "call_id": 1,
+      "plaintext_bytes": 745,
+      "captured_bytes": 704,
+      "uncaptured_tail_bytes": 41,
+      "captured_is_floor_64": true,
+      "source_equals_plaintext_prefix": true,
+      "xor_operand_equals_plaintext_prefix": true,
+      "before_equals_keystream_prefix": true,
+      "after_equals_ciphertext_prefix": true,
+      "all_instruction_semantics_verified": true,
+      "keystream_sha256": "a14ae59a06452fe6ae0724598c9c1478cffebd38163ba0aa2b8d4e00868e052a",
+      "destination_addresses": [
+        "0x18098c939",
+        "0x18098cab9"
+      ],
+      "source_pointer_slots": [
+        "0x18098c8c9",
+        "0x18098ca49"
+      ]
+    },
+    {
+      "call_id": 2,
+      "plaintext_bytes": 1291,
+      "captured_bytes": 1280,
+      "uncaptured_tail_bytes": 11,
+      "captured_is_floor_64": true,
+      "source_equals_plaintext_prefix": true,
+      "xor_operand_equals_plaintext_prefix": true,
+      "before_equals_keystream_prefix": true,
+      "after_equals_ciphertext_prefix": true,
+      "all_instruction_semantics_verified": true,
+      "keystream_sha256": "b8c29fe4d00da26280967c5032127112c4d5d14025b2df7c959a07038d7c37b1",
+      "destination_addresses": [
+        "0x18098c939",
+        "0x18098cab9"
+      ],
+      "source_pointer_slots": [
+        "0x18098c8c9",
+        "0x18098ca49"
+      ]
+    },
+    {
+      "call_id": 3,
+      "plaintext_bytes": 709,
+      "captured_bytes": 704,
+      "uncaptured_tail_bytes": 5,
+      "captured_is_floor_64": true,
+      "source_equals_plaintext_prefix": true,
+      "xor_operand_equals_plaintext_prefix": true,
+      "before_equals_keystream_prefix": true,
+      "after_equals_ciphertext_prefix": true,
+      "all_instruction_semantics_verified": true,
+      "keystream_sha256": "38b8aee80ad1f743e7c3b3e27a3259726592b513209db74d17840d9aefd41acc",
+      "destination_addresses": [
+        "0x18098c939",
+        "0x18098cab9"
+      ],
+      "source_pointer_slots": [
+        "0x18098c8c9",
+        "0x18098ca49"
+      ]
+    },
+    {
+      "call_id": 4,
+      "plaintext_bytes": 1361,
+      "captured_bytes": 1344,
+      "uncaptured_tail_bytes": 17,
+      "captured_is_floor_64": true,
+      "source_equals_plaintext_prefix": true,
+      "xor_operand_equals_plaintext_prefix": true,
+      "before_equals_keystream_prefix": true,
+      "after_equals_ciphertext_prefix": true,
+      "all_instruction_semantics_verified": true,
+      "keystream_sha256": "2c48b54ebba451fd5bad167c04d5036e47d372f53a945d92beea85b2646b6775",
+      "destination_addresses": [
+        "0x18098c939",
+        "0x18098cab9"
+      ],
+      "source_pointer_slots": [
+        "0x18098c8c9",
+        "0x18098ca49"
+      ]
+    },
+    {
+      "call_id": 5,
+      "plaintext_bytes": 1291,
+      "captured_bytes": 1280,
+      "uncaptured_tail_bytes": 11,
+      "captured_is_floor_64": true,
+      "source_equals_plaintext_prefix": true,
+      "xor_operand_equals_plaintext_prefix": true,
+      "before_equals_keystream_prefix": true,
+      "after_equals_ciphertext_prefix": true,
+      "all_instruction_semantics_verified": true,
+      "keystream_sha256": "aff6737217eb36ad6383197f8df3467dd5a2f3f67d48c67a6b923c4c0f6101ff",
+      "destination_addresses": [
+        "0x18098c939",
+        "0x18098cab9"
+      ],
+      "source_pointer_slots": [
+        "0x18098c8c9",
+        "0x18098ca49"
+      ]
+    },
+    {
+      "call_id": 6,
+      "plaintext_bytes": 851,
+      "captured_bytes": 832,
+      "uncaptured_tail_bytes": 19,
+      "captured_is_floor_64": true,
+      "source_equals_plaintext_prefix": true,
+      "xor_operand_equals_plaintext_prefix": true,
+      "before_equals_keystream_prefix": true,
+      "after_equals_ciphertext_prefix": true,
+      "all_instruction_semantics_verified": true,
+      "keystream_sha256": "915035613157fd2d547464053abf81613e2cc8e574b5d331c474dc451a0d96ad",
+      "destination_addresses": [
+        "0x18098c939",
+        "0x18098cab9"
+      ],
+      "source_pointer_slots": [
+        "0x18098c8c9",
+        "0x18098ca49"
+      ]
+    },
+    {
+      "call_id": 7,
+      "plaintext_bytes": 683,
+      "captured_bytes": 640,
+      "uncaptured_tail_bytes": 43,
+      "captured_is_floor_64": true,
+      "source_equals_plaintext_prefix": true,
+      "xor_operand_equals_plaintext_prefix": true,
+      "before_equals_keystream_prefix": true,
+      "after_equals_ciphertext_prefix": true,
+      "all_instruction_semantics_verified": true,
+      "keystream_sha256": "ba913416a8249694a3b9ac239919810ee6b7aa23e22f35cd40a406c40c355dfa",
+      "destination_addresses": [
+        "0x18098c939",
+        "0x18098cab9"
+      ],
+      "source_pointer_slots": [
+        "0x18098c8c9",
+        "0x18098ca49"
+      ]
+    }
+  ],
+  "all_calls_closed": true
+}

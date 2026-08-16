@@ -1,0 +1,206 @@
+Installed 2 packages in 23ms
+[*] ��ѹ��� -> ��ʵ��� 0x180c0eb27
+[*] �� 0: RIP=0x180c6add9 0.0s
+[*] �� 1: RIP=0x180c1c6b8 0.1s
+  [������ֵ] RIP=0x180a2643f addr=0x18098f97c size=8 val=0
+[*] �� 2: RIP=0x1809da628 0.1s
+  [RETǰ] RIP=0x180c1b2f3 [rsp]=0xdf09e59 rsp=0x7ffe7ff000
+    rax = 0x1
+    rbx = 0x0
+    rcx = 0x0
+    rdx = 0x0
+    rsi = 0x0
+    rdi = 0x0
+    rbp = 0x0
+    rsp = 0x7ffe7ff000
+    r8 = 0x0
+    r9 = 0x0
+    r10 = 0x0
+    r11 = 0x0
+    r12 = 0x0
+    r13 = 0x0
+    r14 = 0x0
+    r15 = 0x0
+    [rsp-0x20..rsp+0x20]: 0100000000000000010000000000000046000000000000004600000000000000599ef00d00000000000000800100000001000000000000000000000000000000
+[!] UcError Invalid memory fetch (UC_ERR_FETCH_UNMAPPED) RIP=0xdf09e59 0.1s
+
+=== handler ִ�д���: 36 ===
+  h[0] 0x180c1b230: rsp=0x7ffe7fef78 [rsp]=0x0 rax=0x1809832bf r13=0x0 r14=0x46 r15=0x7ffe7feff8 rbp=0x18098c884
+  h[1] 0x180c1b235: rsp=0x7ffe7fef70 [rsp]=0x6f3eff26 rax=0x1809832bf r13=0x0 r14=0x46 r15=0x7ffe7feff8 rbp=0x18098c884
+  h[2] 0x180c1b239: rsp=0x7ffe7fef70 [rsp]=0x46 rax=0x1809832bf r13=0x0 r14=0x46 r15=0x7ffe7feff8 rbp=0x18098c884
+  h[3] 0x180c1b23b: rsp=0x7ffe7fef68 [rsp]=0x0 rax=0x1809832bf r13=0x0 r14=0x46 r15=0x7ffe7feff8 rbp=0x18098c884
+  h[4] 0x180c1b245: rsp=0x7ffe7fef68 [rsp]=0x0 rax=0x1809832bf r13=0x6d7aa7ed r14=0x46 r15=0x7ffe7feff8 rbp=0x18098c884
+  h[5] 0x180c1b2b9: rsp=0x7ffe7fef68 [rsp]=0x18098c884 rax=0x1809832bf r13=0x0 r14=0x46 r15=0x7ffe7feff8 rbp=0x18098c884
+  h[6] 0x180c1b2bd: rsp=0x7ffe7fef70 [rsp]=0x18098c884 rax=0x1809832bf r13=0x0 r14=0x46 r15=0x7ffe7feff8 rbp=0x18098c884
+  h[7] 0x180c1b2c1: rsp=0x7ffe7fef78 [rsp]=0x0 rax=0x1809832bf r13=0x0 r14=0x46 r15=0x7ffe7feff8 rbp=0x18098c884
+  h[8] 0x180c1b2c8: rsp=0x7ffe7fef78 [rsp]=0x0 rax=0x1809832bf r13=0x0 r14=0x46 r15=0x7ffe7feff8 rbp=0x18098c884
+  h[9] 0x180c1b2d0: rsp=0x7ffe7fef78 [rsp]=0x0 rax=0x1809832bf r13=0x0 r14=0x46 r15=0x7ffe7feff8 rbp=0x18098c884
+  h[10] 0x180c1b2d3: rsp=0x7ffe7fef70 [rsp]=0x0 rax=0x1809832bf r13=0x0 r14=0x46 r15=0x7ffe7feff8 rbp=0x18098c884
+  h[11] 0x180c1b2d6: rsp=0x7ffe7fef68 [rsp]=0x0 rax=0x1809832bf r13=0x0 r14=0x46 r15=0x7ffe7feff8 rbp=0x18098c884
+  h[12] 0x180c1b2da: rsp=0x7ffe7fef68 [rsp]=0x0 rax=0x1809832bf r13=0x0 r14=0x46 r15=0x7ffe7feff8 rbp=0x18098c884
+  h[13] 0x180c1b2e1: rsp=0x7ffe7fef70 [rsp]=0x0 rax=0x1809832bf r13=0x0 r14=0x46 r15=0x7ffe7feff8 rbp=0x18098c884
+  h[14] 0x180c1b2e5: rsp=0x7ffe7fef78 [rsp]=0x0 rax=0x1809832bf r13=0x0 r14=0x46 r15=0x7ffe7feff8 rbp=0x18098c884
+  h[15] 0x180c1b2e9: rsp=0x7ffe7fef80 [rsp]=0x0 rax=0x1809832bf r13=0x0 r14=0x46 r15=0x7ffe7feff8 rbp=0x18098c884
+  h[16] 0x180c1b2ec: rsp=0x7ffe7fef78 [rsp]=0x0 rax=0x1809832bf r13=0x0 r14=0x46 r15=0x7ffe7feff8 rbp=0x18098c884
+  h[17] 0x180c1b268: rsp=0x7ffe7fef80 [rsp]=0x0 rax=0x1809832bf r13=0x0 r14=0x46 r15=0x7ffe7feff8 rbp=0x18098c884
+  h[18] 0x180c1b26c: rsp=0x7ffe7fef88 [rsp]=0x0 rax=0x1809832bf r13=0x0 r14=0x46 r15=0x7ffe7feff8 rbp=0x18098c884
+  h[19] 0x180c1b270: rsp=0x7ffe7fef90 [rsp]=0x0 rax=0x1809832bf r13=0x0 r14=0x46 r15=0x7ffe7feff8 rbp=0x18098c884
+  h[20] 0x180c1b273: rsp=0x7ffe7fef88 [rsp]=0x0 rax=0x1809832bf r13=0x0 r14=0x46 r15=0x7ffe7feff8 rbp=0x18098c884
+  h[21] 0x180c1b276: rsp=0x7ffe7fef80 [rsp]=0x0 rax=0x1809832bf r13=0x0 r14=0x46 r15=0x7ffe7feff8 rbp=0x18098c884
+  h[22] 0x180c1b27a: rsp=0x7ffe7fef80 [rsp]=0x0 rax=0x1809832bf r13=0x0 r14=0x46 r15=0x7ffe7feff8 rbp=0x18098c884
+  h[23] 0x180c1b27e: rsp=0x7ffe7fef88 [rsp]=0x0 rax=0x1809832bf r13=0x0 r14=0x46 r15=0x7ffe7feff8 rbp=0x18098c884
+  h[24] 0x180c1b282: rsp=0x7ffe7fef90 [rsp]=0x0 rax=0x1809832bf r13=0x0 r14=0x46 r15=0x7ffe7feff8 rbp=0x18098c884
+  h[25] 0x180c1b286: rsp=0x7ffe7fef98 [rsp]=0x0 rax=0x1809832bf r13=0x0 r14=0x46 r15=0x7ffe7feff8 rbp=0x18098c884
+  h[26] 0x180c1b24a: rsp=0x7ffe7fefe0 [rsp]=0x0 rax=0x1809832bf r13=0x0 r14=0x0 r15=0x0 rbp=0x0
+  h[27] 0x180c1b251: rsp=0x7ffe7fefe8 [rsp]=0x1 rax=0x1809832bf r13=0x0 r14=0x0 r15=0x0 rbp=0x0
+  h[28] 0x180c1b254: rsp=0x7ffe7fefe0 [rsp]=0x1 rax=0x1809832bf r13=0x0 r14=0x0 r15=0x0 rbp=0x0
+  h[29] 0x180c1b257: rsp=0x7ffe7fefd8 [rsp]=0x1 rax=0x1809832bf r13=0x0 r14=0x0 r15=0x0 rbp=0x0
+  h[30] 0x180c1b258: rsp=0x7ffe7fefe0 [rsp]=0x1 rax=0x1 r13=0x0 r14=0x0 r15=0x0 rbp=0x0
+  h[31] 0x180c1b25c: rsp=0x7ffe7fefe8 [rsp]=0x1 rax=0x1 r13=0x0 r14=0x0 r15=0x0 rbp=0x0
+  h[32] 0x180c1b263: rsp=0x7ffe7feff0 [rsp]=0x46 rax=0x1 r13=0x0 r14=0x0 r15=0x0 rbp=0x0
+  h[33] 0x180c1b2f1: rsp=0x7ffe7feff0 [rsp]=0x46 rax=0x1 r13=0x0 r14=0x0 r15=0x0 rbp=0x0
+  h[34] 0x180c1b2f2: rsp=0x7ffe7feff8 [rsp]=0x46 rax=0x1 r13=0x0 r14=0x0 r15=0x0 rbp=0x0
+  h[35] 0x180c1b2f3: rsp=0x7ffe7ff000 [rsp]=0xdf09e59 rax=0x1 r13=0x0 r14=0x0 r15=0x0 rbp=0x0
+
+=== �����ֳ� ===
+   rax = 0x1
+   rbx = 0x0
+   rcx = 0x0
+   rdx = 0x0
+   rsi = 0x0
+   rdi = 0x0
+   rbp = 0x0
+   rsp = 0x7ffe7ff008
+   r8 = 0x0
+   r9 = 0x0
+   r10 = 0x0
+   r11 = 0x0
+   r12 = 0x0
+   r13 = 0x0
+   r14 = 0x0
+   r15 = 0x0
+   rip = 0xdf09e59
+   fetch = 0xdf09e59
+   [rsp] ���� 64 �ֽ�: 00000080010000000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+=== ����ǰ��� 120 ��ָ�� ===
+  0x180c1b230: push     0x6f3eff26
+  0x180c1b235: mov      qword ptr [rsp], r14
+  0x180c1b239: push     r13
+  0x180c1b23b: movabs   r13, 0x6d7aa7ed
+  0x180c1b245: jmp      0x180c1b347
+  0x180c1b347: push     r15
+  0x180c1b349: mov      r15, r13
+  0x180c1b34c: add      qword ptr [rsp + 0x10], r15
+  0x180c1b351: pop      r15
+  0x180c1b353: pop      r13
+  0x180c1b355: pop      qword ptr [r15]
+  0x180c1b358: sub      qword ptr [r15], 0x6d7aa7ed
+  0x180c1b35f: push     0x1dbfb44a
+  0x180c1b364: mov      qword ptr [rsp], rbp
+  0x180c1b368: push     qword ptr [rsp]
+  0x180c1b36b: mov      r8, qword ptr [rsp]
+  0x180c1b36f: jmp      0x180c1b2b9
+  0x180c1b2b9: add      rsp, 8
+  0x180c1b2bd: add      rsp, 8
+  0x180c1b2c1: add      r8, 0xe7
+  0x180c1b2c8: lock sub dword ptr [r8], 1
+  0x180c1b2d0: push     qword ptr [rsp]
+  0x180c1b2d3: push     qword ptr [rsp]
+  0x180c1b2d6: mov      r8, qword ptr [rsp]
+  0x180c1b2da: add      rsp, 8
+  0x180c1b2e1: add      rsp, 8
+  0x180c1b2e5: add      rsp, 8
+  0x180c1b2e9: push     qword ptr [rsp]
+  0x180c1b2ec: jmp      0x180c1b44c
+  0x180c1b44c: push     qword ptr [rsp]
+  0x180c1b44f: mov      r9, qword ptr [rsp]
+  0x180c1b453: add      rsp, 8
+  0x180c1b45a: add      rsp, 8
+  0x180c1b461: add      rsp, 8
+  0x180c1b468: push     qword ptr [rsp]
+  0x180c1b46b: push     qword ptr [rsp]
+  0x180c1b46e: pop      r10
+  0x180c1b470: jmp      0x180c1b268
+  0x180c1b268: add      rsp, 8
+  0x180c1b26c: add      rsp, 8
+  0x180c1b270: push     qword ptr [rsp]
+  0x180c1b273: push     qword ptr [rsp]
+  0x180c1b276: mov      r11, qword ptr [rsp]
+  0x180c1b27a: add      rsp, 8
+  0x180c1b27e: add      rsp, 8
+  0x180c1b282: add      rsp, 8
+  0x180c1b286: jmp      0x180c1b314
+  0x180c1b314: push     qword ptr [rsp]
+  0x180c1b317: push     qword ptr [rsp]
+  0x180c1b31a: mov      r12, qword ptr [rsp]
+  0x180c1b31e: add      rsp, 8
+  0x180c1b322: add      rsp, 8
+  0x180c1b329: add      rsp, 8
+  0x180c1b330: push     qword ptr [rsp]
+  0x180c1b333: push     qword ptr [rsp]
+  0x180c1b336: mov      r13, qword ptr [rsp]
+  0x180c1b33a: add      rsp, 8
+  0x180c1b33e: add      rsp, 8
+  0x180c1b342: jmp      0x180c1b41a
+  0x180c1b41a: add      rsp, 8
+  0x180c1b421: push     qword ptr [rsp]
+  0x180c1b424: push     qword ptr [rsp]
+  0x180c1b427: mov      r14, qword ptr [rsp]
+  0x180c1b42b: add      rsp, 8
+  0x180c1b432: add      rsp, 8
+  0x180c1b436: add      rsp, 8
+  0x180c1b43d: push     qword ptr [rsp]
+  0x180c1b440: push     qword ptr [rsp]
+  0x180c1b443: mov      r15, qword ptr [rsp]
+  0x180c1b447: jmp      0x180c1b1ba
+  0x180c1b1ba: add      rsp, 8
+  0x180c1b1be: add      rsp, 8
+  0x180c1b1c2: add      rsp, 8
+  0x180c1b1c6: jmp      0x180c1af2b
+  0x180c1af2b: push     qword ptr [rsp]
+  0x180c1af2e: push     qword ptr [rsp]
+  0x180c1af31: mov      rdi, qword ptr [rsp]
+  0x180c1af35: add      rsp, 8
+  0x180c1af3c: add      rsp, 8
+  0x180c1af43: add      rsp, 8
+  0x180c1af47: push     qword ptr [rsp]
+  0x180c1af4a: jmp      0x180c1b374
+  0x180c1b374: push     qword ptr [rsp]
+  0x180c1b377: mov      rsi, qword ptr [rsp]
+  0x180c1b37b: add      rsp, 8
+  0x180c1b37f: add      rsp, 8
+  0x180c1b386: add      rsp, 8
+  0x180c1b38d: push     qword ptr [rsp]
+  0x180c1b390: push     qword ptr [rsp]
+  0x180c1b393: jmp      0x180c1aff2
+  0x180c1aff2: pop      rbp
+  0x180c1aff3: add      rsp, 8
+  0x180c1affa: add      rsp, 8
+  0x180c1b001: push     qword ptr [rsp]
+  0x180c1b004: push     qword ptr [rsp]
+  0x180c1b007: mov      rbx, qword ptr [rsp]
+  0x180c1b00b: add      rsp, 8
+  0x180c1b012: add      rsp, 8
+  0x180c1b016: add      rsp, 8
+  0x180c1b01a: push     qword ptr [rsp]
+  0x180c1b01d: push     qword ptr [rsp]
+  0x180c1b020: jmp      0x180c1b17f
+  0x180c1b17f: pop      rdx
+  0x180c1b180: add      rsp, 8
+  0x180c1b184: add      rsp, 8
+  0x180c1b18b: push     qword ptr [rsp]
+  0x180c1b18e: push     qword ptr [rsp]
+  0x180c1b191: pop      rcx
+  0x180c1b192: add      rsp, 8
+  0x180c1b199: jmp      0x180c1b24a
+  0x180c1b24a: add      rsp, 8
+  0x180c1b251: push     qword ptr [rsp]
+  0x180c1b254: push     qword ptr [rsp]
+  0x180c1b257: pop      rax
+  0x180c1b258: add      rsp, 8
+  0x180c1b25c: add      rsp, 8
+  0x180c1b263: jmp      0x180c1b2f1
+  0x180c1b2f1: popfq    
+  0x180c1b2f2: popfq    
+  0x180c1b2f3: ret      

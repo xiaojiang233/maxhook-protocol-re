@@ -1,0 +1,696 @@
+{
+  "schema": "maxhook.devirtualizer/v1",
+  "scope": "repeated 1024-block keystream generator trace (offline)",
+  "inputs": {
+    "snapshots": 52,
+    "calls": [
+      1,
+      2,
+      3
+    ],
+    "history_length": 124,
+    "common_suffix_length": 124,
+    "dll_sha256": "f3ddac1dae9539f34e6b9d1fdea654f984cca4cff37851cadcbf6909b78af6a9"
+  },
+  "stable_common_suffix": {
+    "note": "The last 124 basic-block start addresses of the 1024-entry history ring are IDENTICAL across all 52 snapshots and all 3 calls. This is the per-block generator loop tail: it repeats once per 64-byte keystream block.",
+    "blocks": [
+      "0x180c54b8a",
+      "0x180c54cd2",
+      "0x180c54cf6",
+      "0x180996b98",
+      "0x180c04899",
+      "0x1809ac339",
+      "0x180a31591",
+      "0x1809815b2",
+      "0x18099089e",
+      "0x180990a93",
+      "0x180990b21",
+      "0x18098202a",
+      "0x180b41fb8",
+      "0x180b42104",
+      "0x180b42287",
+      "0x180b423a3",
+      "0x18098202a",
+      "0x180b41fb8",
+      "0x180b42104",
+      "0x180b422aa",
+      "0x180b423a3",
+      "0x18098257f",
+      "0x1809bfebb",
+      "0x1809bff47",
+      "0x1809c012a",
+      "0x18098257f",
+      "0x1809bfebb",
+      "0x1809bff47",
+      "0x1809c012a",
+      "0x1809a3b86",
+      "0x180a02a99",
+      "0x180a02bcd",
+      "0x180a02c51",
+      "0x180a02ca5",
+      "0x1809815b2",
+      "0x18099089e",
+      "0x180990a93",
+      "0x180990b21",
+      "0x1809a3b86",
+      "0x180a02a99",
+      "0x180a02bcd",
+      "0x180a02c51",
+      "0x180a02ca5",
+      "0x18098202a",
+      "0x180b41fb8",
+      "0x180b42104",
+      "0x180b42287",
+      "0x180b423a3",
+      "0x1809a3b86",
+      "0x180a02a99",
+      "0x180a02bcd",
+      "0x180a02c51",
+      "0x180a02c94",
+      "0x1809815b2",
+      "0x18099089e",
+      "0x180990a93",
+      "0x180990b21",
+      "0x1809a3b86",
+      "0x180a02a99",
+      "0x180a02bcd",
+      "0x180a02c51",
+      "0x180a02ca5",
+      "0x1809a3b86",
+      "0x180a02a99",
+      "0x180a02bcd",
+      "0x180a02c51",
+      "0x180a02ca5",
+      "0x18098257f",
+      "0x1809bfebb",
+      "0x1809bff47",
+      "0x1809c012a",
+      "0x1809a3b86",
+      "0x180a02a99",
+      "0x180a02bcd",
+      "0x180a02c51",
+      "0x180a02c94",
+      "0x18098257f",
+      "0x1809bfebb",
+      "0x1809bff47",
+      "0x1809c012a",
+      "0x180981a92",
+      "0x180a182e9",
+      "0x180a1841c",
+      "0x180989613",
+      "0x1809f275a",
+      "0x18098858a",
+      "0x180addfc6",
+      "0x180ade18c",
+      "0x180ade38e",
+      "0x1809da915",
+      "0x180bb20f1",
+      "0x180bb24cb",
+      "0x1809851af",
+      "0x180bd41ad",
+      "0x180bd430d",
+      "0x180bd438f",
+      "0x180bd43de",
+      "0x18098858a",
+      "0x180addfc6",
+      "0x180ade18c",
+      "0x180ade35e",
+      "0x18098b0a7",
+      "0x1809ba2f0",
+      "0x1809ba397",
+      "0x1809ba63e",
+      "0x180985196",
+      "0x1809e62cd",
+      "0x1809e6430",
+      "0x18098abf8",
+      "0x180aa57d7",
+      "0x180aa58bf",
+      "0x1809851af",
+      "0x180bd41ad",
+      "0x180bd430d",
+      "0x180bd438f",
+      "0x180bd43de",
+      "0x18099412c",
+      "0x180bce721",
+      "0x180bce798",
+      "0x180bce861",
+      "0x180bceb64",
+      "0x18098b5e0",
+      "0x1809c5184",
+      "0x1809c544c"
+    ],
+    "class_runs": [
+      {
+        "depth_from_tail": 1,
+        "depth_to_tail": 2,
+        "class": "other:cmp"
+      },
+      {
+        "depth_from_tail": 3,
+        "depth_to_tail": 3,
+        "class": "stack"
+      },
+      {
+        "depth_from_tail": 4,
+        "depth_to_tail": 4,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 5,
+        "depth_to_tail": 5,
+        "class": "setup/move"
+      },
+      {
+        "depth_from_tail": 6,
+        "depth_to_tail": 6,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 7,
+        "depth_to_tail": 7,
+        "class": "setup/move"
+      },
+      {
+        "depth_from_tail": 8,
+        "depth_to_tail": 8,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 9,
+        "depth_to_tail": 11,
+        "class": "generator-loop"
+      },
+      {
+        "depth_from_tail": 12,
+        "depth_to_tail": 12,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 13,
+        "depth_to_tail": 16,
+        "class": "cipher-arithmetic"
+      },
+      {
+        "depth_from_tail": 17,
+        "depth_to_tail": 17,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 18,
+        "depth_to_tail": 21,
+        "class": "cipher-arithmetic"
+      },
+      {
+        "depth_from_tail": 22,
+        "depth_to_tail": 22,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 23,
+        "depth_to_tail": 24,
+        "class": "setup/move"
+      },
+      {
+        "depth_from_tail": 25,
+        "depth_to_tail": 25,
+        "class": "cipher-arithmetic"
+      },
+      {
+        "depth_from_tail": 26,
+        "depth_to_tail": 26,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 27,
+        "depth_to_tail": 28,
+        "class": "setup/move"
+      },
+      {
+        "depth_from_tail": 29,
+        "depth_to_tail": 29,
+        "class": "cipher-arithmetic"
+      },
+      {
+        "depth_from_tail": 30,
+        "depth_to_tail": 30,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 31,
+        "depth_to_tail": 34,
+        "class": "cipher-arithmetic"
+      },
+      {
+        "depth_from_tail": 35,
+        "depth_to_tail": 35,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 36,
+        "depth_to_tail": 38,
+        "class": "generator-loop"
+      },
+      {
+        "depth_from_tail": 39,
+        "depth_to_tail": 39,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 40,
+        "depth_to_tail": 43,
+        "class": "cipher-arithmetic"
+      },
+      {
+        "depth_from_tail": 44,
+        "depth_to_tail": 44,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 45,
+        "depth_to_tail": 48,
+        "class": "cipher-arithmetic"
+      },
+      {
+        "depth_from_tail": 49,
+        "depth_to_tail": 49,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 50,
+        "depth_to_tail": 52,
+        "class": "cipher-arithmetic"
+      },
+      {
+        "depth_from_tail": 53,
+        "depth_to_tail": 53,
+        "class": "setup/move"
+      },
+      {
+        "depth_from_tail": 54,
+        "depth_to_tail": 54,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 55,
+        "depth_to_tail": 57,
+        "class": "generator-loop"
+      },
+      {
+        "depth_from_tail": 58,
+        "depth_to_tail": 58,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 59,
+        "depth_to_tail": 62,
+        "class": "cipher-arithmetic"
+      },
+      {
+        "depth_from_tail": 63,
+        "depth_to_tail": 63,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 64,
+        "depth_to_tail": 67,
+        "class": "cipher-arithmetic"
+      },
+      {
+        "depth_from_tail": 68,
+        "depth_to_tail": 68,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 69,
+        "depth_to_tail": 70,
+        "class": "setup/move"
+      },
+      {
+        "depth_from_tail": 71,
+        "depth_to_tail": 71,
+        "class": "cipher-arithmetic"
+      },
+      {
+        "depth_from_tail": 72,
+        "depth_to_tail": 72,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 73,
+        "depth_to_tail": 75,
+        "class": "cipher-arithmetic"
+      },
+      {
+        "depth_from_tail": 76,
+        "depth_to_tail": 76,
+        "class": "setup/move"
+      },
+      {
+        "depth_from_tail": 77,
+        "depth_to_tail": 77,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 78,
+        "depth_to_tail": 79,
+        "class": "setup/move"
+      },
+      {
+        "depth_from_tail": 80,
+        "depth_to_tail": 80,
+        "class": "cipher-arithmetic"
+      },
+      {
+        "depth_from_tail": 81,
+        "depth_to_tail": 81,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 82,
+        "depth_to_tail": 83,
+        "class": "setup/move"
+      },
+      {
+        "depth_from_tail": 84,
+        "depth_to_tail": 84,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 85,
+        "depth_to_tail": 85,
+        "class": "setup/move"
+      },
+      {
+        "depth_from_tail": 86,
+        "depth_to_tail": 86,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 87,
+        "depth_to_tail": 87,
+        "class": "cipher-arithmetic"
+      },
+      {
+        "depth_from_tail": 88,
+        "depth_to_tail": 89,
+        "class": "setup/move"
+      },
+      {
+        "depth_from_tail": 90,
+        "depth_to_tail": 90,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 91,
+        "depth_to_tail": 91,
+        "class": "setup/move"
+      },
+      {
+        "depth_from_tail": 92,
+        "depth_to_tail": 92,
+        "class": "cipher-arithmetic"
+      },
+      {
+        "depth_from_tail": 93,
+        "depth_to_tail": 93,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 94,
+        "depth_to_tail": 95,
+        "class": "cipher-arithmetic"
+      },
+      {
+        "depth_from_tail": 96,
+        "depth_to_tail": 97,
+        "class": "setup/move"
+      },
+      {
+        "depth_from_tail": 98,
+        "depth_to_tail": 98,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 99,
+        "depth_to_tail": 99,
+        "class": "cipher-arithmetic"
+      },
+      {
+        "depth_from_tail": 100,
+        "depth_to_tail": 101,
+        "class": "setup/move"
+      },
+      {
+        "depth_from_tail": 102,
+        "depth_to_tail": 102,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 103,
+        "depth_to_tail": 104,
+        "class": "setup/move"
+      },
+      {
+        "depth_from_tail": 105,
+        "depth_to_tail": 105,
+        "class": "cipher-arithmetic"
+      },
+      {
+        "depth_from_tail": 106,
+        "depth_to_tail": 106,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 107,
+        "depth_to_tail": 108,
+        "class": "setup/move"
+      },
+      {
+        "depth_from_tail": 109,
+        "depth_to_tail": 109,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 110,
+        "depth_to_tail": 110,
+        "class": "setup/move"
+      },
+      {
+        "depth_from_tail": 111,
+        "depth_to_tail": 111,
+        "class": "cipher-arithmetic"
+      },
+      {
+        "depth_from_tail": 112,
+        "depth_to_tail": 112,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 113,
+        "depth_to_tail": 114,
+        "class": "cipher-arithmetic"
+      },
+      {
+        "depth_from_tail": 115,
+        "depth_to_tail": 116,
+        "class": "setup/move"
+      },
+      {
+        "depth_from_tail": 117,
+        "depth_to_tail": 117,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 118,
+        "depth_to_tail": 118,
+        "class": "setup/move"
+      },
+      {
+        "depth_from_tail": 119,
+        "depth_to_tail": 119,
+        "class": "stack"
+      },
+      {
+        "depth_from_tail": 120,
+        "depth_to_tail": 120,
+        "class": "setup/move"
+      },
+      {
+        "depth_from_tail": 121,
+        "depth_to_tail": 121,
+        "class": "cipher-arithmetic"
+      },
+      {
+        "depth_from_tail": 122,
+        "depth_to_tail": 122,
+        "class": "dispatch-stub"
+      },
+      {
+        "depth_from_tail": 123,
+        "depth_to_tail": 123,
+        "class": "setup/move"
+      },
+      {
+        "depth_from_tail": 124,
+        "depth_to_tail": 124,
+        "class": "cipher-arithmetic"
+      }
+    ]
+  },
+  "context_classification": {
+    "base": "0x18098c884",
+    "size": 768,
+    "counts": {
+      "POSITION-DERIVED": 209,
+      "CONSTANT": 519,
+      "MIXED": 40
+    },
+    "nonce_derived_offsets": [],
+    "mixed_offsets": [
+      54,
+      55,
+      69,
+      70,
+      71,
+      72,
+      73,
+      181,
+      189,
+      190,
+      191,
+      192,
+      193,
+      217,
+      218,
+      262,
+      263,
+      294,
+      295,
+      296,
+      297,
+      298,
+      330,
+      331,
+      399,
+      453,
+      454,
+      535,
+      536,
+      552,
+      573,
+      574,
+      601,
+      602,
+      654,
+      655,
+      678,
+      679,
+      722,
+      723
+    ],
+    "interpretation": "0 NONCE-DERIVED bytes: at the XOR point the nonce has already been fully mixed into position-dependent stream state. The context is dominated by CONSTANT bytes (pointers to heap buffers, the handler table 0x180c64ebd, flags) and POSITION-DERIVED bytes (rolling key @+0x0a, VIP @+0x6d, and the 64-byte destination slots @+0xb5/+0x235 which hold the keystream byte being XORed).",
+    "key_fields": {
+      "+0x0a": "rolling key (dword) - POSITION-DERIVED",
+      "+0x6d": "VIP (qword) - POSITION-DERIVED",
+      "+0x85": "handler table 0x180c64ebd - CONSTANT",
+      "+0xb5": "destination slot A (keystream byte) - the XOR target",
+      "+0x235": "destination slot B (keystream byte) - the XOR target",
+      "+0x61": "runtime key-schedule pointer (milestone 28)",
+      "+0xc5": "runtime keystream-source pointer (milestone 28)"
+    }
+  },
+  "recovered_data_operations": {
+    "chain": [
+      "VM word generator -> EDX (32-bit true keystream word)",
+      "0x180c2775c popfq; ret trampoline",
+      "0x18041a860 store_le32(RCX=dest, EDX=keystream word)",
+      "64-byte keystream buffer",
+      "0x180aa5bba per-byte load",
+      "destination slot 0x18098c939 / 0x18098cab9 (context +0xb5/+0x235)",
+      "0x1809c5561 xor byte [r8], r12b   (r12b=plaintext, [r8]=keystream)",
+      "ciphertext"
+    ],
+    "xor_site": {
+      "address": "0x1809c5561",
+      "semantics": "xor byte ptr [r8], r12b",
+      "r12": "plaintext byte pointer (r12b = plaintext byte)",
+      "r8": "destination context slot (pre-loaded with keystream byte)",
+      "before": "[r8] = keystream byte",
+      "after": "[r8] = ciphertext byte",
+      "disasm": [
+        "xor byte ptr [r8], r12b",
+        "pushfq ",
+        "mov r12, 1",
+        "or rsi, 0x80",
+        "xor r11, r10",
+        "mov rbx, 0",
+        "mov rax, 0x12",
+        "mov r14, 0x6b8fb36e",
+        "mov rcx, rbp"
+      ]
+    },
+    "store32": {
+      "address": "0x18041a860",
+      "semantics": "little-endian store of a 32-bit keystream word",
+      "disasm": [
+        "mov rax, rcx",
+        "mov byte ptr [rcx], dl",
+        "mov ecx, dword ptr [rip + 0x3bd059]",
+        "xor cl, 0xd7",
+        "add cl, 0xdf",
+        "mov r8d, edx",
+        "shr r8d, cl",
+        "mov byte ptr [rax + 1], r8b"
+      ]
+    },
+    "writer_oracle": [
+      {
+        "call_id": 1,
+        "plaintext_bytes": 745,
+        "writer_records": 204,
+        "discarded_leading_records": 12,
+        "blocks": 12,
+        "all_blocks_equal_keystream": true
+      },
+      {
+        "call_id": 2,
+        "plaintext_bytes": 1353,
+        "writer_records": 364,
+        "discarded_leading_records": 12,
+        "blocks": 22,
+        "all_blocks_equal_keystream": true
+      },
+      {
+        "call_id": 3,
+        "plaintext_bytes": 1127,
+        "writer_records": 300,
+        "discarded_leading_records": 12,
+        "blocks": 18,
+        "all_blocks_equal_keystream": true
+      }
+    ]
+  },
+  "bookkeeping_vs_cipher": {
+    "bookkeeping": [
+      "handler table pointer @+0x85 (constant 0x180c64ebd)",
+      "VIP @+0x6d (advances every dispatch, not cipher state)",
+      "rolling key @+0x0a (dispatch-index mixing, not keystream output)",
+      "heap object pointers (plaintext/key/output std::string objects)",
+      "dispatch stubs (jmp into handler table entries)"
+    ],
+    "cipher_semantics": [
+      "destination slots @+0xb5 / @+0x235: hold the keystream byte",
+      "handler arithmetic (xor/add/and/or/rotate) over context state",
+      "generator loop 0x18099089e->0x180990a93->0x180990b21",
+      "store32 0x18041a860 writing final keystream words",
+      "xor 0x1809c5561 combining keystream with plaintext",
+      "key-schedule pointers @+0x61 / @+0xc5 (runtime-only state)"
+    ]
+  },
+  "limitations": [
+    "The actual (key, nonce, block_index) -> 16 keystream words mapping is NOT recovered: the key-schedule state at context+0x61/+0xc5 is runtime-only (milestone 28) and absent from the offline dump.",
+    "This devirtualizer recovers the DATA OPERATIONS (which slots hold keystream, where it is stored, where XORed) but not the round function that produces the keystream words.",
+    "No live attach was performed; all analysis is offline."
+  ]
+}

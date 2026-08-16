@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MaxHook.dll 逆向分析报告 — 布吉岛服务器「协议无效」根因研究</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0f1117; color: #d8dee9;
+    font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+    line-height: 1.65; padding: 32px 20px; max-width: 1080px; margin: 0 auto;
+  }
+  h1 { font-size: 26px; color: #fff; margin-bottom: 6px; }
+  h2 { font-size: 20px; color: #7ec8ff; margin: 36px 0 12px; padding-bottom: 6px; border-bottom: 1px solid #2a3040; }
+  h3 { font-size: 16px; color: #ffd479; margin: 22px 0 8px; }
+  p { margin: 8px 0; }
+  .sub { color: #8a93a6; font-size: 13px; margin-bottom: 24px; }
+  .card {
+    background: #171b26; border: 1px solid #2a3040; border-radius: 10px;
+    padding: 16px 18px; margin: 14px 0;
+  }
+  .verdict {
+    background: #1d2434; border-left: 4px solid #ff6b6b; border-radius: 8px;
+    padding: 16px 18px; margin: 18px 0;
+  }
+  .verdict.green { border-left-color: #4cd07d; }
+  code, .mono {
+    font-family: "Cascadia Code", Consolas, monospace; font-size: 12.5px;
+    background: #1a1f2c; padding: 1px 6px; border-radius: 4px; color: #9ee6a8;
+  }
+  pre {
+    background: #141824; border: 1px solid #2a3040; border-radius: 8px;
+    padding: 14px; overflow-x: auto; font-size: 12px; line-height: 1.5; margin: 10px 0;
+  }
+  pre code { background: none; padding: 0; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 13px; }
+  th { background: #1d2434; color: #7ec8ff; text-align: left; padding: 8px 10px; border: 1px solid #2a3040; }
+  td { padding: 7px 10px; border: 1px solid #2a3040; vertical-align: top; }
+  tr:nth-child(even) td { background: #151924; }
+  .tag { display: inline-block; padding: 1px 8px; border-radius: 10px; font-size: 11px; margin-right: 6px; }
+  .tag.red { background: #4a1e26; color: #ff8a8a; }
+  .tag.green { background: #1d3a28; color: #6fd89a; }
+  .tag.blue { background: #1e3349; color: #7ec8ff; }
+  .tag.yellow { background: #3d3522; color: #ffd479; }
+  .small { font-size: 12px; color: #8a93a6; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 800px) { .grid2 { grid-template-columns: 1fr; } }
+  ul, ol { margin: 8px 0 8px 24px; }
+  li { margin: 4px 0; }
+  .hl { color: #ff8a8a; font-weight: 600; }
+  .hlg { color: #6fd89a; font-weight: 600; }
+  .footer { margin-top: 40px; padding-top: 14px; border-top: 1px solid #2a3040; color: #6b7280; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<h1>MaxHook.dll 逆向分析报告</h1>
+<p class="sub">网易中国版 Minecraft「布吉岛」服务器 heypixel 反作弊体系 — 合法客户端经 MCProtocolLib 代理被判「协议无效」根因研究<br>
+分析日期：2026-08-12 · 目标：<code>E:\MCLDownload\Game\.minecraft\native\MaxHook.dll</code> (24,928,616 B, PDB <code>anti-cheat.pdb</code>)</p>
+
+<div class="verdict">
+<h3 style="margin-top:0">核心结论（TL;DR）</h3>
+<p><b>1. MaxHook.dll 是 WinLicense（Themida 商业壳）加壳的 JVMTI/JNI 原生反作弊</b>，随 heypixel mod 打包分发（jar 内 <code>lib/MaxHook.x64.dll</code>），与「布吉岛」服务器是<b>同一厂商的配套产品</b>（开发路径 <code>NativeAntiCheat\x64\Release\anti-cheat.dll</code>）。</p>
+<p><b>2. 检测面分两层：</b>① Java mod（ZKM 混淆，1128 类）通过自定义通道 <code>heypixel:s2cevent</code> 上报 mod 文件哈希 + 硬件指纹（jasypt 加密），并有心跳 <code>SyncToken</code>；② DLL 通过 JNI 钩子（<code>jni_call_hook::flush_and_report</code>）挂钩 <code>net/minecraft*</code> 类、自带 socket 层与内嵌证书库（Certum/Sectigo）经 <b>WinHTTP 独立直连上报</b>，并做字节码级类文件校验（<code>Invalid inc maxStack/size</code>）。</p>
+<p><b>3. 「协议无效」判定的直接触发点不在包内容，而在服务器切换（GAME→CONFIGURATION 重协商）后的<b class="hl">通道重注册与完整性/心跳链路断裂</b>：</b>代理以 <code>legacyServerSwitch</code> 模式代答配置阶段，客户端停留在 GAME 态，<b class="hl">不会向新服务器上下文重发 <code>minecraft:register</code> 通道注册</b>，且 <code>heypixel:s2cevent</code> 的完整性上报/心跳时序被打断——服务端周期性校验缺失即周期判「协议无效」。代理源码注释已自认此风险（<i>"Dropping them makes the server judge the client's protocol invalid (missing integrity report / sync token) after the switch"</i>）。</p>
+<p><b>4. 服务端身份校验：</b>DLL 的 <code>net/minecraft</code> 类匹配器 + 自带 TLS 证书库说明它<b>校验的是"自己的上报通道"（WinHTTP 直连）与 JVM 内的 Minecraft 类</b>，而非 Minecraft 连接对端 IP；但经代理时 DLL 经 JNI 观察到的连接上下文是代理地址，若随上报带上环境信息，服务端可比对出异常。</p>
+</div>
+
+<h2>一、MaxHook.dll 技术身份与加壳结构</h2>
+
+<div class="card">
+<h3>1.1 壳识别</h3>
+<ul>
+<li>入口 RVA <code>0x1F00058</code> 位于 <code>.boot</code> 节（15.9 MB，熵 7.95 ≈ 纯随机加密载荷）；<code>.bugland</code>（22.5 MB BSS，RSize=0）与 <code>.boot</code> 共享同一 RawOff（0x896600）。</li>
+<li>入口为 LZ77/Deflate 风格自解压 stub（位流读取 <code>adc dl,dl</code> + <code>rep movsb</code> 回指复制）。</li>
+<li><b>解压流程（Unicorn 模拟完整还原）</b>：入口 <code>base+0x1F00058</code> → 调用 helper <code>0x1F001DF</code>（取 EIP、算 delta、检查重定位标志）→ 循环调用解压例程 <code>base+0x1F0005D</code>（src=<code>base+0x1F00248</code>，dst=<code>base+0x980000</code>=.bugland）→ 完成后 <code>jmp base+0xC0EB27</code>（解压后真实入口，OEP 为 <code>push rbp; jmp ...</code> 跳板链）。</li>
+<li>壳运行期读取 <code>gs:[0x30]</code>（PEB）、<code>gs:[0x188]</code>（TLS）→ 需要完整 PEB/TEB；我们为其搭建了最小 Windows 模拟环境（真实 kernel32/ntdll 导出表 + PEB/TEB/LDR + API 分发 + JNI/JVM 伪造表），VM 运行 1 亿指令后解密出 <code>SOFTWARE\WinLicense</code>、<code>Software\WLkt</code> 等壳自身授权键。</li>
+<li>载荷解压区（<code>boot_unpacked.bin</code>，22.5 MB）前 2.9 MB 为低熵明文代码区（真实 OEP 代码），其余为 VM 字节码/加密数据。</li>
+</ul>
+<pre><code>WinLicense 特征串（原始文件明文）:
+  WinLicenseVersion / WinLicenseDriverVersion / /forcerun / /dumpstatus
+  SOFTWARE\WinLicense / Software\WLkt
+导入解析器: FNV 变体哈希 (seed 0x1c258cc9, prime 0x1000193), 匹配出 19 个壳自身 API:
+  VirtualAlloc/VirtualProtect/VirtualFree/VirtualQuery/NtMapViewOfSection/NtUnmapViewOfSection/
+  NtCreateSection/NtClose/RtlImageNtHeader/GetSystemInfo ...</code></pre>
+</div>
+
+<div class="card">
+<h3>1.2 来源与分发（网易绑定第一层）</h3>
+<ul>
+<li>mod jar <code>4689645918625526379@2@8.jar</code>（81 MB）内含 <code>lib/MaxHook.x64.dll</code>（尺寸与安装版完全一致 24,928,616 B）+ <code>lib/MinHook.x64.dll</code>（API 钩子库，修正了此前「Detours」推断）。</li>
+<li>Java 侧加载（<code>ClientNetworkBootstrap.initializeNativeLibrary()</code>）：<code>extractAndLoadNativeLibrary()</code> 从 jar 资源解压到 <code>.minecraft/native/MaxHook.dll</code> 后 <code>System.load()</code>；开发回退路径 <code>D:\WorkSpace\IDEA\Java\HeyPixelMod\NativeAntiCheat\x64\Release\anti-cheat.dll</code>（即项目名 <code>NativeAntiCheat</code>，PDB <code>anti-cheat.pdb</code>）。</li>
+<li><b>结论：MaxHook.dll 不是网易官方反作弊，而是「布吉岛」服务器（heypixel 生态）自带的客户端反作弊组件</b>——与服务器同一厂商，随 mod 分发。</li>
+</ul>
+</div>
+
+<h2>二、DLL 检测与通信能力（静态证据链）</h2>
+
+<div class="card">
+<h3>2.1 JNI 类名匹配器（核心：钩 Minecraft 类）</h3>
+<p>RVA <code>0x18D790</code> 处反汇编还原为：</p>
+<pre><code>bool is_net_minecraft(const char* s) {           // rcx = JNI 类名字符串
+    if (strlen(s) < 13) return false;
+    return memcmp(s, "net/minecraft", 13) == 0;  // movabs 立即数构造, 避免明文串
+}
+; movabs rax, 0x656e696d2f74656e   ; "net/mine"
+; movabs rdx, 0x7466617263656e69   ; "inecraft"
+; xor rax,[rcx]; xor rdx,[rcx+5]; or rdx,rax; sete al; ret</code></pre>
+<p>用途：DLL 经 <code>jni_call_hook</code> 过滤 <code>net/minecraft*</code> 类的 JNI 调用（FindClass/GetStaticMethodID 等），用于观察/挂钩 Minecraft 客户端网络类。C++ RTTI 明文（.data）：<code>jni_call_hook::flush_and_report</code>（static，含 <code>std::vector&lt;std::basic_string&lt;char&gt;&gt;</code> 记录队列）——收集 JNI 调用记录并批量上报。</p>
+</div>
+
+<div class="card">
+<h3>2.2 类文件校验 / 字节码插桩能力</h3>
+<p>明文错误串 <code>Invalid inc maxStack/size</code> —— 来自 Java class 文件解析/验证器。结合「匹配 net/minecraft 类」与 JVMTI agent 角色，DLL 具备<b>在类加载时校验甚至改写 Minecraft 类字节码</b>的能力（JVMTI ClassFileLoadHook 类能力）。</p>
+</div>
+
+<div class="card">
+<h3>2.3 独立上报通道（WinHTTP + 自带 TLS 证书库 + 自带 socket 层）</h3>
+<table>
+<tr><th>证据（原始文件明文）</th><th>含义</th></tr>
+<tr><td><code>http://ocsp.sectigo.com</code>、<code>http://crl.certum.pl/ctnca2.crl</code>、<code>http://subca.ocsp-certum.com</code>、<code>http://repository.certum.pl/ctnca2.cer</code>、<code>http://ccsca2021.crl.certum.pl/ccsca2021.crl</code>、<code>https://sectigo.com/CPS</code>、<code>http://crl.usertrust.com/USERTrustRSACertificationAuthority.crl</code> 等 17 条</td><td>内嵌 X.509 证书链的 CA 扩展 URL（Certum/Sectigo），用于对 WinHTTP TLS 连接做<b>证书链校验</b></td></tr>
+<tr><td><code>connection reset / refused / aborted / already connected / not connected / not a socket</code></td><td>自带 C++ socket 封装层（独立 TCP 通道，非 Minecraft 连接）</td></tr>
+<tr><td>导入表 <code>WinHttpCloseHandle</code>、<code>GetAdaptersAddresses</code>、<code>RegGetValueW</code>、<code>GetFileVersionInfoA</code>、<code>CoCreateInstance</code>、<code>inet_ntop</code>、<code>MessageBoxA</code>、<code>JNI_GetCreatedJavaVMs</code></td><td>WinHTTP 直连上报 + 网卡指纹 + 注册表读取 + 文件版本校验（查启动器/环境）+ JVM 附加</td></tr>
+<tr><td><code>GetTempPath2W</code>、<code>RtlAddVectoredExceptionHandler</code></td><td>临时文件操作；VEH 反调试</td></tr>
+</table>
+<p class="small">注：WinHTTP 的<b>目标 URL 与请求体在 WinLicense 加密载荷内</b>（VM 运行后仍未解密到该层，DLL 在完成壳初始化前跳入反模拟陷阱）。URL 需运行态抓包确认（见第七节验证方案）。</p>
+</div>
+
+<h2>三、Java mod 侧全貌（完全逆向）</h2>
+
+<div class="card">
+<h3>3.1 通道与协议</h3>
+<ul>
+<li>mod 为 ZKM 24.0.2 混淆（1128 个类，含 emoji 命名混淆类）；<code>com.heypixel.client</code> 客户端包 112 文件已完全逆向。</li>
+<li>Forge 通道：<code>heypixel:s2cevent</code>（包 233=String 服务器 UI 事件 / 250=MuxFragmentMessage 完整性上报 / 234=图片）、<code>floodgate:form</code>、<code>floodgate:netease</code>。</li>
+<li><code>MuxFragmentCodec</code>：协议版本 1，按 sequence 分片重组（<code>FragmentAccumulator</code>，单包上限 16 MB，分片 60s 过期）。</li>
+<li>线格式（本地抓包样本 + 代理日志确认）：<code>0xFA + int32 BE variant + zlib(JSON)</code>（S2C 配置推送）、<code>0x01/0x02 + opaque</code>（C2S 完整性上报）、<code>0x0C + empty</code>（控制/心跳）、<code>heypixel:sync_skins</code>（0x01+0x24+UUID hex，皮肤同步）。</li>
+</ul>
+<pre><code>本地样本解码:
+  s2cevent_0: 0xFA 00000076 zlib -> {"type":"config","enabled":{"thunderbolt_fishing_rod":true,...}}
+  s2cevent_1: 0xFA 00000074 zlib -> {"type":"infos","unlocked":{},"exchange":[],"exchange_raw":[]}
+  s2cevent_2: 0xFA 00000077 zlib -> {"type":"players","players":{"578415c3-...":{"uuid":...}}}
+  sync_skins: 0x01 0x24 "00000000-0000-4000-8000-0000666a0e0ee"  (UUID hex)
+代理 3h 日志: heypixel:s2cevent 25,102 次 / heypixel:sync_skins 2,042 次, 无 WARN/ERROR</code></pre>
+</div>
+
+<div class="card">
+<h3>3.2 完整性上报（RemoteAssetMessage）</h3>
+<ul>
+<li>进服即发 <code>SPRINT</code> 型上报；服务器经 <code>PlayerMetadataMessage</code> 下发动作（SPRINT/SNEAK/SWIM/ATTACK/NULL/ASD），客户端对应回复。</li>
+<li>内容：加载的 mod 文件列表 + 路径 + <b>SHA-256</b>、<code>user.dir</code>、<code>java.home</code>、CPU（ProcessorID）、主板（厂商/型号/序列号/HardwareUUID）、<b>全部网卡（名称/MAC/IPv4/IPv6）</b>、磁盘序列号、integrity token（主/次）——经 jasypt 加密（密码 = 随机 clientId UUID），MessagePack 编码后分片发送。</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>3.3 心跳与管道</h3>
+<ul>
+<li><code>NetworkHeartbeatMessage</code>（包 ID 12）：进服一次性发送 <code>SyncToken</code>（服务器下发的令牌，客户端回显），登出清除。</li>
+<li><code>PacketPipelineInjector</code>：登录时在 Netty pipeline 的 <code>packet_handler</code> 前注入 <code>PacketInterceptHandler</code>（ChannelDuplexHandler），对每个入站/出站包广播事件（可取消/替换）。混淆层另有包拦截类（引用 <code>Packet</code>/<code>ServerboundCustomPayloadPacket</code>/<code>ClientPacketListener</code>/<code>Connection</code>）。</li>
+</ul>
+</div>
+
+<h2>四、heypixel.log 的 #1–#10 节奏解读</h2>
+
+<div class="card">
+<p>日志由 <b>DLL 侧写入</b>（mod 无写此文件的代码；格式串在加密载荷内）。节奏分两组：</p>
+<table>
+<tr><th>阶段</th><th>序列</th><th>间隔</th><th>推断</th></tr>
+<tr><td>进服检测</td><td><code>#1 → #7 → #8 → #2</code></td><td>#8 距 #7 ≈ 47–79ms；#2 距 #8 ≈ 800–1250ms</td><td>#1=启动环境采集；#7=快速检测组开始（进程/窗口/网卡枚举）；#8=快速组完成（~50ms）；#2=慢速组完成（证书/文件/连接校验，~1s）</td></tr>
+<tr><td>周期快检</td><td><code>#3 → #4</code></td><td>#4 距 #3 ≈ 0ms，每 ~400ms 一轮</td><td>快速检测对（文件哈希/注册表/轻量进程扫描），执行近乎瞬时</td></tr>
+<tr><td>周期中检</td><td><code>#9 → #10</code></td><td>#10 距 #9 ≈ 330–550ms，每 ~400ms</td><td>中速检测（网络/连接特征/上报校验），耗时 ~400ms</td></tr>
+<tr><td>周期慢检</td><td><code>#5 → #6</code></td><td>#6 距 #5 ≈ 1000–1437ms，每 ~1000ms</td><td>慢速检测（WinHTTP 上报/证书 CRL/深度扫描），耗时 ~1s</td></tr>
+</table>
+<p>关键：<b>服务端「协议无效」是周期性判定的</b>，与 #9/#10（~400ms）和 #5/#6（~1000ms）两档周期检测节奏吻合——每次服务端校验发现客户端完整性/心跳链路异常即判一次。日志本身在干净/代理两种环境下节奏一致（日志只记检测执行，不记结果），<b>异常判定发生在服务端，依据客户端上报链路的完备性</b>。</p>
+</div>
+
+<h2>五、代理链路分析（S1mple / MCProtocolLib 1.20.6）</h2>
+
+<div class="card">
+<h3>5.1 代理行为</h3>
+<ul>
+<li>完成网易 X19 认证（自定义 AES/RSA + sauth），双 leg 独立压缩/AES 状态。</li>
+<li>状态桥接：LOGIN/CONFIG 扩展包按白名单转发；<b>GAME 态全量转发</b>（含全部 custom payload）。</li>
+<li><code>legacyServerSwitch</code>（关键路径）：后端服务器做 GAME→CONFIGURATION 重协商时，若客户端处于 GAME（网易 1.20 客户端不支持动态重协商），代理<b>代答整个配置阶段</b>（SelectKnownPacks 回显服务端列表、KeepAlive 自答、FinishConfiguration 代发），客户端保持 GAME；期间将客户端 GAME 态 custom payload（heypixel:s2cevent 等）转发给后端。</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>5.2 证据：代理作者已确认的断链点</h3>
+<pre><code>// ProxyConnection.java L187-196
+if (this.legacyServerSwitch && transformed instanceof ServerboundCustomPayloadPacket) {
+    // While the backend is being switched (backend=CONFIGURATION, client still GAME),
+    // the client keeps sending business-channel payloads (heypixel:s2cevent integrity
+    // reports/heartbeats, floodgate:* etc). Dropping them makes the server judge the
+    // client's protocol invalid (missing integrity report / sync token) after the switch.</code></pre>
+<p>即：<b>代理作者已观测到「丢包 → 协议无效」的直接因果</b>（missing integrity report / sync token），并为此加了转发。但转发不解决 <code>minecraft:register</code> 通道注册的重注册问题（见结论）。</p>
+</div>
+
+<h2>六、根因结论与证据链</h2>
+
+<div class="verdict">
+<h3 style="margin-top:0">6.1 「协议无效」触发链（按证据强度排序）</h3>
+<table>
+<tr><th>#</th><th>触发项</th><th>证据</th><th>强度</th></tr>
+<tr>
+<td><b>A</b></td>
+<td><b>服务器切换后完整性/心跳链路未在新上下文重建</b>：布吉岛/网易服务器群切换（GAME→CONFIG 重协商）后，客户端（GAME 态）不会向新上下文重发 <code>minecraft:register</code>，代理代答的配置阶段也不包含 heypixel 通道注册；服务端新上下文收不到 <code>RemoteAssetMessage</code> 完整性上报与 <code>SyncToken</code> 心跳 → 周期校验失败 → 周期判「协议无效」</td>
+<td>代理源码注释（5.2）；服务端判定具周期性（四章）；s2cevent 协议完全依赖通道注册（三章）；heypixel.log 周期节奏与服务端判定周期吻合</td>
+<td><span class="tag red">高</span></td>
+</tr>
+<tr>
+<td><b>B</b></td>
+<td><b>MaxHook.dll 观察到的连接上下文与期望不符</b>：DLL 经 JNI 钩 <code>net/minecraft</code> 网络类；经代理时对端是局域网代理地址而非网易服务器；DLL 自带 socket 层/WinHTTP 独立通道的上报数据中若包含连接对端/环境指纹，服务端比对异常</td>
+<td>2.1 类匹配器；2.3 独立通道；RemoteAssetMessage 上报网卡/环境（3.2）；代理为局域网地址</td>
+<td><span class="tag yellow">中（需运行态确认）</span></td>
+</tr>
+<tr>
+<td><b>C</b></td>
+<td><b>分片重组丢失</b>：MuxFragmentCodec 分片包在代理转发/延迟下若乱序或超 60s 过期，<code>FragmentAccumulator</code> 丢片 → 完整性上报不完整</td>
+<td>3.1 分片机制；日志 C2S 上报量大但无法确证丢片</td>
+<td><span class="tag yellow">中</span></td>
+</tr>
+<tr>
+<td><b>D</b></td>
+<td><b>DLL 自身周期性检测上报（#5/#6 慢检）未达服务端</b>：DLL 的 WinHTTP 独立通道不经过代理，若其上报要求与 Minecraft 连接同会话绑定（如校验 SNI/证书链后回传会话签名），代理会话下不成立</td>
+<td>2.3 独立 TLS；四章慢检节奏</td>
+<td><span class="tag yellow">低-中（推断）</span></td>
+</tr>
+</table>
+
+<h3>6.2 回答关键疑点</h3>
+<ul>
+<li><b>Wireshark/抓包检测？</b> 检测名单（进程名/工具名）位于 WinLicense 加密载荷内，未在解压区明文出现；DLL 确具备进程枚举能力路径（FNV 解析器 + 环境采集），但<b>静态上未获名单项</b>。运行态 Procmon/npcap（内核级，避开 VEH 反调试）可确认。另注意：DLL 自带 socket 层 + WinHTTP，其网络特征检测重点更可能是「自己通道的 TLS 指纹」而非 Wireshark 进程。</li>
+<li><b>服务器身份校验？</b> 有「校验」但对象是<b>自己上报通道的 TLS 对端（内嵌 Certum/Sectigo 证书库）</b>；对 Minecraft 连接对端 IP 的校验未获直接证据（mod 逆向源码不读 ServerData/remoteAddress）。「走代理必然触发」的更稳机制是 A（通道重注册缺失）与 B（连接上下文异常）。</li>
+<li><b>与网易绑定在哪层？</b> ①随 mod jar 分发（System.load）；②mod 通道与服务器联动（s2cevent/floodgate）；③DLL 独立 WinHTTP 通道 + 证书库（可能上报到服务器配套端点）；④launcher 目录/文件版本校验（GetFileVersionInfoA/GetTempPath2W 导入）。</li>
+<li><b>上报通道？</b> Java 侧完全已知（heypixel:s2cevent 包 250，jasypt+MessagePack）；DLL 侧 WinHTTP URL 加密（需运行态抓包，见第七节）。</li>
+</ul>
+</div>
+
+<h2>七、验证方案（运行态取证清单）</h2>
+
+<div class="card">
+<h3>7.1 客户端（Windows）</h3>
+<ol>
+<li><b>Procmon</b>（内核驱动，VEH 反调试不可见）：过滤 <code>MaxHook.dll</code> → 记录文件访问（<code>.minecraft/native</code>、<code>launcher</code>、temp）、注册表（<code>SOFTWARE\WinLicense</code>、<code>Software\WLkt</code>、启动器键）、进程创建/读取。</li>
+<li><b>npcap 内核级抓包</b>（绕开用户态 Wireshark 触发面）：定位 WinHTTP 目标 IP/端口 + TLS SNI（证书校验失败时 SNI/证书名直接可见）。重点看 <code>#5/#6</code> 慢检（~1000ms 周期）是否对应新 TCP/TLS 连接。</li>
+<li>对比干净/代理两种环境 heypixel.log 的 #1–#10 节奏与 <code>#9/#10</code>、<code>#5/#6</code> 的<b>耗时异常</b>（若代理环境下某档耗时跳变/缺失，即该档为触发项）。</li>
+<li>断开状态监控：代理切换前后抓 s2cevent 双向流量，确认 <code>minecraft:register</code>（config 态）与 250 号分片包是否在切换后仍被服务端接受。</li>
+</ol>
+<h3>7.2 代理（Arch 主机）</h3>
+<ol>
+<li>在 <code>legacyServerSwitch</code> 路径补打日志：确认切换后服务端是否再收到客户端 <code>ServerboundCustomPayloadPacket(minecraft:register)</code>；若没有 → 手动在配置阶段代答阶段补发 <code>minecraft:register</code>（含 <code>heypixel:s2cevent</code>/<code>heypixel:sync_skins</code>/<code>floodgate:*</code>）再观察「协议无效」是否消失。</li>
+<li>用 3h 日志的 payload dump（<code>/opt/s1mple/payload-dumps</code>）回放 C2S 上报，检查分片序号是否有空洞（MuxFragment 丢片）。</li>
+<li>试验：切换后若持续黑屋，改为「不代答配置、让客户端参与重协商」（若网易客户端实际支持），或切换后强制客户端重新登录。</li>
+</ol>
+</div>
+
+<h2>八、分析产物清单</h2>
+<div class="card">
+<table>
+<tr><th>文件</th><th>说明</th></tr>
+<tr><td><code>E:\Coding\S1mple\target\boot_unpacked.bin</code></td><td>.boot 解压载荷 dump（22.5 MB，Unicorn 模拟入口解压例程获得）</td></tr>
+<tr><td><code>E:\Coding\S1mple\target\mem_after_vm.bin</code></td><td>WinLicense VM 运行 1 亿指令后的内存快照（含解密出的授权键串）</td></tr>
+<tr><td><code>unpack_boot.py</code> / <code>winenv.py</code> / <code>run_unpack*.py</code></td><td>Unicorn 解压 + 最小 Windows 模拟环境（PEB/TEB/LDR + 真实 DLL 导出 + API 分发 + JNI/JVM 伪造表）</td></tr>
+<tr><td><code>hash_match.py</code> / <code>hash_match2.py</code></td><td>FNV 哈希还原 WinLicense API 解析名单（19 个壳 API）</td></tr>
+<tr><td><code>scan_constructed.py</code></td><td>扫描 .text movabs 构造字符串（还原 <code>net/minecraft</code> 匹配器）</td></tr>
+<tr><td><code>fake_jvm.dll</code></td><td>伪造 jvm.dll（JNI_GetCreatedJavaVMs 导出）用于 JVM 附加模拟</td></tr>
+</table>
+</div>
+
+<h2>九、遗留问题</h2>
+<div class="card">
+<ul>
+<li>WinHTTP 上报目标 URL 与请求体格式：仍在加密载荷内，需运行态抓包（7.1.2）。</li>
+<li>Wireshark/工具进程检测名单：静态未解密，需 Procmon 运行态确认（7.1.1）。</li>
+<li>DLL 是否校验 Minecraft 对端 IP：静态无直接证据；可在 Procmon 中观察 DLL 对 <code>getaddrinfo</code>/<code>connect</code> 的调用参数确认。</li>
+<li>#1–#10 各编号与检测项的精确对应：日志格式串被 WinLicense 加密；可通过运行态内存 dump（壳解包完成后 OEP 处）进一步提取。</li>
+</ul>
+</div>
+
+<div class="footer">
+MaxHook.dll 逆向分析 · 分析方法：PE 静态分析 + Unicorn 动态解密 + WinLicense 导入解析器哈希还原 + Java mod 逆向（ZKM 部分由常量池/类引用推断）+ 代理源码审查 + 3h 运行日志/payload 样本交叉验证<br>
+生成：WorkBuddy · 2026-08-12
+</div>
+
+</body>
+</html>

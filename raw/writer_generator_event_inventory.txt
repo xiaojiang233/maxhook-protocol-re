@@ -1,0 +1,86 @@
+
+ writer_calls_v2_manual_20260814_013526
+writer_calls_installed {'module': 'MaxHook.dll', 'module_base': '0x180000000', 'encrypt': '0x180324610', 'writer': '0x18041a860', 'buffer_from_plaintext_object': -1264}
+writer_calls_begin {'call_id': 1, 'plaintext_object': '0x8ca40fefd0', 'buffer': '0x8ca40feae0'}
+writer_calls_leave {'call_id': 1, 'records': 204, 'dropped': 0, 'retval': '0x8ca40ff160'}
+writer_call_records {'call_id': 1, 'label': 'writer_call_records', 'records': 204, 'file': '000004_call_1_meta_writer_call_records.bin', 'captured_bytes': 37788, 'sha256': '7a3eec8f84edeae63b269b9c4369287b612ef9da05b61d5ff1010ffaa1673a49'}
+writer_calls_begin {'call_id': 2, 'plaintext_object': '0x8ca40fefd0', 'buffer': '0x8ca40feae0'}
+writer_calls_leave {'call_id': 2, 'records': 364, 'dropped': 0, 'retval': '0x8ca40ff160'}
+writer_call_records {'call_id': 2, 'label': 'writer_call_records', 'records': 364, 'file': '000007_call_2_meta_writer_call_records.bin', 'captured_bytes': 67497, 'sha256': '87e53378ce2ebff8e3ab3870c4718348a508bf78af17fb008c2406bed586e67a'}
+writer_calls_begin {'call_id': 3, 'plaintext_object': '0x8ca40fefd0', 'buffer': '0x8ca40feae0'}
+writer_calls_leave {'call_id': 3, 'records': 348, 'dropped': 0, 'retval': '0x8ca40ff160'}
+writer_call_records {'call_id': 3, 'label': 'writer_call_records', 'records': 348, 'file': '000010_call_3_meta_writer_call_records.bin', 'captured_bytes': 64534, 'sha256': '2291956e80cca0c74a216a7e3ec1993a7f071f8e6a749f1a3fe7822ad2c07947'}
+writer_calls_begin {'call_id': 4, 'plaintext_object': '0x8ca40fefd0', 'buffer': '0x8ca40feae0'}
+writer_calls_leave {'call_id': 4, 'records': 252, 'dropped': 0, 'retval': '0x8ca40ff160'}
+writer_call_records {'call_id': 4, 'label': 'writer_call_records', 'records': 252, 'file': '000013_call_4_meta_writer_call_records.bin', 'captured_bytes': 46694, 'sha256': '3c0065c0e2ff5d8399e2b980d60987290e81b63743badcd9d7b891cb03adc658'}
+writer_calls_begin {'call_id': 5, 'plaintext_object': '0x8ca40fefd0', 'buffer': '0x8ca40feae0'}
+writer_calls_leave {'call_id': 5, 'records': 348, 'dropped': 0, 'retval': '0x8ca40ff160'}
+writer_call_records {'call_id': 5, 'label': 'writer_call_records', 'records': 348, 'file': '000016_call_5_meta_writer_call_records.bin', 'captured_bytes': 64536, 'sha256': 'bfee7610af5cf2f906a77b649c0209bd3ddef48967f2964bfb597ba107c585d3'}
+writer_calls_begin {'call_id': 6, 'plaintext_object': '0x8ca40fefd0', 'buffer': '0x8ca40feae0'}
+
+ writer_calls_manual_20260814_013014
+writer_calls_installed {'module': 'MaxHook.dll', 'module_base': '0x180000000', 'encrypt': '0x180324610', 'writer': '0x18041a860', 'buffer_from_plaintext_object': -1264}
+writer_calls_begin {'call_id': 1, 'plaintext_object': '0x8ca40fefd0', 'buffer': '0x8ca40feae0'}
+writer_calls_leave {'call_id': 1, 'records': 204, 'dropped': 0, 'retval': '0x8ca40ff160'}
+writer_call_records {'call_id': 1, 'label': 'writer_call_records', 'records': 204, 'file': '000004_call_1_meta_writer_call_records.bin', 'captured_bytes': 25957, 'sha256': '3962e286ce9c3a33bebc33c6e824cd87bb78002fbfac3f71d5ddf154c2eaf81d'}
+writer_calls_begin {'call_id': 2, 'plaintext_object': '0x8ca40fefd0', 'buffer': '0x8ca40feae0'}
+writer_calls_leave {'call_id': 2, 'records': 348, 'dropped': 0, 'retval': '0x8ca40ff160'}
+writer_call_records {'call_id': 2, 'label': 'writer_call_records', 'records': 348, 'file': '000007_call_2_meta_writer_call_records.bin', 'captured_bytes': 44353, 'sha256': '5ee5baa8f8f8eb42597b9dfe79dc2361ed555a2ca46115fdec273ce6ee12ba1e'}
+writer_calls_begin {'call_id': 3, 'plaintext_object': '0x8ca40fefd0', 'buffer': '0x8ca40feae0'}
+writer_calls_leave {'call_id': 3, 'records': 204, 'dropped': 0, 'retval': '0x8ca40ff160'}
+writer_call_records {'call_id': 3, 'label': 'writer_call_records', 'records': 204, 'file': '000010_call_3_meta_writer_call_records.bin', 'captured_bytes': 25957, 'sha256': 'a9a3d45e4042314e36052170b0546fbd9149ab1b0db323a8ac6a40c15d0b4819'}
+writer_calls_begin {'call_id': 4, 'plaintext_object': '0x8ca40fefd0', 'buffer': '0x8ca40feae0'}
+writer_calls_leave {'call_id': 4, 'records': 332, 'dropped': 0, 'retval': '0x8ca40ff160'}
+writer_call_records {'call_id': 4, 'label': 'writer_call_records', 'records': 332, 'file': '000013_call_4_meta_writer_call_records.bin', 'captured_bytes': 42301, 'sha256': '33d6b6ea59bb14ace8c7de9655ce32ee3edda5ef9234024a4636023a82e47b75'}
+writer_calls_begin {'call_id': 5, 'plaintext_object': '0x8ca40fefd0', 'buffer': '0x8ca40feae0'}
+writer_calls_leave {'call_id': 5, 'records': 284, 'dropped': 0, 'retval': '0x8ca40ff160'}
+writer_call_records {'call_id': 5, 'label': 'writer_call_records', 'records': 284, 'file': '000016_call_5_meta_writer_call_records.bin', 'captured_bytes': 36179, 'sha256': '75c1c1e17499904c57df55294011e6c5b622c00ff58f223c2f503214f5f72752'}
+writer_calls_begin {'call_id': 6, 'plaintext_object': '0x8ca40fefd0', 'buffer': '0x8ca40feae0'}
+writer_calls_leave {'call_id': 6, 'records': 220, 'dropped': 0, 'retval': '0x8ca40ff160'}
+writer_call_records {'call_id': 6, 'label': 'writer_call_records', 'records': 220, 'file': '000019_call_6_meta_writer_call_records.bin', 'captured_bytes': 27991, 'sha256': '53471a7b15f091fc870c43e713c4305720507a4abc1a72304d028ff01aa3e8e5'}
+writer_calls_begin {'call_id': 7, 'plaintext_object': '0x8ca40fefd0', 'buffer': '0x8ca40feae0'}
+writer_calls_leave {'call_id': 7, 'records': 364, 'dropped': 0, 'retval': '0x8ca40ff160'}
+writer_call_records {'call_id': 7, 'label': 'writer_call_records', 'records': 364, 'file': '000022_call_7_meta_writer_call_records.bin', 'captured_bytes': 46399, 'sha256': '1326a48e62c74b645d3ea77f1264250ce9ecc10b15c1cf132eac3bce26f01a8d'}
+writer_calls_begin {'call_id': 8, 'plaintext_object': '0x8ca40fefd0', 'buffer': '0x8ca40feae0'}
+writer_calls_leave {'call_id': 8, 'records': 348, 'dropped': 0, 'retval': '0x8ca40ff160'}
+writer_call_records {'call_id': 8, 'label': 'writer_call_records', 'records': 348, 'file': '000025_call_8_meta_writer_call_records.bin', 'captured_bytes': 44352, 'sha256': '2f1ed022092ce3f979f5ba30d0eb6ac5a3001fc9aeafc3aeb62a897bb3d99498'}
+writer_calls_begin {'call_id': 9, 'plaintext_object': '0x8ca40fefd0', 'buffer': '0x8ca40feae0'}
+writer_calls_leave {'call_id': 9, 'records': 236, 'dropped': 0, 'retval': '0x8ca40ff160'}
+writer_call_records {'call_id': 9, 'label': 'writer_call_records', 'records': 236, 'file': '000028_call_9_meta_writer_call_records.bin', 'captured_bytes': 30044, 'sha256': 'a0d216ad01d4e93e592350653d40477b5ccf681181d7589f5cb102a50d0cacc9'}
+writer_calls_begin {'call_id': 10, 'plaintext_object': '0x8ca40fefd0', 'buffer': '0x8ca40feae0'}
+writer_calls_leave {'call_id': 10, 'records': 188, 'dropped': 0, 'retval': '0x8ca40ff160'}
+writer_call_records {'call_id': 10, 'label': 'writer_call_records', 'records': 188, 'file': '000031_call_10_meta_writer_call_records.bin', 'captured_bytes': 23911, 'sha256': 'eee9b51fc72d5fc6619b1a04afd06a62296bc0ec8592cfda4b9e909ab1fb8440'}
+writer_calls_begin {'call_id': 11, 'plaintext_object': '0x8ca40fefd0', 'buffer': '0x8ca40feae0'}
+writer_calls_leave {'call_id': 11, 'records': 348, 'dropped': 0, 'retval': '0x8ca40ff160'}
+writer_call_records {'call_id': 11, 'label': 'writer_call_records', 'records': 348, 'file': '000034_call_11_meta_writer_call_records.bin', 'captured_bytes': 44341, 'sha256': 'e81fabeb3ca1e806c32b3d636236ab844612456b073f7d016810a602102bb3de'}
+writer_calls_begin {'call_id': 12, 'plaintext_object': '0x8ca40fefd0', 'buffer': '0x8ca40feae0'}
+writer_calls_leave {'call_id': 12, 'records': 188, 'dropped': 0, 'retval': '0x8ca40ff160'}
+writer_call_records {'call_id': 12, 'label': 'writer_call_records', 'records': 188, 'file': '000037_call_12_meta_writer_call_records.bin', 'captured_bytes': 23914, 'sha256': '7fbe72d8c1999ed09b183a031cf1fcfc432e9545221ee05700a8b42a6158fed5'}
+writer_calls_begin {'call_id': 13, 'plaintext_object': '0x8ca40fefd0', 'buffer': '0x8ca40feae0'}
+writer_calls_leave {'call_id': 13, 'records': 364, 'dropped': 0, 'retval': '0x8ca40ff160'}
+writer_call_records {'call_id': 13, 'label': 'writer_call_records', 'records': 364, 'file': '000040_call_13_meta_writer_call_records.bin', 'captured_bytes': 46386, 'sha256': '54283197b8fa0ec24cc11f323064ef59d7ac545de2445ccea280e10f2cf3277c'}
+
+ block_generator_manual_20260814_012601
+block_generator_installed {'module': 'MaxHook.dll', 'module_base': '0x180000000', 'encrypt': '0x180324610', 'generator': '0x18041a8a0', 'store32': '0x18041a860'}
+block_generator_leave {'call_id': 1, 'blocks': 1, 'retval': '0x8ca40ff160'}
+block_generator_records {'call_id': 1, 'label': 'block_generator_records', 'blocks': 1, 'file': '000003_call_1_meta_block_generator_records.bin', 'captured_bytes': 805, 'sha256': 'bd42d48f9ead2f95a8f103314f2ba745dd620369bf5bab087350794527fc79e2'}
+block_generator_leave {'call_id': 2, 'blocks': 1, 'retval': '0x8ca40ff160'}
+block_generator_records {'call_id': 2, 'label': 'block_generator_records', 'blocks': 1, 'file': '000005_call_2_meta_block_generator_records.bin', 'captured_bytes': 805, 'sha256': '588ba200b7ab809c15709c469116925c8fddf11f4e4b7dd8074013f1cb7f7e88'}
+block_generator_leave {'call_id': 3, 'blocks': 1, 'retval': '0x8ca40ff160'}
+block_generator_records {'call_id': 3, 'label': 'block_generator_records', 'blocks': 1, 'file': '000007_call_3_meta_block_generator_records.bin', 'captured_bytes': 797, 'sha256': 'b2a3a82f92ffaf5ca5304f3b425f7d5944e2931e196febb18d248efdf249f0a8'}
+block_generator_leave {'call_id': 4, 'blocks': 1, 'retval': '0x8ca40ff160'}
+block_generator_records {'call_id': 4, 'label': 'block_generator_records', 'blocks': 1, 'file': '000009_call_4_meta_block_generator_records.bin', 'captured_bytes': 805, 'sha256': 'deb08892892decef43c8215c58ed211ff47de82f39daf6cafcf94d7aa740a2bd'}
+block_generator_leave {'call_id': 5, 'blocks': 1, 'retval': '0x8ca40ff160'}
+block_generator_records {'call_id': 5, 'label': 'block_generator_records', 'blocks': 1, 'file': '000011_call_5_meta_block_generator_records.bin', 'captured_bytes': 797, 'sha256': '7e08eda7c12dbf3afe71e64b58f595bf282d8d3f07b88c0346bd03b26ca67f44'}
+block_generator_leave {'call_id': 6, 'blocks': 1, 'retval': '0x8ca40ff160'}
+block_generator_records {'call_id': 6, 'label': 'block_generator_records', 'blocks': 1, 'file': '000013_call_6_meta_block_generator_records.bin', 'captured_bytes': 805, 'sha256': '6faf9f5bc706d8f171f004645230d08ac0157514c87b24d5dc61f7f61d41f4a3'}
+block_generator_leave {'call_id': 7, 'blocks': 1, 'retval': '0x8ca40ff160'}
+block_generator_records {'call_id': 7, 'label': 'block_generator_records', 'blocks': 1, 'file': '000015_call_7_meta_block_generator_records.bin', 'captured_bytes': 805, 'sha256': '2594ef8032866ca28274b70677932c7609963d10ab2566ac6ffc2c23ee148bd0'}
+block_generator_leave {'call_id': 8, 'blocks': 1, 'retval': '0x8ca40ff160'}
+block_generator_records {'call_id': 8, 'label': 'block_generator_records', 'blocks': 1, 'file': '000017_call_8_meta_block_generator_records.bin', 'captured_bytes': 797, 'sha256': '543c03bc8855f9e011b5a0ed678dd15be8860df980a2f479e1de0e3a82f8886a'}
+block_generator_leave {'call_id': 9, 'blocks': 1, 'retval': '0x8ca40ff160'}
+block_generator_records {'call_id': 9, 'label': 'block_generator_records', 'blocks': 1, 'file': '000019_call_9_meta_block_generator_records.bin', 'captured_bytes': 796, 'sha256': '8ab19940f6fbccc77dae8672d511cc31ddc4ce557850c9c88afc870c7c53bdca'}
+block_generator_leave {'call_id': 10, 'blocks': 1, 'retval': '0x8ca40ff160'}
+block_generator_records {'call_id': 10, 'label': 'block_generator_records', 'blocks': 1, 'file': '000021_call_10_meta_block_generator_records.bin', 'captured_bytes': 805, 'sha256': '88640ffe1a95db31e8a0aa40df5dcfbc8c4c9d07bbc3f91dfd70a02677d7beea'}
+block_generator_leave {'call_id': 11, 'blocks': 1, 'retval': '0x8ca40ff160'}
+block_generator_records {'call_id': 11, 'label': 'block_generator_records', 'blocks': 1, 'file': '000023_call_11_meta_block_generator_records.bin', 'captured_bytes': 797, 'sha256': '91badd3d5a660720d6bc5aef2d7cabda8a1720fce4972ff5213502c00857d567'}

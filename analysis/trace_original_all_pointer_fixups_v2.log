@@ -1,0 +1,9 @@
+[*] ��ѹ��� -> ��ʵ��� 0x180c0eb27
+[*] applied 697 proven module-pointer fixups
+[*] �� 0: RIP=0x180c6adfa 0.0s
+[*] �� 1: RIP=0x180ade18c 0.1s
+  [������ֵ] RIP=0x180a2643f addr=0x18098f97c size=8 val=0
+[*] �� 2: RIP=0x180c58810 0.1s
+[UNMAPPED] access=19 rip=0x180bb7dca addr=0x5e87f size=8 value=0x0
+[!] UcError Invalid memory read (UC_ERR_READ_UNMAPPED) RIP=0x180bb7dca 0.2s
+[*] δ���� (���� 100 ��?)

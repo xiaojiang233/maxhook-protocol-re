@@ -1,0 +1,1 @@
+{"sequence": 1, "captured_at": "2026-08-14T01:14:46.921142+08:00", "kind": "keystream_buffer_writes_installed", "thread_id": 45572, "module": "MaxHook.dll", "module_base": "0x180000000", "encrypt": "0x180324610", "buffer": "0x11a6cfee70", "size": 64, "load": "0x180aa5bba"}

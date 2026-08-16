@@ -1,0 +1,13 @@
+{
+  "schema": "maxhook.sha256-tag-all-samples/v1",
+  "samples": 44,
+  "message_specs": 1150,
+  "keys": [
+    "derived",
+    "raw",
+    "c0",
+    "c1"
+  ],
+  "sample0_hits": [],
+  "verified_all_samples": []
+}

@@ -1,0 +1,9 @@
+[*] ��ѹ��� -> ��ʵ��� 0x180c0eb27
+[*] applied 8409 cross-epoch stable fixup bytes
+[*] �� 0: RIP=0x1809da384 0.0s
+  [������ֵ] RIP=0x180a2643f addr=0x18098f97c size=8 val=0
+[*] �� 1: RIP=0x180c02b07 0.1s
+[*] �� 2: RIP=0x180ae4cb6 0.1s
+[UNMAPPED] access=19 rip=0x180a353e7 addr=0x3dccbb6a size=4 value=0x0 regs={'rax': 18446744073709551615, 'rbx': 2, 'rcx': 6452463758, 'rdx': 1036827498, 'rsi': 8, 'rdi': 6452463841, 'rbp': 6452463748, 'rsp': 549730643944, 'r8': 18446744073709551612, 'r9': 6455454997, 'r10': 6455520500, 'r11': 1028, 'r12': 6452464010, 'r13': 1028, 'r14': 6452464010, 'r15': 96}
+[!] UcError Invalid memory read (UC_ERR_READ_UNMAPPED) RIP=0x180a353e7 0.1s
+[*] δ���� (���� 100 ��?)

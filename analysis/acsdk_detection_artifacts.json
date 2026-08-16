@@ -1,0 +1,1503 @@
+{
+  "schema_version": 1,
+  "artifact_family": "NetEase acSDK/EnvSDK",
+  "scope_note": "These plaintext artifacts belong to the NetEase acSDK/EnvSDK layer; they are not evidence of MaxHook VM-internal detection lists.",
+  "source": {
+    "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+    "region_base": 2128841408512,
+    "region_base_hex": "0x1efa8d60000",
+    "size": 745472,
+    "sha256": "ecfa1647be6ddd66a04cdbd1e527a57712cd786f62daf8ebd365518040f17a86"
+  },
+  "validation": {
+    "all_checks_passed": true,
+    "source_hash_pinned": true,
+    "source_size_pinned": true,
+    "offset_windows_pinned": true,
+    "vm_table_copy_count": 2,
+    "vm_table_copies_identical": true
+  },
+  "virtual_machine_file_indicators": {
+    "physical_machine_classification_value": "real",
+    "classification_mapping_basis": "four list factories followed by the LuaJIT reverse-serialized KGC constant block real/hyperv/qemu/virtualbox/vmware",
+    "family_count": 4,
+    "indicator_count": 34,
+    "families": [
+      {
+        "family": "VMware",
+        "classification_value": "vmware",
+        "count": 13,
+        "entries": [
+          {
+            "value": "vm3dgl64.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136033,
+              "file_offset_hex": "0x21361",
+              "virtual_address": 2128841544545,
+              "virtual_address_hex": "0x1efa8d81361",
+              "end_file_offset_exclusive": 136045,
+              "end_file_offset_exclusive_hex": "0x2136d",
+              "end_virtual_address_exclusive": 2128841544557,
+              "end_virtual_address_exclusive_hex": "0x1efa8d8136d",
+              "length": 12
+            }
+          },
+          {
+            "value": "vm3dgl.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136046,
+              "file_offset_hex": "0x2136e",
+              "virtual_address": 2128841544558,
+              "virtual_address_hex": "0x1efa8d8136e",
+              "end_file_offset_exclusive": 136056,
+              "end_file_offset_exclusive_hex": "0x21378",
+              "end_virtual_address_exclusive": 2128841544568,
+              "end_virtual_address_exclusive_hex": "0x1efa8d81378",
+              "length": 10
+            }
+          },
+          {
+            "value": "vm3dum64.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136057,
+              "file_offset_hex": "0x21379",
+              "virtual_address": 2128841544569,
+              "virtual_address_hex": "0x1efa8d81379",
+              "end_file_offset_exclusive": 136069,
+              "end_file_offset_exclusive_hex": "0x21385",
+              "end_virtual_address_exclusive": 2128841544581,
+              "end_virtual_address_exclusive_hex": "0x1efa8d81385",
+              "length": 12
+            }
+          },
+          {
+            "value": "vm3dum.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136070,
+              "file_offset_hex": "0x21386",
+              "virtual_address": 2128841544582,
+              "virtual_address_hex": "0x1efa8d81386",
+              "end_file_offset_exclusive": 136080,
+              "end_file_offset_exclusive_hex": "0x21390",
+              "end_virtual_address_exclusive": 2128841544592,
+              "end_virtual_address_exclusive_hex": "0x1efa8d81390",
+              "length": 10
+            }
+          },
+          {
+            "value": "VmbuxCoinstaller.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136081,
+              "file_offset_hex": "0x21391",
+              "virtual_address": 2128841544593,
+              "virtual_address_hex": "0x1efa8d81391",
+              "end_file_offset_exclusive": 136101,
+              "end_file_offset_exclusive_hex": "0x213a5",
+              "end_virtual_address_exclusive": 2128841544613,
+              "end_virtual_address_exclusive_hex": "0x1efa8d813a5",
+              "length": 20
+            }
+          },
+          {
+            "value": "vmGuestLib.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136102,
+              "file_offset_hex": "0x213a6",
+              "virtual_address": 2128841544614,
+              "virtual_address_hex": "0x1efa8d813a6",
+              "end_file_offset_exclusive": 136116,
+              "end_file_offset_exclusive_hex": "0x213b4",
+              "end_virtual_address_exclusive": 2128841544628,
+              "end_virtual_address_exclusive_hex": "0x1efa8d813b4",
+              "length": 14
+            }
+          },
+          {
+            "value": "vmGuestLibJava.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136117,
+              "file_offset_hex": "0x213b5",
+              "virtual_address": 2128841544629,
+              "virtual_address_hex": "0x1efa8d813b5",
+              "end_file_offset_exclusive": 136135,
+              "end_file_offset_exclusive_hex": "0x213c7",
+              "end_virtual_address_exclusive": 2128841544647,
+              "end_virtual_address_exclusive_hex": "0x1efa8d813c7",
+              "length": 18
+            }
+          },
+          {
+            "value": "vmhgfs.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136136,
+              "file_offset_hex": "0x213c8",
+              "virtual_address": 2128841544648,
+              "virtual_address_hex": "0x1efa8d813c8",
+              "end_file_offset_exclusive": 136146,
+              "end_file_offset_exclusive_hex": "0x213d2",
+              "end_virtual_address_exclusive": 2128841544658,
+              "end_virtual_address_exclusive_hex": "0x1efa8d813d2",
+              "length": 10
+            }
+          },
+          {
+            "value": "vmwogl32.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136147,
+              "file_offset_hex": "0x213d3",
+              "virtual_address": 2128841544659,
+              "virtual_address_hex": "0x1efa8d813d3",
+              "end_file_offset_exclusive": 136159,
+              "end_file_offset_exclusive_hex": "0x213df",
+              "end_virtual_address_exclusive": 2128841544671,
+              "end_virtual_address_exclusive_hex": "0x1efa8d813df",
+              "length": 12
+            }
+          },
+          {
+            "value": "vmmreg32.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136160,
+              "file_offset_hex": "0x213e0",
+              "virtual_address": 2128841544672,
+              "virtual_address_hex": "0x1efa8d813e0",
+              "end_file_offset_exclusive": 136172,
+              "end_file_offset_exclusive_hex": "0x213ec",
+              "end_virtual_address_exclusive": 2128841544684,
+              "end_virtual_address_exclusive_hex": "0x1efa8d813ec",
+              "length": 12
+            }
+          },
+          {
+            "value": "vmx_fb.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136173,
+              "file_offset_hex": "0x213ed",
+              "virtual_address": 2128841544685,
+              "virtual_address_hex": "0x1efa8d813ed",
+              "end_file_offset_exclusive": 136183,
+              "end_file_offset_exclusive_hex": "0x213f7",
+              "end_virtual_address_exclusive": 2128841544695,
+              "end_virtual_address_exclusive_hex": "0x1efa8d813f7",
+              "length": 10
+            }
+          },
+          {
+            "value": "vmx_mode.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136184,
+              "file_offset_hex": "0x213f8",
+              "virtual_address": 2128841544696,
+              "virtual_address_hex": "0x1efa8d813f8",
+              "end_file_offset_exclusive": 136196,
+              "end_file_offset_exclusive_hex": "0x21404",
+              "end_virtual_address_exclusive": 2128841544708,
+              "end_virtual_address_exclusive_hex": "0x1efa8d81404",
+              "length": 12
+            }
+          },
+          {
+            "value": "VMUpgradeAtShutdownWXP.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136197,
+              "file_offset_hex": "0x21405",
+              "virtual_address": 2128841544709,
+              "virtual_address_hex": "0x1efa8d81405",
+              "end_file_offset_exclusive": 136223,
+              "end_file_offset_exclusive_hex": "0x2141f",
+              "end_virtual_address_exclusive": 2128841544735,
+              "end_virtual_address_exclusive_hex": "0x1efa8d8141f",
+              "length": 26
+            }
+          }
+        ],
+        "validated_identical_table_copies": [
+          {
+            "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+            "file_offset": 136028,
+            "file_offset_hex": "0x2135c",
+            "virtual_address": 2128841544540,
+            "virtual_address_hex": "0x1efa8d8135c",
+            "end_file_offset_exclusive": 136223,
+            "end_file_offset_exclusive_hex": "0x2141f",
+            "end_virtual_address_exclusive": 2128841544735,
+            "end_virtual_address_exclusive_hex": "0x1efa8d8141f",
+            "length": 195,
+            "sha256": "dfe72d15c98f731415d2d30218f13e30d5a841a55012e07d4441645bf40a4ebe"
+          },
+          {
+            "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+            "file_offset": 305104,
+            "file_offset_hex": "0x4a7d0",
+            "virtual_address": 2128841713616,
+            "virtual_address_hex": "0x1efa8daa7d0",
+            "end_file_offset_exclusive": 305299,
+            "end_file_offset_exclusive_hex": "0x4a893",
+            "end_virtual_address_exclusive": 2128841713811,
+            "end_virtual_address_exclusive_hex": "0x1efa8daa893",
+            "length": 195,
+            "sha256": "dfe72d15c98f731415d2d30218f13e30d5a841a55012e07d4441645bf40a4ebe"
+          }
+        ]
+      },
+      {
+        "family": "VirtualBox",
+        "classification_value": "virtualbox",
+        "count": 13,
+        "entries": [
+          {
+            "value": "vboxdisp.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136337,
+              "file_offset_hex": "0x21491",
+              "virtual_address": 2128841544849,
+              "virtual_address_hex": "0x1efa8d81491",
+              "end_file_offset_exclusive": 136349,
+              "end_file_offset_exclusive_hex": "0x2149d",
+              "end_virtual_address_exclusive": 2128841544861,
+              "end_virtual_address_exclusive_hex": "0x1efa8d8149d",
+              "length": 12
+            }
+          },
+          {
+            "value": "vboxhook.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136350,
+              "file_offset_hex": "0x2149e",
+              "virtual_address": 2128841544862,
+              "virtual_address_hex": "0x1efa8d8149e",
+              "end_file_offset_exclusive": 136362,
+              "end_file_offset_exclusive_hex": "0x214aa",
+              "end_virtual_address_exclusive": 2128841544874,
+              "end_virtual_address_exclusive_hex": "0x1efa8d814aa",
+              "length": 12
+            }
+          },
+          {
+            "value": "vboxmrxnp.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136363,
+              "file_offset_hex": "0x214ab",
+              "virtual_address": 2128841544875,
+              "virtual_address_hex": "0x1efa8d814ab",
+              "end_file_offset_exclusive": 136376,
+              "end_file_offset_exclusive_hex": "0x214b8",
+              "end_virtual_address_exclusive": 2128841544888,
+              "end_virtual_address_exclusive_hex": "0x1efa8d814b8",
+              "length": 13
+            }
+          },
+          {
+            "value": "vboxogl.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136377,
+              "file_offset_hex": "0x214b9",
+              "virtual_address": 2128841544889,
+              "virtual_address_hex": "0x1efa8d814b9",
+              "end_file_offset_exclusive": 136388,
+              "end_file_offset_exclusive_hex": "0x214c4",
+              "end_virtual_address_exclusive": 2128841544900,
+              "end_virtual_address_exclusive_hex": "0x1efa8d814c4",
+              "length": 11
+            }
+          },
+          {
+            "value": "vboxoglarrayspu.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136389,
+              "file_offset_hex": "0x214c5",
+              "virtual_address": 2128841544901,
+              "virtual_address_hex": "0x1efa8d814c5",
+              "end_file_offset_exclusive": 136408,
+              "end_file_offset_exclusive_hex": "0x214d8",
+              "end_virtual_address_exclusive": 2128841544920,
+              "end_virtual_address_exclusive_hex": "0x1efa8d814d8",
+              "length": 19
+            }
+          },
+          {
+            "value": "vboxoglcrutil.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136409,
+              "file_offset_hex": "0x214d9",
+              "virtual_address": 2128841544921,
+              "virtual_address_hex": "0x1efa8d814d9",
+              "end_file_offset_exclusive": 136426,
+              "end_file_offset_exclusive_hex": "0x214ea",
+              "end_virtual_address_exclusive": 2128841544938,
+              "end_virtual_address_exclusive_hex": "0x1efa8d814ea",
+              "length": 17
+            }
+          },
+          {
+            "value": "vboxoglerrorspu.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136427,
+              "file_offset_hex": "0x214eb",
+              "virtual_address": 2128841544939,
+              "virtual_address_hex": "0x1efa8d814eb",
+              "end_file_offset_exclusive": 136446,
+              "end_file_offset_exclusive_hex": "0x214fe",
+              "end_virtual_address_exclusive": 2128841544958,
+              "end_virtual_address_exclusive_hex": "0x1efa8d814fe",
+              "length": 19
+            }
+          },
+          {
+            "value": "vboxoglfeedbackspu.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136447,
+              "file_offset_hex": "0x214ff",
+              "virtual_address": 2128841544959,
+              "virtual_address_hex": "0x1efa8d814ff",
+              "end_file_offset_exclusive": 136469,
+              "end_file_offset_exclusive_hex": "0x21515",
+              "end_virtual_address_exclusive": 2128841544981,
+              "end_virtual_address_exclusive_hex": "0x1efa8d81515",
+              "length": 22
+            }
+          },
+          {
+            "value": "vboxoglpackspu.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136470,
+              "file_offset_hex": "0x21516",
+              "virtual_address": 2128841544982,
+              "virtual_address_hex": "0x1efa8d81516",
+              "end_file_offset_exclusive": 136488,
+              "end_file_offset_exclusive_hex": "0x21528",
+              "end_virtual_address_exclusive": 2128841545000,
+              "end_virtual_address_exclusive_hex": "0x1efa8d81528",
+              "length": 18
+            }
+          },
+          {
+            "value": "vboxoglpassthroughspu.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136489,
+              "file_offset_hex": "0x21529",
+              "virtual_address": 2128841545001,
+              "virtual_address_hex": "0x1efa8d81529",
+              "end_file_offset_exclusive": 136514,
+              "end_file_offset_exclusive_hex": "0x21542",
+              "end_virtual_address_exclusive": 2128841545026,
+              "end_virtual_address_exclusive_hex": "0x1efa8d81542",
+              "length": 25
+            }
+          },
+          {
+            "value": "vboxservice.exe",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136515,
+              "file_offset_hex": "0x21543",
+              "virtual_address": 2128841545027,
+              "virtual_address_hex": "0x1efa8d81543",
+              "end_file_offset_exclusive": 136530,
+              "end_file_offset_exclusive_hex": "0x21552",
+              "end_virtual_address_exclusive": 2128841545042,
+              "end_virtual_address_exclusive_hex": "0x1efa8d81552",
+              "length": 15
+            }
+          },
+          {
+            "value": "vboxtray.exe",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136531,
+              "file_offset_hex": "0x21553",
+              "virtual_address": 2128841545043,
+              "virtual_address_hex": "0x1efa8d81553",
+              "end_file_offset_exclusive": 136543,
+              "end_file_offset_exclusive_hex": "0x2155f",
+              "end_virtual_address_exclusive": 2128841545055,
+              "end_virtual_address_exclusive_hex": "0x1efa8d8155f",
+              "length": 12
+            }
+          },
+          {
+            "value": "VBoxControl.exe",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136544,
+              "file_offset_hex": "0x21560",
+              "virtual_address": 2128841545056,
+              "virtual_address_hex": "0x1efa8d81560",
+              "end_file_offset_exclusive": 136559,
+              "end_file_offset_exclusive_hex": "0x2156f",
+              "end_virtual_address_exclusive": 2128841545071,
+              "end_virtual_address_exclusive_hex": "0x1efa8d8156f",
+              "length": 15
+            }
+          }
+        ],
+        "validated_identical_table_copies": [
+          {
+            "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+            "file_offset": 136332,
+            "file_offset_hex": "0x2148c",
+            "virtual_address": 2128841544844,
+            "virtual_address_hex": "0x1efa8d8148c",
+            "end_file_offset_exclusive": 136559,
+            "end_file_offset_exclusive_hex": "0x2156f",
+            "end_virtual_address_exclusive": 2128841545071,
+            "end_virtual_address_exclusive_hex": "0x1efa8d8156f",
+            "length": 227,
+            "sha256": "1167080bdac6ee1e6bb4ffedababfc50eb0c0930d005ba44e651f58c6fe92eb0"
+          },
+          {
+            "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+            "file_offset": 305408,
+            "file_offset_hex": "0x4a900",
+            "virtual_address": 2128841713920,
+            "virtual_address_hex": "0x1efa8daa900",
+            "end_file_offset_exclusive": 305635,
+            "end_file_offset_exclusive_hex": "0x4a9e3",
+            "end_virtual_address_exclusive": 2128841714147,
+            "end_virtual_address_exclusive_hex": "0x1efa8daa9e3",
+            "length": 227,
+            "sha256": "1167080bdac6ee1e6bb4ffedababfc50eb0c0930d005ba44e651f58c6fe92eb0"
+          }
+        ]
+      },
+      {
+        "family": "QEMU",
+        "classification_value": "qemu",
+        "count": 1,
+        "entries": [
+          {
+            "value": "qemu-ga.exe",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136672,
+              "file_offset_hex": "0x215e0",
+              "virtual_address": 2128841545184,
+              "virtual_address_hex": "0x1efa8d815e0",
+              "end_file_offset_exclusive": 136683,
+              "end_file_offset_exclusive_hex": "0x215eb",
+              "end_virtual_address_exclusive": 2128841545195,
+              "end_virtual_address_exclusive_hex": "0x1efa8d815eb",
+              "length": 11
+            }
+          }
+        ],
+        "validated_identical_table_copies": [
+          {
+            "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+            "file_offset": 136667,
+            "file_offset_hex": "0x215db",
+            "virtual_address": 2128841545179,
+            "virtual_address_hex": "0x1efa8d815db",
+            "end_file_offset_exclusive": 136683,
+            "end_file_offset_exclusive_hex": "0x215eb",
+            "end_virtual_address_exclusive": 2128841545195,
+            "end_virtual_address_exclusive_hex": "0x1efa8d815eb",
+            "length": 16,
+            "sha256": "c239d35792eafc71c21343e73c5300d08d67cc251274c147ae712b27ac07cc3e"
+          },
+          {
+            "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+            "file_offset": 305743,
+            "file_offset_hex": "0x4aa4f",
+            "virtual_address": 2128841714255,
+            "virtual_address_hex": "0x1efa8daaa4f",
+            "end_file_offset_exclusive": 305759,
+            "end_file_offset_exclusive_hex": "0x4aa5f",
+            "end_virtual_address_exclusive": 2128841714271,
+            "end_virtual_address_exclusive_hex": "0x1efa8daaa5f",
+            "length": 16,
+            "sha256": "c239d35792eafc71c21343e73c5300d08d67cc251274c147ae712b27ac07cc3e"
+          }
+        ]
+      },
+      {
+        "family": "Hyper-V",
+        "classification_value": "hyperv",
+        "count": 7,
+        "entries": [
+          {
+            "value": "VmbusCoinstaller.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136797,
+              "file_offset_hex": "0x2165d",
+              "virtual_address": 2128841545309,
+              "virtual_address_hex": "0x1efa8d8165d",
+              "end_file_offset_exclusive": 136817,
+              "end_file_offset_exclusive_hex": "0x21671",
+              "end_virtual_address_exclusive": 2128841545329,
+              "end_virtual_address_exclusive_hex": "0x1efa8d81671",
+              "length": 20
+            }
+          },
+          {
+            "value": "VmdCoinstall.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136818,
+              "file_offset_hex": "0x21672",
+              "virtual_address": 2128841545330,
+              "virtual_address_hex": "0x1efa8d81672",
+              "end_file_offset_exclusive": 136834,
+              "end_file_offset_exclusive_hex": "0x21682",
+              "end_virtual_address_exclusive": 2128841545346,
+              "end_virtual_address_exclusive_hex": "0x1efa8d81682",
+              "length": 16
+            }
+          },
+          {
+            "value": "vmbusres.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136835,
+              "file_offset_hex": "0x21683",
+              "virtual_address": 2128841545347,
+              "virtual_address_hex": "0x1efa8d81683",
+              "end_file_offset_exclusive": 136847,
+              "end_file_offset_exclusive_hex": "0x2168f",
+              "end_virtual_address_exclusive": 2128841545359,
+              "end_virtual_address_exclusive_hex": "0x1efa8d8168f",
+              "length": 12
+            }
+          },
+          {
+            "value": "VMBusVideoD.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136848,
+              "file_offset_hex": "0x21690",
+              "virtual_address": 2128841545360,
+              "virtual_address_hex": "0x1efa8d81690",
+              "end_file_offset_exclusive": 136863,
+              "end_file_offset_exclusive_hex": "0x2169f",
+              "end_virtual_address_exclusive": 2128841545375,
+              "end_virtual_address_exclusive_hex": "0x1efa8d8169f",
+              "length": 15
+            }
+          },
+          {
+            "value": "vmicres.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136864,
+              "file_offset_hex": "0x216a0",
+              "virtual_address": 2128841545376,
+              "virtual_address_hex": "0x1efa8d816a0",
+              "end_file_offset_exclusive": 136875,
+              "end_file_offset_exclusive_hex": "0x216ab",
+              "end_virtual_address_exclusive": 2128841545387,
+              "end_virtual_address_exclusive_hex": "0x1efa8d816ab",
+              "length": 11
+            }
+          },
+          {
+            "value": "vmstorfltres.dll",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136876,
+              "file_offset_hex": "0x216ac",
+              "virtual_address": 2128841545388,
+              "virtual_address_hex": "0x1efa8d816ac",
+              "end_file_offset_exclusive": 136892,
+              "end_file_offset_exclusive_hex": "0x216bc",
+              "end_virtual_address_exclusive": 2128841545404,
+              "end_virtual_address_exclusive_hex": "0x1efa8d816bc",
+              "length": 16
+            }
+          },
+          {
+            "value": "vmicsvc.exe",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 136893,
+              "file_offset_hex": "0x216bd",
+              "virtual_address": 2128841545405,
+              "virtual_address_hex": "0x1efa8d816bd",
+              "end_file_offset_exclusive": 136904,
+              "end_file_offset_exclusive_hex": "0x216c8",
+              "end_virtual_address_exclusive": 2128841545416,
+              "end_virtual_address_exclusive_hex": "0x1efa8d816c8",
+              "length": 11
+            }
+          }
+        ],
+        "validated_identical_table_copies": [
+          {
+            "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+            "file_offset": 136792,
+            "file_offset_hex": "0x21658",
+            "virtual_address": 2128841545304,
+            "virtual_address_hex": "0x1efa8d81658",
+            "end_file_offset_exclusive": 136904,
+            "end_file_offset_exclusive_hex": "0x216c8",
+            "end_virtual_address_exclusive": 2128841545416,
+            "end_virtual_address_exclusive_hex": "0x1efa8d816c8",
+            "length": 112,
+            "sha256": "4899605592d90debd4f8ed68079db050f6e0387f1d4237c7e2b86f740269274e"
+          },
+          {
+            "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+            "file_offset": 305868,
+            "file_offset_hex": "0x4aacc",
+            "virtual_address": 2128841714380,
+            "virtual_address_hex": "0x1efa8daaacc",
+            "end_file_offset_exclusive": 305980,
+            "end_file_offset_exclusive_hex": "0x4ab3c",
+            "end_virtual_address_exclusive": 2128841714492,
+            "end_virtual_address_exclusive_hex": "0x1efa8daab3c",
+            "length": 112,
+            "sha256": "4899605592d90debd4f8ed68079db050f6e0387f1d4237c7e2b86f740269274e"
+          }
+        ]
+      }
+    ],
+    "validated_category_constant_copies": [
+      {
+        "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+        "file_offset": 137119,
+        "file_offset_hex": "0x2179f",
+        "virtual_address": 2128841545631,
+        "virtual_address_hex": "0x1efa8d8179f",
+        "end_file_offset_exclusive": 137154,
+        "end_file_offset_exclusive_hex": "0x217c2",
+        "end_virtual_address_exclusive": 2128841545666,
+        "end_virtual_address_exclusive_hex": "0x1efa8d817c2",
+        "length": 35,
+        "values_in_serialized_order": [
+          "real",
+          "hyperv",
+          "qemu",
+          "virtualbox",
+          "vmware"
+        ],
+        "sha256": "2e5fe91acf081ce3c21bde135fb8532422b647282df13298590cee03b86b7c24"
+      },
+      {
+        "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+        "file_offset": 306195,
+        "file_offset_hex": "0x4ac13",
+        "virtual_address": 2128841714707,
+        "virtual_address_hex": "0x1efa8daac13",
+        "end_file_offset_exclusive": 306230,
+        "end_file_offset_exclusive_hex": "0x4ac36",
+        "end_virtual_address_exclusive": 2128841714742,
+        "end_virtual_address_exclusive_hex": "0x1efa8daac36",
+        "length": 35,
+        "values_in_serialized_order": [
+          "real",
+          "hyperv",
+          "qemu",
+          "virtualbox",
+          "vmware"
+        ],
+        "sha256": "2e5fe91acf081ce3c21bde135fb8532422b647282df13298590cee03b86b7c24"
+      }
+    ]
+  },
+  "scan_common_key_simul": {
+    "function_name": "scanCommonKeySimul",
+    "source_range": {
+      "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+      "file_offset": 165846,
+      "file_offset_hex": "0x287d6",
+      "virtual_address": 2128841574358,
+      "virtual_address_hex": "0x1efa8d887d6",
+      "end_file_offset_exclusive": 166397,
+      "end_file_offset_exclusive_hex": "0x289fd",
+      "end_virtual_address_exclusive": 2128841574909,
+      "end_virtual_address_exclusive_hex": "0x1efa8d889fd",
+      "length": 551,
+      "sha256": "3b5643354635605bebaa1a2aebf7658758bad70bd9b706e549ad8507c874e45a"
+    },
+    "classification_values": [
+      {
+        "value": "鼠标连点",
+        "occurrence_count": 1,
+        "sources": [
+          {
+            "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+            "file_offset": 165874,
+            "file_offset_hex": "0x287f2",
+            "virtual_address": 2128841574386,
+            "virtual_address_hex": "0x1efa8d887f2",
+            "end_file_offset_exclusive": 165886,
+            "end_file_offset_exclusive_hex": "0x287fe",
+            "end_virtual_address_exclusive": 2128841574398,
+            "end_virtual_address_exclusive_hex": "0x1efa8d887fe",
+            "length": 12
+          }
+        ]
+      },
+      {
+        "value": "键盘连按",
+        "occurrence_count": 1,
+        "sources": [
+          {
+            "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+            "file_offset": 165972,
+            "file_offset_hex": "0x28854",
+            "virtual_address": 2128841574484,
+            "virtual_address_hex": "0x1efa8d88854",
+            "end_file_offset_exclusive": 165984,
+            "end_file_offset_exclusive_hex": "0x28860",
+            "end_virtual_address_exclusive": 2128841574496,
+            "end_virtual_address_exclusive_hex": "0x1efa8d88860",
+            "length": 12
+          }
+        ]
+      },
+      {
+        "value": "鼠标录制",
+        "occurrence_count": 1,
+        "sources": [
+          {
+            "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+            "file_offset": 166019,
+            "file_offset_hex": "0x28883",
+            "virtual_address": 2128841574531,
+            "virtual_address_hex": "0x1efa8d88883",
+            "end_file_offset_exclusive": 166031,
+            "end_file_offset_exclusive_hex": "0x2888f",
+            "end_virtual_address_exclusive": 2128841574543,
+            "end_virtual_address_exclusive_hex": "0x1efa8d8888f",
+            "length": 12
+          }
+        ]
+      },
+      {
+        "value": "简单百宝箱",
+        "occurrence_count": 2,
+        "sources": [
+          {
+            "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+            "file_offset": 166064,
+            "file_offset_hex": "0x288b0",
+            "virtual_address": 2128841574576,
+            "virtual_address_hex": "0x1efa8d888b0",
+            "end_file_offset_exclusive": 166079,
+            "end_file_offset_exclusive_hex": "0x288bf",
+            "end_virtual_address_exclusive": 2128841574591,
+            "end_virtual_address_exclusive_hex": "0x1efa8d888bf",
+            "length": 15
+          },
+          {
+            "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+            "file_offset": 166144,
+            "file_offset_hex": "0x28900",
+            "virtual_address": 2128841574656,
+            "virtual_address_hex": "0x1efa8d88900",
+            "end_file_offset_exclusive": 166159,
+            "end_file_offset_exclusive_hex": "0x2890f",
+            "end_virtual_address_exclusive": 2128841574671,
+            "end_virtual_address_exclusive_hex": "0x1efa8d8890f",
+            "length": 15
+          }
+        ]
+      },
+      {
+        "value": "按键精灵",
+        "occurrence_count": 1,
+        "sources": [
+          {
+            "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+            "file_offset": 166173,
+            "file_offset_hex": "0x2891d",
+            "virtual_address": 2128841574685,
+            "virtual_address_hex": "0x1efa8d8891d",
+            "end_file_offset_exclusive": 166185,
+            "end_file_offset_exclusive_hex": "0x28929",
+            "end_virtual_address_exclusive": 2128841574697,
+            "end_virtual_address_exclusive_hex": "0x1efa8d88929",
+            "length": 12
+          }
+        ]
+      }
+    ],
+    "group_count": 5,
+    "indicator_count": 17,
+    "groups": [
+      {
+        "classification_value": "鼠标连点",
+        "count": 4,
+        "indicators": [
+          {
+            "value": "___BBXMouseClick___",
+            "classification_value": "鼠标连点",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 165887,
+              "file_offset_hex": "0x287ff",
+              "virtual_address": 2128841574399,
+              "virtual_address_hex": "0x1efa8d887ff",
+              "end_file_offset_exclusive": 165906,
+              "end_file_offset_exclusive_hex": "0x28812",
+              "end_virtual_address_exclusive": 2128841574418,
+              "end_virtual_address_exclusive_hex": "0x1efa8d88812",
+              "length": 19
+            }
+          },
+          {
+            "value": "___JDBBX_MOUSECLICK__BETA_",
+            "classification_value": "鼠标连点",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 165907,
+              "file_offset_hex": "0x28813",
+              "virtual_address": 2128841574419,
+              "virtual_address_hex": "0x1efa8d88813",
+              "end_file_offset_exclusive": 165933,
+              "end_file_offset_exclusive_hex": "0x2882d",
+              "end_virtual_address_exclusive": 2128841574445,
+              "end_virtual_address_exclusive_hex": "0x1efa8d8882d",
+              "length": 26
+            }
+          },
+          {
+            "value": "___JDBBX_MOUSECLICK___",
+            "classification_value": "鼠标连点",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 165934,
+              "file_offset_hex": "0x2882e",
+              "virtual_address": 2128841574446,
+              "virtual_address_hex": "0x1efa8d8882e",
+              "end_file_offset_exclusive": 165956,
+              "end_file_offset_exclusive_hex": "0x28844",
+              "end_virtual_address_exclusive": 2128841574468,
+              "end_virtual_address_exclusive_hex": "0x1efa8d88844",
+              "length": 22
+            }
+          },
+          {
+            "value": "jdyou0",
+            "classification_value": "鼠标连点",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 165957,
+              "file_offset_hex": "0x28845",
+              "virtual_address": 2128841574469,
+              "virtual_address_hex": "0x1efa8d88845",
+              "end_file_offset_exclusive": 165963,
+              "end_file_offset_exclusive_hex": "0x2884b",
+              "end_virtual_address_exclusive": 2128841574475,
+              "end_virtual_address_exclusive_hex": "0x1efa8d8884b",
+              "length": 6
+            }
+          }
+        ]
+      },
+      {
+        "classification_value": "键盘连按",
+        "count": 2,
+        "indicators": [
+          {
+            "value": "KEY_BOARD_2011_5_9",
+            "classification_value": "键盘连按",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 165985,
+              "file_offset_hex": "0x28861",
+              "virtual_address": 2128841574497,
+              "virtual_address_hex": "0x1efa8d88861",
+              "end_file_offset_exclusive": 166003,
+              "end_file_offset_exclusive_hex": "0x28873",
+              "end_virtual_address_exclusive": 2128841574515,
+              "end_virtual_address_exclusive_hex": "0x1efa8d88873",
+              "length": 18
+            }
+          },
+          {
+            "value": "jdyou1",
+            "classification_value": "键盘连按",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 166004,
+              "file_offset_hex": "0x28874",
+              "virtual_address": 2128841574516,
+              "virtual_address_hex": "0x1efa8d88874",
+              "end_file_offset_exclusive": 166010,
+              "end_file_offset_exclusive_hex": "0x2887a",
+              "end_virtual_address_exclusive": 2128841574522,
+              "end_virtual_address_exclusive_hex": "0x1efa8d8887a",
+              "length": 6
+            }
+          }
+        ]
+      },
+      {
+        "classification_value": "鼠标录制",
+        "count": 1,
+        "indicators": [
+          {
+            "value": "___JDBBX_MOUSERECODE___",
+            "classification_value": "鼠标录制",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 166032,
+              "file_offset_hex": "0x28890",
+              "virtual_address": 2128841574544,
+              "virtual_address_hex": "0x1efa8d88890",
+              "end_file_offset_exclusive": 166055,
+              "end_file_offset_exclusive_hex": "0x288a7",
+              "end_virtual_address_exclusive": 2128841574567,
+              "end_virtual_address_exclusive_hex": "0x1efa8d888a7",
+              "length": 23
+            }
+          }
+        ]
+      },
+      {
+        "classification_value": "简单百宝箱",
+        "count": 3,
+        "indicators": [
+          {
+            "value": "http://soft.jdbbx.com/",
+            "classification_value": "简单百宝箱",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 166080,
+              "file_offset_hex": "0x288c0",
+              "virtual_address": 2128841574592,
+              "virtual_address_hex": "0x1efa8d888c0",
+              "end_file_offset_exclusive": 166102,
+              "end_file_offset_exclusive_hex": "0x288d6",
+              "end_virtual_address_exclusive": 2128841574614,
+              "end_virtual_address_exclusive_hex": "0x1efa8d888d6",
+              "length": 22
+            }
+          },
+          {
+            "value": "http://jt.soft.jdbbx.com/",
+            "classification_value": "简单百宝箱",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 166103,
+              "file_offset_hex": "0x288d7",
+              "virtual_address": 2128841574615,
+              "virtual_address_hex": "0x1efa8d888d7",
+              "end_file_offset_exclusive": 166128,
+              "end_file_offset_exclusive_hex": "0x288f0",
+              "end_virtual_address_exclusive": 2128841574640,
+              "end_virtual_address_exclusive_hex": "0x1efa8d888f0",
+              "length": 25
+            }
+          },
+          {
+            "value": "JdbbxIsRunning",
+            "classification_value": "简单百宝箱",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 166129,
+              "file_offset_hex": "0x288f1",
+              "virtual_address": 2128841574641,
+              "virtual_address_hex": "0x1efa8d888f1",
+              "end_file_offset_exclusive": 166143,
+              "end_file_offset_exclusive_hex": "0x288ff",
+              "end_virtual_address_exclusive": 2128841574655,
+              "end_virtual_address_exclusive_hex": "0x1efa8d888ff",
+              "length": 14
+            }
+          }
+        ]
+      },
+      {
+        "classification_value": "按键精灵",
+        "count": 7,
+        "indicators": [
+          {
+            "value": "http://pos.baidu.com/",
+            "classification_value": "按键精灵",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 166194,
+              "file_offset_hex": "0x28932",
+              "virtual_address": 2128841574706,
+              "virtual_address_hex": "0x1efa8d88932",
+              "end_file_offset_exclusive": 166215,
+              "end_file_offset_exclusive_hex": "0x28947",
+              "end_virtual_address_exclusive": 2128841574727,
+              "end_virtual_address_exclusive_hex": "0x1efa8d88947",
+              "length": 21
+            }
+          },
+          {
+            "value": "http://ad.vrbrothers.com/",
+            "classification_value": "按键精灵",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 166216,
+              "file_offset_hex": "0x28948",
+              "virtual_address": 2128841574728,
+              "virtual_address_hex": "0x1efa8d88948",
+              "end_file_offset_exclusive": 166241,
+              "end_file_offset_exclusive_hex": "0x28961",
+              "end_virtual_address_exclusive": 2128841574753,
+              "end_virtual_address_exclusive_hex": "0x1efa8d88961",
+              "length": 25
+            }
+          },
+          {
+            "value": "CJProtect_Event_CodeInfo",
+            "classification_value": "按键精灵",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 166245,
+              "file_offset_hex": "0x28965",
+              "virtual_address": 2128841574757,
+              "virtual_address_hex": "0x1efa8d88965",
+              "end_file_offset_exclusive": 166269,
+              "end_file_offset_exclusive_hex": "0x2897d",
+              "end_virtual_address_exclusive": 2128841574781,
+              "end_virtual_address_exclusive_hex": "0x1efa8d8897d",
+              "length": 24
+            }
+          },
+          {
+            "value": "CJProtect_Event_CodeFlag",
+            "classification_value": "按键精灵",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 166273,
+              "file_offset_hex": "0x28981",
+              "virtual_address": 2128841574785,
+              "virtual_address_hex": "0x1efa8d88981",
+              "end_file_offset_exclusive": 166297,
+              "end_file_offset_exclusive_hex": "0x28999",
+              "end_virtual_address_exclusive": 2128841574809,
+              "end_virtual_address_exclusive_hex": "0x1efa8d88999",
+              "length": 24
+            }
+          },
+          {
+            "value": "_CJProtect_Share_Mem_CodeData_",
+            "classification_value": "按键精灵",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 166301,
+              "file_offset_hex": "0x2899d",
+              "virtual_address": 2128841574813,
+              "virtual_address_hex": "0x1efa8d8899d",
+              "end_file_offset_exclusive": 166331,
+              "end_file_offset_exclusive_hex": "0x289bb",
+              "end_virtual_address_exclusive": 2128841574843,
+              "end_virtual_address_exclusive_hex": "0x1efa8d889bb",
+              "length": 30
+            }
+          },
+          {
+            "value": "_CJProtect_Share_Mem_CodeFlag_",
+            "classification_value": "按键精灵",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 166335,
+              "file_offset_hex": "0x289bf",
+              "virtual_address": 2128841574847,
+              "virtual_address_hex": "0x1efa8d889bf",
+              "end_file_offset_exclusive": 166365,
+              "end_file_offset_exclusive_hex": "0x289dd",
+              "end_virtual_address_exclusive": 2128841574877,
+              "end_virtual_address_exclusive_hex": "0x1efa8d889dd",
+              "length": 30
+            }
+          },
+          {
+            "value": "292020MMRunning",
+            "classification_value": "按键精灵",
+            "source": {
+              "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+              "file_offset": 166382,
+              "file_offset_hex": "0x289ee",
+              "virtual_address": 2128841574894,
+              "virtual_address_hex": "0x1efa8d889ee",
+              "end_file_offset_exclusive": 166397,
+              "end_file_offset_exclusive_hex": "0x289fd",
+              "end_virtual_address_exclusive": 2128841574909,
+              "end_virtual_address_exclusive_hex": "0x1efa8d889fd",
+              "length": 15
+            }
+          }
+        ]
+      }
+    ],
+    "indicators_in_source_order": [
+      {
+        "value": "___BBXMouseClick___",
+        "classification_value": "鼠标连点",
+        "source": {
+          "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+          "file_offset": 165887,
+          "file_offset_hex": "0x287ff",
+          "virtual_address": 2128841574399,
+          "virtual_address_hex": "0x1efa8d887ff",
+          "end_file_offset_exclusive": 165906,
+          "end_file_offset_exclusive_hex": "0x28812",
+          "end_virtual_address_exclusive": 2128841574418,
+          "end_virtual_address_exclusive_hex": "0x1efa8d88812",
+          "length": 19
+        }
+      },
+      {
+        "value": "___JDBBX_MOUSECLICK__BETA_",
+        "classification_value": "鼠标连点",
+        "source": {
+          "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+          "file_offset": 165907,
+          "file_offset_hex": "0x28813",
+          "virtual_address": 2128841574419,
+          "virtual_address_hex": "0x1efa8d88813",
+          "end_file_offset_exclusive": 165933,
+          "end_file_offset_exclusive_hex": "0x2882d",
+          "end_virtual_address_exclusive": 2128841574445,
+          "end_virtual_address_exclusive_hex": "0x1efa8d8882d",
+          "length": 26
+        }
+      },
+      {
+        "value": "___JDBBX_MOUSECLICK___",
+        "classification_value": "鼠标连点",
+        "source": {
+          "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+          "file_offset": 165934,
+          "file_offset_hex": "0x2882e",
+          "virtual_address": 2128841574446,
+          "virtual_address_hex": "0x1efa8d8882e",
+          "end_file_offset_exclusive": 165956,
+          "end_file_offset_exclusive_hex": "0x28844",
+          "end_virtual_address_exclusive": 2128841574468,
+          "end_virtual_address_exclusive_hex": "0x1efa8d88844",
+          "length": 22
+        }
+      },
+      {
+        "value": "jdyou0",
+        "classification_value": "鼠标连点",
+        "source": {
+          "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+          "file_offset": 165957,
+          "file_offset_hex": "0x28845",
+          "virtual_address": 2128841574469,
+          "virtual_address_hex": "0x1efa8d88845",
+          "end_file_offset_exclusive": 165963,
+          "end_file_offset_exclusive_hex": "0x2884b",
+          "end_virtual_address_exclusive": 2128841574475,
+          "end_virtual_address_exclusive_hex": "0x1efa8d8884b",
+          "length": 6
+        }
+      },
+      {
+        "value": "KEY_BOARD_2011_5_9",
+        "classification_value": "键盘连按",
+        "source": {
+          "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+          "file_offset": 165985,
+          "file_offset_hex": "0x28861",
+          "virtual_address": 2128841574497,
+          "virtual_address_hex": "0x1efa8d88861",
+          "end_file_offset_exclusive": 166003,
+          "end_file_offset_exclusive_hex": "0x28873",
+          "end_virtual_address_exclusive": 2128841574515,
+          "end_virtual_address_exclusive_hex": "0x1efa8d88873",
+          "length": 18
+        }
+      },
+      {
+        "value": "jdyou1",
+        "classification_value": "键盘连按",
+        "source": {
+          "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+          "file_offset": 166004,
+          "file_offset_hex": "0x28874",
+          "virtual_address": 2128841574516,
+          "virtual_address_hex": "0x1efa8d88874",
+          "end_file_offset_exclusive": 166010,
+          "end_file_offset_exclusive_hex": "0x2887a",
+          "end_virtual_address_exclusive": 2128841574522,
+          "end_virtual_address_exclusive_hex": "0x1efa8d8887a",
+          "length": 6
+        }
+      },
+      {
+        "value": "___JDBBX_MOUSERECODE___",
+        "classification_value": "鼠标录制",
+        "source": {
+          "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+          "file_offset": 166032,
+          "file_offset_hex": "0x28890",
+          "virtual_address": 2128841574544,
+          "virtual_address_hex": "0x1efa8d88890",
+          "end_file_offset_exclusive": 166055,
+          "end_file_offset_exclusive_hex": "0x288a7",
+          "end_virtual_address_exclusive": 2128841574567,
+          "end_virtual_address_exclusive_hex": "0x1efa8d888a7",
+          "length": 23
+        }
+      },
+      {
+        "value": "http://soft.jdbbx.com/",
+        "classification_value": "简单百宝箱",
+        "source": {
+          "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+          "file_offset": 166080,
+          "file_offset_hex": "0x288c0",
+          "virtual_address": 2128841574592,
+          "virtual_address_hex": "0x1efa8d888c0",
+          "end_file_offset_exclusive": 166102,
+          "end_file_offset_exclusive_hex": "0x288d6",
+          "end_virtual_address_exclusive": 2128841574614,
+          "end_virtual_address_exclusive_hex": "0x1efa8d888d6",
+          "length": 22
+        }
+      },
+      {
+        "value": "http://jt.soft.jdbbx.com/",
+        "classification_value": "简单百宝箱",
+        "source": {
+          "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+          "file_offset": 166103,
+          "file_offset_hex": "0x288d7",
+          "virtual_address": 2128841574615,
+          "virtual_address_hex": "0x1efa8d888d7",
+          "end_file_offset_exclusive": 166128,
+          "end_file_offset_exclusive_hex": "0x288f0",
+          "end_virtual_address_exclusive": 2128841574640,
+          "end_virtual_address_exclusive_hex": "0x1efa8d888f0",
+          "length": 25
+        }
+      },
+      {
+        "value": "JdbbxIsRunning",
+        "classification_value": "简单百宝箱",
+        "source": {
+          "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+          "file_offset": 166129,
+          "file_offset_hex": "0x288f1",
+          "virtual_address": 2128841574641,
+          "virtual_address_hex": "0x1efa8d888f1",
+          "end_file_offset_exclusive": 166143,
+          "end_file_offset_exclusive_hex": "0x288ff",
+          "end_virtual_address_exclusive": 2128841574655,
+          "end_virtual_address_exclusive_hex": "0x1efa8d888ff",
+          "length": 14
+        }
+      },
+      {
+        "value": "http://pos.baidu.com/",
+        "classification_value": "按键精灵",
+        "source": {
+          "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+          "file_offset": 166194,
+          "file_offset_hex": "0x28932",
+          "virtual_address": 2128841574706,
+          "virtual_address_hex": "0x1efa8d88932",
+          "end_file_offset_exclusive": 166215,
+          "end_file_offset_exclusive_hex": "0x28947",
+          "end_virtual_address_exclusive": 2128841574727,
+          "end_virtual_address_exclusive_hex": "0x1efa8d88947",
+          "length": 21
+        }
+      },
+      {
+        "value": "http://ad.vrbrothers.com/",
+        "classification_value": "按键精灵",
+        "source": {
+          "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+          "file_offset": 166216,
+          "file_offset_hex": "0x28948",
+          "virtual_address": 2128841574728,
+          "virtual_address_hex": "0x1efa8d88948",
+          "end_file_offset_exclusive": 166241,
+          "end_file_offset_exclusive_hex": "0x28961",
+          "end_virtual_address_exclusive": 2128841574753,
+          "end_virtual_address_exclusive_hex": "0x1efa8d88961",
+          "length": 25
+        }
+      },
+      {
+        "value": "CJProtect_Event_CodeInfo",
+        "classification_value": "按键精灵",
+        "source": {
+          "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+          "file_offset": 166245,
+          "file_offset_hex": "0x28965",
+          "virtual_address": 2128841574757,
+          "virtual_address_hex": "0x1efa8d88965",
+          "end_file_offset_exclusive": 166269,
+          "end_file_offset_exclusive_hex": "0x2897d",
+          "end_virtual_address_exclusive": 2128841574781,
+          "end_virtual_address_exclusive_hex": "0x1efa8d8897d",
+          "length": 24
+        }
+      },
+      {
+        "value": "CJProtect_Event_CodeFlag",
+        "classification_value": "按键精灵",
+        "source": {
+          "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+          "file_offset": 166273,
+          "file_offset_hex": "0x28981",
+          "virtual_address": 2128841574785,
+          "virtual_address_hex": "0x1efa8d88981",
+          "end_file_offset_exclusive": 166297,
+          "end_file_offset_exclusive_hex": "0x28999",
+          "end_virtual_address_exclusive": 2128841574809,
+          "end_virtual_address_exclusive_hex": "0x1efa8d88999",
+          "length": 24
+        }
+      },
+      {
+        "value": "_CJProtect_Share_Mem_CodeData_",
+        "classification_value": "按键精灵",
+        "source": {
+          "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+          "file_offset": 166301,
+          "file_offset_hex": "0x2899d",
+          "virtual_address": 2128841574813,
+          "virtual_address_hex": "0x1efa8d8899d",
+          "end_file_offset_exclusive": 166331,
+          "end_file_offset_exclusive_hex": "0x289bb",
+          "end_virtual_address_exclusive": 2128841574843,
+          "end_virtual_address_exclusive_hex": "0x1efa8d889bb",
+          "length": 30
+        }
+      },
+      {
+        "value": "_CJProtect_Share_Mem_CodeFlag_",
+        "classification_value": "按键精灵",
+        "source": {
+          "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+          "file_offset": 166335,
+          "file_offset_hex": "0x289bf",
+          "virtual_address": 2128841574847,
+          "virtual_address_hex": "0x1efa8d889bf",
+          "end_file_offset_exclusive": 166365,
+          "end_file_offset_exclusive_hex": "0x289dd",
+          "end_virtual_address_exclusive": 2128841574877,
+          "end_virtual_address_exclusive_hex": "0x1efa8d889dd",
+          "length": 30
+        }
+      },
+      {
+        "value": "292020MMRunning",
+        "classification_value": "按键精灵",
+        "source": {
+          "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+          "file_offset": 166382,
+          "file_offset_hex": "0x289ee",
+          "virtual_address": 2128841574894,
+          "virtual_address_hex": "0x1efa8d889ee",
+          "end_file_offset_exclusive": 166397,
+          "end_file_offset_exclusive_hex": "0x289fd",
+          "end_virtual_address_exclusive": 2128841574909,
+          "end_virtual_address_exclusive_hex": "0x1efa8d889fd",
+          "length": 15
+        }
+      }
+    ]
+  },
+  "yara_rules": {
+    "count": 4,
+    "rules": [
+      {
+        "name": "X19_NekoLauncher",
+        "source": {
+          "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+          "file_offset": 190087,
+          "file_offset_hex": "0x2e687",
+          "virtual_address": 2128841598599,
+          "virtual_address_hex": "0x1efa8d8e687",
+          "end_file_offset_exclusive": 190798,
+          "end_file_offset_exclusive_hex": "0x2e94e",
+          "end_virtual_address_exclusive": 2128841599310,
+          "end_virtual_address_exclusive_hex": "0x1efa8d8e94e",
+          "length": 711
+        },
+        "sha256": "472716893150b3dfd472a08064a358a287943a843c6555693cc32a106fce31b8",
+        "text": "rule X19_NekoLauncher\n    {\n        meta:\n            description = \"X19_NekoLauncher\"\n            date = \"2023-03-07\"\n\n        strings:\n            $a0 = {BA 02 00 00 00 44 8D 42 ?? 48 8B 4D A8 E8 ?? ?? ?? ?? 89 7C 24 20 45 33 C9 4C }\n            $a1 = {BA 02 00 00 00 44 8D 42 ?? 48 8B 8D 70 01 00 00 E8 ?? ?? ?? ?? 89 7C 24 20 45 33 C9 4C 8D 05}\n            $a2 = {89 7C 24 20 45 33 C9 4C 8D 05 ?? ?? ?? ?? 48 8D 15 ?? ?? ?? ?? 48 8D 8D 90 01 00 00 E8}\n            $a3 = {45 33 C9 4C 8D 05 ?? ?? ?? ?? 48 8D 15 ?? ?? ?? ?? 33 C9 57 E8 ?? ?? ?? ?? 48 8B 8D 60 03 00 00 48 33 CC}\n            $a4 = {4C 8B F8 41 B8 13 00 00 00 48 8D 15 ?? ?? ?? ?? 48 8D 4D 90}\n\n        condition:\n            all of them\n    }\n"
+      },
+      {
+        "name": "X19_Akira",
+        "source": {
+          "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+          "file_offset": 190803,
+          "file_offset_hex": "0x2e953",
+          "virtual_address": 2128841599315,
+          "virtual_address_hex": "0x1efa8d8e953",
+          "end_file_offset_exclusive": 191821,
+          "end_file_offset_exclusive_hex": "0x2ed4d",
+          "end_virtual_address_exclusive": 2128841600333,
+          "end_virtual_address_exclusive_hex": "0x1efa8d8ed4d",
+          "length": 1018
+        },
+        "sha256": "349cb26867661771e2c8f23bb1f17a9302834a6324ad4be103e5f3430dbbb8e2",
+        "text": "rule X19_Akira\n    {\n        meta:\n            description = \"X19_Akira\"\n            date = \"2023-9-27\"\n\n        strings:\n            $a0 = {85 C9 75 ?? 45 85 C0 B8 ?? ?? ?? ?? 75 ?? 83 ?? ?? 19 C9 83}\n            $a1 = {4C 01 F8 49 ?? ?? ?? ?? ?? ?? 4D 2B 01 49 29 D0 49 89 EE 49}\n            $a2 = {44 89 D0 44 88 D9 21 D8 D3 E8 48 89 F1 83 ?? ?? 41 ?? ?? ?? 89 C2}\n            $a3 = {48 39 CA 73 ?? 45 0F B7 14 50 48 FF C2 44 01 D0 EB ?? 41 ?? ?? ?? 74}\n            $a4 = {41 89 C9 48 89 D9 E8 ?? ?? ?? ?? 8D 48 ?? 4C 8B ?? ?? ?? 80 ?? ?? 76}\n            $a5 = {41 89 C9 31 D2 FF C9 49 ?? ?? ?? 83 ?? ?? 75 ?? 4C 8D  ?? ?? ?? 4C}\n            $a6 = {48 01 D0 8B 51 ?? 89 41 ?? 48 ?? ?? ?? 49 0F AF D0 48 01 D0 8B 51}\n            $a7 = {48 85 D2 74 ?? 89 DE 89 D1 48 ?? ?? ?? 8B 7C ?? ?? FF C3 48 01}\n            $a8 = {56 53 48 ?? ?? ?? 4D 85 C0 89 D6 4C 89 C3 74 ?? 4D 85 C9 4C 89}\n            $a9 = {48 89 C5 48 89 FA 48 89 F1 E8 ?? ?? ?? ?? 48 85 ED 48 89 C7 74}\n\n        condition:\n            all of them\n    }\n"
+      },
+      {
+        "name": "X19_0613_module_younkoo",
+        "source": {
+          "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+          "file_offset": 191832,
+          "file_offset_hex": "0x2ed58",
+          "virtual_address": 2128841600344,
+          "virtual_address_hex": "0x1efa8d8ed58",
+          "end_file_offset_exclusive": 193404,
+          "end_file_offset_exclusive_hex": "0x2f37c",
+          "end_virtual_address_exclusive": 2128841601916,
+          "end_virtual_address_exclusive_hex": "0x1efa8d8f37c",
+          "length": 1572
+        },
+        "sha256": "2b41c96997374b27d6813a790f3cee715494022069ceb6bacce16d82b4afaa28",
+        "text": "rule X19_0613_module_younkoo\n    {\n        meta:\n            description = \"X19_0613_module_younkoo\"\n            date = \"2025-06-13\"\n        strings:\n            $a0 = {48 89 75 97 48 89 5D 9F 4B 8D 1C 36 4C 8B C3 49 8B D7 48 8B CF E8 ?? ?? ?? ?? F2 0F 10 05 ?? ?? ?? ?? F2 0F 11 04 3B 8B 05}\n            $a1 = {48 89 5C 24 08 57 48 83 EC 40 48 8B 05 ?? ?? ?? ?? 48 33 C4 48 89 44 24 30 80 79 ?? 00 0F 84}\n            $a2 = {8B 48 ?? 48 89 4C 24 40 48 8D 45 D8 48 89 44 24 48 48 8D 54 24 40 E8 ?? ?? ?? ?? 90 48 83 7D 00 00 74 2E 80 7D 08 00 74 20 8B 0D}\n            $a3 = {48 8B D7 48 8D 48 ?? E8 ?? ?? ?? ?? 48 C7 46 ?? 00 00 00 00 4C 8B 05 ?? ?? ?? ?? 49 8D 48 ?? 0F 57 C0 48 85 C9}\n            $a4 = {7F 45 97 66 44 89 65 87 48 8D 4D 87 E8 ?? ?? ?? ?? 48 8D 15 ?? ?? ?? ?? 48 8B 0D ?? ?? ?? ?? E8 ?? ?? ?? ?? 48 8B D8 0F 57 C0 33 C0 }\n            $a5 = {48 89 45 2F 4C 8B F2 33 DB E8 ?? ?? ?? ?? 83 38 05 0F 85 ?? ?? ?? ?? 48 8D 15 ?? ?? ?? ?? 48 8B 0D ?? ?? ?? ?? E8}\n            $a6 = {85 C0 74 35 48 B8 FF FF FF FF FF FF FF 7F 48 3B F0 0F 87 ?? ?? ?? ?? 48 8B D6 48 8D 4D F7 E8 ?? ?? ?? ?? 48 8B 4D F7 48}\n            $a7 = {48 8B 46 ?? 48 3B 08 0F 83 ?? ?? ?? ?? 48 8B 56 ?? 48 8B 02 44 0F B6 0C 01 44 89 4D B8 49 63 00 48 03 02 48 89 45}\n            $a8 = {48 8B 75 F0 48 8B 5D E8 48 3B DE 0F 84 ?? ?? ?? ?? 48 83 C3 48 4C 8D 3D ?? ?? ?? ?? 48 8B 3D ?? ?? ?? ?? 4C 89 7C 24 50 48 C7 44 24 58 55}\n            $a9 = {48 8B C8 FF 15 ?? ?? ?? ?? 48 8B 75 F0 48 8B 5D E8 48 3B DE 0F 84 ?? ?? ?? ?? 48 83 C3 48 4C 8D 3D}\n        condition:\n            7 of ($a*)\n    }\n"
+      },
+      {
+        "name": "x19_0623_module_Zen",
+        "source": {
+          "file": "E:\\Coding\\S1mple\\target\\dump_out\\41264\\region_000001efa8d60000.bin",
+          "file_offset": 193409,
+          "file_offset_hex": "0x2f381",
+          "virtual_address": 2128841601921,
+          "virtual_address_hex": "0x1efa8d8f381",
+          "end_file_offset_exclusive": 195868,
+          "end_file_offset_exclusive_hex": "0x2fd1c",
+          "end_virtual_address_exclusive": 2128841604380,
+          "end_virtual_address_exclusive_hex": "0x1efa8d8fd1c",
+          "length": 2459
+        },
+        "sha256": "3ededbd038b2c34cf750c5d229344dbd1bbd816dfaf96f8782054ecfef7cc131",
+        "text": "rule x19_0623_module_Zen\n    {\n        meta:\n            category = \"opcode\"\n        strings:\n            $s01 = { 48 89 C7 48 8B 06 48 89 F1 FF 90 ?? ?? ?? ?? 84 C0 74 ?? 48 8B 06 48 89 F1 FF 50 ?? 48 89 C7 48 8B 06 48 89 F1 FF 90 ?? ?? ?? ?? 4C 8B 05 }\n            $s03 = { 48 89 F8 48 C1 E8 ?? 8D 14 FD ?? ?? ?? ?? 48 83 C2 ?? 48 31 C2 49 B8 ?? ?? ?? ?? ?? ?? ?? ?? 49 0F AF D0 48 31 D0 48 C1 EA ?? 48 31 C2 49 0F AF D0 49 89 D3 }\n            $s04 = { 48 C7 81 ?? ?? ?? ?? ?? ?? ?? ?? E8 ?? ?? ?? ?? 48 89 43 ?? E8 ?? ?? ?? ?? 48 89 43 ?? 48 89 BB ?? ?? ?? ?? 48 89 B3 }\n            $s05 = { 48 8B 42 ?? 48 8B 49 ?? 48 8B 50 ?? 48 39 D1 74 ?? E8 ?? ?? ?? ?? 85 C0 74 ?? 49 8B 4E ?? 48 8B 01 48 8B 40 ?? 48 89 F2 49 89 D8 41 89 F9 }\n            $s06 = { 79 ?? 48 8D 4C 24 ?? C6 44 24 ?? ?? F7 DA 4C 89 F8 48 29 C8 48 83 F8 ?? 7F ?? 41 89 D0 41 83 C8 ?? 45 0F BD C0 41 83 F0 ?? 45 69 C0 }\n            $s07 = { 78 ?? 48 8D 4C 24 ?? EB ?? 48 8D 4C 24 ?? C6 44 24 ?? ?? 48 F7 DB 48 89 F8 48 29 C8 48 83 F8 ?? 7F ?? 48 89 DA 48 83 CA ?? 48 0F BD D2 83 F2 ?? 69 D2 }\n            $s08 = { E8 ?? ?? ?? ?? 48 89 44 24 ?? 48 C7 44 24 ?? ?? ?? ?? ?? 48 C7 44 24 ?? ?? ?? ?? ?? 0F 57 C0 0F 11 40 ?? 0F 11 40 ?? 0F 11 00 48 8D 4C 24 }\n            $s09 = { 49 83 C1 ?? F6 06 ?? B8 ?? ?? ?? ?? 49 0F 45 C1 F6 C1 ?? 74 ?? 48 8B 7E ?? EB ?? 89 CF D1 EF 83 E7 ?? 49 89 C1 49 29 F9 4D 39 C1 }\n            $s10 = { 77 ?? 48 8B 05 ?? ?? ?? ?? 0F B7 08 81 F9 ?? ?? ?? ?? 75 ?? 48 63 48 ?? 81 3C 08 ?? ?? ?? ?? 75 ?? 48 01 C8 0F B7 48 ?? 81 F9 }\n            $s11 = { FF 50 ?? 89 C1 B8 ?? ?? ?? ?? 84 C9 74 ?? 48 8B 03 48 89 D9 89 FA FF 50 ?? F2 0F 11 06 31 C0 48 83 C4 }\n            $s12 = { 48 39 C7 77 ?? 48 89 CB 48 8B 12 48 89 F1 49 89 F8 E8 ?? ?? ?? ?? 85 C0 74 ?? 31 C0 48 83 C4 ?? 5B 5F 5E C3 48 01 FE 48 89 33 }\n            $s14 = { 80 3E ?? 0F 85 ?? ?? ?? ?? 48 8D 7E ?? 48 89 39 48 39 C7 0F 84 ?? ?? ?? ?? 80 3F ?? 75 ?? 48 8D 56 ?? 48 89 11 48 39 D0 0F 84 }\n            $s16 = { 48 83 F8 ?? 73 ?? 48 83 F8 ?? 74 ?? E9 ?? ?? ?? ?? 41 0F B7 00 35 ?? ?? ?? ?? 45 0F B6 48 ?? 41 83 F1 ?? 66 41 09 C1 0F 84 }\n            $s17 = { 83 F8 ?? 74 ?? 85 C0 0F 85 ?? ?? ?? ?? 48 8D 7E ?? 48 8B 06 4C 8B 46 ?? 4D 8D 48 ?? 48 8B 56 ?? 49 39 D1 76 ?? 48 89 CB 49 81 C0 }\n            $s19 = { 48 89 D9 FF 50 ?? 0F B6 43 ?? 24 ?? 3C ?? 74 ?? 48 8B 03 48 89 D9 48 89 F2 FF 50 ?? 48 8B 7F ?? 48 8B 07 48 89 F9 48 89 F2 FF 50 ?? 0F B6 47 }\n        condition:\n            any of them\n    }\n"
+      }
+    ],
+    "assembly": "verbatim rule spans joined in source order by one blank line",
+    "combined_sha256": "c15293c5400d90051ca1cf836e34b84804f460b5c17270308baa413569660569",
+    "combined_length": 5763,
+    "validation": {
+      "compiler_available": false,
+      "status": "not_run",
+      "reason": "yara-python is not installed; structural extraction checks passed"
+    },
+    "output_file": "E:\\Coding\\S1mple\\target\\acsdk_detection_rules.yar",
+    "output_sha256": "c15293c5400d90051ca1cf836e34b84804f460b5c17270308baa413569660569"
+  }
+}

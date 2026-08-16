@@ -1,0 +1,487 @@
+{
+  "schema": "maxhook.encrypt-boundary.capture/v1",
+  "pid": 42948,
+  "finished_at": "2026-08-14T01:02:56.398193+08:00",
+  "sensitive_plaintext_and_key_material": true,
+  "event_count": 86,
+  "call_count": 7,
+  "complete_calls": 7,
+  "calls": [
+    {
+      "call_id": "1",
+      "thread_ids": [
+        20272
+      ],
+      "return_address": null,
+      "complete_inputs": true,
+      "complete_outputs": true,
+      "strings": [
+        {
+          "phase": "input",
+          "label": "input32",
+          "size": 32,
+          "capacity": 47,
+          "file": "000002_call_1_input_input32.bin",
+          "sha256": "62429edae7ec2a3e5fc89136923f47449832ea34b5dc927ce256cb37accd5ad6"
+        },
+        {
+          "phase": "input",
+          "label": "input64",
+          "size": 64,
+          "capacity": 79,
+          "file": "000003_call_1_input_input64.bin",
+          "sha256": "19763d119fb4cd7395374096787433c9bca4851cb97411a6e713330e149e4b09"
+        },
+        {
+          "phase": "input",
+          "label": "plaintext_json",
+          "size": 745,
+          "capacity": 982,
+          "file": "000004_call_1_input_plaintext_json.bin",
+          "sha256": "4b43f798f87dc0b18eb5cfb70a431cc5b186c8c08436edbc982bedc0f15b96e4"
+        },
+        {
+          "phase": "output",
+          "label": "kid_hex",
+          "size": 32,
+          "capacity": 47,
+          "file": "000005_call_1_output_kid_hex.bin",
+          "sha256": "62429edae7ec2a3e5fc89136923f47449832ea34b5dc927ce256cb37accd5ad6"
+        },
+        {
+          "phase": "output",
+          "label": "nonce_hex",
+          "size": 24,
+          "capacity": 31,
+          "file": "000006_call_1_output_nonce_hex.bin",
+          "sha256": "f0110390c0f6114103c9b6c304f120208e99399e000f33a1f363ea90b97a99eb"
+        },
+        {
+          "phase": "output",
+          "label": "ciphertext_hex",
+          "size": 1490,
+          "capacity": 1503,
+          "file": "000007_call_1_output_ciphertext_hex.bin",
+          "sha256": "e4d1e9d8c6f585f319f0b4b14159c105dd8633067116773dded278b91c2a4a5a"
+        },
+        {
+          "phase": "output",
+          "label": "tag_hex",
+          "size": 32,
+          "capacity": 47,
+          "file": "000008_call_1_output_tag_hex.bin",
+          "sha256": "a3b35efbd431ce6feb3f6b668c6c3f2b8db83ef4c8cd3e535f549c10caa8da03"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "call_id": "2",
+      "thread_ids": [
+        20272
+      ],
+      "return_address": null,
+      "complete_inputs": true,
+      "complete_outputs": true,
+      "strings": [
+        {
+          "phase": "input",
+          "label": "input32",
+          "size": 32,
+          "capacity": 47,
+          "file": "000013_call_2_input_input32.bin",
+          "sha256": "62429edae7ec2a3e5fc89136923f47449832ea34b5dc927ce256cb37accd5ad6"
+        },
+        {
+          "phase": "input",
+          "label": "input64",
+          "size": 64,
+          "capacity": 79,
+          "file": "000014_call_2_input_input64.bin",
+          "sha256": "19763d119fb4cd7395374096787433c9bca4851cb97411a6e713330e149e4b09"
+        },
+        {
+          "phase": "input",
+          "label": "plaintext_json",
+          "size": 1291,
+          "capacity": 1798,
+          "file": "000015_call_2_input_plaintext_json.bin",
+          "sha256": "92c3540ba40195f68abc2f818a41e22ee7b2fffa845ed3aa737451a3664d1547"
+        },
+        {
+          "phase": "output",
+          "label": "kid_hex",
+          "size": 32,
+          "capacity": 47,
+          "file": "000016_call_2_output_kid_hex.bin",
+          "sha256": "62429edae7ec2a3e5fc89136923f47449832ea34b5dc927ce256cb37accd5ad6"
+        },
+        {
+          "phase": "output",
+          "label": "nonce_hex",
+          "size": 24,
+          "capacity": 31,
+          "file": "000017_call_2_output_nonce_hex.bin",
+          "sha256": "54a0be465e205cdbb6c61c2d21d5bb497edf0a9f30ff501b1d069b5bea6a726c"
+        },
+        {
+          "phase": "output",
+          "label": "ciphertext_hex",
+          "size": 2582,
+          "capacity": 2591,
+          "file": "000018_call_2_output_ciphertext_hex.bin",
+          "sha256": "8ece578ca5f1fbf49e8fe1097bafa91132d4d3c0209a4a982722b406fd3a3bf5"
+        },
+        {
+          "phase": "output",
+          "label": "tag_hex",
+          "size": 32,
+          "capacity": 47,
+          "file": "000019_call_2_output_tag_hex.bin",
+          "sha256": "57f55d6847540a32551892ff7b03f452c9a6fe394d91125d22a2568608a2da76"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "call_id": "3",
+      "thread_ids": [
+        20272
+      ],
+      "return_address": null,
+      "complete_inputs": true,
+      "complete_outputs": true,
+      "strings": [
+        {
+          "phase": "input",
+          "label": "input32",
+          "size": 32,
+          "capacity": 47,
+          "file": "000026_call_3_input_input32.bin",
+          "sha256": "62429edae7ec2a3e5fc89136923f47449832ea34b5dc927ce256cb37accd5ad6"
+        },
+        {
+          "phase": "input",
+          "label": "input64",
+          "size": 64,
+          "capacity": 79,
+          "file": "000027_call_3_input_input64.bin",
+          "sha256": "19763d119fb4cd7395374096787433c9bca4851cb97411a6e713330e149e4b09"
+        },
+        {
+          "phase": "input",
+          "label": "plaintext_json",
+          "size": 709,
+          "capacity": 934,
+          "file": "000028_call_3_input_plaintext_json.bin",
+          "sha256": "68396a09d00b1f6d57922877a1e32be771117091344bf0b1b93cf35ec9e952b9"
+        },
+        {
+          "phase": "output",
+          "label": "kid_hex",
+          "size": 32,
+          "capacity": 47,
+          "file": "000029_call_3_output_kid_hex.bin",
+          "sha256": "62429edae7ec2a3e5fc89136923f47449832ea34b5dc927ce256cb37accd5ad6"
+        },
+        {
+          "phase": "output",
+          "label": "nonce_hex",
+          "size": 24,
+          "capacity": 31,
+          "file": "000030_call_3_output_nonce_hex.bin",
+          "sha256": "869e93868d0670edd3af5973c1b875811f8733314a5b561eaea3628138176bda"
+        },
+        {
+          "phase": "output",
+          "label": "ciphertext_hex",
+          "size": 1418,
+          "capacity": 1423,
+          "file": "000031_call_3_output_ciphertext_hex.bin",
+          "sha256": "3b81343126295b06e7294cad9e8a63e7e8a68ed45a89c89f0c5b7d68788ec5e0"
+        },
+        {
+          "phase": "output",
+          "label": "tag_hex",
+          "size": 32,
+          "capacity": 47,
+          "file": "000032_call_3_output_tag_hex.bin",
+          "sha256": "45f0c884cf494d4a9054fc72b1397896627b49e4076b576c861703fb1ac49e7c"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "call_id": "4",
+      "thread_ids": [
+        20272
+      ],
+      "return_address": null,
+      "complete_inputs": true,
+      "complete_outputs": true,
+      "strings": [
+        {
+          "phase": "input",
+          "label": "input32",
+          "size": 32,
+          "capacity": 47,
+          "file": "000037_call_4_input_input32.bin",
+          "sha256": "62429edae7ec2a3e5fc89136923f47449832ea34b5dc927ce256cb37accd5ad6"
+        },
+        {
+          "phase": "input",
+          "label": "input64",
+          "size": 64,
+          "capacity": 79,
+          "file": "000038_call_4_input_input64.bin",
+          "sha256": "19763d119fb4cd7395374096787433c9bca4851cb97411a6e713330e149e4b09"
+        },
+        {
+          "phase": "input",
+          "label": "plaintext_json",
+          "size": 1361,
+          "capacity": 1822,
+          "file": "000039_call_4_input_plaintext_json.bin",
+          "sha256": "5eeab87386fd923d1a62b0a7171ce6736e300e4d41501bbc220e93de3e615714"
+        },
+        {
+          "phase": "output",
+          "label": "kid_hex",
+          "size": 32,
+          "capacity": 47,
+          "file": "000040_call_4_output_kid_hex.bin",
+          "sha256": "62429edae7ec2a3e5fc89136923f47449832ea34b5dc927ce256cb37accd5ad6"
+        },
+        {
+          "phase": "output",
+          "label": "nonce_hex",
+          "size": 24,
+          "capacity": 31,
+          "file": "000041_call_4_output_nonce_hex.bin",
+          "sha256": "49116cf04a2853d78dc409ece883cb6e98aa0b21827ca52597e9967348deae62"
+        },
+        {
+          "phase": "output",
+          "label": "ciphertext_hex",
+          "size": 2722,
+          "capacity": 2735,
+          "file": "000042_call_4_output_ciphertext_hex.bin",
+          "sha256": "094885a2c4d0a39318ed3acbc8fd136e3eedbb2dd3aa38595b0e5c194b7fdcf3"
+        },
+        {
+          "phase": "output",
+          "label": "tag_hex",
+          "size": 32,
+          "capacity": 47,
+          "file": "000043_call_4_output_tag_hex.bin",
+          "sha256": "d69f72e1f1f149e4834c44decce5bd366aa53f58ab0ab82b1ae1b58964e758f7"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "call_id": "5",
+      "thread_ids": [
+        20272
+      ],
+      "return_address": null,
+      "complete_inputs": true,
+      "complete_outputs": true,
+      "strings": [
+        {
+          "phase": "input",
+          "label": "input32",
+          "size": 32,
+          "capacity": 47,
+          "file": "000051_call_5_input_input32.bin",
+          "sha256": "62429edae7ec2a3e5fc89136923f47449832ea34b5dc927ce256cb37accd5ad6"
+        },
+        {
+          "phase": "input",
+          "label": "input64",
+          "size": 64,
+          "capacity": 79,
+          "file": "000052_call_5_input_input64.bin",
+          "sha256": "19763d119fb4cd7395374096787433c9bca4851cb97411a6e713330e149e4b09"
+        },
+        {
+          "phase": "input",
+          "label": "plaintext_json",
+          "size": 1291,
+          "capacity": 1798,
+          "file": "000053_call_5_input_plaintext_json.bin",
+          "sha256": "afcc3cb6d63b5e5050cfdf89955f4f053bcf678a91923a3fc90ea3875348da73"
+        },
+        {
+          "phase": "output",
+          "label": "kid_hex",
+          "size": 32,
+          "capacity": 47,
+          "file": "000054_call_5_output_kid_hex.bin",
+          "sha256": "62429edae7ec2a3e5fc89136923f47449832ea34b5dc927ce256cb37accd5ad6"
+        },
+        {
+          "phase": "output",
+          "label": "nonce_hex",
+          "size": 24,
+          "capacity": 31,
+          "file": "000055_call_5_output_nonce_hex.bin",
+          "sha256": "e7354066fce0089ec5af3d1589e52aff9f4dfd85b01032b51ee19cf6a687e7ae"
+        },
+        {
+          "phase": "output",
+          "label": "ciphertext_hex",
+          "size": 2582,
+          "capacity": 2591,
+          "file": "000056_call_5_output_ciphertext_hex.bin",
+          "sha256": "9f4a5bcaa1b100c1a12555ea7897c9190feabe595e86c663b5b73e88382ee00a"
+        },
+        {
+          "phase": "output",
+          "label": "tag_hex",
+          "size": 32,
+          "capacity": 47,
+          "file": "000057_call_5_output_tag_hex.bin",
+          "sha256": "5c16e7cc33a86f7b4b3dcffebe71d344b6264fc37e92e41469ddfde9f4d315fa"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "call_id": "6",
+      "thread_ids": [
+        20272
+      ],
+      "return_address": null,
+      "complete_inputs": true,
+      "complete_outputs": true,
+      "strings": [
+        {
+          "phase": "input",
+          "label": "input32",
+          "size": 32,
+          "capacity": 47,
+          "file": "000064_call_6_input_input32.bin",
+          "sha256": "62429edae7ec2a3e5fc89136923f47449832ea34b5dc927ce256cb37accd5ad6"
+        },
+        {
+          "phase": "input",
+          "label": "input64",
+          "size": 64,
+          "capacity": 79,
+          "file": "000065_call_6_input_input64.bin",
+          "sha256": "19763d119fb4cd7395374096787433c9bca4851cb97411a6e713330e149e4b09"
+        },
+        {
+          "phase": "input",
+          "label": "plaintext_json",
+          "size": 851,
+          "capacity": 1078,
+          "file": "000066_call_6_input_plaintext_json.bin",
+          "sha256": "a8643a63da0798894e73e30ff90782d6f99c84353f062613bc68a8bcb234b291"
+        },
+        {
+          "phase": "output",
+          "label": "kid_hex",
+          "size": 32,
+          "capacity": 47,
+          "file": "000067_call_6_output_kid_hex.bin",
+          "sha256": "62429edae7ec2a3e5fc89136923f47449832ea34b5dc927ce256cb37accd5ad6"
+        },
+        {
+          "phase": "output",
+          "label": "nonce_hex",
+          "size": 24,
+          "capacity": 31,
+          "file": "000068_call_6_output_nonce_hex.bin",
+          "sha256": "b9228c4b7a883b605787022792148e7cf298c101bd888379f58a28502d40979c"
+        },
+        {
+          "phase": "output",
+          "label": "ciphertext_hex",
+          "size": 1702,
+          "capacity": 1711,
+          "file": "000069_call_6_output_ciphertext_hex.bin",
+          "sha256": "32bf16a242e9ae09f432bd6717f3715943747bb6426bb871085743f0aafc5d10"
+        },
+        {
+          "phase": "output",
+          "label": "tag_hex",
+          "size": 32,
+          "capacity": 47,
+          "file": "000070_call_6_output_tag_hex.bin",
+          "sha256": "50830f18c5b38f3dae276a74093bc285363a71118a5b20c71d0e931d1dbaf76e"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "call_id": "7",
+      "thread_ids": [
+        20272
+      ],
+      "return_address": null,
+      "complete_inputs": true,
+      "complete_outputs": true,
+      "strings": [
+        {
+          "phase": "input",
+          "label": "input32",
+          "size": 32,
+          "capacity": 47,
+          "file": "000076_call_7_input_input32.bin",
+          "sha256": "62429edae7ec2a3e5fc89136923f47449832ea34b5dc927ce256cb37accd5ad6"
+        },
+        {
+          "phase": "input",
+          "label": "input64",
+          "size": 64,
+          "capacity": 79,
+          "file": "000077_call_7_input_input64.bin",
+          "sha256": "19763d119fb4cd7395374096787433c9bca4851cb97411a6e713330e149e4b09"
+        },
+        {
+          "phase": "input",
+          "label": "plaintext_json",
+          "size": 683,
+          "capacity": 886,
+          "file": "000078_call_7_input_plaintext_json.bin",
+          "sha256": "e8fbcb88b78c0c70cf2861039dc7fd34f91bebbe26ca79cf7112169e52e83f4e"
+        },
+        {
+          "phase": "output",
+          "label": "kid_hex",
+          "size": 32,
+          "capacity": 47,
+          "file": "000079_call_7_output_kid_hex.bin",
+          "sha256": "62429edae7ec2a3e5fc89136923f47449832ea34b5dc927ce256cb37accd5ad6"
+        },
+        {
+          "phase": "output",
+          "label": "nonce_hex",
+          "size": 24,
+          "capacity": 31,
+          "file": "000080_call_7_output_nonce_hex.bin",
+          "sha256": "10d4d063c45b0a96c8728ed3ee77d47fb0b03b111ee8580836c78b70a4588e6e"
+        },
+        {
+          "phase": "output",
+          "label": "ciphertext_hex",
+          "size": 1366,
+          "capacity": 1375,
+          "file": "000081_call_7_output_ciphertext_hex.bin",
+          "sha256": "dc3dbe3786b18fe6fd805b31e19522efbd310469b793edba8995b34193f6611d"
+        },
+        {
+          "phase": "output",
+          "label": "tag_hex",
+          "size": 32,
+          "capacity": 47,
+          "file": "000082_call_7_output_tag_hex.bin",
+          "sha256": "1130ceabeadb249c4de2fa39dad7a82591b6e7be23aee7dda7ccc0bd7f44e1b3"
+        }
+      ],
+      "errors": []
+    }
+  ]
+}

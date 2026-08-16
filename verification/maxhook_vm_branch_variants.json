@@ -1,0 +1,193 @@
+{
+  "schema": "maxhook.vm.branch-variants/v2",
+  "dispatch_ordinals": {
+    "branch": 11,
+    "reconverged": 12
+  },
+  "branch_dispatch_source_consistent": true,
+  "reconverged_dispatch_source_consistent": true,
+  "baseline": {
+    "segment_set_sha256": "61d30cf236e2db4f25a1310379ea53c71037d45a5dc2f30cb96e54f69daebdea",
+    "frequency": 4,
+    "call_count": 5
+  },
+  "variants": [
+    {
+      "segment_set_sha256": "363051fe6885fcdd9a6a0b2750c296f9bee38e8b2ff313dd44adbc5cc5eb2ecd",
+      "call_files": [
+        "vm_addrs_call2.txt"
+      ],
+      "frequency": 1,
+      "is_baseline_majority": false,
+      "segment_first_translation_addresses": 354,
+      "extra_vs_baseline": [
+        "0x180c2c30c",
+        "0x180c2c30d",
+        "0x180c2c32a",
+        "0x180c2c32d",
+        "0x180c2c331",
+        "0x180c2c6ac",
+        "0x180c2c6b1",
+        "0x180c2c6b4",
+        "0x180c2c6b8",
+        "0x180c2c6bf",
+        "0x180c2c6c6",
+        "0x180c2c6cc"
+      ],
+      "missing_vs_baseline": [],
+      "extra_cfg_chain": [
+        {
+          "address": "0x180c2c30c",
+          "bytes": "57",
+          "mnemonic": "push",
+          "op_str": "rdi"
+        },
+        {
+          "address": "0x180c2c30d",
+          "bytes": "e99a030000",
+          "mnemonic": "jmp",
+          "op_str": "0x180c2c6ac"
+        },
+        {
+          "address": "0x180c2c6ac",
+          "bytes": "689c2bcf6f",
+          "mnemonic": "push",
+          "op_str": "0x6fcf2b9c"
+        },
+        {
+          "address": "0x180c2c6b1",
+          "bytes": "ff3424",
+          "mnemonic": "push",
+          "op_str": "qword ptr [rsp]"
+        },
+        {
+          "address": "0x180c2c6b4",
+          "bytes": "488b3c24",
+          "mnemonic": "mov",
+          "op_str": "rdi, qword ptr [rsp]"
+        },
+        {
+          "address": "0x180c2c6b8",
+          "bytes": "4881c408000000",
+          "mnemonic": "add",
+          "op_str": "rsp, 8"
+        },
+        {
+          "address": "0x180c2c6bf",
+          "bytes": "4881c408000000",
+          "mnemonic": "add",
+          "op_str": "rsp, 8"
+        },
+        {
+          "address": "0x180c2c6c6",
+          "bytes": "81f79c2bcf6f",
+          "mnemonic": "xor",
+          "op_str": "edi, 0x6fcf2b9c"
+        },
+        {
+          "address": "0x180c2c6cc",
+          "bytes": "e959fcffff",
+          "mnemonic": "jmp",
+          "op_str": "0x180c2c32a"
+        },
+        {
+          "address": "0x180c2c32a",
+          "bytes": "48893b",
+          "mnemonic": "mov",
+          "op_str": "qword ptr [rbx], rdi"
+        },
+        {
+          "address": "0x180c2c32d",
+          "bytes": "488b3c24",
+          "mnemonic": "mov",
+          "op_str": "rdi, qword ptr [rsp]"
+        },
+        {
+          "address": "0x180c2c331",
+          "bytes": "4883c408",
+          "mnemonic": "add",
+          "op_str": "rsp, 8"
+        }
+      ],
+      "extra_cfg_exit": "0x180c2c335",
+      "recognized_effect": {
+        "matched": true,
+        "constant": "0x6fcf2b9c",
+        "net_effect": "qword[RBX] = 0; original RDI restored; stack pointer restored"
+      }
+    },
+    {
+      "segment_set_sha256": "61d30cf236e2db4f25a1310379ea53c71037d45a5dc2f30cb96e54f69daebdea",
+      "call_files": [
+        "vm_addrs_call1.txt",
+        "vm_addrs_call3.txt",
+        "vm_addrs_call4.txt",
+        "vm_addrs_call5.txt"
+      ],
+      "frequency": 4,
+      "is_baseline_majority": true,
+      "segment_first_translation_addresses": 342,
+      "extra_vs_baseline": [],
+      "missing_vs_baseline": [],
+      "extra_cfg_chain": [],
+      "extra_cfg_exit": null,
+      "recognized_effect": null
+    }
+  ],
+  "calls": [
+    {
+      "file": "E:\\Coding\\S1mple\\target\\vm_trace_capture4\\vm_addrs_call1.txt",
+      "sha256": "3d013a92504209ae5232556cb71aa53cd44ac070cbda5de3c00693f9eebd5080",
+      "branch_dispatch_source": "0x1809d9fae",
+      "first_new_after_branch_dispatch": "0x1814ce47d",
+      "reconverged_dispatch_source": "0x180a73ede",
+      "segment_first_translation_addresses": 342,
+      "segment_set_sha256": "61d30cf236e2db4f25a1310379ea53c71037d45a5dc2f30cb96e54f69daebdea"
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\vm_trace_capture4\\vm_addrs_call2.txt",
+      "sha256": "eafd46b3e8517b93169614bd31fb1fcb2134da38c80ad924c9556b2baf76772a",
+      "branch_dispatch_source": "0x1809d9fae",
+      "first_new_after_branch_dispatch": "0x180c2c30c",
+      "reconverged_dispatch_source": "0x180a73ede",
+      "segment_first_translation_addresses": 354,
+      "segment_set_sha256": "363051fe6885fcdd9a6a0b2750c296f9bee38e8b2ff313dd44adbc5cc5eb2ecd"
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\vm_trace_capture4\\vm_addrs_call3.txt",
+      "sha256": "3dea053eab8520334c43533a16df05611c04013b115f3b649984b864e558c3f7",
+      "branch_dispatch_source": "0x1809d9fae",
+      "first_new_after_branch_dispatch": "0x1814ce47d",
+      "reconverged_dispatch_source": "0x180a73ede",
+      "segment_first_translation_addresses": 342,
+      "segment_set_sha256": "61d30cf236e2db4f25a1310379ea53c71037d45a5dc2f30cb96e54f69daebdea"
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\vm_trace_capture4\\vm_addrs_call4.txt",
+      "sha256": "154a16e09fe8a69a9241b92c646ea4267feee85645cbd9a4c99fc1e116e342ed",
+      "branch_dispatch_source": "0x1809d9fae",
+      "first_new_after_branch_dispatch": "0x1814ce47d",
+      "reconverged_dispatch_source": "0x180a73ede",
+      "segment_first_translation_addresses": 342,
+      "segment_set_sha256": "61d30cf236e2db4f25a1310379ea53c71037d45a5dc2f30cb96e54f69daebdea"
+    },
+    {
+      "file": "E:\\Coding\\S1mple\\target\\vm_trace_capture4\\vm_addrs_call5.txt",
+      "sha256": "3d013a92504209ae5232556cb71aa53cd44ac070cbda5de3c00693f9eebd5080",
+      "branch_dispatch_source": "0x1809d9fae",
+      "first_new_after_branch_dispatch": "0x1814ce47d",
+      "reconverged_dispatch_source": "0x180a73ede",
+      "segment_first_translation_addresses": 342,
+      "segment_set_sha256": "61d30cf236e2db4f25a1310379ea53c71037d45a5dc2f30cb96e54f69daebdea"
+    }
+  ],
+  "inputs": {
+    "runtime_bugland_sha256": "3a8e093afbf678fec5b4a84e5759b4d030f8ad39b52eac81a872dfe581449f26"
+  },
+  "limits": [
+    "The branch trigger value is not present in the address-only capture.",
+    "RBX's concrete pointee is unknown because already-translated addresses are outside the translation-count=1 ordering slice.",
+    "The extra block has zero-store semantics if entered; transform counts are not runtime hit counts.",
+    "This does not prove that the branch depends specifically on plaintext or nonce."
+  ]
+}
